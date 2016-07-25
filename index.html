@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">What is Soft Sills Engineering?</h1>
+  <p>
+  Being a great engineer takes more than code. It takes soft skills! Each week on the Soft Skills Engineering podcast,
+  <a href="https://twitter.com/jergason">Jamison Dance</a> and <a href="https://twitter.com/djsmith42">Dave Smith</a>
+  answer questions from a vast empire of software engineer listeners. Hilarity and wisdom ensue as they share
+  experiences, insight, and comedy.
+  </p>
+
+  <h1 class="page-heading">Most Recent Episode:</h1>
+
+  {% assign recent_post = site.posts.first %}
+
+  <h2>
+    <a class="post-link" href="{{ recent_post.url | prepend: site.baseurl }}">{{ recent_post.title }}</a>
+    <span class="post-meta">{{ recent_post.date | date: "%b %-d, %Y" }}</span>
+
+  </h2>
+  <div>
+    {{ recent_post.content }}
+  </div>
+
+</div>
