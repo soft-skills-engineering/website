@@ -1,5 +1,0 @@
----
-layout: feed
-format: mp3
----
-{{ content }}

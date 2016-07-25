@@ -1,5 +1,0 @@
----
-layout: feed
-format: ogg
----
-{{ content }}
