@@ -11,6 +11,18 @@ layout: default
           <p class="post-meta">{{ post.date | date: site.date_format }}</p>
           <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
           <p class="post-summary">
+            {% if post.file %}
+              <audio src="{{ post.file }}" preload="none" controls="controls" type="audio/mp3">
+                Your browser doesn't support the <code>audio</code> element.
+              </audio>
+
+              <a href="{{ post.file }}">Download</a>
+            {% endif %}
+
+            {% if post.soundcloud %}
+              {{ post.soundcloud }}
+            {% endif %}
+
             {% if post.summary %}
               {{ post.summary }}
             {% else %}

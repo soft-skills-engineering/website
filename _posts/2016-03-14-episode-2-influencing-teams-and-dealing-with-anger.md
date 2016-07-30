@@ -2,6 +2,10 @@
 layout: post
 title:  "Episode 2: Influencing your team and dealing with anger"
 date:   2016-03-14 12:00:00
+guid: 56d6dca2-d114-468a-953d-3f95b3048f59
+file: http://thesmithfam.org/podcasts/sse-002.mp3?rss=true
+length: 34683307
+duration: 36:08
 categories: career anger team
 ---
 
