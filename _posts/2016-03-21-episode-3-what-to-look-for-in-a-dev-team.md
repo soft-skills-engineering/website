@@ -1,7 +1,11 @@
 ---
 layout: post
 title:  "Episode 3: What to look for in a dev team and moving fast"
-date:   2016-03-21 12:00:00
+date:   2016-03-21 12:00:00 -0700
+guid: 103dab3b-0da1-4f8e-883e-59552132c115
+duration: "32:01"
+length: 30740779
+file: "http://thesmithfam.org/podcasts/sse-003.mp3?rss=true"
 categories: interviewing
 ---
 
