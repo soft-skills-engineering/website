@@ -1,15 +1,13 @@
-<footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-4">
-        <ul class="social-media-list">
-          <li>
-          <span class="icon icon--twitter">{% include icon-twitter.svg %}</span>
-            Follow us on Twitter:
-            <a href="https://twitter.com/{{ site.twitter_username }}">@{{ site.twitter_username }}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+<footer class="center">
+  <div class="measure">
+    <small>
+      Soft Skills Engineering is by <a href="https://twitter.com/djsmith42">Dave Smith</a> and <a href="https://twitter.com/jergason">Jamison Dance</a>, who think you are neat.
+    </small>
   </div>
 </footer>
+{% if site.enable_anchorjs %}<!-- AnchorJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
+<script>
+    anchors.options.visible = 'always';
+    anchors.add('article h2, article h3, article h4, article h5, article h6');
+</script>{% endif %}

@@ -1,28 +1,28 @@
 ---
 layout: default
 ---
+{% assign posts_count = (paginator.posts | size) %}
 
 <div class="home">
+  {% if posts_count > 0 %}
+    <div class="posts">
+      {% for post in paginator.posts %}
+        <div class="post py3">
+          <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          <p class="post-summary">
+            {% if post.summary %}
+              {{ post.summary }}
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
 
-  <h1 class="page-heading">What is Soft Sills Engineering?</h1>
-  <p>
-  Being a great engineer takes more than code. It takes soft skills! Each week on the Soft Skills Engineering podcast,
-  <a href="https://twitter.com/jergason">Jamison Dance</a> and <a href="https://twitter.com/djsmith42">Dave Smith</a>
-  answer questions from a vast empire of software engineer listeners. Hilarity and wisdom ensue as they share
-  experiences, insight, and comedy.
-  </p>
-
-  <h1 class="page-heading">Most Recent Episode:</h1>
-
-  {% assign recent_post = site.posts.first %}
-
-  <h2>
-    <a class="post-link" href="{{ recent_post.url | prepend: site.baseurl }}">{{ recent_post.title }}</a>
-    <span class="post-meta">{{ recent_post.date | date: "%b %-d, %Y" }}</span>
-
-  </h2>
-  <div>
-    {{ recent_post.content }}
-  </div>
-
+    {% include pagination.html %}
+  {% else %}
+    <h1 class='center'>{{ site.text.index.coming_soon }}</h3>
+  {% endif %}
 </div>
