@@ -8,13 +8,9 @@ url:         "https://softskills.audio"
 date_format: "%b %-d, %Y"
 logo_url: "http://thesmithfam.org/podcasts/sse-logo-3.png" 
 
-# Google services
 google_verification:
-# Use either direct GA implementation or set up GTM account
-# - using both will skew your data (leave blank to not use at all)
-google_analytics:
+google_analytics: "UA-81663582-1"
 google_tag_manager:
-# Bing services
 bing_verification:
 
 # Optional features
