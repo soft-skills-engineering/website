@@ -5,7 +5,7 @@ date: 2016-03-21 12:00:00 -0700
 guid: 103dab3b-0da1-4f8e-883e-59552132c115
 duration: "25:33"
 length: 30740779
-file: "http://thesmithfam.org/podcasts/sse-003.mp3?rss=true"
+file: "https://download.softskills.audio/sse-003.mp3?rss=true"
 categories: episode
 ---
 

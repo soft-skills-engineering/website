@@ -1,12 +1,12 @@
 # Site settings
 title:       "Soft Skills Engineering"
-email:       dave@thesmithfam.org
+email:       soft-skills-engineering@googlegroups.com
 author:      "Jamison Dance and Dave Smith"
 description: "Being a great software engineer takes more than code."
 baseurl:     ""
 url:         "https://softskills.audio"
 date_format: "%b %-d, %Y"
-logo_url: "http://thesmithfam.org/podcasts/sse-logo-3.png" 
+logo_url: "https://download.softskills.audio/sse-logo-3.png" 
 
 # Google services
 google_verification:
