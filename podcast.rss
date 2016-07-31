@@ -17,7 +17,7 @@ layout: none
 		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
 		<image>
 			<link>{{ site.url }}</link>
-      <url>http://thesmithfam.org/podcasts/sse-logo-3.png</url>
+      <url>{{ site.logo_url }}</url>
 			<title>{{ site.title }}</title>
 		</image>
     <media:credit role="author">{{ site.author }}</media:credit>
@@ -31,7 +31,7 @@ layout: none
 			<itunes:name>{{ site.author }}</itunes:name>
 			<itunes:email>{{ site.email }}</itunes:email>
 		</itunes:owner>
-    <itunes:image href="http://thesmithfam.org/podcasts/sse-logo-3.png" />
+    <itunes:image href="{{ site.logo_url }}" />
     <itunes:category text="Education">
       <itunes:category text="Training" />
     </itunes:category>
