@@ -5,7 +5,7 @@ date: 2016-04-18 12:00:00 -0700
 guid: 8a6ccbbe-125d-4c7c-8492-97e1a9a36711
 duration: "25:33"
 length: 23422891
-file: "http://thesmithfam.org/podcasts/sse-007.mp3?rss=true"
+file: "https://download.softskills.audio/sse-007.mp3?rss=true"
 categories: episode
 ---
 
