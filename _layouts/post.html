@@ -27,15 +27,13 @@ layout: default
 <article class="post-content">
 
   {% if page.file %}
-    <audio src="{{ page.file }}" preload="none" controls="controls" type="audio/mp3">
-      Your browser doesn't support the <code>audio</code> element.
-    </audio>
+    <div class="audio-player">
+      <audio src="{{ page.file }}" preload="none" controls="controls" type="audio/mp3">
+        Your browser doesn't support the <code>audio</code> element.
+      </audio>
 
-    <a href="{{ page.file }}">Download</a>
-  {% endif %}
-
-  {% if page.soundcloud %}
-    {{ page.soundcloud }}
+      <a href="{{ page.file }}">Download</a>
+    </div>
   {% endif %}
 
   {{ content }}
