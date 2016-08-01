@@ -4,6 +4,14 @@ layout: default
 {% assign posts_count = (paginator.posts | size) %}
 
 <div class="home">
+  <p>A weekly podcast for developers, because it takes more than great code to be a great developer.</p>
+  <h2>Subscribe</h2>
+  <ul>
+    <li>To subscribe, search for "Soft Skills Engineering" in your favorite podcast app. Or use one of these links:</li>
+    <li>Mobile devices: <a href="{{site.podcast_itunes_url}}">tap here</a></li>
+    <li>Feed URL: <a href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a></li>
+  </ul>
+
   {% if posts_count > 0 %}
     <div class="posts">
       {% for post in paginator.posts %}
