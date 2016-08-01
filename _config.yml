@@ -7,6 +7,7 @@ baseurl:     ""
 url:         "https://softskills.audio"
 date_format: "%b %-d, %Y"
 logo_url: "https://download.softskills.audio/sse-logo-3.png" 
+twitter_dm_url: "https://twitter.com/messages/compose?recipient_id=707699773642383361"
 
 google_verification:
 google_analytics: "UA-81663582-1"
