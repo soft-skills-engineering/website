@@ -18,6 +18,7 @@
 - [x] grab excerpt from post to put in podcast rss feed
 - [ ] look at making the excerpt make more sense?
 - [ ] (Dave) serve mp3's via https, not http.
+- [ ] Add photos of Jamison and Dave somewhere?
 
 
 what does the `image` tag in the rss feed do?

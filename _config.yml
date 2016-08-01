@@ -9,14 +9,11 @@ date_format: "%b %-d, %Y"
 logo_url: "https://download.softskills.audio/sse-logo-3.png" 
 podcast_feed_url: "https://feeds.feedburner.com/SoftSkillsEngineering"
 podcast_itunes_url: "https://itunes.apple.com/us/podcast/soft-skills-engineering/id1091341048?mt=2"
+twitter_dm_url: "https://twitter.com/messages/compose?recipient_id=707699773642383361"
 
-# Google services
 google_verification:
-# Use either direct GA implementation or set up GTM account
-# - using both will skew your data (leave blank to not use at all)
-google_analytics:
+google_analytics: "UA-81663582-1"
 google_tag_manager:
-# Bing services
 bing_verification:
 
 # Optional features
