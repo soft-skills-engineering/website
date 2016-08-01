@@ -46,3 +46,13 @@
 .related-post-title {
   border-bottom: thin solid #f3f3f3;
 }
+
+.audio-player {
+  align-items: center;
+  display: flex;
+  margin-bottom: 1em;
+}
+
+.audio-player audio {
+  margin-right: 1em;
+}

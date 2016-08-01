@@ -1,0 +1,24 @@
+<div class="post py3">
+  <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+  <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+    <h3 class="h2 post-title">{{ post.title }}</h3>
+  </a>
+    {% if post.file %}
+      <div class="audio-player">
+        <audio src="{{ post.file }}" preload="none" controls="controls" type="audio/mp3">
+          Your browser doesn't support the <code>audio</code> element.
+        </audio>
+
+        <a href="{{ post.file }}">Download</a>
+      </div>
+    {% endif %}
+
+
+  <p class="post-summary">
+    {% if post.summary %}
+      {{ post.summary }}
+    {% else %}
+      {{ post.excerpt }}
+    {% endif %}
+  </p>
+</div>

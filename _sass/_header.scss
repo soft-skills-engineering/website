@@ -12,6 +12,12 @@
 
 .site-header .site-title {
   font-size: $h2;
+  font-family: $font-family;
+  margin: 0;
+}
+
+.site-title .site-title-link {
+  font-size: inherit;
 }
 
 .site-nav {
