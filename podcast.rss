@@ -1,5 +1,4 @@
 ---
-layout: none
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xml:lang="en-US" xmlns:media="http://search.yahoo.com/mrss/" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
@@ -51,7 +50,7 @@ layout: none
         {% else %}
         <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
         {% endif %}
-        <enclosure url="{{ post.file }}" length="{{ post.length }}" type="audio/mpeg"/>
+        <enclosure url="{{ post.file }}?rss=true" length="{{ post.length }}" type="audio/mpeg"/>
 				<itunes:author>{{ site.author }}</itunes:author>
 				<itunes:subtitle>{{ site.title }}: {{ post.title }}</itunes:subtitle>
 				<itunes:summary>{{ post.content | xml_escape }}</itunes:summary>
@@ -59,7 +58,7 @@ layout: none
         <itunes:keywords>software,coding,development,web,dev,soft-skills,programming</itunes:keywords>
 				<itunes:image href="{{ site.url }}/images/itunes.png" />
 				<itunes:explicit>no</itunes:explicit>
-        <media:content url="{{ post.file }}"  fileSize="{{ post.length }}" type="audio/mpeg" /></item>
+        <media:content url="{{ post.file }}?rss=true"  fileSize="{{ post.length }}" type="audio/mpeg" /></item>
 			</item>
 		{% endfor %}
 

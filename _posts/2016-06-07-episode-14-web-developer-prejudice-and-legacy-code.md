@@ -5,7 +5,7 @@ date: 2016-06-07 12:00:00 -0700
 guid: 95f2a5cc-5488-43d6-a246-98d71ce2f53e
 duration: "25:33"
 length: 29193984
-file: "https://download.softskills.audio/sse-014.mp3?rss=true"
+file: "https://download.softskills.audio/sse-014.mp3"
 categories: episode
 ---
 
