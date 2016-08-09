@@ -32,3 +32,19 @@ body {
      -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
+
+h3.host {
+  margin: 0;
+}
+
+.host-details {
+}
+
+img.host-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  vertical-align: middle;
+  float: left;
+  margin-right: 10px;
+}
