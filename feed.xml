@@ -49,8 +49,8 @@ layout: null
         <enclosure url="{{ post.file }}?rss=true" length="{{ post.length }}" type="audio/mpeg"/>
         <itunes:explicit>no</itunes:explicit>
         <itunes:subtitle></itunes:subtitle>
-        <description>{{ post.content | xml_escape }}</description>
-        <itunes:summary>{{ post.content | xml_escape }}</itunes:summary>
+        <description>{{ post.content }}</description>
+        <itunes:summary>{{ post.content }}</itunes:summary>
 
         <!-- FIXME? -->
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
