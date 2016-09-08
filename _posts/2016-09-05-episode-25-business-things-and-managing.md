@@ -2,9 +2,9 @@
 layout: post
 title: 'Episode 25: Understanding the Business and Managing Without Being a Developer'
 date: 2016-09-05 12:00:00 -0700
-guid: f72b7e1c-d2a1-4ad5-a9a8-8318d00efb99
-duration: "37:35"
-length: 36074880
+guid: cdd8d25d-e37f-44ea-b783-329748c3bee9
+duration: "38:49"
+length: 37270272
 file: "https://download.softskills.audio/sse-025.mp3"
 categories: episode
 ---
