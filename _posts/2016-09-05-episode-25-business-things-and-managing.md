@@ -9,7 +9,7 @@ file: "https://download.softskills.audio/sse-025.mp3"
 categories: episode
 ---
 
-In episode 24, Jamison and  Dave answer these question:
+In episode 25, Jamison and  Dave answer these question:
 
 ##How do I understand the business side better?
 
