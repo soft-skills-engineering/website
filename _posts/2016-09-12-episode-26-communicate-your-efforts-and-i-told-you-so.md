@@ -2,10 +2,10 @@
 layout: post
 title: 'Episode 26: Communicate Your Efforts and I Told You So'
 date: 2016-09-12 12:00:00 -0700
-guid: cdd8d25d-e37f-44ea-b783-329748c3bee9
-duration: "38:49"
-length: 37270272
-file: "https://download.softskills.audio/sse-025.mp3"
+guid: 461aab20-b759-4706-a6b4-039b1d4dd298
+duration: "41:10"
+length: 39514752
+file: "https://download.softskills.audio/sse-026.mp3"
 categories: episode
 ---
 
