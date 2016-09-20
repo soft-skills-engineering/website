@@ -11,7 +11,7 @@ categories: episode
 
 In episode 26, Jamison and  Dave answer these question:
 
-##How do you make sure people know about your good work?
+## How do you make sure people know about your good work?
 
 See [Matt Zabriskie's](https://twitter.com/mzabriskie) [great post](http://www.mattzabriskie.com/blog/communicate-your-efforts) for background on this.
 
@@ -19,5 +19,5 @@ We also mentioned [Do Things, Write About It](http://mdswanson.com/blog/2013/08/
 
 
 
-##How do you get your point across effectively so you don't have to say "I told you so" later?
+## How do you get your point across effectively so you don't have to say "I told you so" later?
 
