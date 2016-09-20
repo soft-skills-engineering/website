@@ -51,8 +51,6 @@ layout: null
         <itunes:subtitle></itunes:subtitle>
         <description>{{ post.content | xml_escape }}</description>
         <itunes:summary>{{ post.content | xml_escape }}</itunes:summary>
-
-        <!-- FIXME? -->
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
       </item>
     {% endfor %}
