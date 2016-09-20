@@ -11,7 +11,7 @@ categories: episode
 
 In episode 25, Jamison and  Dave answer these question:
 
-##How do I understand the business side better?
+## How do I understand the business side better?
 
 * [Analysis of tabs vs spaces](https://medium.com/@hoffa/400-000-github-repositories-1-billion-files-14-terabytes-of-code-spaces-or-tabs-7cfe0b5dd7fd#.ahv57m5mn)
 * How does your business make money?
@@ -26,7 +26,7 @@ In episode 25, Jamison and  Dave answer these question:
 * The Dave Smith Method® for learning business jargon.
 * Be kind and have empathy when you learn.
 
-##Can I be a good technical manager without a technical background?
+## Can I be a good technical manager without a technical background?
 
 * Technical leadership vs management.
 * Management means empathy and understanding. Can you get that without "coming up through the ranks"?
