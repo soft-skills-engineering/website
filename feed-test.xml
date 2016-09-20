@@ -4,9 +4,9 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <itunes:summary>{{ site.description | xml_escape }}</itunes:summary>
+    <title>TEST {{ site.title | xml_escape }}</title>
+    <description>TEST {{ site.description | xml_escape }}</description>
+    <itunes:summary>TEST {{ site.description | xml_escape }}</itunes:summary>
 
     <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml" />
 
