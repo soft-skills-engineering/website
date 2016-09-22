@@ -2,9 +2,9 @@
 layout: post
 title: 'Episode 28: How Long Should I Stay At My Job and How Do I Help Junior Developers Improve'
 date: 2016-09-26 12:00:00 -0700
-guid: f78ecf48-7665-4ede-8bda-d342a3c1fd6c
-duration: "42:41"
-length: 40977408
+guid: e88d9b23-eb6d-4d4e-86cd-bc3e2fdba9a1
+duration: "34:48"
+length: 33414912
 file: "https://download.softskills.audio/sse-028.mp3"
 categories: episode
 ---
