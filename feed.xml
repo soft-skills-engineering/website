@@ -46,7 +46,7 @@ layout: null
         <guid isPermaLink="false">{{ post.guid }}</guid>
         <itunes:author></itunes:author>
         <itunes:duration>{{ post.duration }}</itunes:duration>
-        <enclosure url="{{ post.file }}?rss=true" length="{{ post.length }}" type="audio/mpeg"/>
+        <enclosure url="{{ post.file }}?source=rss" length="{{ post.length }}" type="audio/mpeg"/>
         <itunes:explicit>no</itunes:explicit>
         <itunes:subtitle></itunes:subtitle>
         <description>{{ post.content | xml_escape }}</description>

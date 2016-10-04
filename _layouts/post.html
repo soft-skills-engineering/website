@@ -28,11 +28,11 @@ layout: default
 
   {% if page.file %}
     <div class="audio-player">
-      <audio src="{{ page.file }}?website_player=true" preload="none" controls="controls" type="audio/mp3">
+      <audio src="{{ page.file }}?source=webplayer" preload="none" controls="controls" type="audio/mp3">
         Your browser doesn't support the <code>audio</code> element.
       </audio>
 
-      <a href="{{ page.file }}?website_download=true">Download</a>
+      <a href="{{ page.file }}?source=webdownload">Download</a>
     </div>
   {% endif %}
 
