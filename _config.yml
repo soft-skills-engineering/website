@@ -110,5 +110,6 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-mentions
+  - jekyll-redirect-from
 # https://github.com/jekyll/jekyll/issues/2938
 exclude: [vendor]
