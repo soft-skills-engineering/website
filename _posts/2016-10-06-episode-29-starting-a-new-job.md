@@ -7,6 +7,7 @@ duration: "21:25"
 length: 20567040
 file: "https://download.softskills.audio/sse-029.mp3"
 categories: episode
+redirect_from: "/2016/10/07/starting-a-new-job/"
 ---
 
 Literally the only episode that the advice "quit your job and get a better one" doesn't apply.
