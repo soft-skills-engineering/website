@@ -5,7 +5,7 @@ date: 2016-05-09 12:00:00 -0700
 guid: dcaad639-fe60-4a8f-8b67-09ad1180e01e
 duration: "25:33"
 length: 37789099
-file: "https://download.softskills.audio/sse-010.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-010.mp3"
 categories: episode
 ---
 
