@@ -5,7 +5,7 @@ date: 2016-09-26 12:00:00 -0700
 guid: e88d9b23-eb6d-4d4e-86cd-bc3e2fdba9a1
 duration: "34:48"
 length: 33414912
-file: "https://download.softskills.audio/sse-028.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-028.mp3"
 categories: episode
 ---
 
