@@ -19,7 +19,6 @@ episode_number=`echo "$1" | perl -ne'/episode-(\d+)\.mp3/ && print $1'`
 uuid=`uuidgen | perl -ne 'print lc'`
 new_filename="sse-${episode_number}.mp3"
 post_date=`date "+%Y-%m-%d 12:00:00 -0700"`
-url="https://download.softskills.audio/${new_filename}"
 
 
 # edit file to set file name, byte size, guid,
