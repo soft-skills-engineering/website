@@ -6,9 +6,15 @@ tags: about
 ---
 
 <p>
-Want to get your question answered on the show? We'd love to hear from you!
+Want to get your question answered on the show? Here's how:
+</p>
+
+<h4>Two options:</h4>
+
+<p>
+Send us a <a href="https://twitter.com/{{site.twitter_username}}">Tweet</a> or <a href="{{site.twitter_dm_url}}">direct message</a>.
 </p>
 
 <p>
-Just <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgcTq_VQ2HNdp61qGV4rqkKaphjy2HbgnhWrB_E8r61m06gw/viewform">enter your question here</a>, and we'll add it to the queue.
+<a href="{{site.question_form_url}}">Enter your question here</a>, and we'll add it to the queue.
 </p>
