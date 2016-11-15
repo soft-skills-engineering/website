@@ -43,6 +43,10 @@ layout: default
   {% include share_buttons.html %}
 {% endif %}
 
+{% if page.comments %}
+  {% include disqus.html %}
+{% endif %}
+
 {% if site.show_post_footers %}
   {% include post_footer.html %}
 {% endif %}
