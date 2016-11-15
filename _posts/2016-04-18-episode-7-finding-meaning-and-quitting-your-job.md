@@ -6,6 +6,7 @@ guid: 8a6ccbbe-125d-4c7c-8492-97e1a9a36711
 duration: "25:33"
 length: 23422891
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-007.mp3"
+comments: true
 categories: episode
 ---
 
