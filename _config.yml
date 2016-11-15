@@ -17,6 +17,9 @@ google_analytics: "UA-81663582-1"
 google_tag_manager:
 bing_verification:
 
+# Spsonors
+devmountain_marketing_url: "https://devmountain.com/?utm_source=Soft%20Skills%20Engineering%20Podcast&utm_campaign=Soft%20Skills%20Engineering%20Podcast"
+
 # Optional features
 animated:             false
 show_related_posts:   false
