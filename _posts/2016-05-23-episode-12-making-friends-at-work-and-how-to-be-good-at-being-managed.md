@@ -6,7 +6,7 @@ guid: 0c38f219-b0d6-478e-9cc0-2e463c4dba1d
 duration: "25:33"
 length: 37945259
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-012.mp3"
-comments: true
+enable_comments: true
 categories: episode
 ---
 
