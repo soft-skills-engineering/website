@@ -6,6 +6,7 @@ guid: 45245e62-2797-4ac3-ada4-d550d12709c3
 duration: "25:33"
 length: 27917611
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-004.mp3"
+enable_comments: true
 categories: episode
 ---
 
