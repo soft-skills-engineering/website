@@ -43,8 +43,11 @@ layout: default
   {% include share_buttons.html %}
 {% endif %}
 
-{% if page.comments %}
+{% if page.enable_comments %}
+  <h2 class="disqus_header">Comments</h2>
   {% include disqus.html %}
+{% else %}
+  <h2>Comments are disabled for this episode</h2>
 {% endif %}
 
 {% if site.show_post_footers %}
