@@ -31,12 +31,7 @@ layout: null
       <itunes:email>soft-skills-engineering@googlegroups.com</itunes:email>
     </itunes:owner>
     <itunes:image href="https://download.softskills.audio/sse-logo-3.png"></itunes:image>
-    <itunes:category text="Education">
-      <itunes:category text="Training"/>
-    </itunes:category>
-    <itunes:category text="Technology">
-      <itunes:category text="Software How-To"/>
-    </itunes:category>
+    <itunes:category text="Technology" />
 
     {% for post in site.posts %}
       <item>
