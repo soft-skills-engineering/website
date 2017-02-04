@@ -18,6 +18,14 @@ If you want to learn web development, iOS development, or UI/UX, we recommend De
 Go check out their course schedules. Tell them Dave and Jamison sent you.
 </p>
 
+<a href="https://www.algolia.com/softskillsengineering" class="button">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Algolia_logo.svg/1280px-Algolia_logo.svg.png" />
+</a>
+
+<p>
+Algolia is looking for solutions engineers to join their team in Paris and San Francisco.
+</p>
+
 <h2>Becoming a Sponsor</h2>
 
 <p>
