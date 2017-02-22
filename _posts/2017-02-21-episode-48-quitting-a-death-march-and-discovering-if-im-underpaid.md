@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Episode 47: Quitting a Death March & Am  I Underpaid'
+title: 'Episode 48: Quitting a Death March & Am  I Underpaid'
 date: 2017-02-21 12:00:00 -0700
 guid: 94234166-fe15-4121-a177-147072850493
 duration: "32:31"
