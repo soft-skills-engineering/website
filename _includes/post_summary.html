@@ -15,10 +15,6 @@
 
 
   <p class="post-summary">
-    {% if post.summary %}
-      {{ post.summary }}
-    {% else %}
-      {{ post.excerpt }}
-    {% endif %}
+    {{ post.content }}
   </p>
 </div>
