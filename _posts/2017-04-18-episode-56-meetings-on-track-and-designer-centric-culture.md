@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 56: Meetings and Designer-centric Culture"
+title: "Episode 56: Keeping Metings On Track and Designer-centric Culture"
 date: 2017-04-18 12:00:00 -0700
 guid: 7f4ba7c6-1739-4607-9472-8232381df968
 duration: "30:45"
