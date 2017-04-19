@@ -6,35 +6,27 @@ layout: default
 <div class="home">
   <h2 class="tag-line">It takes more than great code<br />to be a great developer.</h2>
   <div class="clearfix"></div>
+
+  <div style="text-align: center; margin-bottom: 20px">
+    <a href="/subscribe/" class="button button-blue">Subscribe Now!</a>
+  </div>
+
   <p>
-  Soft Skills Engineering is a weekly Q &amp; A podcast for software developers who want to level up
-  their non-technical engineering skills.
+  Soft Skills Engineering is a weekly advice podcast for software developers.
   </p>
   <p>
-  Each week, hosts <a href="https://twitter.com/djsmith42">Dave Smith</a> and
+  Hosts <a href="https://twitter.com/djsmith42">Dave Smith</a> and
   <a href="https://twitter.com/jergason">Jamison Dance</a> answer software developers' most pressing
   questions about life, the universe, and everything. Join us each week to laugh at our <del>terrible</del>
   amazing jokes and gasp at our <del>pretty good ideas</del> pure wisdom.
   </p>
-  <h2>Subscribe</h2>
-  <p>
-    Search for "Soft Skills Engineering" in your favorite podcast app, or use one of these links:
-  </p>
-  <ul>
-    <li>Mobile devices: <a href="{{site.podcast_itunes_url}}">tap here</a></li>
-    <li>Feed URL: <a href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a></li>
-  </ul>
 
-  <h2>Recent Episodes</h2>
-  {% if posts_count > 0 %}
-    <div class="posts">
-      {% for post in paginator.posts %}
-        {% include post_summary.html %}
-      {% endfor %}
-    </div>
+  <h2>Recent Episodes:</h2>
+  <div class="posts">
+    {% for post in paginator.posts %}
+      {% include post_summary.html %}
+    {% endfor %}
+  </div>
 
-    {% include pagination.html %}
-  {% else %}
-    <h1 class='center'>{{ site.text.index.coming_soon }}</h1>
-  {% endif %}
+  {% include pagination.html %}
 </div>

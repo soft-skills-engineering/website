@@ -6,15 +6,18 @@ tags: about
 ---
 
 <p>
-Want to get your question answered on the show? Here's how:
-</p>
-
-<h4>Two options:</h4>
-
-<p>
-Send us a <a href="https://twitter.com/{{site.twitter_username}}">Tweet</a> or <a href="{{site.twitter_dm_url}}">direct message</a>.
+Want to get your question answered on the show? Here's how to get into the question queue:
 </p>
 
 <p>
-<a href="{{site.question_form_url}}">Enter your question here</a>, and we'll add it to the queue.
+  <a class="button button-blue" href="https://twitter.com/{{site.twitter_username}}">Tweet Us</a>
+  or <a href="{{site.twitter_dm_url}}">Twitter direct message</a>
+</p>
+
+<p>
+Or...
+</p>
+
+<p>
+<a class="button button-blue" href="{{site.question_form_url}}">Use our Google Form</a>
 </p>
