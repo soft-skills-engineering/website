@@ -6,7 +6,7 @@ tags: about sponsors
 ---
 
 <p>
-The Soft Skills Engineering Podcast is made possible by these awesome pepole:
+The Soft Skills Engineering Podcast is made possible by these awesome people:
 </p>
 
 <a href="{{ site.devmountain_marketing_url }}" class="button">
