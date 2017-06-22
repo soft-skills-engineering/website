@@ -14,7 +14,7 @@ fi
 
 
 byte_size=`ls -nl "$1" | awk '{print $5}'`
-duration=`mp3info -p "%m:%s" $1`
+duration=`mp3info -p "%m:%02s" $1`
 episode_number=`echo "$1" | perl -ne'/episode-(\d+)\.mp3/ && print $1'`
 uuid=`uuidgen | perl -ne 'print lc'`
 new_filename="sse-${episode_number}.mp3"
