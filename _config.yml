@@ -3,7 +3,7 @@ title:       "Soft Skills Engineering" # for the <h1> on the nav bar (don't make
 head_title:  "Soft Skills Engineering Podcast" # for the <title> element
 email:       soft-skills-engineering@googlegroups.com
 author:      "Jamison Dance and Dave Smith"
-description: "It takes more than code to be a great engineer. We discuss all of it. Soft Skills Engineering is a weekly question and answer podcast where we answer questions about all of the non-technical things that go along with being a software developer."
+description: "It takes more than great code to be a great engineer. Soft Skills Engineering is a weekly question and answer podcast where software developer hosts answer questions about all of the non-technical things that go along with being a software developer."
 baseurl:     ""
 url:         "https://softskills.audio"
 date_format: "%b %-d, %Y"
