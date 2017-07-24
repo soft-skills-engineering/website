@@ -1,5 +1,6 @@
 # Site settings
-title:       "Soft Skills Engineering"
+title:       "Soft Skills Engineering" # for the <h1> on the nav bar (don't make it too long, or it wraps the nav bar)
+head_title:  "Soft Skills Engineering Podcast" # for the <title> element
 email:       soft-skills-engineering@googlegroups.com
 author:      "Jamison Dance and Dave Smith"
 description: "It takes more than code to be a great engineer. We discuss all of it. Soft Skills Engineering is a weekly question and answer podcast where we answer questions about all of the non-technical things that go along with being a software developer."
