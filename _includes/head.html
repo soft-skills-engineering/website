@@ -1,6 +1,13 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+    // Dirty hack for client-side redirect since GitHub pages + CloudFlare does not provide this
+    if (window.location.hostname === 'softskills.audio' // to allow for localhost testing without https
+        && window.location.protocol != 'https:') {
+      window.location.protocol = 'https:';
+    }
+    </script>
     <title>{% if page.title %}{{ page.title | strip_html }} &#8211; {% endif %}{{ site.head_title | strip_html }}</title>
     <link rel="dns-prefetch" href="//maxcdn.bootstrapcdn.com">
     <link rel="dns-prefetch" href="//cdn.mathjax.org">
