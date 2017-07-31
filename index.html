@@ -3,14 +3,6 @@ layout: default
 ---
 {% assign posts_count = (paginator.posts | size) %}
 
-<script>
-// Dirty hack for client-side redirect since GitHub pages + CloudFlare does not provide this
-if (window.location.hostname === 'softskills.audio' // to allow for localhost testing without https
-    && window.location.protocol != 'https:') {
-  window.location.protocol = 'https:';
-}
-</script>
-
 <div class="home">
   <h2 class="tag-line">It takes more than great code<br />to be a great developer.</h2>
   <div class="clearfix"></div>
