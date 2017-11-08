@@ -5,7 +5,7 @@ date: 2017-10-29 12:00:00 -0700
 guid: c6e8bf4f-1d5c-46d9-b5a3-8ea2dffbf036
 duration: "31:45"
 length: 30472320
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-80.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-080.mp3"
 categories: episode
 enable_comments: true
 ---
