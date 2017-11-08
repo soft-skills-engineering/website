@@ -17,7 +17,7 @@ byte_size=`ls -nl "$1" | awk '{print $5}'`
 duration=`mp3info -p "%m:%02s" $1`
 episode_number=`echo "$1" | perl -ne'/episode-(\d+)\.mp3/ && print $1'`
 uuid=`uuidgen | perl -ne 'print lc'`
-new_filename="sse-$(printf "%03d" $episode_number).mp3"
+new_filename="sse-$(printf '%03d' $episode_number).mp3"
 post_date=`date "+%Y-%m-%d 12:00:00 -0700"`
 
 
