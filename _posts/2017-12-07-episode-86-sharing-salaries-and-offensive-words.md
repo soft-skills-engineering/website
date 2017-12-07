@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 85: Sharing Salaries and Offensive Words"
+title: "Episode 86: Sharing Salaries and Offensive Words"
 date: 2017-12-07 12:00:00 -0700
 guid: 06d83039-dde3-4241-9152-8b4f41499980
 duration: "34:24"
