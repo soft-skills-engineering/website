@@ -4,7 +4,7 @@ layout: default
 {% assign posts_count = (paginator.posts | size) %}
 
 <div class="home">
-  <h2 class="tag-line">It takes more than great code<br />to be a great developer.</h2>
+  <h2 class="tag-line">It takes more than great code to be a great engineer.</h2>
   <div class="clearfix"></div>
 
   <div style="text-align: center; margin-bottom: 20px">
@@ -12,16 +12,36 @@ layout: default
   </div>
 
   <p>
-  Soft Skills Engineering is a weekly advice podcast for software developers.
-  </p>
-  <p>
-  Hosts <a href="https://twitter.com/djsmith42">Dave Smith</a> and
-  <a href="https://twitter.com/jergason">Jamison Dance</a> answer software developers' most pressing
-  questions about life, the universe, and everything. Join us each week to laugh at our <del>terrible</del>
-  amazing jokes and gasp at our <del>pretty good ideas</del> pure wisdom.
+    Soft Skills Engineering is a weekly advice podcast for software developers. We answer questions about
+    all the stuff you didn't realize you needed to know about beign an engineer:
   </p>
 
-  <h2>Recent Episodes:</h2>
+  <ul>
+    <li>navigating pay raises</li>
+    <li>hiring and interviewing</li>
+    <li>deciding to go into management</li>
+    <li>dealing with annoying co-workers</li>
+    <li>quitting your job</li>
+    <li>managing meeting creep</li>
+    <li>micromanagers</li>
+    <li>installing a ball pit in your office</li>
+    <li>and much much more...</li>
+  </ul>
+
+  <p>
+  For answers to these and other questions, our hosts <a href="https://twitter.com/djsmith42">Dave Smith</a> and
+  <a href="https://twitter.com/jergason">Jamison Dance</a> are here to help.
+  </p>
+
+  <h2>Why should you listen?</h2>
+  <p>Soft Skills Engineering listeners are awesome. Here's what they are saying about the podcast.</p>
+  <p>Saad says:</p>
+  <blockquote class="testimonial">I owe you a lot, listening to Soft Skills has completely shifted my thoughts on what it means to be an engineer.
+    It’s probably one of the more useful things I’ve gained during my time at Amazon. I kind of brushed this stuff off, considering some of it
+    politics, and the rest unimportant, but boy was I wrong. It definitely helped me grow, and I’m totally indebted to you for that.
+  </blockquote>
+
+  <h2 style="margin-top:3rem">Recent Episodes:</h2>
   <div class="posts">
     {% for post in paginator.posts %}
       {% include post_summary.html %}
