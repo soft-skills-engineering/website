@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 90: Upper Management Dislikes Me and Undeserved Job Offers
+title: "Episode 90: Upper Management Dislikes Me and Undeserved Job Offers"
 date: 2018-01-05 12:00:00 -0700
 guid: ad7a40a6-ea78-4ca1-9278-727d9b4f0cba
 duration: "29:17"
