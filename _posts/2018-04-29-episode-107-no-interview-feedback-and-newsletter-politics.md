@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "Episode 107: Silence After Interviews and Newsletter Politics"
-date: 2018-04-29 12:00:00 -0700
-guid: 585b46db-c786-4114-ae04-3576291370d1
-duration: "18:59"
-length: 18227366
+date: 2018-04-30 12:00:00 -0700
+guid: 69054307-c85f-44fb-9c88-cd71119a16f3
+duration: "28:00"
+length: 26885926
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-107.mp3"
 categories: episode
 enable_comments: true
