@@ -1,7 +1,7 @@
 ---
 layout: post
-title: '(Rerun) Episode 40: Office Visibility and New Tech'
-date: 2016-12-21 12:00:00 -0700
+title: "(Rerun) Episode 40: Office Visibility and New Tech"
+date: 2018-05-06 12:00:00 -0700
 guid: cb8bd0f3-3747-4eea-8358-cec0740e342d
 duration: "33:13"
 length: 31883136
