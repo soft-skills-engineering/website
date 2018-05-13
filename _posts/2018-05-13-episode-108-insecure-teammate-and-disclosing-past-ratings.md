@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 106: An Insecure Teammate and Disclosing Past Ratings"
+title: "Episode 108: An Insecure Teammate and Disclosing Past Ratings"
 date: 2018-05-13 12:00:00 -0700
 guid: eba81edc-b5ef-40b3-9f15-266f39dcd2be
 duration: "24:32"
