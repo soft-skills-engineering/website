@@ -13,4 +13,4 @@ enable_comments: true
 Jamison and Dave talk about these questions:
 
 1. My cousin is a manager at my employer. How do I avoid nepotism?
-2. I'm like to become a developer. What are the minimum requirements for a junior developer? When will I be "good enough" to get a job as a junior dev?
+2. I'd like to become a developer. What are the minimum requirements for a junior developer? When will I be "good enough" to get a job as a junior dev?
