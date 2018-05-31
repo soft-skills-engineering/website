@@ -12,7 +12,7 @@ enable_comments: true
 
 Jamison and Dave answer these questions:
 
-1. It's been a yearn and I still haven't touched the codebase. What should I do?
+1. It's been a year and I still haven't touched the codebase. What should I do?
 2. All my hobbies revolve around computers. How do I develop other interests?
 
 Jamison mentioned Dan Luu's article on how bad teams are always hiring. [Here](https://danluu.com/hiring-lemons/) it is.
