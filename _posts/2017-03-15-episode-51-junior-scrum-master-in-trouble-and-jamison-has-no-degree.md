@@ -15,4 +15,4 @@ enable_comments: true
 1. I'm a junior developer on a team of seniors, and I'm also the Scrum Master. Our team has *lots* of problems. What do I do?
 2. Jamison openly talks about not finishing his degree. How did he put it on his resume or explain it to potential employers?
 
-In question two Jamison discovers he has been lying on his LinkedIn profile for half a decade, and freaks out a little bit. The mistake is corrected, but can the damage every be undone? Tune in next week on *SOFT SKILLS ENGINEERING*.
+In question two Jamison discovers he has been lying on his LinkedIn profile for half a decade, and freaks out a little bit. The mistake is corrected, but can the damage ever be undone? Tune in next week on *SOFT SKILLS ENGINEERING*.
