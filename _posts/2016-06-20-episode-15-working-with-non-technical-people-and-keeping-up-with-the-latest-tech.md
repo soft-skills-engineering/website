@@ -14,7 +14,7 @@ categories: episode
 
 
 
-In episode 15, Jamison and  Dave join Brad Green, engineering director at Google and Angular team mamager, to answer these questions:
+In episode 15, Jamison and  Dave join Brad Green, engineering director at Google and Angular team manager, to answer these questions:
 
 How do I deal with non-technical people at work? I often get questions that put me into a position where I have to explain really basic concepts to non-technical people like sales and marketing. They seem to rely on me like a crutch, and it gets tiring to have to explain things over and over. How do I strike the right balance of being helpful, but not so helpful that they become dependent on me? I want to be helpful, but I don't want to spend 90% of my time acting as tech support.
 
