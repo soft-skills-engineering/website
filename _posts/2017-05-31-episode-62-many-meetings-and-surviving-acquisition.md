@@ -13,4 +13,4 @@ enable_comments: true
 Jamison and Dave answer these two questions:
 
 1. I'm in too many meetings. How do I guard my own productivity?
-2. How do I make sure I'm not sideline when my company acquires another company?
+2. How do I make sure I'm not sidelined when my company acquires another company?

@@ -12,7 +12,7 @@ enable_comments: true
 
 [Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
 
-1. How soon in to a new job is it appropriate to raise concerns?
+1. How soon into a new job is it appropriate to raise concerns?
 2. What do you do when issues in your personal life affect your work?
 
 Thank you to Algolia for sponsoring this episode. Check out their job posting at [algolia.com/softskillsengineering](https://www.algolia.com/softskillsengineering).

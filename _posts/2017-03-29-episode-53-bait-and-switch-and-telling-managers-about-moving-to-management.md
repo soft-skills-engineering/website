@@ -13,4 +13,4 @@ enable_comments: true
 [Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
 
 1. I was hired for one thing, but ended up doing something *very* different that I don't enjoy. What do I do?
-2. How do I tell my manager that I'm moving in to management on another team?
+2. How do I tell my manager that I'm moving into management on another team?
