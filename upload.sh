@@ -38,6 +38,14 @@ new_filename="sse-${prefixed_episode_number}.mp3"
 episode_timestamp="$episode_date 12:00:00 -0700"
 episode_markdown_file="$website_dir/_posts/$episode_date-episode-$episode_number-$episode_url_title.md"
 
+if [ -e "$episode_markdown_file" ]; then
+  echo
+  echo "WARNING"
+  echo "WARNING  The markdown file already exists: $episode_markdown_file"
+  echo "WARNING  To be careful, this script won't overwrite it."
+  echo "WARNING"
+  echo
+else
 # Markdown file template:
 cat << EOM > "$episode_markdown_file"
 ---
@@ -62,30 +70,40 @@ TODO
 
 TODO
 EOM
+fi
+
+read -p "Upload mp3 file to server now? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  scp "$mp3_file" "$username@thesmithfam.org:~/podcasts/${new_filename}"
+fi
+echo
+echo
 
 echo "Episode markdown has been created here:"
 echo
 echo $episode_markdown_file
 echo
-read -p "Open vim to edit it? " -n 1 -r
+read -p "Open vim to edit it? (recommended) " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   vi "$episode_markdown_file"
 fi
 echo
 echo
 
-read -p "Add it to git now? " -n 1 -r
+read -p "Add and push to github now? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
+  branch_name=episode-$episode_number
+  echo "Checking out the gh-pages branch, and creating a new branch called $branch_name"
+  git checkout gh-pages
+  git pull
+  git checkout -b $branch_name
   git add "$episode_markdown_file"
   git commit -v
+  git push origin $branch_name
+  echo
+  echo Go here to create the pull request:
+  echo
+  echo "https://github.com/soft-skills-engineering/website/tree/$branch_name"
+  echo
 fi
-echo
-echo
-
-
-read -p "Upload to server now? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  scp "$mp3_file" "$username@thesmithfam.org:~/podcasts/${new_filename}"
-fi
-echo
 echo
