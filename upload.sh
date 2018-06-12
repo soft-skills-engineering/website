@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 # Usage:
 if [[ $# != 3 ]]; then
   echo "This script does the following after the audio file is edited:"
@@ -15,18 +17,16 @@ if [[ $# != 3 ]]; then
   exit 1
 fi
 
-set -e
+# Command line args:
+mp3_file=$1
+episode_date=$2
+episode_url_title=$3
 
 # Hack for Dave's Macs:
 username=$(whoami)
 if [ $username == "dasmithm" -o $username == "dsmith" ]; then # Dave's accounts
   username="dave"
 fi
-
-# Command line args:
-mp3_file=$1
-episode_date=$2
-episode_url_title=$3
 
 website_dir="$(realpath "$(dirname "$0")")"
 byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
@@ -55,7 +55,7 @@ date: $episode_timestamp
 guid: $uuid
 duration: "$duration"
 length: $byte_size
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-$episode_number.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-$prefixed_episode_number.mp3"
 categories: episode
 enable_comments: true
 ---
@@ -64,15 +64,15 @@ In this episode, Dave and Jamison answer these questions:
 
 1. TODO
 
-TODO
+   TODO
 
 2. TODO
 
-TODO
+   TODO
 EOM
 fi
 
-read -p "Upload mp3 file to server now? " -n 1 -r
+read -p "Upload mp3 file to server now? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   scp "$mp3_file" "$username@thesmithfam.org:~/podcasts/${new_filename}"
 fi
@@ -83,16 +83,16 @@ echo "Episode markdown has been created here:"
 echo
 echo $episode_markdown_file
 echo
-read -p "Open vim to edit it? (recommended) " -n 1 -r
+read -p "Open vim to edit it? (recommended) "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   vi "$episode_markdown_file"
 fi
 echo
 echo
 
-read -p "Add and push to github now? " -n 1 -r
+read -p "Add and push to github now? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  branch_name=episode-$episode_number
+  branch_name=episode-$prefixed_episode_number
   echo "Checking out the gh-pages branch, and creating a new branch called $branch_name"
   git checkout gh-pages
   git pull
@@ -106,4 +106,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "https://github.com/soft-skills-engineering/website/tree/$branch_name"
   echo
 fi
+echo
 echo
