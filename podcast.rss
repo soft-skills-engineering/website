@@ -11,7 +11,7 @@
 		<language>{{ site.lang }}</language>
 		<managingEditor>{{ site.email }} ({{ site.author }})</managingEditor>
 		<webMaster>{{ site.email }} ({{ site.author }})</webMaster>
-		<copyright>2016-{{ site.time | "%Y" }} {{ site.author }}</copyright>
+		<copyright>2016-{{ site.time | date: "%Y" }} {{ site.author }}</copyright>
 		<pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
 		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
 		<image>
