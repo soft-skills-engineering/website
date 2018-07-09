@@ -98,7 +98,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   git pull
   git checkout -b $branch_name
   git add "$episode_markdown_file"
-  git commit -v
+  git commit -m "Episode $episode_number"
   git push origin $branch_name
   echo
   echo Go here to create the pull request:
