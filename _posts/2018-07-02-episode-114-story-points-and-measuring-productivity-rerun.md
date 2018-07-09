@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 114: Story Point and Measuring Productivity (Episode 79 Rerun)"
+title: "Episode 114: Story Point Commitments and Measuring Productivity (Episode 79 Rerun)"
 date: 2018-07-02 12:00:00 -0700
 guid: 16a0d77f-cfdc-41eb-a878-bc679a5b9661
 duration: "39:00"
