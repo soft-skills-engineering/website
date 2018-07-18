@@ -2,6 +2,20 @@
 
 set -e
 
+function realpath() {
+    [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
+}
+
+function check_prereqs() {
+  if ! which mp3info 2>/dev/null; then
+    echo "Cannot find mp3info executable. Install it with:"
+    echo
+    echo "brew install mp3info"
+    echo
+    exit 1
+  fi
+}
+
 # Usage:
 if [[ $# != 3 ]]; then
   echo "This script does the following after the audio file is edited:"
@@ -16,6 +30,8 @@ if [[ $# != 3 ]]; then
   echo
   exit 1
 fi
+
+check_prereqs
 
 # Command line args:
 mp3_file=$1
