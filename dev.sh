@@ -1,5 +1,11 @@
 #!/bin/bash
 
-sudo gem install bundler \
-  && bundle install \
-  && bundle exec jekyll serve --watch --incremental --future
+set -e
+
+cd "$(dirname "$0")"
+
+which bundle >/dev/null || sudo gem install bundler
+
+bundle install
+rm -rf _site
+bundle exec jekyll serve --watch --incremental --future
