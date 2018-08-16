@@ -6,7 +6,17 @@ tags: about sponsors
 ---
 
 <p>
-The Soft Skills Engineering Podcast is made possible by these awesome people:
+The Soft Skills Engineering Podcast is made possible by patrons like you who have pledged to the show on Patreon:
+</p>
+
+<p>
+  <a href="{{site.patreon_url}}" class="button button-blue" style="background-color:green">Support us on Patreon</a>
+</p>
+
+<hr />
+
+<p>
+Also, these wonderful sponsors have made the show possible:
 </p>
 
 <a href="{{ site.devmountain_marketing_url }}" class="button">
