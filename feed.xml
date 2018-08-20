@@ -19,7 +19,7 @@ layout: null
     <itunes:explicit>no</itunes:explicit>
     <image>
       <link>{{ site.url }}{{ site.baseurl }}</link>
-      <url>https://download.softskills.audio/sse-logo-3.png</url>
+      <url>https://download.softskills.audio/avatar2.png</url>
       <title>{{ site.title | xml_escape }}</title>
     </image>
 
@@ -30,7 +30,7 @@ layout: null
       <itunes:name>Jamison Dance and Dave Smith</itunes:name>
       <itunes:email>soft-skills-engineering@googlegroups.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://download.softskills.audio/sse-logo-3.png"></itunes:image>
+    <itunes:image href="https://download.softskills.audio/avatar2.png"></itunes:image>
     <itunes:category text="Technology" />
 
     {% for post in site.posts %}
