@@ -7,7 +7,7 @@ function realpath() {
 }
 
 function check_prereqs() {
-  if ! which mp3info 2>/dev/null; then
+  if ! which mp3info >/dev/null 2>&1; then
     echo "Cannot find mp3info executable. Install it with:"
     echo
     echo "brew install mp3info"
@@ -77,6 +77,8 @@ enable_comments: true
 ---
 
 In this episode, Dave and Jamison answer these questions:
+
+DELETE THIS: for your reference, the URL title is: $episode_url_title
 
 1. TODO
 
