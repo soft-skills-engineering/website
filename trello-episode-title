@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+from trello import set_up, get_question_cards
+
+episode_number, key, token = set_up()
+question_cards = get_question_cards(key, token, episode_number)
+titles = [card['name'] for card in question_cards]
+print(' and '.join(titles))

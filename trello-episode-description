@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+import re
+from trello import set_up, get_question_cards
+
+def format_questions(questions):
+  ret = []
+  for question in questions:
+    lines = question.split('\n')
+    if lines and lines[0].lower().startswith('from') or lines[0].lower().contains('anonymous'):
+      del lines[0]
+    if lines[0].strip() == '':
+      del lines[0]
+    for i, line in enumerate(lines):
+      line = line.strip()
+      if i > 0:
+        line = '   ' + line
+      lines[i] = line
+    question = '\n'.join(lines)
+    question = re.sub('^"', '', question)
+    question = re.sub('"$', '', question)
+    ret.append(question)
+  return ret
+
+episode_number, key, token = set_up()
+question_cards = get_question_cards(key, token, episode_number)
+questions = [card['desc'] for card in question_cards]
+questions = format_questions(questions)
+for count, question in enumerate(questions):
+  print('{}. {}'.format(count+1, question))
+  print('\n')
+
