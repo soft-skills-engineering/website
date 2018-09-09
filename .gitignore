@@ -4,3 +4,6 @@ _site
 .*.sw*
 .DS_Store
 *.md-e*
+trello-auth.json
+ve
+__pycache__

@@ -16,27 +16,33 @@ function check_prereqs() {
   fi
 }
 
+function python_setup() {
+  which virtualenv >/dev/null || pip3 install virtualenv
+  [ -d ve ] || virtualenv ve --python=python3.6
+  source ve/bin/activate
+  pip install -r requirements.txt >/dev/null
+}
+
 # Usage:
-if [[ $# != 3 ]]; then
+if [[ $# != 2 ]]; then
+  echo
   echo "This script does the following after the audio file is edited:"
-  echo "  1. Create the episode markdown file (with metadata)"
+  echo "  1. Create the episode markdown file (with info from Trello)"
   echo "  2. Upload the mp3 to the server"
   echo
-  echo "After you run it, you must poopulate the TODOs in the mark down file"
+  echo "Usage: ./upload.sh <audio-file> <episode-date>"
   echo
-  echo "usage: ./upload.sh <audio-file> <episode-date> <url-title>"
-  echo
-  echo "example: ./upload.sh /tmp/sse-112.mp3 2018-06-12 dogma-rehab-and-firing-a-coworker"
+  echo "Example: ./upload.sh /tmp/sse-112.mp3 2018-06-12"
   echo
   exit 1
 fi
 
 check_prereqs
+python_setup
 
 # Command line args:
 mp3_file=$1
 episode_date=$2
-episode_url_title=$3
 
 # Hack for Dave's Macs:
 username=$(whoami)
@@ -48,6 +54,9 @@ website_dir="$(realpath "$(dirname "$0")")"
 byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
 duration=`mp3info -p "%m:%02s" "$mp3_file"`
 episode_number=`echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1'`
+episode_title="$(./trello-episode-title $episode_number)"
+episode_url_title="$(./trello-episode-url $episode_number)"
+episode_question_text="$(./trello-episode-description $episode_number)"
 uuid=`uuidgen | perl -ne 'print lc'`
 prefixed_episode_number="$(printf '%03d' $episode_number)"
 new_filename="sse-${prefixed_episode_number}.mp3"
@@ -66,7 +75,7 @@ else
 cat << EOM > "$episode_markdown_file"
 ---
 layout: post
-title: "Episode $episode_number: TODO WRITE TITLE HERE"
+title: "Episode $episode_number: $episode_title"
 date: $episode_timestamp
 guid: $uuid
 duration: "$duration"
@@ -78,15 +87,7 @@ enable_comments: true
 
 In this episode, Dave and Jamison answer these questions:
 
-DELETE THIS: for your reference, the URL title is: $episode_url_title
-
-1. TODO
-
-   TODO
-
-2. TODO
-
-   TODO
+$episode_question_text
 EOM
 fi
 
