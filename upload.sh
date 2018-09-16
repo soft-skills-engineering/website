@@ -103,14 +103,12 @@ echo "Episode markdown has been created here:"
 echo
 echo $episode_markdown_file
 echo
-read -p "Open vim to edit it? (recommended) "
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  vi "$episode_markdown_file"
-fi
+echo
+cat "$episode_markdown_file"
 echo
 echo
 
-read -p "Add and push to github now? "
+read -p "Preview the file above. Add and push to github now? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   branch_name=episode-$prefixed_episode_number
   echo "Checking out the gh-pages branch, and creating a new branch called $branch_name"
