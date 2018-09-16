@@ -6,15 +6,15 @@ def read_auth_info():
   script_path = os.path.dirname(os.path.realpath(__file__))
   auth_file = script_path + "/trello-auth.json"
   if not os.path.exists(auth_file):
-    print("Missing {}".format(auth_file))
+    print("Cannot access Trello: Missing {}".format(auth_file))
     sys.exit(1)
   with open("trello-auth.json") as f:
     auth = json.loads(f.read())
   if not auth.get('key', '').strip():
-    print("Missing 'key' from {}".format(auth_file))
+    print("Cannot access Trello: Missing 'key' from {}".format(auth_file))
     sys.exit(1)
   if not auth.get('token', '').strip():
-    print("Missing 'token' from {}".format(auth_file))
+    print("Cannot access Trello: Missing 'token' from {}".format(auth_file))
     sys.exit(1)
   return auth['key'], auth['token']
 
