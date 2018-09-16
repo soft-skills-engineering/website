@@ -6,7 +6,7 @@ def format_questions(questions):
   ret = []
   for question in questions:
     lines = question.split('\n')
-    if lines and lines[0].lower().startswith('from') or lines[0].lower().contains('anonymous'):
+    if lines and lines[0].lower().startswith('from') or 'anonymous' in lines[0].lower():
       del lines[0]
     if lines[0].strip() == '':
       del lines[0]
