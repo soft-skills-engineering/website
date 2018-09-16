@@ -1,0 +1,4 @@
+#!/usr/bin/env python3
+from trello import set_up
+
+set_up()

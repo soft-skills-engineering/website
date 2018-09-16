@@ -54,6 +54,7 @@ website_dir="$(realpath "$(dirname "$0")")"
 byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
 duration=`mp3info -p "%m:%02s" "$mp3_file"`
 episode_number=`echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1'`
+./trello-check $episode_number
 episode_title="$(./trello-episode-title $episode_number)"
 episode_url_title="$(./trello-episode-url $episode_number)"
 episode_question_text="$(./trello-episode-description $episode_number)"
