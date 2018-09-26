@@ -11,6 +11,7 @@ logo_url: "https://download.softskills.audio/sse-logo-4.png"
 og_image_url: "https://download.softskills.audio/avatar1.png"
 podcast_feed_url: "https://feeds.feedburner.com/SoftSkillsEngineering"
 podcast_itunes_url: "https://itunes.apple.com/us/podcast/soft-skills-engineering/id1091341048?mt=2"
+podcast_android_url: "https://subscribeonandroid.com/feeds.feedburner.com/SoftSkillsEngineering"
 podcast_cover_art_url: "https://download.softskills.audio/sse-cover-art.png"
 twitter_dm_url: "https://twitter.com/messages/compose?recipient_id=707699773642383361"
 patreon_url: "https://patreon.com/SoftSkillsEng"
@@ -118,4 +119,4 @@ plugins:
   - jekyll-mentions
   - jekyll-redirect-from
 # https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor]
+exclude: [vendor, ve]

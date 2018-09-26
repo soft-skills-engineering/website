@@ -5,14 +5,35 @@ permalink: /subscribe/
 tags: subscribe
 ---
 <div>
+  <style>
+    a.subscribe-link {
+      text-decoration: none;
+      background-image: none;
+    }
+    a.subscribe-link:hover {
+      text-decoration: underline;
+    }
+  </style>
   <p>
     To subscribe, search for "Soft Skills Engineering" in your favorite podcast app, or use one of these links:
   </p>
   <ul>
-    <li>Mobile devices: <a href="{{site.podcast_itunes_url}}">tap here</a></li>
-    <li>Copy/paste this feed URL: <a href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a></li>
+    <p><a class="subscribe-link" href="{{site.podcast_itunes_url}}"> Subscribe on iPhone</a></p>
+    <p>
+      <a class="subscribe-link" href="{{site.podcast_android_url}}">
+      <img src="/img/android.png" style="height: 20px; width: 20px"/>
+      Subscribe on Android
+      </a>
+    </p>
+    <p>
+    Or
+    </p>
+    <p>
+      Copy and paste the feed URL:
+      <a class="subscribe-link" href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a>
+    </p>
   </ul>
-  <div style="text-align: center">
+  <div style="text-align: center; margin-top: 50px">
     <img style="height: 60px" src="/img/computer.svg" />
   </div>
 </div>
