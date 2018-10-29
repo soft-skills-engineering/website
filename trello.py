@@ -45,5 +45,5 @@ def find_episode_list_id(key, token, episode_number):
   response = requests.get('https://api.trello.com/1/boards/{}/lists?key={}&token={}'.format(BOARD_ID, key, token))
   lists = json.loads(response.content)
   for lst in lists:
-    if lst['name'].lower() == "episode {}".format(episode_number):
+    if lst['name'].lower().startswith("episode {}".format(episode_number)):
       return lst['id']
