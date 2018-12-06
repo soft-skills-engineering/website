@@ -19,6 +19,16 @@ The Soft Skills Engineering Podcast is made possible by patrons like you who hav
 Also, these wonderful sponsors have made the show possible:
 </p>
 
+<a href="{{ site.pluralsight_marketing_url }}" class="button">
+  <img src="/img/pluralsight.png" />
+</a>
+
+<p>
+Pluralsight is hiring machine learning engineers, data scientists, and software engineers. Check out the jobs at
+<a href="{{site.pluralsight_marketing_url}}">{{site.pluralsight_marketing_url}}</a>.
+</p>
+
+
 <a href="{{ site.devmountain_marketing_url }}" class="button">
   <img src="/img/devmountain.png" />
 </a>
