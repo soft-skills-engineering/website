@@ -24,3 +24,6 @@ In this episode, Dave and Jamison answer these questions:
    I understand the needs of the business to plan ahead. So saying "it'll be ready when it's done" is not a good answer. However, it feels like we're constantly falling behind arbitrary deadlines and in a constant frenzy to catch up.
    
    So....what do?
+
+This episode is sponsored by Pluralsight, who is hiring Data Scientists, Machine Learning Engineers, and Software Engineers.
+Check out the jobs at [{{site.pluralsight_marketing_url}}]({{site.pluralsight_marketing_url}})
