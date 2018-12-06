@@ -10,6 +10,9 @@ categories: episode
 enable_comments: true
 ---
 
+This episode is sponsored by Pluralsight. Pluralsight is hiring data scientists, machine learning engineers, and software engineers.
+Check out the jobs at [{{site.pluralsight_marketing_url}}]({{site.pluralsight_marketing_url}})
+
 In this episode, Dave and Jamison answer these questions:
 
 1. I'm current doing nearly nothing at work (not by choice) and getting paid a king's ransom for it, just to stay on the roster. I've never been in this situation before. Would I be foolish to give it all up just to not be miserably bored? I'm pretty sure this isn't sustainable, and I'd get laid off in the next economic downturn before you guys might get to my question, but just curious what your insights are.
@@ -24,6 +27,3 @@ In this episode, Dave and Jamison answer these questions:
    I understand the needs of the business to plan ahead. So saying "it'll be ready when it's done" is not a good answer. However, it feels like we're constantly falling behind arbitrary deadlines and in a constant frenzy to catch up.
    
    So....what do?
-
-This episode is sponsored by Pluralsight, who is hiring Data Scientists, Machine Learning Engineers, and Software Engineers.
-Check out the jobs at [{{site.pluralsight_marketing_url}}]({{site.pluralsight_marketing_url}})
