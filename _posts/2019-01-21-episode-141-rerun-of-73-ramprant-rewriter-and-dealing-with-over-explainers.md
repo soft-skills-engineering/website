@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 141: A Rampant Rewriter and Dealing with an Overexplainer (rerun of episoee 73)"
+title: "Episode 141: A Rampant Rewriter and Dealing with an Overexplainer (rerun of episode 73)"
 date: 2019-01-21 12:00:00 -0700
 guid: e626a150-0eae-40c6-babf-d7a04996a634
 duration: "33:18"
