@@ -19,9 +19,11 @@ The Soft Skills Engineering Podcast is made possible by patrons like you who hav
 Also, these wonderful sponsors have made the show possible:
 </p>
 
-<a href="{{ site.pluralsight_marketing_url }}" class="button">
-  <img src="/img/pluralsight.png" />
-</a>
+<p style="text-align: center">
+  <a href="{{ site.pluralsight_marketing_url }}" class="button">
+    <img src="/img/pluralsight.png" />
+  </a>
+</p>
 
 <p>
 Pluralsight is hiring machine learning engineers, data scientists, and software engineers. Check out the jobs at
@@ -29,18 +31,22 @@ Pluralsight is hiring machine learning engineers, data scientists, and software 
 </p>
 
 
-<a href="{{ site.devmountain_marketing_url }}" class="button">
-  <img src="/img/devmountain.png" />
-</a>
+<p style="text-align: center">
+  <a href="{{ site.devmountain_marketing_url }}" class="button">
+    <img src="/img/devmountain.png" />
+  </a>
+</p>
 
 <p>
 If you want to learn web development, iOS development, or UI/UX, we recommend DevMountain.
 Go check out their course schedules. Tell them Dave and Jamison sent you.
 </p>
 
-<a href="https://www.algolia.com/softskillsengineering" class="button">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Algolia_logo.svg/1280px-Algolia_logo.svg.png" />
-</a>
+<p style="text-align: center">
+  <a href="https://www.algolia.com/softskillsengineering" class="button">
+    <img style="width: 500px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Algolia_logo.svg/1280px-Algolia_logo.svg.png" />
+  </a>
+</p>
 
 <p>
 Algolia is looking for solutions engineers to join their team in Paris and San Francisco.
