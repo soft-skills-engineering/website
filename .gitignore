@@ -7,3 +7,5 @@ _site
 trello-auth.json
 ve
 __pycache__
+.bundle
+vendor
