@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+"""
+Prints the date of the upcoming Monday as YYYY-MM-DD to standard output.
+If today is a Monday, prints today's date.
+"""
+from datetime import datetime, timedelta
+
+MONDAY = 0
+DAYS_PER_WEEK = 7
+
+today = datetime.now().date()
+
+if today.weekday() == MONDAY:
+  upcoming_monday = today
+else:
+  days_until_monday = DAYS_PER_WEEK - today.weekday()
+  upcoming_monday = today + timedelta(days=days_until_monday)
+
+print(upcoming_monday)

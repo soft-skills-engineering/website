@@ -24,13 +24,13 @@ function python_setup() {
 }
 
 # Usage:
-if [[ $# != 2 ]]; then
+if [[ $# != 2 ]] && [[ $# != 1 ]]; then
   echo
   echo "This script does the following after the audio file is edited:"
   echo "  1. Create the episode markdown file (with info from Trello)"
   echo "  2. Upload the mp3 to the server"
   echo
-  echo "Usage: ./upload.sh <audio-file> <episode-date>"
+  echo "Usage: ./upload.sh <audio-file> [<episode-date>]"
   echo
   echo "Example: ./upload.sh /tmp/sse-112.mp3 2018-06-12"
   echo
@@ -43,6 +43,15 @@ python_setup
 # Command line args:
 mp3_file=$1
 episode_date=$2
+
+if [ -z "$episode_date" ]; then
+  echo "Determining next episode date..."
+  episode_date=$(./upcoming-monday-date)
+  read -p "Is this the right publication date? [$episode_date] "
+  if ! [[ $REPLY =~ ^[Yy]$ ]]; then
+    exit 0
+  fi
+fi
 
 # Hack for Dave's Macs:
 username=$(whoami)
