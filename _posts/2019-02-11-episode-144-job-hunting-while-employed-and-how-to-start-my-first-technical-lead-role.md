@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-In this episode, Dave and Jamison answer these questions:
+In this episode, Dave and Jamison answer these questions along with special guest Jonathan Cutrell::
 
 1. I've been job hunting while employed (gasp), and I have a number of opportunities that have advanced to the in-person interview. Most of the requests I've seen have said that they'll be 4-5 hours in the office (which seems fairly typical).
    
@@ -22,3 +22,6 @@ In this episode, Dave and Jamison answer these questions:
    I’m about to start a new job (I took the time-honored and hallowed show advice, though I’m leaving on great terms with my old job) and will be coming in as that fanciest of newly-invented titles in software, Staff Software Engineer. This is the only third time I’ve started a new job [not counting odd jobs in high school and college], and I’ve never stepped into a *leadership* role before when starting. What are the most helpful things you’ve done or seen other engineers do when joining a team in a technical leadership role?
    
    Thanks!
+
+Follow Jonathan Cutrell on Twitter <a href="https://twitter.com/jcutrell">@jcutrell</a>
+and subscribe to the Developer Tea podcast: <a href="https://spec.fm/podcasts/developer-tea">https://spec.fm/podcasts/developer-tea</a>.
