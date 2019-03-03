@@ -30,9 +30,10 @@ if [[ $# != 2 ]] && [[ $# != 1 ]]; then
   echo "  1. Create the episode markdown file (with info from Trello)"
   echo "  2. Upload the mp3 to the server"
   echo
-  echo "Usage: ./upload.sh <audio-file> [<episode-date>]"
+  echo "Usage: ./upload <audio-file> [<episode-date>]"
   echo
-  echo "Example: ./upload.sh /tmp/sse-112.mp3 2018-06-12"
+  echo "Example: ./upload /tmp/sse-112.mp3"
+  echo "Example: ./upload /tmp/sse-112.mp3 2018-06-12"
   echo
   exit 1
 fi
