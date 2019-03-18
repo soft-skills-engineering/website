@@ -50,7 +50,7 @@ if [ -z "$episode_date" ]; then
   episode_date=$(./upcoming-monday-date)
   read -p "Is this the right publication date? [$episode_date] "
   if ! [[ $REPLY =~ ^[Yy]$ ]]; then
-    exit 0
+    exit 1
   fi
 fi
 
