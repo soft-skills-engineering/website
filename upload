@@ -48,9 +48,9 @@ episode_date=$2
 if [ -z "$episode_date" ]; then
   echo "Determining next episode date..."
   episode_date=$(./upcoming-monday-date)
-  read -p "Is this the right publication date? [$episode_date] "
-  if ! [[ $REPLY =~ ^[Yy]$ ]]; then
-    exit 1
+  read -p "Enter the publication date: [$episode_date] "
+  if [ -n "$REPLY" ]; then
+    episode_date=$REPLY
   fi
 fi
 
