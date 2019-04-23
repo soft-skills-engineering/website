@@ -19,19 +19,19 @@ The Soft Skills Engineering Podcast is made possible by patrons like you who hav
 Also, these wonderful sponsors have made the show possible:
 </p>
 
-<p style="text-align: center">
+<p style="text-align: center; margin-top: 100px">
   <a href="{{ site.velocity_marketing_url }}" class="button">
     <img src="/img/velocity.svg" />
   </a>
 </p>
 
 <p>
-At Velocity, systems and site reliability engineers, architects, and application developers learn to build and manage performant, distributed, resilient, and highly available websites and applications.
+The O'Reilly Velocity Conference is where systems and site reliability engineers, architects, and application developers learn the skills and technologies needed to build and manage large-scale, cloud native systems.
 <a href="{{site.velocity_marketing_url}}">{{site.velocity_marketing_url}}</a>.
 </p>
 
 
-<p style="text-align: center">
+<p style="text-align: center; margin-top: 100px">
   <a href="{{ site.pluralsight_marketing_url }}" class="button">
     <img src="/img/pluralsight.png" />
   </a>
@@ -43,7 +43,7 @@ Pluralsight is hiring machine learning engineers, data scientists, and software 
 </p>
 
 
-<p style="text-align: center">
+<p style="text-align: center; margin-top: 100px">
   <a href="{{ site.devmountain_marketing_url }}" class="button">
     <img src="/img/devmountain.png" />
   </a>
@@ -54,7 +54,7 @@ If you want to learn web development, iOS development, or UI/UX, we recommend De
 Go check out their course schedules. Tell them Dave and Jamison sent you.
 </p>
 
-<p style="text-align: center">
+<p style="text-align: center; margin-top: 100px">
   <a href="https://www.algolia.com/softskillsengineering" class="button">
     <img style="width: 500px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Algolia_logo.svg/1280px-Algolia_logo.svg.png" />
   </a>
@@ -64,7 +64,7 @@ Go check out their course schedules. Tell them Dave and Jamison sent you.
 Algolia is looking for solutions engineers to join their team in Paris and San Francisco.
 </p>
 
-<h2>Becoming a Sponsor</h2>
+<h2 style="margin-top: 100px">Becoming a Sponsor</h2>
 
 <p>
 Your company can sponsor the Soft Skills Engineering podcast to reach thousands of super
