@@ -20,6 +20,18 @@ Also, these wonderful sponsors have made the show possible:
 </p>
 
 <p style="text-align: center">
+  <a href="{{ site.velocity_marketing_url }}" class="button">
+    <img src="/img/velocity.svg" />
+  </a>
+</p>
+
+<p>
+At Velocity, systems and site reliability engineers, architects, and application developers learn to build and manage performant, distributed, resilient, and highly available websites and applications.
+<a href="{{site.velocity_marketing_url}}">{{site.velocity_marketing_url}}</a>.
+</p>
+
+
+<p style="text-align: center">
   <a href="{{ site.pluralsight_marketing_url }}" class="button">
     <img src="/img/pluralsight.png" />
   </a>
