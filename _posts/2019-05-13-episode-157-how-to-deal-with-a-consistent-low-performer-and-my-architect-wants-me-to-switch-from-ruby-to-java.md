@@ -10,6 +10,10 @@ categories: episode
 enable_comments: true
 ---
 
+<b>This episode is sponsored by the O'Reilly Velocity conference. Register today and use discount
+code SKILLS for a 20% discount:
+<a href="{{ site.velocity_marketing_url }}">{{ site.velocity_marketing_url }}</a>.</b>
+
 In this episode, Dave and Jamison answer these questions:
 
 1. I became a manager a year go. I took over someone as my direct report who was not performing well at the time. On my first day, I gave a motivational chat to welcome him again to the team and continued to motivate him. But after 1 year, he is not improving at all. I give him clear feedback and set expectations but he just doesn't change. This got to a point where it is stressful for both of us. And since I spent so much time on just for this issue, I fear that it adds to the stress and may affect my decisions. What should I do?
