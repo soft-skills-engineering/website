@@ -2,6 +2,7 @@
 layout: page
 title: Soft Skills Engineering Slack Team
 permalink: /slack
+tags: about
 ---
 
 > Want an invite? Anyone who donates to the [Soft Skills Engineering Patreon](https://www.patreon.com/SoftSkillsEng) gets an invite to the Slack team.

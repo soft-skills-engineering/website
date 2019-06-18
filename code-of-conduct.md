@@ -46,8 +46,6 @@ This community is mostly not a place for obvious commercial activity such as rec
 * #remote-jobs
 * #services
 
-Additionally, geographically-focused channels (i.e. #colorado-connections, #new-york-city, similar) have a higher tolerance for specific kinds of commercial activity focused on events based in that region.
-
 Non-obvious commercial activity is less obvious. Well-intentioned user surveys of a specific channel are a common request and we ask that you:
 
 * Ask permission of the channel.
@@ -56,7 +54,7 @@ Non-obvious commercial activity is less obvious. Well-intentioned user surveys o
 
 We believe the above protocol is a useful approach for other types of non-obvious commercial activity.
 
-If you join this community simply to take value from the community rather than contribute, the community will quickly notice and react. If you are wondering whether a specific action is commercial or not, please ask and calibrate in #rands-slack-rules.
+If you join this community simply to take value from the community rather than contribute, the community will quickly notice and react. If you are wondering whether a specific action is commercial or not, please ask and calibrate in #slack-rules.
 
 ## Resolve Peacefully
 
