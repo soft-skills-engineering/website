@@ -5,7 +5,7 @@ permalink: /slack
 tags: about
 ---
 
-> Want an invite? Anyone who donates to the [Soft Skills Engineering Patreon](https://www.patreon.com/SoftSkillsEng) gets an invite to the Slack.
+> Want an invite? Anyone who donates to the [Soft Skills Engineering Patreon](https://www.patreon.com/SoftSkillsEng) gets an invite to the Slack. Invites are sent the week of each month after Patreon bills you.
 
 Welcome to the Soft Skills Engineering Slack! We're excited to have you join this community interested in the non-technical parts of the technical field of software. These guidelines will help keep the environment safe, welcoming, and friendly.
 
