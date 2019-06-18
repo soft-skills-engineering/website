@@ -13,15 +13,15 @@ This is the process for incident resolution at Soft Skills Engineering Slack and
 
 ## Resolve Peacefully 
 
-When an incident occurs, we ask that per the [Code of Conduct](https://github.com/randsleadershipslack/documents-and-resources/blob/master/code-of-conduct.md) for those involved to resolve peacefully:
+When an incident occurs, we ask that per the [Code of Conduct](/code-of-conduct) for those involved to resolve peacefully:
 
 “If you see someone violating any part of this Code of Conduct, we urge you to respectfully dissuade them from such behavior. Expect that others in the community wish to help keep the community respectful, and welcome your input in doing so.”
 
-This is easier said than done, but this is Soft Skills Engineering Slack. Our expectations are that everyone here is hoping to learn about the craft of leadership; peaceful resolution of complex human situations is leadership 101.
+This is easier said than done, but this is the Soft Skills Engineering Slack. Our expectations are that everyone here is hoping to learn about the craft of soft skills; peaceful resolution of complex human situations is an essential soft skill.
 
 ## Escalation
 
-Resolution amongst the individuals will not always be achievable. In this case, the reporter or observer of the incident has a choice. They can share the incident with #rands-slack-rules to seek feedback, and perhaps resolve the incident, or they can raise the incident with the Administrators (see below for specifics). We understand the need for the latter workflow, but we highly encourage the former because, again, this is a community focused on leadership. Our hope is that the debate will help educate this sub-community of humans interested in the rules and culture that govern this small corner of the Internet. 
+Resolution amongst the individuals will not always be achievable. In this case, the reporter or observer of the incident has a choice. They can share the incident with #slack-rules to seek feedback, and perhaps resolve the incident, or they can raise the incident with the Administrators (see below for specifics). We understand the need for the latter workflow, but we encourage the former because, again, this is a community focused on soft skills. Our hope is that the debate will help educate this sub-community of humans interested in the rules and culture that govern this small corner of the Internet. 
 
 There are two paths in reporting an incident to an Administrator: filing a formal complain and raising a concern. For a formal complaint, the reporter needs to send an Administrator a direct message with the following information:
 
@@ -42,12 +42,12 @@ Incidents are confidential. The administrator will not provide any information t
 
 ## Appeal of Account Suspension
 
-In cases that result in account suspension, the individual suspended may appeal the decision starting one week after the suspension by sending a mail to an Administrator with justification for overturning the appeal. If a suspension is overturned, the new context will be shared with #rands-slack-rules
+In cases that result in account suspension, the individual suspended may appeal the decision starting one week after the suspension by sending a mail to an Administrator with justification for overturning the appeal. If a suspension is overturned, the new context will be shared with #slack-rules
 
 # FAQ:
 
-- “Is situation XYZ an incident?” Unsure if there’s a CoC violation? Ask in #rands-slack-rules and/or DM the administrator. We'll help. 
-- “How many incidents have you handled since this place started?” Fifteen as of April 2019.
+- “Is situation XYZ an incident?” Unsure if there’s a CoC violation? Ask in #slack-rules and/or DM the administrator. We'll help. 
+- “How many incidents have you handled since this place started?” None as of June 2019.
 
 ## Administrators
 
