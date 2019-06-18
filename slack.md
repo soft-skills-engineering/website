@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Soft Skills Engineering Slack Team
+title: Slack
 permalink: /slack
 tags: about
 ---
 
-> Want an invite? Anyone who donates to the [Soft Skills Engineering Patreon](https://www.patreon.com/SoftSkillsEng) gets an invite to the Slack team.
+> Want an invite? Anyone who donates to the [Soft Skills Engineering Patreon](https://www.patreon.com/SoftSkillsEng) gets an invite to the Slack.
 
-Welcome to the Soft Skills Engineering Slack team! We're excited to have you join this community interested in the non-technical parts of the technical field of software. These guidelines will help keep the environment safe, welcoming, and friendly.
+Welcome to the Soft Skills Engineering Slack! We're excited to have you join this community interested in the non-technical parts of the technical field of software. These guidelines will help keep the environment safe, welcoming, and friendly.
 
 ## Guidelines
 1. Hop in to #intros and introduce yourself. Help us get to know you!
