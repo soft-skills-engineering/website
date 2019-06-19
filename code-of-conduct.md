@@ -74,7 +74,9 @@ If you are unable to resolve a situation peacefully, please refer to our [Incide
 
 If the Administrators determine that a human is violating any part of this Code of Conduct, the Administrators may take any action they deem appropriate within this Slack team, up to and including expulsion and exclusion from the Soft Skills Engineering Slack.
 
-As Administrators, we will seek to resolve conflicts peacefully and in a manner that is positive for the community. We can’t foresee every situation, and thus if in the Administrator's judgment the best thing to do is to ask a disrespectful individual to leave, we will do so. 
+As Administrators, we will seek to resolve conflicts peacefully and in a manner that is positive for the community. We can’t foresee every situation, and thus if in the Administrator's judgment the best thing to do is to ask a disrespectful individual to leave, we will do so.
+
+Membership in the Soft Skills Engineering Slack is a privilege, not a right. While we will try our best to communicate clearly and enforce well-understood rules, the Administrators may remove anyone from the Slack at any time for any reason.
 
 ## Administrators
 
@@ -91,6 +93,6 @@ Thank you to the [Rands Leadership Slack](https://github.com/randsleadershipslac
 
 Special thanks to [Chicago Camps](http://chicagocamps.org/code-of-conduct/), YxYY ([Yes and Yes Yes](http://www.yesandyesyes.com/)), and Hillary Hartley for sharing their Code of Conduct with us. We consider them as examples to look up to and emulate. We also thank the YxYY community member [Tantek Çelik](http://tantek.com/), and the other organizers of [IndieWebCamp](http://indiewebcamp.com/) for creating and sharing the [Code of Conduct](http://indiewebcamp.com/code-of-conduct) on which this one is based. If you question the need for a Code of Conduct, please see [this](http://indiewebcamp.com/code-of-conduct-why).
 
-V1.0 of this Code of Conduct was published on June 18th, 2019.
+V1.1 of this Code of Conduct was published on June 18th, 2019.
 
 This Code of Conduct is released under the [CC0 public domain license](https://creativecommons.org/publicdomain/zero/1.0/).
