@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 162 (rerun of episode 113): Quitting Your First Job and Too Many Responsibilities"
-date: 2019-07-17 12:00:00 -0700
+date: 2019-06-17 12:00:00 -0700
 guid: "8f0c8537-634c-4130-973f-575bbeca0e56"
 duration: "32:59"
 length: 35506781
