@@ -88,6 +88,6 @@ Thank you to every Soft Skills Engineering Slack community member for helping to
 
 Thank you to the [Rands Leadership Slack](https://github.com/randsleadershipslack/documents-and-resources/blob/master/code-of-conduct.md), which we cribbed this from.
 
-V1.2 of this Code of Conduct was published on June 18th, 2019.
+V1.2 of this Code of Conduct was published on July 15th, 2019.
 
 This Code of Conduct is released under the [CC0 public domain license](https://creativecommons.org/publicdomain/zero/1.0/).
