@@ -7,7 +7,7 @@ All participants in the Soft Skills Engineering Slack are required to comply wit
 
 # The Short Version
 
-Be respectful of other people; respectfully ask people to stop if you are bothered; respect privacy; understand we're mostly not-for-profit; and if you can’t resolve an issue then contact the Administrators. If you are being a problem, it will be apparent and you may be asked to leave the Soft Skills Engineering Slack.
+Be respectful of other people; respectfully ask people to stop if you are bothered; respect privacy; understand we're mostly not-for-profit; and if you can’t resolve an issue then contact the Administrators. If you are being a problem, it will be apparent and you may be booted from the Soft Skills Engineering Slack.
 
 # The Long Version
 
@@ -41,10 +41,8 @@ For attribution of specific content found on this Slack, we ask that you ask the
 This community is mostly not a place for obvious commercial activity such as recruiting or marketing except in channels dedicated to that purpose which include:
 
 * #conferences
-* #consulting-gigs
+* #freelancing
 * #jobs
-* #remote-jobs
-* #services
 
 Non-obvious commercial activity is less obvious. Well-intentioned user surveys of a specific channel are a common request and we ask that you:
 
@@ -62,7 +60,7 @@ We believe peer-to-peer discussions, feedback, and corrections can help build a 
 
 If you see someone violating any part of this Code of Conduct, we urge you to respectfully dissuade them from such behavior. Expect that others in the community wish to help keep the community respectful, and welcome your input in doing so.
 
-If you experience disrespectful behavior toward yourself or anyone else and feel in any way unable or unwilling to respond or resolve it respectfully (for any reason), please immediately bring it to the attention of an Administrator. We want to hear from you about anything that you feel is disrespectful, threatening, or just something that could make someone feel distressed in any way. We will listen and work to resolve the matter.
+If you experience disrespectful behavior toward yourself or anyone else and feel in any way unable or unwilling to respond or resolve it respectfully (for any reason), please bring it to the attention of an Administrator. We want to hear from you about anything that you feel is disrespectful, threatening, or just something that could make someone feel distressed in any way. We will listen and work to resolve the matter.
 
 ## Apologize for Mistakes
 
@@ -72,9 +70,9 @@ Should you catch yourself behaving disrespectfully, or be confronted as such, li
 
 If you are unable to resolve a situation peacefully, please refer to our [Incident Process](/incident-process) and choose a course of action that suits the situation. 
 
-If the Administrators determine that a human is violating any part of this Code of Conduct, the Administrators may take any action they deem appropriate within this Slack team, up to and including expulsion and exclusion from the Soft Skills Engineering Slack.
+If the Administrators determine that a human is violating any part of this Code of Conduct, the Administrators may take any action they deem appropriate within this Slack team, up to and including removal from the Soft Skills Engineering Slack. Some other potential actions are warnings or timing out accounts for some time.
 
-As Administrators, we will seek to resolve conflicts peacefully and in a manner that is positive for the community. We can’t foresee every situation, and thus if in the Administrator's judgment the best thing to do is to ask a disrespectful individual to leave, we will do so.
+As Administrators, we will seek to resolve conflicts peacefully and in a manner that is positive for the community. We can’t foresee every situation. If an Administrator feels the best thing to do is to ask a disrespectful individual to leave, they will do so.
 
 Membership in the Soft Skills Engineering Slack is a privilege, not a right. While we will try our best to communicate clearly and enforce well-understood rules, the Administrators may remove anyone from the Slack at any time for any reason.
 
@@ -90,9 +88,6 @@ Thank you to every Soft Skills Engineering Slack community member for helping to
 
 Thank you to the [Rands Leadership Slack](https://github.com/randsleadershipslack/documents-and-resources/blob/master/code-of-conduct.md), which we cribbed this from.
 
-
-Special thanks to [Chicago Camps](http://chicagocamps.org/code-of-conduct/), YxYY ([Yes and Yes Yes](http://www.yesandyesyes.com/)), and Hillary Hartley for sharing their Code of Conduct with us. We consider them as examples to look up to and emulate. We also thank the YxYY community member [Tantek Çelik](http://tantek.com/), and the other organizers of [IndieWebCamp](http://indiewebcamp.com/) for creating and sharing the [Code of Conduct](http://indiewebcamp.com/code-of-conduct) on which this one is based. If you question the need for a Code of Conduct, please see [this](http://indiewebcamp.com/code-of-conduct-why).
-
-V1.1 of this Code of Conduct was published on June 18th, 2019.
+V1.2 of this Code of Conduct was published on July 15th, 2019.
 
 This Code of Conduct is released under the [CC0 public domain license](https://creativecommons.org/publicdomain/zero/1.0/).
