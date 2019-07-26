@@ -40,19 +40,3 @@ In this episode, Dave and Jamison answer these questions:
    I have taken it on myself to engage with the customer and help them out.  BUT, now I have become a glorified customer service rep and I can't do much of my own work because I'm passing messages back and forth between engineers who don't like to talk to their customers.
    
    My manager says the team needs training and he is going to work on it with them, but this has been going on for months.  Should I take the Soft Skills advice of 'Quit your Job', or continue being a middleman?"
-   
-   
-   
-   **Raw text:**
-   
-   "Hey Dave and Jamison, love the show and your amazing insight into the world of soft skills.
-   
-   I have been having a problem on my team that I hope you can help with.
-   
-   We are a team of engineers that have internal customers, we build stuff that other teams build on.  It's a bit of a back end of the back end role but it works ok.
-   
-   The problem is NONE of the other engineers are customer focused in the slightest.  Tickets come in, they do them, close them and move on.  Not one engineer appears to want to engage with the internal teams we support, or scope requirements for fixes.  They do whats in the ticket as it reads exactly and we end up with some requirements getting lost, tickets needing to be reopened and our reputation going down the tubes.
-   
-   This means that I have taken it on myself to engage with the customer and help them out.  BUT, now I have become a very well paid customer service rep and I can't do much of my own work because I'm passing messages back and forth between engineers who don't like to talk to the people they are building features for.
-   
-   My manager says the team needs training and he is going to work on it with them, but this has been going on for months.  Should I take the Soft Skills advice of 'Quit your Job', or continue passing messages back and forth like a Chinese Whispers Engineer?
