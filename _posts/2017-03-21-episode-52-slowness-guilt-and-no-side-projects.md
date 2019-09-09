@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. I feel guilty about how slow I'm working. What should I do?
 2. I'd like to find a job, but I don't have any completed side projects or an interesting GitHub profile. How can I explain this?

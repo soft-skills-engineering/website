@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. I didn't quit my job. Did I mess up?
 2. I was hired to manage a team, but it is actually just me. What do I do?
