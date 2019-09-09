@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. I've been pushed in to doing management tasks I really don't enjoy. What do I do?
 2. How do I handle a co-worker who I really struggle to get along with?

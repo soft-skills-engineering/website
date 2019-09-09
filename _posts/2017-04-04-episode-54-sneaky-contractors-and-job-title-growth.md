@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. Our codebase is really bad, and management hired a contractor behind our backs to rewrite it. What should I do?
 2. How important are job titles when looking for a new job?
