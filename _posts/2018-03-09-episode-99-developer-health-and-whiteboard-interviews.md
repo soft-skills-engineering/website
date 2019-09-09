@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. Do you have any recommendations for maintaining physical health in a software developer role? For example, strategies to maintain good posture, reduce eye strain, etc.
 2. Is the practice of asking interviewing developers to regurgitate 20 year old algorithms on a whiteboard a recent trend or is this something new? Can you make sense of this madness?

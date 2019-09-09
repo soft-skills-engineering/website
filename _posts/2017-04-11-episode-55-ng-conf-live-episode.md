@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-It's a special ng-conf live episode! [Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions in front of a live audience:
+It's a special ng-conf live episode! [Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions in front of a live audience:
 
 1. When you go freelancing, do your coding skills atrophy?
 2. What is something you wish you knew about freelancing before you started?

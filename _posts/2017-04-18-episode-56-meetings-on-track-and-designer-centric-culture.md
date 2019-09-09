@@ -13,4 +13,4 @@ enable_comments: true
 1. How do I keep meetings on track?
 2. I work in an agency with a designer-centric culture. How do I make myself heard?
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
