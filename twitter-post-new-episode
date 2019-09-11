@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+import sys
+from twitter import tweet, twitter_api
+
+def main():
+  if len(sys.argv) != 4:
+    print("Usage: {} <episode-number> <episode-summary> <episode-url>".format(sys.argv[0]))
+    sys.exit(1)
+
+  episode_number  = sys.argv[1]
+  episode_summary = sys.argv[2]
+  episode_url     = sys.argv[3]
+
+  api = twitter_api()
+  tweet_url, tweet_content = tweet(
+    api=api,
+    episode_number=episode_number,
+    episode_summary=episode_summary,
+    episode_url=episode_url,
+  )
+  print('Created tweet:')
+  print('---------------------------------------')
+  print(tweet_content)
+  print('---------------------------------------')
+  print()
+  print(tweet_url)
+  print()
+
+if __name__ == '__main__':
+  main()
