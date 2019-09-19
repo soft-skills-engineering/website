@@ -37,17 +37,21 @@
   max-width: 760px;
 }
 
+.posts-footer {
+  text-align: center;
+}
+
 /* Individual Posts */
 .post {
   margin-bottom: var(--double-space);
-  padding: 2.5rem 2rem;
+  padding: 3rem 2.5rem;
   border: 4px solid var(--post-border-color);
   border-radius: 8px;
   background-color: var(--post-bg-color);
 }
 
 .post:first-child {
-  border-color: var(--color6);
+  border-color: #8882BF;
   background-color: var(--color5);
 }
 
@@ -57,7 +61,12 @@
 }
 
 .post-link {
-  font-weight: var(--font-medium);
   text-decoration: none;
   color: var(--font-color);
+}
+
+.post-link h1,
+.post-link h2 {
+  font-size: 2.25rem;
+  font-weight: var(--font-medium);
 }
