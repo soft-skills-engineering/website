@@ -1,24 +1,22 @@
-<div class="post">
+<article class="post">
   <p class="post-meta">{{ post.date | date: site.date_format }}</p>
-  <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
-    <h3 class="h2 post-title">{{ post.title }}</h3>
-  </a>
-    {% if post.file %}
-      <div class="audio-player">
-        <audio src="{{ post.file }}?website_player=true" preload="none" controls="controls" type="audio/mp3">
-          Your browser doesn't support the <code>audio</code> element.
-        </audio>
 
-        <a href="{{ post.file }}?website_download=true">Download</a>
-      </div>
-    {% endif %}
+  <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
+    <h1>{{ post.title }}</h1>
+  </a>
+
+  {% if post.file %}
+    <div class="audio-player">
+      <audio src="{{ post.file }}?website_player=true" preload="none" controls="controls" type="audio/mp3">
+        Your browser doesn't support the <code>audio</code> element.
+      </audio>
+
+      <a href="{{ post.file }}?website_download=true">Download</a>
+    </div>
+  {% endif %}
 
 
   <p class="post-summary">
     {{ post.content }}
   </p>
-
-  <p style="text-align: center">
-    <img style="height: 50px" src="/img/speech-face.png" />
-  </p>
-</div>
+</article>

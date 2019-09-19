@@ -44,20 +44,27 @@ img {
 
 /* BASE: ELEMENTS */
 
+a {
+  color: var(--color1);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 p, ol, ul {
   margin-bottom: var(--space);
   line-height: var(--line-height);
-}
-
-small,
-.small {
-  font-size: 0.7rem;
 }
 
 sup {
   position: relative;
   vertical-align: middle;
   top: -0.9em;
+}
+
+h1, h2, h3 {
+  margin-bottom: var(--space);
 }
 
 .gist,
@@ -172,7 +179,16 @@ pre a:only-of-type::before {
 }
 
 .button {
+  position: relative;
+  border-radius: 8px;
+  background: var(--color1);
   display: inline-block;
+}
+
+.button span {
+  display: inline-block;
+  margin-top: -.3em;
+  margin-left: -.3em;
   padding: .5em 1em;
   border: 2px solid var(--color1);
   border-radius: 8px;
@@ -184,6 +200,20 @@ pre a:only-of-type::before {
 
 .button + .button {
   margin-left: 1rem;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
 }
 
 /* Grid */
@@ -205,6 +235,32 @@ pre a:only-of-type::before {
 .site-nav,
 .subscribe-nav {
   display: none;
+}
+
+/* Site Foote */
+
+.site-footer {
+  margin-top: var(--double-space);
+  background-color: var(--color5);
+}
+
+.attribution {
+  padding: 1.5rem 0;
+  background: var(--color1);
+  text-align: center;
+
+  small {
+    font-size: .9rem;
+  }
+
+  &,
+  a {
+    color: #999FC2;
+  }
+
+  a {
+    font-weight: var(--font-medium);
+  }
 }
 
 /* Hero */
