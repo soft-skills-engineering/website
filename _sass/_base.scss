@@ -2,6 +2,7 @@ html {
   box-sizing: border-box;
   font-family: var(--font);
   font-size: var(--font-size);
+  color: var(--font-color);
 }
 
 *, *:before, *:after {
@@ -40,6 +41,10 @@ h2, h3 {
 img {
   max-width: 100%;
   height: auto;
+}
+
+ul, ol {
+  padding-left: 1.35em;
 }
 
 /* BASE: ELEMENTS */
@@ -160,6 +165,7 @@ pre a:only-of-type::before {
   margin-top: 0.75rem;
 }
 
+// TODO: Refactor
 @media (min-width: 768px) {
   .split-list {
     -webkit-columns: 2;
@@ -269,7 +275,7 @@ pre a:only-of-type::before {
   --container-width: 700px;
 
   padding-top: 5rem;
-  padding-bottom: 10rem;
+  padding-bottom: 22vw;
   background-image: url(/img/icon-pattern.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
