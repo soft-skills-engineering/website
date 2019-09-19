@@ -1,0 +1,11 @@
+---
+# The scss file which includes files from _sass/
+---
+@charset "UTF-8";
+
+@import "variables";
+
+@import "base";
+
+@import "pagination";
+@import "posts";

@@ -1,50 +1,235 @@
-@charset "UTF-8";
-/*!
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: var(--font-size);
+}
 
-Pixyll
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
-A simple, beautiful theme for Jekyll that emphasizes content rather than
-aesthetic fluff.
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
 
-Built upon BASSCSS (http://jxnblk.github.io/basscss).
+h1, h2, h3 {
+  margin-bottom: var(--space);
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1.2;
+}
 
-Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander
-MIT License http://opensource.org/licenses/MIT
+h1 {
+  font-size: 2.5rem;
+}
 
-*/
+h2 {
+  font-size: 2.125rem;
+}
 
-html, body {
-  height: auto;
-  min-height: 100%;
+h3 {
+  font-size: 1.65rem;
+}
+
+h2, h3 {
+  margin-top: calc(var(--space) * 2.5);
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
-em img {
-  max-width: 100%;
-  margin-left: 0;
+/* BASE: ELEMENTS */
+
+p, ol, ul {
+  margin-bottom: var(--space);
+  line-height: var(--line-height);
 }
 
-body {
-          box-sizing: border-box;
-     -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+small,
+.small {
+  font-size: 0.7rem;
 }
 
-h3.host {
-  margin: 0;
-}
-
-.host-details {
-}
-
-img.host-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+sup {
+  position: relative;
   vertical-align: middle;
-  float: left;
-  margin-right: 10px;
+  top: -0.9em;
+}
+
+.gist,
+.gist .highlight .p {
+  font-size: .75rem;
+}
+
+.gist .lines {
+  width: 100%;
+}
+
+pre,
+pre code {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+pre,
+code {
+  font-family: Monospace; // TODO
+}
+
+code {
+  color: #7A7A7A; // TODO
+}
+
+pre {
+  padding: 1.125em;
+  line-height: 1.11;
+  overflow-x: scroll;
+  margin-bottom: 0.88em;
+}
+
+.highlight .p {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+pre {
+  counter-reset: line-numbering;
+  white-space: pre;
+  overflow-x: auto;
+  word-break: inherit;
+  word-wrap: inherit;
+}
+
+pre a {
+  background-image: none;
+}
+
+pre a::before {
+  content: counter(line-numbering);
+  counter-increment: line-numbering;
+  padding-right: 1em; /* space after numbers */
+  width: 25px;
+  text-align: right;
+  opacity: 0.7;
+  display: inline-block;
+  color: #F9F9F9; // TODO
+  margin-right: 16px;
+  font-size: 13px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+pre a:first-of-type::before {
+  padding-top: 10px;
+}
+
+pre a:last-of-type::before {
+  padding-bottom: 10px;
+}
+
+pre a:only-of-type::before {
+  padding: 10px;
+}
+
+.lead {
+  font-size: 1.35rem;
+}
+
+.split-list {
+  height: auto;
+}
+.split-list li {
+  margin-bottom: 0.75rem;
+}
+.split-list li ul {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .split-list {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+  }
+}
+
+/* Buttons */
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  padding: .5em 1em;
+  border: 2px solid var(--color1);
+  border-radius: 8px;
+  background: #FFF;
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  color: var(--color1);
+}
+
+.button + .button {
+  margin-left: 1rem;
+}
+
+/* Grid */
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 var(--gutters);
+}
+
+.block {
+  position: relative;
+  margin-bottom: var(--gutter-gaps);
+  padding: var(--block-space) 0;
+}
+
+/* Site Header */
+
+.site-nav,
+.subscribe-nav {
+  display: none;
+}
+
+/* Hero */
+
+.hero {
+  --container-width: 700px;
+
+  padding-top: 5rem;
+  background-image: url(/img/icon-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.hero h1 {
+  margin: 0 auto var(--double-space);
+  font-size: 3rem;
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+.hero .lead {
+  text-align: center;
+}
+
+.hero .discussion-list {
+  margin: 0 auto var(--double-space);
+  max-width: 75%;
 }

@@ -1,18 +1,47 @@
-<header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <h1 class="h3 site-title">
-        <a class="site-title-link" href="{{ site.url }}">
-          <img class="header-logo" src="/img/logo-transparent-bg.png" alt="Soft Skills Engineering Podcast" />
-        </a>
-      </h1>
-      <nav class="site-nav">
-        {% include navigation.html %}
-      </nav>
-      <div class="clearfix"></div>
-      {% if site.show_social_icons %}
-        {% include social_links.html %}
-      {% endif %}
-    </div>
+<header class="site-header">
+  <div class="container">
+    {% comment %}<button class="nav-toggler">Close</button>{% endcomment %}
+    <a class="site-title-link" href="{{ site.url }}">
+      <img
+        class="header-logo"
+        src="/img/logo.svg"
+        width="160"
+        alt="Soft Skills Engineering Podcast" />
+    </a>
+
+    <nav class="site-nav">
+      <ul>
+        {% for page in site.pages %}
+          {% if page.tags contains "about"
+          or page.tags contains "subscribe"
+          or page.tags contains "contact" %}
+            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <nav class="subscribe-nav">
+      <ul>
+        <li>
+          <a href="#">iTunes</a>
+        </li>
+        <li>
+          <a href="#">Android</a>
+        </li>
+        <li>
+          <a href="#">Spotify</a>
+        </li>
+        <li>
+          <a href="#">RSS</a>
+        </li>
+      </ul>
+    </nav>
+
+    {% if site.show_social_icons %}
+      {% include social_links.html %}
+    {% endif %}
   </div>
 </header>
+
+
