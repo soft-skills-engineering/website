@@ -23,8 +23,12 @@ layout: default
     </ul>
 
     <div class="button-group">
-      <a href="/about/" class="button">Meet the hosts</a>
-      <a href="/ask/" class="button">Ask a question</a>
+      <a href="/about/" class="button">
+        <span>Meet the hosts</span>
+      </a>
+      <a href="/ask/" class="button">
+        <span>Ask a question</span>
+      </a>
     </div>
 
     {% comment %}
@@ -45,8 +49,10 @@ layout: default
 
 <h2 class="sr-only">Recent Episodes</h2>
 <div class="posts">
-  {% for post in paginator.posts %}
-    {% include post_summary.html %}
-  {% endfor %}
+  <div class="container">
+    {% for post in paginator.posts limit:4 %}
+      {% include post_summary.html %}
+    {% endfor %}
+  </div>
 </div>
 
