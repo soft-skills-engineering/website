@@ -179,7 +179,15 @@ pre a:only-of-type::before {
   padding: 2px 0 0 2px;
   border: 2px solid var(--color1);
   border-radius: 8px 16px 8px 16px / 8px 16px 8px 16px;
-  background: var(--color1);
+  background-image: linear-gradient(45deg,
+    #FFF 40%,
+    var(--color1) 40%,
+    var(--color1) 50%,
+    #FFF 50%,
+    #FFF 90%,
+    var(--color1) 90%,
+    var(--color1) 100%);
+  background-size: 14.14px 14.14px;
   display: inline-block;
   font-size: 1.3rem;
 }
