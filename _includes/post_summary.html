@@ -1,9 +1,9 @@
 <article class="post">
-  <p class="post-meta">{{ post.date | date: site.date_format }}</p>
-
   <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
     <h1>{{ post.title }}</h1>
   </a>
+
+  <time class="post-timestamp">{{ post.date | date: site.date_format }}</time>
 
   {% if post.file %}
     <div class="audio-player">
@@ -14,7 +14,6 @@
       <a href="{{ post.file }}?website_download=true">Download</a>
     </div>
   {% endif %}
-
 
   <p class="post-summary">
     {{ post.content }}

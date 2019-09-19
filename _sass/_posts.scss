@@ -1,12 +1,19 @@
+/* Post List */
 
 .posts {
   position: relative;
   background-color: var(--color6);
 }
 
+.posts .container {
+  position: relative;
+  z-index: 1;
+}
+
 .posts:before,
 .posts:after {
   position: absolute;
+  z-index: 0;
   display: block;
   width: 100%;
   height: 10vw;
@@ -27,4 +34,18 @@
 
 .posts .container {
   max-width: 760px;
+}
+
+/* Individual Posts */
+.post {
+  margin-bottom: var(--double-space);
+  padding: 2rem 1.5rem;
+  border: 4px solid var(--post-border-color);
+  border-radius: 8px;
+  background-color: var(--post-bg-color);
+}
+
+.post-timestamp {
+  display: block;
+  margin-bottom: var(--space);
 }
