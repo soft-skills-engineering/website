@@ -1,4 +1,8 @@
 <article class="post">
+  {% if include.show_latest %}
+  <span class="post-latest-badge">Latest Episode</span>
+  {% endif %}
+
   <a href="{{ post.url | prepend: site.baseurl }}" class="post-link">
     <h1>{{ post.title }}</h1>
   </a>

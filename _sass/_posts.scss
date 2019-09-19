@@ -33,19 +33,31 @@
 
 
 .posts .container {
+  top: -16vw;
   max-width: 760px;
 }
 
 /* Individual Posts */
 .post {
   margin-bottom: var(--double-space);
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 2rem;
   border: 4px solid var(--post-border-color);
   border-radius: 8px;
   background-color: var(--post-bg-color);
 }
 
+.post:first-child {
+  border-color: var(--color6);
+  background-color: var(--color5);
+}
+
 .post-timestamp {
   display: block;
   margin-bottom: var(--space);
+}
+
+.post-link {
+  font-weight: var(--font-medium);
+  text-decoration: none;
+  color: var(--font-color);
 }
