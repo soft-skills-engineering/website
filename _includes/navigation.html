@@ -1,7 +1,0 @@
-{% for page in site.pages %}
-  {% if page.tags contains "about"
-  or page.tags contains "subscribe"
-  or page.tags contains "contact" %}
-        <a href="{{ page.url }}">{{ page.title }}</a>
-    {% endif %}
-{% endfor %}
