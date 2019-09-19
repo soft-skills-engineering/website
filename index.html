@@ -55,8 +55,11 @@ layout: default
     {% endfor %}
 
     <footer class="posts-footer">
-      <h2>We've produced {{ paginator.size }} delightful episodes.<br/>Check 'em out!</h2>
+      <h2 class="posts-footer-header">We've produced {{ paginator.size }} delightful episodes.<br/>Check 'em out!</h2>
 
+      {% comment %}
+        TODO: Setup pagination results
+      {% endcomment %}
       <a href="#" class="button"><span>View all episodes</span></a>
     </footer>
   </div>

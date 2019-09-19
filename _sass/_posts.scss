@@ -2,6 +2,8 @@
 
 .posts {
   position: relative;
+  margin-bottom: 8rem;
+  padding-bottom: calc(2vw + var(--space));
   background-color: var(--color6);
 }
 
@@ -16,24 +18,26 @@
   z-index: 0;
   display: block;
   width: 100%;
-  height: 10vw;
+  height: 11vw;
   background-image: url(/img/oblong.svg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   content: "";
+  pointer-events: none;
 }
 
 .posts:before {
-  top: -5vw;
+  top: -4vw;
 }
 
 .posts:after {
-  bottom: -5vw;
+  bottom: -4vw;
 }
 
 
 .posts .container {
-  top: -16vw;
+  top: -12vw;
+  margin-bottom: -12vw;
   max-width: 760px;
 }
 
@@ -41,7 +45,14 @@
   text-align: center;
 }
 
+.posts-footer-header {
+  margin-top: 4rem;
+  margin-bottom: var(--double-space);
+  font-weight: var(--font-medium);
+}
+
 /* Individual Posts */
+
 .post {
   margin-bottom: var(--double-space);
   padding: 3rem 2.5rem;
