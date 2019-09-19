@@ -186,8 +186,6 @@ pre a:only-of-type::before {
 
 .button span {
   position: relative;
-  top: -4px;
-  left: -4px;
   display: inline-block;
   padding: .5em 1em;
   border: 2px solid var(--color1);
@@ -196,10 +194,16 @@ pre a:only-of-type::before {
   font-weight: var(--font-medium);
   text-decoration: none;
   color: var(--color1);
+  transform: translateX(-4px) translateY(-4px);
+  transition: all var(--anim-speed);
 }
 
 .button + .button {
   margin-left: 2rem;
+}
+
+.button:hover span {
+  transform: translateX(2px) translateY(2px);
 }
 
 .sr-only {
@@ -248,9 +252,10 @@ pre a:only-of-type::before {
   padding: 1.5rem 0;
   background: var(--color1);
   text-align: center;
+  vertical-align: middle;
 
   small {
-    font-size: .9rem;
+    font-size: 1rem;
   }
 
   &,
@@ -261,4 +266,31 @@ pre a:only-of-type::before {
   a {
     font-weight: var(--font-medium);
   }
+}
+
+.avatar-link {
+  display: inline-block;
+  padding: 0 .2em;
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.avatar-link + .avatar-link {
+  padding-right: 0;
+}
+
+.avatar-link img {
+  vertical-align: middle;
+  margin-right: .25em;
+  border-radius: 50%;
+  opacity: .7;
+  transition: opacity var(--anim-speed);
+}
+
+.avatar-link:hover span {
+  text-decoration: underline;
+}
+
+.avatar-link:hover img {
+  opacity: 1;
 }
