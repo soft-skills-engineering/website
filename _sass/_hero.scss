@@ -1,0 +1,25 @@
+.hero {
+  --container-width: 700px;
+
+  padding-top: 5rem;
+  padding-bottom: 22vw;
+  background-image: url(/img/icon-pattern.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.hero h1 {
+  margin: 0 auto var(--double-space);
+  font-size: 3rem;
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+.hero .lead {
+  text-align: center;
+}
+
+.hero .discussion-list {
+  margin: 0 auto var(--double-space);
+  max-width: 75%;
+}

@@ -53,6 +53,12 @@ layout: default
     {% for post in paginator.posts limit:4 %}
       {% include post_summary.html %}
     {% endfor %}
+
+    <footer class="posts-footer">
+      <h2>We've produced {{ paginator.size }} delightful episodes.<br/>Check 'em out!</h2>
+
+      <a href="#" class="button"><span>View all episodes</span></a>
+    </footer>
   </div>
 </div>
 
