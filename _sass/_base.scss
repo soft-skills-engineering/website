@@ -18,7 +18,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 h1, h2, h3 {
   margin-bottom: var(--space);
   font-style: normal;
-  font-weight: normal;
+  font-weight: var(--font-medium);
   line-height: 1.2;
 }
 
@@ -28,15 +28,10 @@ h1 {
 
 h2 {
   font-size: 2.125rem;
-  font-weight: var(--font-medium);
 }
 
 h3 {
   font-size: 1.65rem;
-}
-
-h2, h3 {
-  margin-top: calc(var(--space) * 2.5);
 }
 
 img {
@@ -158,24 +153,18 @@ pre a:only-of-type::before {
 
 .split-list {
   height: auto;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  columns: 2;
+  -webkit-column-gap: 60px;
+  -moz-column-gap: 60px;
+  column-gap: 60px;
 }
 .split-list li {
   margin-bottom: 0.75rem;
 }
 .split-list li ul {
   margin-top: 0.75rem;
-}
-
-// TODO: Refactor
-@media (min-width: 768px) {
-  .split-list {
-    -webkit-columns: 2;
-    -moz-columns: 2;
-    columns: 2;
-    -webkit-column-gap: 60px;
-    -moz-column-gap: 60px;
-    column-gap: 60px;
-  }
 }
 
 /* Buttons */
@@ -187,16 +176,19 @@ pre a:only-of-type::before {
 
 .button {
   position: relative;
-  border-radius: 8px;
+  padding: 2px 0 0 2px;
+  border: 2px solid var(--color1);
+  border-radius: 8px 16px 8px 16px / 8px 16px 8px 16px;
   background: var(--color1);
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .button span {
+  position: relative;
+  top: -4px;
+  left: -4px;
   display: inline-block;
-  margin-top: -.3em;
-  margin-left: -.3em;
   padding: .5em 1em;
   border: 2px solid var(--color1);
   border-radius: 8px;

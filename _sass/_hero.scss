@@ -2,10 +2,14 @@
   --container-width: 700px;
 
   padding-top: 5rem;
-  padding-bottom: 22vw;
+  padding-bottom: calc(18vw - 2.5rem);
   background-image: url(/img/icon-pattern.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
+}
+
+.hero .container {
+  margin-bottom: 4rem;
 }
 
 .hero h1 {
