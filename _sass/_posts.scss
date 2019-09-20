@@ -45,10 +45,9 @@
   text-align: center;
 }
 
-.posts-footer-header {
+.posts-footer-heading {
   margin-top: 4rem;
   margin-bottom: var(--double-space);
-  font-weight: var(--font-medium);
 }
 
 /* Individual Posts */
@@ -68,7 +67,7 @@
 
 .post-timestamp {
   display: block;
-  margin-bottom: var(--space);
+  margin: var(--double-space) 0 var(--space);
 }
 
 .post-link {
@@ -79,5 +78,18 @@
 .post-link h1,
 .post-link h2 {
   font-size: 2.25rem;
+  font-weight: var(--font-medium);
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  margin: var(--double-space) 0;
+}
+
+.audio-player a {
+  display: inline-block;
+  margin-left: .85rem;
+  font-size: 1.2rem;
   font-weight: var(--font-medium);
 }
