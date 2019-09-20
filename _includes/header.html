@@ -9,38 +9,73 @@
         alt="Soft Skills Engineering Podcast" />
     </a>
 
-    <nav class="site-nav">
-      <ul>
-        {% for page in site.pages %}
-          {% if page.tags contains "about"
-          or page.tags contains "subscribe"
-          or page.tags contains "contact" %}
-            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </nav>
+    <div class="site-header-navs">
 
-    <nav class="subscribe-nav">
-      <ul>
-        <li>
-          <a href="#">iTunes</a>
-        </li>
-        <li>
-          <a href="#">Android</a>
-        </li>
-        <li>
-          <a href="#">Spotify</a>
-        </li>
-        <li>
-          <a href="#">RSS</a>
-        </li>
-      </ul>
-    </nav>
+      <nav class="site-nav">
+        <ul>
+          {% for page in site.pages %}
+            {% if page.tags contains "about"
+            or page.tags contains "subscribe"
+            or page.tags contains "contact" %}
+              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+          <li>
+            <a href="#" class="patreon-link">
+              <small>Support us on</small>
+              <span class="patreon-link-label">
+                <img src="/img/heart.svg" alt="Heart" aria-hidden="true" width="20" />
+                <strong>Patreon</strong>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-    {% if site.show_social_icons %}
-      {% include social_links.html %}
-    {% endif %}
+      <nav class="subscribe-nav">
+        <span class="subscribe-nav-label">Subscribe</span>
+        <ul>
+          <li>
+            <a href="#" class="subscribe-link">
+              <img
+                src="/img/itunes.svg"
+                class="icon"
+                alt="iTunes logo"
+                aria-hidden="true" /> iTunes</a>
+          </li>
+          <li>
+            <a href="#" class="subscribe-link">
+              <img
+                src="/img/android.svg"
+                class="icon"
+                alt="Android logo"
+                aria-hidden="true" /> Android</a>
+          </li>
+          <li>
+            <a href="#" class="subscribe-link">
+                <img
+                src="/img/spotify.svg"
+                class="icon"
+                alt="Spotify logo"
+                aria-hidden="true" /> Spotify</a>
+          </li>
+          <li>
+            <a href="#" class="subscribe-link">
+                <img
+                src="/img/rss.svg"
+                class="icon"
+                alt="RSS logo"
+                aria-hidden="true" /> RSS</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    {% comment %}
+      {% if site.show_social_icons %}
+        {% include social_links.html %}
+      {% endif %}
+    {% endcomment %}
   </div>
 </header>
 
