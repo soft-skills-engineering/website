@@ -22,15 +22,18 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
-h1 {
+h1,
+.type-h1 {
   font-size: 2.5rem;
 }
 
-h2 {
+h2,
+.type-h2 {
   font-size: 2.125rem;
 }
 
-h3 {
+h3,
+.type-h3 {
   font-size: 1.65rem;
 }
 
@@ -167,6 +170,24 @@ pre a:only-of-type::before {
   margin-top: 0.75rem;
 }
 
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important;
+	-webkit-clip-path: inset(50%) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
 /* Buttons */
 
 .button-group {
@@ -214,20 +235,6 @@ pre a:only-of-type::before {
   transform: translateX(2px) translateY(2px);
 }
 
-.sr-only {
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important;
-	-webkit-clip-path: inset(50%) !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;
-}
-
 /* Grid */
 
 .container {
@@ -240,6 +247,14 @@ pre a:only-of-type::before {
   position: relative;
   margin-bottom: var(--gutter-gaps);
   padding: var(--block-space) 0;
+}
+
+.block-header {
+  margin-bottom: 4rem;
+}
+
+img + .block-heading {
+  margin-top: var(--double-space);
 }
 
 /* Site Header */
@@ -257,7 +272,7 @@ pre a:only-of-type::before {
 }
 
 .attribution {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   background: var(--color1);
   text-align: center;
   vertical-align: middle;
@@ -301,4 +316,29 @@ pre a:only-of-type::before {
 
 .avatar-link:hover img {
   opacity: 1;
+}
+
+/* Quotes Grid */
+.quotes-grid {
+  margin: 0 auto;
+  padding: 0 var(--gutters);
+  max-width: 1500px;
+}
+
+.quotes-grid > * {
+  margin: 0 auto var(--space);
+  break-inside: avoid;
+}
+
+@media (min-width: 768px) {
+  .quotes-grid {
+    column-count: 2;
+    column-gap: var(--space);
+  }
+}
+
+@media (min-width: 1200px) {
+  .quotes-grid {
+    column-count: 3;
+  }
 }

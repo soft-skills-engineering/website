@@ -5,7 +5,7 @@
   --gutters        : 24px; /* Hard-coded so size changes don't wreck havoc */
   --space          : 1rem;
   --double-space   : calc(var(--space) * 2);
-  --block-space    : var(--double-space);
+  --block-space    : 4rem;
   --offset         : var(--gutters);
 
   /* TYPOGRAPHY */
