@@ -2,7 +2,7 @@
 layout: page
 title: Sponsors
 permalink: /sponsors/
-tags: about sponsors
+tags: in-nav sponsors
 ---
 
 <p>
@@ -10,7 +10,7 @@ The Soft Skills Engineering Podcast is made possible by patrons like you who hav
 </p>
 
 <p>
-  <a href="{{site.patreon_url}}" class="button button-blue" style="background-color:green">Support us on Patreon</a>
+  <a href="{{site.patreon_url}}" class="button"><span>Support us on Patreon</span></a>
 </p>
 
 <hr />
@@ -19,19 +19,22 @@ The Soft Skills Engineering Podcast is made possible by patrons like you who hav
 Also, these wonderful sponsors have made the show possible:
 </p>
 
-<p style="text-align: center; margin-top: 100px">
+
+
+<section class="sponsor">
+<h2>
   <a href="{{ site.velocity_marketing_url }}" class="button">
-    <img src="/img/velocity.svg" />
+    <img src="/img/velocity.svg" alt="Velocity" />
   </a>
-</p>
+</h2>
 
 <p>
 The O'Reilly Velocity Conference is where systems and site reliability engineers, architects, and application developers learn the skills and technologies needed to build and manage large-scale, cloud native systems.
-<a href="{{site.velocity_marketing_url}}">{{site.velocity_marketing_url}}</a>.
+<a href="{{site.velocity_marketing_url}}">{{ site.velocity_marketing_url }}</a>.
 </p>
 
 
-<p style="text-align: center; margin-top: 100px">
+<p>
   <a href="{{ site.pluralsight_marketing_url }}" class="button">
     <img src="/img/pluralsight.png" />
   </a>
@@ -73,7 +76,7 @@ industry.
 </p>
 
 <p>
-Soft Skills Engineering made its debut in spring of 2016. Episode downloads quickly grew 
+Soft Skills Engineering made its debut in spring of 2016. Episode downloads quickly grew
 from a few hundred to thousands.
 </p>
 
