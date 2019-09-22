@@ -5,7 +5,7 @@
       <img
         class="header-logo"
         src="/img/logo.svg"
-        width="160"
+        width="120"
         alt="Soft Skills Engineering Podcast" />
     </a>
 
@@ -13,13 +13,21 @@
 
       <nav class="site-nav">
         <ul>
-          {% for page in site.pages %}
-            {% if page.tags contains "about"
-            or page.tags contains "subscribe"
-            or page.tags contains "contact" %}
-              <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
+          <li>
+            <a href="/episodes/">Episodes</a>
+          </li>
+          <li>
+            <a href="/meet-the-hosts/">Meet the Hosts</a>
+          </li>
+          <li>
+            <a href="/ask/">Ask a Question</a>
+          </li>
+          <li>
+            <a href="/sponsors/">Sponsors</a>
+          </li>
+          <li>
+            <a href="/slack/">Slack</a>
+          </li>
           <li>
             <a href="#" class="patreon-link">
               <small>Support us on</small>

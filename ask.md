@@ -2,11 +2,11 @@
 layout: page
 title: Ask a Question
 permalink: /ask/
-tags: about
+tags: in-nav
 ---
 
-<p>
-Want to get your question answered on the show? Here's how to get into the question queue:
+<p class="lead">
+    Want to get your question answered on the show? Here's how to get into the question queue:
 </p>
 
 <p>

@@ -2,7 +2,7 @@
 layout: page
 title: Slack
 permalink: /slack
-tags: about
+tags: in-nav
 ---
 
 > Want an invite? Anyone who donates to the [Soft Skills Engineering Patreon](https://www.patreon.com/SoftSkillsEng) gets an invite to the Slack. Invites are sent the week of each month after Patreon bills you.
