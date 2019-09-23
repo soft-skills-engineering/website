@@ -37,7 +37,6 @@
 .posts .container {
   top: -12vw;
   margin-bottom: -12vw;
-  max-width: 760px;
 }
 
 .posts-footer {
@@ -86,7 +85,7 @@
 .audio-player {
   display: flex;
   align-items: center;
-  margin: var(--double-space) 0;
+  margin: var(--double-space) 0 0;
 }
 
 .audio-player a {
@@ -100,5 +99,9 @@
 @media (min-width: 768px) {
   .post-summary {
     display: block;
+  }
+
+  .audio-player {
+    margin-bottom: var(--double-space);
   }
 }
