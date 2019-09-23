@@ -1,16 +1,17 @@
 <header class="site-header">
   <div class="container">
-    {% comment %}<button class="nav-toggler">Close</button>{% endcomment %}
-    <a class="site-title-link" href="{{ site.url }}">
-      <img
-        class="header-logo"
-        src="/img/logo.svg"
-        width="120"
-        alt="Soft Skills Engineering Podcast" />
-    </a>
+    <div class="site-header-primary">
+      <button class="nav-toggler">Toggle</button>
+      <a class="site-title-link" href="{{ site.url }}">
+        <img
+          class="header-logo"
+          src="/img/logo.svg"
+          width="120"
+          alt="Soft Skills Engineering Podcast" />
+      </a>
+    </div>
 
     <div class="site-header-navs">
-
       <nav class="site-nav">
         <ul>
           <li>
@@ -28,7 +29,7 @@
           <li>
             <a href="/slack/">Slack</a>
           </li>
-          <li>
+          <li class="patreon-cta">
             <a href="#" class="patreon-link">
               <small>Support us on</small>
               <span class="patreon-link-label">
@@ -78,12 +79,6 @@
         </ul>
       </nav>
     </div>
-
-    {% comment %}
-      {% if site.show_social_icons %}
-        {% include social_links.html %}
-      {% endif %}
-    {% endcomment %}
   </div>
 </header>
 

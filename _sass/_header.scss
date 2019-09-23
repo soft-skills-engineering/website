@@ -1,0 +1,165 @@
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0 0;
+  background: var(--color6);
+}
+
+.site-header-primary {
+  display: flex;
+}
+
+.site-title-link {
+  order: 0;
+  display: inline-block;
+}
+
+.header-logo {
+  width: 80px;
+}
+
+.nav-toggler {
+  order: 1;
+}
+
+.site-header ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.site-header li {
+  display: flex;
+  list-style: none;
+  width: 50%;
+}
+
+.site-header a {
+  font-weight: var(--font-medium);
+  text-decoration: none;
+}
+
+.patreon-link small {
+  display: block;
+  font-size: .65rem;
+}
+
+.patreon-link strong {
+  font-weight: var(--font-bold);
+}
+
+/* Specific Navs */
+
+.site-nav ul {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.site-nav li {
+  margin-bottom: 1.5rem;
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .nav-toggler {
+    display: none;
+  }
+
+  .site-header {
+    padding-top: 2rem;
+  }
+
+  .site-header .container {
+    display: flex;
+  }
+
+  .site-header-navs {
+    flex: 1;
+    margin: 1rem 0 0 1.5rem;
+  }
+
+  .header-logo {
+    width: 148px;
+    height: 148px;
+  }
+
+  .site-header ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .site-nav ul {
+    margin-bottom: 10px;
+  }
+
+  .site-nav li {
+    align-items: flex-end;
+  }
+
+  .site-nav a {
+    font-size: 1.3rem;
+  }
+
+  .subscribe-nav {
+    display: flex;
+    height: 40px;
+  }
+
+  .subscribe-nav-label {
+    position: relative;
+    padding: 0 1rem;
+    border-radius: 4px 0 0 4px;
+    background-color: var(--color3);
+    font-weight: var(--font-bold);
+    color: #FFF;
+  }
+
+  .subscribe-nav-label:after {
+    position: absolute;
+    right: -22px;
+    display: inline-block;
+    width: 30px;
+    height: 100%;
+    background-image: url(/img/rounded-end.svg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    content: "";
+  }
+
+  .subscribe-nav {
+    border-radius: 4px;
+    background-color: #FED1C6;
+  }
+
+  .subscribe-nav ul,
+  .subscribe-nav li {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .subscribe-nav-label,
+  .subscribe-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .subscribe-link {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    transition: all var(--anim-speed);
+  }
+
+  .subscribe-link:hover {
+    opacity: .7;
+  }
+
+  .subscribe-link .icon {
+    margin-right: .3rem;
+  }
+}

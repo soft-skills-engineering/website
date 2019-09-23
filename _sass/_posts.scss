@@ -34,7 +34,6 @@
   bottom: -4vw;
 }
 
-
 .posts .container {
   top: -12vw;
   margin-bottom: -12vw;
@@ -75,10 +74,13 @@
   color: var(--font-color);
 }
 
-.post-link h1,
-.post-link h2 {
+.post-title {
   font-size: 2.25rem;
   font-weight: var(--font-medium);
+}
+
+.post-summary {
+  display: none;
 }
 
 .audio-player {
@@ -92,4 +94,11 @@
   margin-left: .85rem;
   font-size: 1.2rem;
   font-weight: var(--font-medium);
+}
+
+
+@media (min-width: 768px) {
+  .post-summary {
+    display: block;
+  }
 }
