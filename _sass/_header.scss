@@ -1,15 +1,22 @@
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
   width: 100%;
   height: 100%;
-  padding: 1rem 0 0;
-  background: var(--color6);
+  background: #FFF;
+}
+
+.site-header .container {
+  height: 100%;
 }
 
 .site-header-primary {
   display: flex;
+  padding-top: 1rem;
+  height: 110px;
+  background: #FFF;
 }
 
 .site-title-link {
@@ -23,6 +30,10 @@
 
 .nav-toggler {
   order: 1;
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  appearance: none;
 }
 
 .site-header ul {
@@ -32,11 +43,12 @@
 
 .site-header li {
   display: flex;
+  align-items: center;
   list-style: none;
-  width: 50%;
 }
 
 .site-header a {
+  font-size: 1.3rem;
   font-weight: var(--font-medium);
   text-decoration: none;
 }
@@ -52,14 +64,30 @@
 
 /* Specific Navs */
 
-.site-nav ul {
+.site-header ul {
   display: flex;
   flex-flow: row wrap;
 }
 
-.site-nav li {
+.site-header li {
   margin-bottom: 1.5rem;
-  width: 50%;
+  width: 100%;
+}
+
+.site-header-navs {
+  --neg-gap: calc(-1 * var(--gutters));
+  margin-left: var(--neg-gap);
+  margin-right: var(--neg-gap);
+  padding: 3rem var(--gutters);
+  height: calc(100vh - 110px);
+  background-color: var(--color6);
+}
+
+.site-nav,
+.subscribe-nav {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
@@ -68,6 +96,10 @@
   }
 
   .site-header {
+    position: static;
+  }
+
+  .site-header-primary {
     padding-top: 2rem;
   }
 
@@ -75,14 +107,22 @@
     display: flex;
   }
 
-  .site-header-navs {
-    flex: 1;
-    margin: 1rem 0 0 1.5rem;
-  }
-
   .header-logo {
     width: 148px;
     height: 148px;
+  }
+
+  .site-header-navs {
+    flex: 1;
+    margin: 40px 0 0 1.5rem;
+    padding: 0;
+    height: auto;
+    background: transparent;
+  }
+
+  .site-nav,
+  .subscribe-nav {
+    max-width: none;
   }
 
   .site-header ul {
@@ -96,6 +136,8 @@
 
   .site-nav li {
     align-items: flex-end;
+    margin-bottom: 0;
+    width: auto;
   }
 
   .site-nav a {
@@ -105,6 +147,10 @@
   .subscribe-nav {
     display: flex;
     height: 40px;
+  }
+
+  .subscribe-nav a {
+    font-size: 1rem;
   }
 
   .subscribe-nav-label {

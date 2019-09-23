@@ -154,22 +154,6 @@ pre a:only-of-type::before {
   font-size: var(--lead-font-size);
 }
 
-.split-list {
-  height: auto;
-  -webkit-columns: 2;
-  -moz-columns: 2;
-  columns: 2;
-  -webkit-column-gap: 60px;
-  -moz-column-gap: 60px;
-  column-gap: 60px;
-}
-.split-list li {
-  margin-bottom: 0.75rem;
-}
-.split-list li ul {
-  margin-top: 0.75rem;
-}
-
 .sr-only {
 	border: 0 !important;
 	clip: rect(1px, 1px, 1px, 1px) !important;
@@ -193,10 +177,13 @@ pre a:only-of-type::before {
 .button-group {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .button {
   position: relative;
+  display: block;
   padding: 2px 0 0 2px;
   border: 2px solid var(--color1);
   border-radius: 8px 16px 8px 16px / 8px 16px 8px 16px;
@@ -209,7 +196,6 @@ pre a:only-of-type::before {
     var(--color1) 90%,
     var(--color1) 100%);
   background-size: 14.14px 14.14px;
-  display: inline-block;
   font-size: 1.3rem;
 }
 
@@ -228,7 +214,7 @@ pre a:only-of-type::before {
 }
 
 .button + .button {
-  margin-left: 2rem;
+  margin-top: var(--space);
 }
 
 .button:hover span {
@@ -326,10 +312,38 @@ img + .block-heading {
   break-inside: avoid;
 }
 
+@media (min-width: 600px) {
+  .button-group {
+    flex-direction: row;
+  }
+
+  .button + .button {
+    margin: 0 0 0 2rem;
+  }
+}
+
 @media (min-width: 768px) {
   .quotes-grid {
     column-count: 2;
     column-gap: var(--space);
+  }
+
+  .split-list {
+    height: auto;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+  }
+
+  .split-list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .split-list li ul {
+    margin-top: 0.75rem;
   }
 }
 
