@@ -1,11 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="17px" height="32px" viewBox="0 0 17 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
-    <title>Tablet - All Nav Options</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Tablet---All-Nav-Options" transform="translate(-252.000000, -64.000000)" fill="#DE8570">
-            <path d="M189,64 L257.45269,64 C258.961513,64 260.341955,64.8490169 261.022584,66.1956015 L267.087969,78.1956015 C267.661443,79.3301857 267.661443,80.6698143 267.087969,81.8043985 L261.022584,93.8043985 C260.341955,95.1509831 258.961513,96 257.45269,96 L189,96 C186.790861,96 185,94.209139 185,92 L185,68 C185,65.790861 186.790861,64 189,64 Z" id="Rectangle"></path>
-        </g>
-    </g>
-</svg>
+<svg width="17" height="32" xmlns="http://www.w3.org/2000/svg"><path d="M-63 0H5.453a4 4 0 0 1 3.57 2.196l6.065 12a4 4 0 0 1 0 3.608l-6.065 12A4 4 0 0 1 5.453 32H-63a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4z" fill="#DE8570" fill-rule="evenodd"/></svg>
