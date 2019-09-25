@@ -5,9 +5,9 @@
 .hero.home-hero {
   padding-bottom: calc(18vw - 2.5rem);
   background-image: url(/img/icon-pattern.svg);
-  background-position: center bottom -20vw;
+  background-position: center bottom -5vw;
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 300% auto;
 }
 
 .hero .container {
@@ -16,7 +16,7 @@
 
 .hero h1 {
   margin: 0 auto var(--double-space);
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: var(--font-bold);
   text-align: center;
 }
@@ -35,4 +35,16 @@
 .hero .discussion-list {
   margin: 0 auto var(--double-space);
   max-width: 75%;
+}
+
+
+@media (min-width: 768px) {
+  .hero.home-hero {
+    background-position: center bottom -20vw;
+    background-size: 100% auto;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
 }
