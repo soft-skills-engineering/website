@@ -155,17 +155,17 @@ pre a:only-of-type::before {
 }
 
 .sr-only {
-	border: 0 !important;
-	clip: rect(1px, 1px, 1px, 1px) !important;
-	-webkit-clip-path: inset(50%) !important;
-	clip-path: inset(50%) !important;
-	height: 1px !important;
-	margin: -1px !important;
-	overflow: hidden !important;
-	padding: 0 !important;
-	position: absolute !important;
-	width: 1px !important;
-	white-space: nowrap !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
 }
 
 .text-center {
@@ -176,6 +176,16 @@ pre a:only-of-type::before {
   display: inline-block;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+a {
+  color: var(--color1);
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
 }
 
 /* Buttons */
@@ -229,6 +239,20 @@ pre a:only-of-type::before {
 
 .button:hover span {
   transform: translateX(2px) translateY(2px);
+}
+
+.icon-sep {
+  margin-top: var(--double-space);
+  margin-bottom: var(--double-space);
+  text-align: center;
+
+  img {
+    max-width: 80px;
+  }
+
+  + .block {
+    margin-top: -2rem;
+  }
 }
 
 
