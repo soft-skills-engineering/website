@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-flow: row wrap;
 
     > * {
       width: 45%;
@@ -36,3 +37,14 @@
 img + .block-heading {
   margin-top: var(--double-space);
 }
+
+/* SPACING */
+.mt-1 { margin-top: var(--space); }
+.mt-2 { margin-top: var(--double-space); }
+.mt-3 { margin-top: calc(var(--space) * 3); }
+.mt-4 { margin-top: calc(var(--double-space) * 2); }
+
+.mb-1 { margin-bottom: var(--space); }
+.mb-2 { margin-bottom: var(--double-space); }
+.mb-3 { margin-bottom: calc(var(--space) * 3); }
+.mb-4 { margin-bottom: calc(var(--double-space) * 2); }
