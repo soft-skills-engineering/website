@@ -1,0 +1,38 @@
+/* WRAPPERS */
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  padding: 0 var(--gutters);
+}
+
+.container.wide {
+  max-width: calc(var(--container-width) + (var(--container-width) * 1/3));
+}
+
+@media (min-width: 920px) {
+  .container.split-cols {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    > * {
+      width: 45%;
+    }
+  }
+}
+
+/* BLOCKS */
+
+.block {
+  position: relative;
+  margin-bottom: var(--gutter-gaps);
+  padding: var(--block-space) 0;
+}
+
+.block-header {
+  margin-bottom: 4rem;
+}
+
+img + .block-heading {
+  margin-top: var(--double-space);
+}

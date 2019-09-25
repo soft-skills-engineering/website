@@ -39,7 +39,7 @@
             <a href="/slack/">Slack</a>
           </li>
           <li class="patreon-cta">
-            <a href="#" class="patreon-link">
+            <a href="{{ site.patreon_url }}" class="patreon-link">
               <small>Support us on</small>
               <span class="patreon-link-label">
                 <img src="/img/heart.svg" alt="Heart" aria-hidden="true" width="20" />
@@ -52,40 +52,7 @@
 
       <nav class="subscribe-nav">
         <span class="subscribe-nav-label">Subscribe</span>
-        <ul>
-          <li>
-            <a href="#" class="subscribe-link">
-              <img
-                src="/img/itunes.svg"
-                class="icon"
-                alt="iTunes logo"
-                aria-hidden="true" /> iTunes</a>
-          </li>
-          <li>
-            <a href="#" class="subscribe-link">
-              <img
-                src="/img/android.svg"
-                class="icon"
-                alt="Android logo"
-                aria-hidden="true" /> Android</a>
-          </li>
-          <li>
-            <a href="#" class="subscribe-link">
-                <img
-                src="/img/spotify.svg"
-                class="icon"
-                alt="Spotify logo"
-                aria-hidden="true" /> Spotify</a>
-          </li>
-          <li>
-            <a href="#" class="subscribe-link">
-                <img
-                src="/img/rss.svg"
-                class="icon"
-                alt="RSS logo"
-                aria-hidden="true" /> RSS</a>
-          </li>
-        </ul>
+        {% include subscribe_nav.html %}
       </nav>
     </div>
   </div>
