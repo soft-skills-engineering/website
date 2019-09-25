@@ -29,5 +29,15 @@
   </main>
 
   {% include footer.html %}
+
+
+  <script>
+    const toggler = document.getElementById('NavToggler');
+    const header = document.getElementById('SiteHeader');
+    toggler.addEventListener('click', (evt) => {
+      evt.preventDefault();
+      header.classList.toggle('show-nav');
+    })
+  </script>
 </body>
 </html>
