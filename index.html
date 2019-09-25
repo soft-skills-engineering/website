@@ -51,7 +51,7 @@ layout: default
 <div class="posts">
   <div class="container">
     {% for post in paginator.posts limit:4 %}
-      {% include post_summary.html %}
+      {% include post_summary.html show_details="True" %}
     {% endfor %}
 
     <footer class="posts-footer">

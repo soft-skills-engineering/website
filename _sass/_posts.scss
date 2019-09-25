@@ -58,6 +58,25 @@
   background-color: var(--post-bg-color);
 }
 
+.post.compact {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  .post-title {
+    font-size: 1.6rem;
+  }
+
+  .post-timestamp {
+    margin-top: .5rem;
+    margin-bottom: 0;
+  }
+
+  .audio-player,
+  .post-summary {
+    display: none;
+  }
+}
+
 .post:first-child {
   border-color: #8882BF;
   background-color: var(--color5);

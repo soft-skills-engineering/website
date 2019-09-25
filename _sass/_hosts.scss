@@ -26,3 +26,10 @@
 .host-avatar.color4 { border-color: var(--color4); }
 .host-avatar.color5 { border-color: var(--color5); }
 .host-avatar.color6 { border-color: var(--color6); }
+
+@media (min-width: 920px) {
+  .host {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

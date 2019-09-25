@@ -1,22 +1,20 @@
-<header class="site-header">
+<header class="site-header" id="SiteHeader">
   <div class="container">
     <div class="site-header-primary">
-      <button class="nav-toggler">Toggle</button>
+      <button class="nav-toggler" id="NavToggler">Menu</button>
       <a class="site-title-link" href="{{ site.url }}">
         <img
-          class="header-logo"
+          class="header-logo logo-stacked"
           src="/img/logo.svg"
           width="120"
           alt="Soft Skills Engineering Podcast" />
 
-        {% comment %}
         <img
-          class="header-logo"
-          src="/img/logo.svg"
-          width="80"
+          class="header-logo logo-landscape"
+          src="/img/logo-wide.svg"
+          width="120"
           alt="Soft Skills Engineering Podcast"
           aria-hidden="true" />
-        {% endcomment %}
       </a>
     </div>
 
@@ -53,6 +51,8 @@
       <nav class="subscribe-nav">
         <span class="subscribe-nav-label">Subscribe</span>
         {% include subscribe_nav.html %}
+
+        <p class="subscribe-text"><small>Search for <strong>"Soft Skills Engineering"</strong> in your favorite podcast app.</small></p>
       </nav>
     </div>
   </div>
