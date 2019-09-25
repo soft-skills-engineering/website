@@ -172,6 +172,12 @@ pre a:only-of-type::before {
   text-align: center;
 }
 
+.or-space {
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 /* Buttons */
 
 .button-group {
@@ -181,9 +187,13 @@ pre a:only-of-type::before {
   align-items: center;
 }
 
+.button-group .button {
+  display: block;
+}
+
 .button {
   position: relative;
-  display: block;
+  display: inline-block;
   padding: 2px 0 0 2px;
   border: 2px solid var(--color1);
   border-radius: 8px 16px 8px 16px / 8px 16px 8px 16px;
@@ -221,86 +231,9 @@ pre a:only-of-type::before {
   transform: translateX(2px) translateY(2px);
 }
 
-/* Grid */
-
-.container {
-  margin: 0 auto;
-  max-width: var(--container-width);
-  padding: 0 var(--gutters);
-}
-
-.block {
-  position: relative;
-  margin-bottom: var(--gutter-gaps);
-  padding: var(--block-space) 0;
-}
-
-.block-header {
-  margin-bottom: 4rem;
-}
-
-img + .block-heading {
-  margin-top: var(--double-space);
-}
-
-/* Site Header */
-
-
-/* Site Foote */
-
-.site-footer {
-  margin-top: var(--double-space);
-  background-color: var(--color5);
-}
-
-.attribution {
-  padding: 2rem 0;
-  background: var(--color1);
-  text-align: center;
-  vertical-align: middle;
-
-  small {
-    font-size: 1rem;
-  }
-
-  &,
-  a {
-    color: #999FC2;
-  }
-
-  a {
-    font-weight: var(--font-medium);
-  }
-}
-
-.avatar-link {
-  display: inline-block;
-  padding: 0 .2em;
-  vertical-align: middle;
-  text-decoration: none;
-}
-
-.avatar-link + .avatar-link {
-  padding-right: 0;
-}
-
-.avatar-link img {
-  vertical-align: middle;
-  margin-right: .25em;
-  border-radius: 50%;
-  opacity: .7;
-  transition: opacity var(--anim-speed);
-}
-
-.avatar-link:hover span {
-  text-decoration: underline;
-}
-
-.avatar-link:hover img {
-  opacity: 1;
-}
 
 /* Quotes Grid */
+
 .quotes-grid {
   margin: 0 auto;
   padding: 0 var(--gutters);
@@ -311,6 +244,9 @@ img + .block-heading {
   margin: 0 auto var(--space) !important; /* Work around Twitter inline styles */
   break-inside: avoid;
 }
+
+
+/* Media Queries */
 
 @media (min-width: 600px) {
   .button-group {

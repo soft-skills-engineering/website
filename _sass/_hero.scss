@@ -1,7 +1,11 @@
 .hero {
   padding-top: 5rem;
+}
+
+.hero.home-hero {
   padding-bottom: calc(18vw - 2.5rem);
   background-image: url(/img/icon-pattern.svg);
+  background-position: center bottom -20vw;
   background-repeat: no-repeat;
   background-size: 100% auto;
 }

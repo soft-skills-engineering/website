@@ -5,87 +5,101 @@ permalink: /sponsors/
 tags: in-nav sponsors
 ---
 
-<header>
+<div class="hero">
   <div class="container">
     <h1>{{ page.title }}</h1>
 
     <p class="lead">
-      The Soft Skills Engineering Podcast is made possible by patrons like you who have pledged to the show on Patreon:
+      The Soft Skills Engineering Podcast is made possible by patrons like you who have pledged to the show on Patreon.
     </p>
 
-    <p>
-      <a href="{{site.patreon_url}}" class="button"><span>Support us on Patreon</span></a>
+    <p class="text-center">
+      <a href="{{ site.patreon_url }}" class="button"><span>Support us on Patreon</span></a>
     </p>
-
-    <p>Also, these wonderful sponsors have made the show possible:</p>
-
   </div>
-</header>
+</div>
 
 
-<section class="sponsor">
-  <a href="{{ site.velocity_marketing_url }}">
-    <img src="/img/velocity.svg" alt="Velocity" />
-  </a>
-  <p>
-  The O'Reilly Velocity Conference is where systems and site reliability engineers, architects, and application developers learn the skills and technologies needed to build and manage large-scale, cloud native systems.
-  <a href="{{site.velocity_marketing_url}}">{{ site.velocity_marketing_url }}</a>.
-  </p>
-</section>
+<div class="block">
+  <div class="container">
+    <div class="block-header">
+      <h2>Official Sponsors</h2>
+      <p class="lead">These wonderful sponsors have made the show possible:</p>
+    </div>
+
+    <section class="sponsor">
+      <a href="{{ site.velocity_marketing_url }}">
+        <img src="/img/velocity.svg" alt="O'Reilly Velocity Conference" />
+      </a>
+      <p>The O'Reilly Velocity Conference is where systems and site reliability engineers, architects, and application developers learn the skills and technologies needed to build and manage large-scale, cloud native systems.
+      <a href="{{site.velocity_marketing_url}}">{{ site.velocity_marketing_url }}</a>.</p>
+    </section>
+
+    <section class="sponsor">
+      <a href="{{ site.pluralsight_marketing_url }}">
+        <img
+          src="/img/pluralsight.png"
+          alt="Pluralsight" />
+      </a>
+      <p>Pluralsight is hiring machine learning engineers, data scientists, and software engineers. Check out the jobs at
+      <a href="{{site.pluralsight_marketing_url}}">{{site.pluralsight_marketing_url}}</a>.
+      </p>
+    </section>
+
+    <section class="sponsor">
+      <a href="{{ site.devmountain_marketing_url }}">
+        <img
+          src="/img/devmountain.png"
+          alt="DevMountain" />
+      </a>
+      <p>If you want to learn web development, iOS development, or UI/UX, we recommend DevMountain. Go check out their course schedules. Tell them Dave and Jamison sent you.
+      </p>
+    </section>
+
+    <section class="sponsor">
+      <a href="https://www.algolia.com/softskillsengineering">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Algolia_logo.svg/1280px-Algolia_logo.svg.png"
+          alt="Algolia" />
+      </a>
+      <p>
+      Algolia is looking for solutions engineers to join their team in Paris and San Francisco.
+      </p>
+    </section>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <header class="block-header">
+      <h2>Becoming a Sponsor</h2>
+      <p>Your company can sponsor the Soft Skills Engineering podcast to reach thousands of super
+      intelligent, proactive software developers who are going places in the software development
+      industry.</p>
+
+      <p>Soft Skills Engineering made its debut in spring of 2016. Episode downloads quickly grew
+      from a few hundred to thousands.</p>
+
+      <p>The future of the podcast is exciting. <strong>You can be part of it</strong>.</p>
+    </header>
+  </div>
+
+  <div class="container split-cols">
+    <section class="info">
+      <h3>How to Sponsor</h3>
+
+      <p>If you're interested, send us a <a href="{{site.twitter_dm_url}}" target="_blank">Twitter
+      Direct Message</a> or email us at
+      <a mailto="soft-skills-engineering@googlegroups.com">soft-skills-engineering@googlegroups.com</a></p>
+    </section>
+    <section class="info">
+      <h3>Sponsorship Levels</h3>
+
+      <p>To get details on pricing and availability, please contact us directly. We'd love to talk about
+      options for your company to get maximum value from your sponsorship.</p>
+    </section>
+  </div>
+</div>
 
 
-<section class="sponsor">
-  <a href="{{ site.pluralsight_marketing_url }}">
-    <img src="/img/pluralsight.png" />
-  </a>
-  <p>Pluralsight is hiring machine learning engineers, data scientists, and software engineers. Check out the jobs at
-  <a href="{{site.pluralsight_marketing_url}}">{{site.pluralsight_marketing_url}}</a>.
-  </p>
-</section>
 
-<section class="sponsor">
-  <a href="{{ site.devmountain_marketing_url }}">
-    <img src="/img/devmountain.png" />
-  </a>
-  <p>
-  If you want to learn web development, iOS development, or UI/UX, we recommend DevMountain.
-  Go check out their course schedules. Tell them Dave and Jamison sent you.
-  </p>
-</section>
-
-<section class="sponsor">
-  <a href="https://www.algolia.com/softskillsengineering">
-    <img style="width: 500px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Algolia_logo.svg/1280px-Algolia_logo.svg.png" />
-  </a>
-  <p>
-  Algolia is looking for solutions engineers to join their team in Paris and San Francisco.
-  </p>
-</section>
-
-<h2>Becoming a Sponsor</h2>
-
-<p>
-Your company can sponsor the Soft Skills Engineering podcast to reach thousands of super
-intelligent, proactive software developers who are going places in the software development
-industry.
-</p>
-
-<p>
-Soft Skills Engineering made its debut in spring of 2016. Episode downloads quickly grew
-from a few hundred to thousands.
-</p>
-
-<p>
-The future of the podcast is exciting. You can be part of it.
-</p>
-
-<h2>How to Sponsor</h2>
-
-If you're interested, send us a <a href="{{site.twitter_dm_url}}" target="_blank">Twitter
-Direct Message</a> or email us at
-<a mailto="soft-skills-engineering@googlegroups.com">soft-skills-engineering@googlegroups.com</a>
-
-<h2>Sponsorship Levels</h2>
-
-To get details on pricing and availability, please contact us directly. We'd love to talk about
-options for your company to get maximum value from your sponsorship.

@@ -5,9 +5,15 @@
 
 @import "variables";
 @import "base";
+@import "grid";
 
+/* FRAMING */
 @import "header";
+@import "footer";
 
+/* COMPONENTS */
 @import "hero";
+@import "hosts";
 @import "pagination";
 @import "posts";
+@import "sponsors";

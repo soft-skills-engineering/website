@@ -1,0 +1,28 @@
+.host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 3rem;
+}
+
+.host-name {
+  text-align: center;
+}
+
+.host-avatar {
+  display: inline-block;
+  margin-bottom: var(--double-space);
+  width: 300px;
+  height: 300px;
+  max-width: 100%;
+  border: 12px solid currentColor;
+  border-radius: 50%;
+}
+
+.host-avatar.color1 { border-color: var(--color1); }
+.host-avatar.color2 { border-color: var(--color2); }
+.host-avatar.color3 { border-color: var(--color3); }
+.host-avatar.color4 { border-color: var(--color4); }
+.host-avatar.color5 { border-color: var(--color5); }
+.host-avatar.color6 { border-color: var(--color6); }
