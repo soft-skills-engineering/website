@@ -32,11 +32,13 @@
 
 
   <script>
-    const toggler = document.getElementById('NavToggler');
-    const header = document.getElementById('SiteHeader');
+    const toggler = document.querySelector('#NavToggler');
+    const header = document.querySelector('#SiteHeader');
+    const body = document.querySelector('body');
     toggler.addEventListener('click', (evt) => {
       evt.preventDefault();
       header.classList.toggle('show-nav');
+      body.classList.toggle('nav-open');
     })
   </script>
 </body>
