@@ -19,7 +19,7 @@
 .site-header-primary {
   display: flex;
   padding-top: 1rem;
-  height: 60px;
+  height: 80px;
   background: #FFF;
 }
 
@@ -130,6 +130,7 @@
 }
 
 @media (min-width: 768px) {
+  .site-header .social-nav,
   .nav-toggler {
     display: none;
   }
