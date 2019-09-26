@@ -188,14 +188,20 @@
     margin-bottom: 16px;
   }
 
+  .site-nav ul {
+    flex-flow: row wrap;
+  }
+
   .site-nav li {
     align-items: flex-end;
     margin-bottom: 0;
-    width: auto;
+    width: calc(100% * 1/3);
   }
 
   .site-nav a {
-    font-size: 1.3rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    font-size: 1.1rem;
   }
 
   .subscribe-nav {
@@ -204,14 +210,13 @@
   }
 
   .subscribe-nav a {
-    font-size: 1rem;
+    font-size: .95rem;
   }
 
   .subscribe-nav-label {
     position: relative;
-    margin-bottom: 0;
+    margin: 0 1rem 0 0;
     padding: 0 1rem;
-    margin-bottom: 0;
     border-radius: 4px 0 0 4px;
     background-color: var(--color3);
     font-size: 1rem;
@@ -220,6 +225,7 @@
 
   .subscribe-nav-label:after {
     position: absolute;
+    top: 0;
     right: -22px;
     display: inline-block;
     width: 30px;
@@ -267,5 +273,15 @@
 
   .subscribe-text {
     display: none;
+  }
+}
+
+@media (min-width: 940px) {
+  .site-nav li {
+    width: auto;
+  }
+
+  .site-nav a {
+    font-size: 1.3rem;
   }
 }
