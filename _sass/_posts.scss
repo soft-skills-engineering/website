@@ -62,10 +62,6 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 
-  .post-title {
-    font-size: 1.6rem;
-  }
-
   .post-timestamp {
     margin-top: .5rem;
     margin-bottom: 0;
@@ -93,7 +89,7 @@
 }
 
 .post-title {
-  font-size: 2.25rem;
+  font-size: 1.8rem;
   font-weight: var(--font-medium);
 }
 
@@ -104,7 +100,13 @@
 .audio-player {
   display: flex;
   align-items: center;
+  flex-flow: row wrap;
   margin: var(--double-space) 0 0;
+}
+
+.audio-player {
+  width: 100%;
+  max-width: 300px;
 }
 
 .audio-player a {
@@ -116,6 +118,10 @@
 
 
 @media (min-width: 768px) {
+  .post-title {
+    font-size: 2.4rem;
+  }
+
   .post-summary {
     display: block;
   }
