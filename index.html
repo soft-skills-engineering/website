@@ -38,7 +38,11 @@ layout: default
 <div class="posts">
   <div class="container">
     {% for post in paginator.posts limit:4 %}
-      {% include post_summary.html show_details="True" %}
+      {% if forloop.first == true %}
+        {% include post_summary.html show_details="True" show_latest="True" %}
+      {% else %}
+        {% include post_summary.html show_details="True" %}
+      {% endif %}
     {% endfor %}
 
     <footer class="posts-footer">
