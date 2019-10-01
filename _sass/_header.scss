@@ -1,13 +1,3 @@
-.site-header.show-nav {
-  width: 100%;
-  height: 100%;
-  background: #FFF;
-
-  .site-header-navs {
-    display: block;
-  }
-}
-
 .site-header .container {
   height: 100%;
 }
@@ -152,6 +142,20 @@
 .site-header .social-nav {
   margin-top: var(--double-space);
 }
+
+// Mobile navigation is open
+body.nav-open {
+  .site-header {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+
+    .site-header-navs {
+      display: block;
+    }
+  }
+}
+
 
 @media (min-width: 768px) {
   .site-header .social-nav,
