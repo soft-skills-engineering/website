@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: subpage
 title: Soft Skills Engineering Slack Team Code of Conduct
 permalink: /code-of-conduct
 ---
+
 All participants in the Soft Skills Engineering Slack are required to comply with the following Code of Conduct. Administrators (see below for definition of administrators) will enforce this code throughout the Soft Skills Engineering Slack.
 
 # The Short Version
@@ -24,7 +25,7 @@ Respectful behavior includes but is not limited to:
 * Be considerate, kind, constructive, and helpful.
 * Avoid demeaning, discriminatory, harassing, hateful, or physically threatening behavior, speech, and imagery.
 * If you’re not sure, ask someone instead of assuming. No, really. Just ask the administrators. We’d rather hear from you than hear about something you said or did after the fact, and we are here to help.
-* Don’t be a bystander. Role model respectful behaviour, but also help to address disrespect when you see it. 
+* Don’t be a bystander. Role model respectful behaviour, but also help to address disrespect when you see it.
 
 Disrespectful behavior outside this community may be considered a violation of this code of conduct at the discretion of the Administrators.
 
@@ -68,7 +69,7 @@ Should you catch yourself behaving disrespectfully, or be confronted as such, li
 
 ## Consequences
 
-If you are unable to resolve a situation peacefully, please refer to our [Incident Process](/incident-process) and choose a course of action that suits the situation. 
+If you are unable to resolve a situation peacefully, please refer to our [Incident Process](/incident-process) and choose a course of action that suits the situation.
 
 If the Administrators determine that a human is violating any part of this Code of Conduct, the Administrators may take any action they deem appropriate within this Slack team, up to and including removal from the Soft Skills Engineering Slack. Some other potential actions are warnings or timing out accounts for some time.
 

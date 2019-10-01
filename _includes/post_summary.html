@@ -3,7 +3,7 @@
     <span class="post-latest-badge">Latest Episode</span>
   {% endif %}
 
-  <h1 class="post-title"><a href="{{ post.url | prepend: site.baseurl }}" class="post-link">{{ post.title }}</a></h1>
+  <h1 class="post-title"><a href="{{ post.url | prepend: site.baseurl }}" class="post-link" data-post-title>{{ post.title }}</a></h1>
 
   <time class="post-timestamp">{{ post.date | date: site.date_format }}</time>
 

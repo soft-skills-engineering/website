@@ -32,13 +32,23 @@
 
 
   <script>
-    const toggler = document.querySelector('#NavToggler');
-    const header = document.querySelector('#SiteHeader');
-    const body = document.querySelector('body');
+    const toggler = document.querySelector('#NavToggler')
+    const header = document.querySelector('#SiteHeader')
+    const body = document.querySelector('body')
     toggler.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      header.classList.toggle('show-nav');
-      body.classList.toggle('nav-open');
+      evt.preventDefault()
+      header.classList.toggle('show-nav')
+      body.classList.toggle('nav-open')
+    })
+
+    const postTitles = document.querySelectorAll('[data-post-title]')
+    postTitles.forEach(element => {
+      let titleText = element.textContent.split(':')
+      let episode = titleText[0]
+
+      titleText.shift()
+      titleText = titleText.join()
+      element.innerHTML = `<strong>${episode}</strong>: ${titleText}`
     })
   </script>
 </body>
