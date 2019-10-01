@@ -88,9 +88,17 @@
   color: var(--font-color);
 }
 
+.hero .post-title,
+.post-title {
+  font-weight: var(--font-regular);
+
+  strong {
+    font-weight: var(--font-medium);
+  }
+}
+
 .post-title {
   font-size: 1.8rem;
-  font-weight: var(--font-medium);
 }
 
 .post-summary {
@@ -113,6 +121,16 @@
   margin-left: .85rem;
   font-size: 1.2rem;
   font-weight: var(--font-medium);
+}
+
+/* Posts Page */
+
+.post-hero {
+
+}
+
+.post-hero .post-title {
+  text-align: left;
 }
 
 

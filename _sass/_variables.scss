@@ -3,7 +3,7 @@
   --site-width     : 1020px;
   --container-width: var(--site-width);
   --gutters        : 16px; /* Hard-coded so size changes don't wreck havoc */
-  --neg-gutters: calc(-1 * var(--gutters));
+  --neg-gutters    : calc(-1 * var(--gutters));
   --space          : 1rem;
   --double-space   : calc(var(--space) * 2);
   --block-space    : 4rem;
