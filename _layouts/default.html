@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 {% include head.html %}
-<body class="site{% if site.animated %} animated fade-in-down{% endif %}">
+<body class="{{ body_class }}">
   {% if site.google_tag_manager %}
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -32,15 +32,15 @@
 
 
   <script>
+    // Moble menu toggler
     const toggler = document.querySelector('#NavToggler')
-    const header = document.querySelector('#SiteHeader')
     const body = document.querySelector('body')
     toggler.addEventListener('click', (evt) => {
       evt.preventDefault()
-      header.classList.toggle('show-nav')
       body.classList.toggle('nav-open')
     })
 
+    // Format/Style episode titles
     const postTitles = document.querySelectorAll('[data-post-title]')
     postTitles.forEach(element => {
       let titleText = element.textContent.split(':')

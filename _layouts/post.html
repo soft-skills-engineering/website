@@ -1,32 +1,25 @@
 ---
 layout: default
+body_class: two-thirds
 ---
 
 {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
 {% if minutes == 0 %}
-{% assign minutes = 1 %}
+  {% assign minutes = 1 %}
 {% endif %}
 
-<div class="hero post-hero">
-  <div class="container">
-    <h1 class="post-title" data-post-title>{{ page.title }}</h1>
-    <span class="post-meta">{{ page.date | date: site.date_format }}</span><br>
-    {% if page.update_date %}
-      <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
-    {% endif %}
-    {% if site.estimate_reading_time %}
-      <span class="post-meta small">
-        {% if page.minutes %}
-          {{ page.minutes }} {{ site.text.post.minute_read }}
-        {% else %}
-          {{ minutes }} {{ site.text.post.minute_read }}
-        {% endif %}
-      </span>
-    {% endif %}
+<article>
+  <div class="hero post-hero">
+    <div class="container">
+      <h1 class="post-title" data-post-title>{{ page.title }}</h1>
+      <span class="post-meta">{{ page.date | date: site.date_format }}</span><br>
+      {% if page.update_date %}
+        <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
+      {% endif %}
+    </div>
   </div>
-</div>
 
-  <div class="container">
+  <div class="container audio-block">
     {% if page.file %}
       <div class="audio-player">
         <audio src="{{ page.file }}?source=webplayer" preload="none" controls="controls" type="audio/mp3">
@@ -36,18 +29,19 @@ layout: default
         <a href="{{ page.file }}?source=webdownload">Download</a>
       </div>
     {% endif %}
+  </div>
 
+  <div class="container">
     {{ content }}
   </div>
 </article>
 
 <div class="container">
-{% if site.show_sharing_icons %}
-  {% include share_buttons.html %}
-{% endif %}
 
-<div style="text-align: center">
-  <img style="height: 80px;" src="/img/talk.svg" />
+<div class="icon-sep">
+  <img
+    src="/img/talk.svg"
+    alt="A speech bubble" />
 </div>
 
 {% if page.enable_comments %}
@@ -55,9 +49,5 @@ layout: default
   {% include disqus.html %}
 {% else %}
   <h2 class="disqus_header disqus_disabled">Comments are disabled for this episode</h2>
-{% endif %}
-
-{% if site.show_post_footers %}
-  {% include post_footer.html %}
 {% endif %}
 </div>
