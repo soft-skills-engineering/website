@@ -1,0 +1,20 @@
+---
+layout: page
+title: Favorite Episodes
+permalink: /favorites/
+---
+
+<div class="hero">
+  <div class="container">
+    <h1>Community Favorite Episodes</h1>
+    <p class="lead"></p>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    {% for post in site.posts %}
+      {% include post_summary.html compact="True" %}
+    {% endfor %}
+  </div>
+</div>
