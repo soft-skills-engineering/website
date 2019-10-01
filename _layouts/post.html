@@ -1,6 +1,6 @@
 ---
 layout: default
-body_class: two-thirds
+body_class: focused
 ---
 
 {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
@@ -12,10 +12,14 @@ body_class: two-thirds
   <div class="hero post-hero">
     <div class="container">
       <h1 class="post-title" data-post-title>{{ page.title }}</h1>
-      <span class="post-meta">{{ page.date | date: site.date_format }}</span><br>
-      {% if page.update_date %}
-        <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
-      {% endif %}
+      <p class="post-meta">
+        <time class="post-timestamp">
+          {{ page.date | date: site.date_format }}</time>
+          <br>
+          {% if page.update_date %}
+            <span class="post-updated">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span>
+          {% endif %}
+      </p>
     </div>
   </div>
 

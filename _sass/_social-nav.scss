@@ -22,6 +22,10 @@
   opacity: .7;
 }
 
+.social-nav strong {
+  font-weight: var(--font-medium);
+}
+
 .social-nav-heading {
   width: 50%;
   max-width: 140px; // Dependent upon text

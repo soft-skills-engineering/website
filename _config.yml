@@ -27,24 +27,9 @@ devmountain_marketing_url: "https://devmountain.com/?utm_source=Soft%20Skills%20
 pluralsight_marketing_url: "https://pluralsight.com/softskills"
 velocity_marketing_url: "http://velocityconf.com/skills"
 
-# Optional features
-animated:             false
-show_related_posts:   false
-show_post_footers:    false
-show_social_icons:    false
-ajaxify_contact_form: false
-enable_mathjax: false
-enable_anchorjs: false
-
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname: 'softskillseng'
-
-# Facebook Comments plugin
-# (leave blank to disable Facebook Comments, otherwise set it to true)
-facebook_comments:
-facebook_appid:
-facebook_comments_number: 10
 
 # Social icons
 github_username:
