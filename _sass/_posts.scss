@@ -62,7 +62,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
 
-  .post-timestamp {
+  .post-meta {
     margin-top: .5rem;
     margin-bottom: 0;
   }
@@ -78,9 +78,9 @@
   background-color: var(--color5);
 }
 
-.post-timestamp {
-  display: block;
+.post-meta {
   margin: var(--double-space) 0 var(--space);
+  opacity: .8;
 }
 
 .post-link {
@@ -125,17 +125,22 @@
 
 /* Posts Page */
 
-.post-hero .post-title {
-  text-align: left;
+.post-hero {
+  text-align: center;
 }
 
 .audio-block {
   margin-bottom: 3rem;
+  text-align: center;
 }
 
 
 @media (min-width: 768px) {
   .post-title {
+    font-size: 3rem;
+  }
+
+  .post.compact .post-title {
     font-size: 2.4rem;
   }
 
@@ -145,5 +150,9 @@
 
   .audio-player {
     margin-bottom: var(--double-space);
+  }
+
+  .post-hero .post-title {
+    font-size: 2.8rem;
   }
 }

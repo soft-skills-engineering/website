@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 {% include head.html %}
-<body class="{{ body_class }}">
+
+<body class="{{ layout.body_class }}">
   {% if site.google_tag_manager %}
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id={{ site.google_tag_manager }}"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
