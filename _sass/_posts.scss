@@ -52,7 +52,7 @@
 
 .post {
   margin-bottom: var(--double-space);
-  padding: 3rem 2.5rem;
+  padding: 2rem 1.5rem;
   border: 4px solid var(--post-border-color);
   border-radius: 8px;
   background-color: var(--post-bg-color);
@@ -74,7 +74,7 @@
 }
 
 .post:first-child {
-  border-color: #8882BF;
+  border-color: var(--color7);
   background-color: var(--color5);
 }
 
@@ -83,7 +83,7 @@
   margin-bottom: .5rem;
   padding: .5rem 1rem;
   border-radius: 12px;
-  background: var(--color1);
+  background: var(--color7);
   font-size: .9rem;
   font-weight: var(--font-medium);
   color: #FFF;
@@ -116,26 +116,9 @@
   display: none;
 }
 
-.audio-player {
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
-  margin: var(--double-space) 0 0;
-}
 
-.audio-player audio {
-  max-width: 300px;
-}
-
-.audio-player a {
-  display: inline-block;
-  margin-left: .85rem;
-  font-size: 1.2rem;
-  font-weight: var(--font-medium);
-}
 
 /* Posts Page */
-
 .post-hero {
   text-align: center;
 }
@@ -147,6 +130,10 @@
 
 
 @media (min-width: 768px) {
+  .post {
+    padding: 3rem 2.5rem
+  }
+
   .post-title {
     font-size: 3rem;
   }
