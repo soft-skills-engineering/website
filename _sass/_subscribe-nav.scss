@@ -3,7 +3,7 @@
   height: 40px;
 }
 
-.subscribe-nav a {
+.subscribe-link {
   font-size: .95rem;
 }
 
@@ -40,9 +40,13 @@
 .subscribe-nav ul,
 .subscribe-nav li {
   display: flex;
-  justify-content: center;
   flex: 1;
+  justify-content: center;
   margin-bottom: 0;
+}
+
+.subscribe-nav ul {
+  flex-flow: row wrap;
 }
 
 .subscribe-link {
@@ -50,13 +54,13 @@
   align-items: center;
 }
 
-.subscribe-nav .subscribe-link { // Override
+.subscribe-link {
   display: flex;
   align-items: center;
   padding: 0 1rem;
-  font-size: 1.2rem;
   transition: all var(--anim-speed);
 }
+
 
 .subscribe-link:hover {
   opacity: .7;
