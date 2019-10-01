@@ -78,6 +78,17 @@
   background-color: var(--color5);
 }
 
+.post-latest-badge {
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 12px;
+  background: var(--color1);
+  font-size: .9rem;
+  font-weight: var(--font-medium);
+  color: #FFF;
+}
+
 .post-meta {
   margin: var(--double-space) 0 var(--space);
   opacity: .8;

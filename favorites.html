@@ -6,15 +6,17 @@ permalink: /favorites/
 
 <div class="hero">
   <div class="container">
-    <h1>Community Favorite Episodes</h1>
-    <p class="lead"></p>
+    <h1>Recommended Episodes</h1>
+    <p class="lead">Our most popular episodes, chosen by fans.</p>
   </div>
 </div>
 
 <div class="block">
   <div class="container">
     {% for post in site.posts %}
-      {% include post_summary.html compact="True" %}
+      {% if post.favorite %}
+        {% include post_summary.html compact="True" %}
+      {% endif %}
     {% endfor %}
   </div>
 </div>
