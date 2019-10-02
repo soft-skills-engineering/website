@@ -10,11 +10,27 @@
   {% if include.show_details %}
     {% if post.file %}
       <figure class="audio-player">
+
+
+        {% comment %}
         <audio src="{{ post.file }}?website_player=true" preload="none" controls="controls" type="audio/mp3">
           Your browser doesn't support the <code>audio</code> element.
         </audio>
 
+
         <a href="{{ post.file }}?website_download=true">Download</a>
+        {% endcomment %}
+
+
+        <div class="audio-player">
+          <span class="audio-player-controls">
+            <button id="play" style="display: none">Play</button>
+            <button id="pause" style="display: none" >Pause</button>
+          </span>
+          <span class="audio-player-progress">
+
+          </span>
+        </div>
       </figure>
     {% endif %}
 
