@@ -1,0 +1,17 @@
+.audio-player {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: var(--double-space) 0 0;
+}
+
+.audio-player audio {
+  max-width: 300px;
+}
+
+.audio-player a {
+  display: inline-block;
+  margin-left: .85rem;
+  font-size: 1.2rem;
+  font-weight: var(--font-medium);
+}
