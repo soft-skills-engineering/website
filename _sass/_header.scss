@@ -58,11 +58,14 @@
 }
 
 .site-header a {
-  display: inline-block;
-  font-size: 1.3rem;
   font-weight: var(--font-medium);
   text-decoration: none;
   transition: all var(--anim-speed);
+}
+
+.site-nav a {
+  display: inline-block;
+  font-size: 1.3rem;
 }
 
 /* Site nav */
@@ -112,7 +115,8 @@
     }
 
     .site-nav,
-    .site-header .social-nav {
+    .site-header .social-nav,
+    .site-header .subscribe-nav {
       max-width: 500px;
       margin-left: auto;
       margin-right: auto;
@@ -140,11 +144,40 @@
       pointer-events: none;
     }
 
+    /* Modifications to the subscription nav */
+    .subscribe-nav {
+      display: block;
+      height: auto;
+      background: none;
+    }
+
+    .subscribe-nav ul {
+      display: block;
+    }
+
+    .subscribe-nav li {
+      margin-bottom: 1.5rem;
+      justify-content: flex-start;
+    }
+
+    .subscribe-link {
+      padding: 0;
+      font-size: 1.3rem;
+      transition: none;
+    }
+
     .subscribe-nav-label {
       display: block;
-      margin-bottom: 1rem;
+      margin: 0 0 var(--space);
+      padding: 0;
+      background: none;
       font-size: 1.2rem;
       font-weight: var(--font-bold);
+      color: var(--font-color);
+    }
+
+    .subscribe-nav-label:after {
+      display: none;
     }
 
     .subscribe-nav li:last-child {
@@ -155,7 +188,6 @@
       display: flex;
       margin-top: var(--double-space);
     }
-
 
     #SiteMain,
     .site-footer {
@@ -184,8 +216,8 @@
   }
 
   .header-logo {
-    width: 160px;
-    height: 160px;
+    width: 140px;
+    height: 140px;
   }
 
   .header-logo.logo-stacked {
@@ -234,14 +266,27 @@
     padding-right: .5rem;
     font-size: 1.1rem;
   }
+
+  .site-header .subscribe-link {
+    font-size: .9rem;
+  }
 }
 
 @media (min-width: 940px) {
+  .header-logo {
+    width: 160px;
+    height: 160px;
+  }
+
   .site-nav li {
     width: auto;
   }
 
   .site-nav a {
     font-size: 1.3rem;
+  }
+
+  .site-header .subscribe-link {
+    font-size: 1.1rem;
   }
 }
