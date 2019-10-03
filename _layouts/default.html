@@ -31,5 +31,30 @@
   </main>
 
   {% include footer.html %}
+
+
+  <script>
+    // Moble menu toggler
+    const toggler = document.querySelector('#NavToggler')
+    const body = document.querySelector('body')
+    toggler.addEventListener('click', (evt) => {
+      evt.preventDefault()
+      body.classList.toggle('nav-open')
+    })
+
+    // Format/Style episode titles
+    const postTitles = document.querySelectorAll('[data-post-title]')
+    postTitles.forEach(element => {
+      let titleText = element.textContent.split(':')
+      let episode = titleText[0]
+
+      titleText.shift()
+      titleText = titleText.join()
+      element.innerHTML = `<strong>${episode}</strong>: ${titleText}`
+    })
+
+    // Setup audio elements
+    const audios = document.querySelectorAll('audio');
+  </script>
 </body>
 </html>
