@@ -3,10 +3,9 @@
   align-items: center;
   flex-flow: row wrap;
   margin: var(--double-space) 0 0;
-}
-
-.audio-player audio {
-  max-width: 300px;
+  width: 100%;
+  max-width: 600px;
+  padding-right: 1rem;
 }
 
 .audio-player a {
@@ -14,4 +13,76 @@
   margin-left: .85rem;
   font-size: 1.2rem;
   font-weight: var(--font-medium);
+}
+
+.player {
+  display: flex;
+  margin-bottom: 1.5rem;
+  min-width: 240px;
+  max-width: 400px;
+  width: 100%;
+  height: 46px;
+  border-radius: 8px;
+  background: #CCCAE8;
+}
+
+.player.playing {
+  .player-play{
+    display: none;
+  }
+
+  .player-pause {
+    display: inline-block;
+  }
+}
+
+.player-button {
+  display: inline-block;
+  width: 60px;
+  height: 100%;
+  padding: 0 1rem;
+  border: none;
+  background: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 0;
+}
+
+.player-button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.player-button img {
+  height: 24px;
+}
+
+.player-pause {
+  display: none;
+}
+
+.player-progress {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 2rem;
+
+
+  background-image: url("data:image/svg+xml,%3Csvg width='251' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2l247.5.5' stroke='%23021368' stroke-width='3' fill='none' fill-rule='evenodd' stroke-linecap='square'/%3E%3C/svg%3E");
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  background-size: 100% 4px;
+}
+
+.player-nub {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border: 4px solid var(--color2);
+  border-radius: 50%;
+  background: #FFF;
 }
