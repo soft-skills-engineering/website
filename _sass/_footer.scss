@@ -33,16 +33,18 @@
 
   ul {
     display: flex;
+    flex-flow: row wrap;
     margin-left: -.5rem;
     padding: 0;
   }
 
   li {
+    margin-bottom: var(--space);
+    width: 50%;
     list-style: none;
   }
 
   a {
-    // TODO: Not DRY
     display: inline-block;
     padding-left: .5rem;
     padding-right: .5rem;
@@ -138,6 +140,13 @@
     margin-left: auto;
     width: 280px;
     justify-content: flex-end;
+  }
+
+  .site-footer .subscribe-nav-flat {
+    li {
+      margin-bottom: 0;
+      width: auto;
+    }
   }
 
   .attribution-hosts {
