@@ -25,13 +25,7 @@ body_class: focused
 
   <div class="container audio-block">
     {% if page.file %}
-      <div class="audio-player">
-        <audio src="{{ page.file }}?source=webplayer" preload="none" controls="controls" type="audio/mp3">
-          Your browser doesn't support the <code>audio</code> element.
-        </audio>
-
-        <a href="{{ page.file }}?source=webdownload">Download</a>
-      </div>
+      {% include audio_player.html %}
     {% endif %}
   </div>
 

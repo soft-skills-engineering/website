@@ -9,34 +9,7 @@
 
   {% if include.show_details %}
     {% if post.file %}
-      <figure class="audio-player">
-
-
-        <audio
-          src="{{ post.file }}?website_player=true"
-          preload="none"
-          type="audio/mp3"
-          id="audio-{{ post.guid }}">
-          Your browser doesn't support the <code>audio</code> element.
-        </audio>
-
-        <a href="{{ post.file }}?website_download=true">Download</a>
-
-
-        <div class="player" data-player-for="audio-{{ post.guid }}">
-          <span class="player-controls">
-            <button
-              class="player-play"
-              data-player-play>Play</button>
-            <button
-              class="player-pause"
-              data-player-pause>Pause</button>
-          </span>
-          <span class="audio-player-progress">
-            <span class="bar"></span>
-          </span>
-        </div>
-      </figure>
+      {% include audio_player.html %}
     {% endif %}
 
     <div class="post-summary">
