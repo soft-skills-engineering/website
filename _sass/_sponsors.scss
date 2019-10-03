@@ -9,6 +9,10 @@
 .sponsor img {
   display: block;
   margin-bottom: 1.5rem;
-  max-width: 400px;
+  max-width: 100%;
   max-height: 98px;
+}
+
+@media (min-width: 768px) {
+  max-width: 400px;
 }

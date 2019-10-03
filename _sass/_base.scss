@@ -158,6 +158,14 @@ pre a:only-of-type::before {
   font-size: var(--lead-font-size);
 }
 
+.or-lead {
+  .or-space {
+    display: block;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
+}
+
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
@@ -308,6 +316,14 @@ a {
 
   .split-list li ul {
     margin-top: 0.75rem;
+  }
+
+  .or-lead {
+    .or-space {
+      display: inline-block;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
   }
 }
 
