@@ -2,7 +2,7 @@
 
 .site-footer {
   position: relative;
-  margin-top: 14rem;
+  margin-top: 6rem;
   padding-top: var(--double-space);
   background-color: var(--color6);
 }
@@ -132,6 +132,10 @@
 
 
 @media (min-width: 768px) {
+  .site-footer {
+    margin-top: 14rem;
+  }
+
   .site-footer > .container {
     display: flex;
   }
