@@ -1,17 +1,18 @@
 ---
-layout: page
+layout: subpage
 title: Soft Skills Engineering Slack Team Incident Process
 permalink: /incident-process
 ---
+
 # Things Sometimes Go Sideways
 
-In any group of humans, things will sometimes go sideways. Whether it's simple unintentional miscommunication or more extreme unacceptable behavior, we need to have an agreed upon protocol to resolve these situations ourselves or to escalate in the case that one-to-one resolutions are unachievable. 
+In any group of humans, things will sometimes go sideways. Whether it's simple unintentional miscommunication or more extreme unacceptable behavior, we need to have an agreed upon protocol to resolve these situations ourselves or to escalate in the case that one-to-one resolutions are unachievable.
 
 This is the process for incident resolution at Soft Skills Engineering Slack and process is [documented culture](http://randsinrepose.com/archives/the-process-myth/).
 
 # The Process
 
-## Resolve Peacefully 
+## Resolve Peacefully
 
 When an incident occurs, we ask that per the [Code of Conduct](/code-of-conduct) for those involved to resolve peacefully:
 
@@ -21,7 +22,7 @@ This is easier said than done, but this is the Soft Skills Engineering Slack. Ou
 
 ## Escalation
 
-Resolution amongst the individuals will not always be achievable. In this case, the reporter or observer of the incident has a choice. They can share the incident with #slack-rules to seek feedback, and perhaps resolve the incident, or they can raise the incident with the Administrators (see below for specifics). We understand the need for the latter workflow, but we encourage the former because, again, this is a community focused on soft skills. Our hope is that the debate will help educate this sub-community of humans interested in the rules and culture that govern this small corner of the Internet. 
+Resolution amongst the individuals will not always be achievable. In this case, the reporter or observer of the incident has a choice. They can share the incident with #slack-rules to seek feedback, and perhaps resolve the incident, or they can raise the incident with the Administrators (see below for specifics). We understand the need for the latter workflow, but we encourage the former because, again, this is a community focused on soft skills. Our hope is that the debate will help educate this sub-community of humans interested in the rules and culture that govern this small corner of the Internet.
 
 There are two paths in reporting an incident to an Administrator: filing a formal complaint and raising a concern. For a formal complaint, the reporter needs to send an Administrator a direct message with the following information:
 
@@ -30,9 +31,9 @@ There are two paths in reporting an incident to an Administrator: filing a forma
 3. What material supports this situation?
 4. Any privacy concerns? (Reporter consent is required before sharing any information regarding the incident)
 
-The second reporting path is raising a concern. We ask the reporter provide the same information with the understanding the reporter *is not* looking for resolution, but wants to provide Administrators a heads up regarding behavior within the community. 
+The second reporting path is raising a concern. We ask the reporter provide the same information with the understanding the reporter *is not* looking for resolution, but wants to provide Administrators a heads up regarding behavior within the community.
 
-For both paths, with this information in hand, the Administrators will strive to respond to the reporter as quickly as possible with an estimate of when they think they’ll be able to triage and resolve this incident. In the case of a raised concern, the understanding is there *may be no action* other than administrative awareness. 
+For both paths, with this information in hand, the Administrators will strive to respond to the reporter as quickly as possible with an estimate of when they think they’ll be able to triage and resolve this incident. In the case of a raised concern, the understanding is there *may be no action* other than administrative awareness.
 
 In extreme cases involving formal complaints, the Administrator may suspend one or more accounts until they are able to triage and resolve an incident.
 
@@ -46,7 +47,7 @@ In cases that result in account suspension, the individual suspended may appeal 
 
 # FAQ:
 
-- “Is situation XYZ an incident?” Unsure if there’s a CoC violation? Ask in #slack-rules and/or DM the administrator. We'll help. 
+- “Is situation XYZ an incident?” Unsure if there’s a CoC violation? Ask in #slack-rules and/or DM the administrator. We'll help.
 - “How many incidents have you handled since this place started?” None as of June 2019.
 
 ## Administrators
