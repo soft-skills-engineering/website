@@ -16,7 +16,8 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 }
 
 h1, h2, h3 {
-  margin-bottom: var(--space);
+  margin-top: var(--double-space);
+  margin-bottom: var(--double-space);
   font-style: normal;
   font-weight: var(--font-medium);
   line-height: 1.2;
@@ -38,6 +39,7 @@ h3,
 }
 
 img {
+  display: inline-block;
   max-width: 100%;
   height: auto;
 }
