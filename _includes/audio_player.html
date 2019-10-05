@@ -2,12 +2,14 @@
   <audio
     src="{{ post.file }}?website_player=true"
     preload="none"
+    controls="true"
     type="audio/mp3"
     id="audio-{{ post.guid }}"
     data-id="{{ post.guid }}">
     Your browser doesn't support the <code>audio</code> element.
   </audio>
 
+  {% comment %}
   <div class="player" id="player-{{ post.guid }}">
     <span class="player-controls">
       <button
@@ -37,6 +39,7 @@
       <span id="player-nub-{{ post.guid }}" class="player-nub">&nbsp;</span>
     </span>
   </div>
+  {% endcomment %}
 
 
   <a href="{{ post.file }}?website_download=true">Download</a>
