@@ -53,6 +53,7 @@
       element.innerHTML = `<strong>${episode}</strong>: ${titleText}`
     })
 
+    {% comment %}
     // Setup audio elements
     const audios = document.querySelectorAll('audio')
     audios.forEach(audio => {
@@ -89,6 +90,7 @@
         audio.currentTime = clickTime
      })
     })
+    {% endcomment %}
   </script>
 </body>
 </html>
