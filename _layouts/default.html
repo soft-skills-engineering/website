@@ -52,46 +52,6 @@
       titleText = titleText.join()
       element.innerHTML = `<strong>${episode}</strong>: ${titleText}`
     })
-
-    // Setup audio elements
-    const audios = document.querySelectorAll('audio')
-    audios.forEach(audio => {
-      const audioId = audio.getAttribute('data-id')
-      const player = document.getElementById('player-' + audioId)
-      const play = document.getElementById('player-play-' + audioId)
-      const pause = document.getElementById('player-pause-' + audioId)
-      const progress = document.getElementById('player-progress-' + audioId)
-      const nub = document.getElementById('player-nub-' + audioId)
-
-      play.addEventListener('click', evt => {
-        audio.play()
-        player.classList.toggle('playing')
-      })
-
-      pause.addEventListener('click', evt => {
-        audio.pause()
-        player.classList.toggle('playing')
-      })
-
-      // Update in realtime
-      audio.addEventListener('timeupdate', () => {
-        const move = parseInt(((audio.currentTime / audio.duration) * 100), 10) + "%";
-
-        console.log(move);
-        nub.style.left = move;
-      })
-
-      progress.addEventListener('click', function(e) {
-        // calculate the normalized position clicked
-        const clickPosition = (e.pageX  - this.offsetLeft) / this.offsetWidth
-        const clickTime = clickPosition * audio.duration
-
-        //nub.setAttribute('style', "left: calc(" + parseInt(clickPosition * 100) + '%' + " - 42px)");
-
-        // move the playhead to the correct position
-        audio.currentTime = clickTime
-     })
-    })
   </script>
 </body>
 </html>
