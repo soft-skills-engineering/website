@@ -39,6 +39,10 @@ body.focused main .container,
   margin-bottom: 4rem;
 }
 
+.block-heading {
+  margin-top: 0;
+}
+
 img + .block-heading {
   margin-top: var(--double-space);
 }

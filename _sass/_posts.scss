@@ -109,6 +109,7 @@
 }
 
 .post-title {
+  margin-top: 0;
   font-size: 1.8rem;
 }
 
@@ -129,6 +130,10 @@
   margin-bottom: 3rem;
   width: 100%;
   text-align: center;
+}
+
+.audio-block .audio-player {
+  max-width: 560px;
 }
 
 
@@ -154,6 +159,6 @@
   }
 
   .post-hero .post-title {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
   }
 }
