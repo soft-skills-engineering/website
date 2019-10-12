@@ -1,39 +1,38 @@
 ---
-layout: page
+layout: subpage
 title: Subscribe
 permalink: /subscribe/
 tags: subscribe
 ---
-<div>
-  <style>
-    a.subscribe-link {
-      text-decoration: none;
-      background-image: none;
-    }
-    a.subscribe-link:hover {
-      text-decoration: underline;
-    }
-  </style>
-  <p>
-    To subscribe, search for "Soft Skills Engineering" in your favorite podcast app, or use one of these links:
-  </p>
-  <ul>
-    <p><a class="subscribe-link" href="{{site.podcast_itunes_url}}"> Subscribe on iPhone</a></p>
-    <p>
-      <a class="subscribe-link" href="{{site.podcast_android_url}}">
-      <img src="/img/android.png" style="height: 20px; width: 20px"/>
-      Subscribe on Android
-      </a>
-    </p>
-    <p>
-    Or
-    </p>
-    <p>
-      Copy and paste the feed URL:
-      <a class="subscribe-link" href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a>
-    </p>
-  </ul>
-  <div style="text-align: center; margin-top: 50px">
-    <img style="height: 60px" src="/img/computer.svg" />
-  </div>
+
+<p class="lead">
+  To subscribe, search for "Soft Skills Engineering" in your favorite podcast app, or use one of these links:
+</p>
+
+
+<a href="{{ site.podcast_itunes_url }}" class="subscribe-link">
+  <img
+    src="/img/itunes.svg"
+    class="icon"
+    alt="iTunes logo"
+    aria-hidden="true" /> Apple Podcasts</a>
+
+<a href="{{ site.podcast_android_url }}" class="subscribe-link">
+    <img
+      src="/img/android.svg"
+      class="icon"
+      alt="Android logo"
+      aria-hidden="true" /> Google Podcasts</a>
+
+
+<p>
+  Copy and paste the feed URL:
+  <a class="subscribe-link" href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a>
+</p>
+
+
+<div class="icon-sep">
+  <img
+    src="/img/computer.svg"
+    alt="A computer" />
 </div>

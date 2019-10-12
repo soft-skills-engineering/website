@@ -3,10 +3,6 @@
   height: 40px;
 }
 
-.subscribe-link {
-  font-size: .95rem;
-}
-
 .subscribe-nav-label {
   position: relative;
   display: none;
@@ -58,17 +54,20 @@
 .subscribe-link {
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding: 0 .65rem;
+  font-size: .95rem;
   transition: all var(--anim-speed);
 }
-
 
 .subscribe-link:hover {
   opacity: .7;
 }
 
 .subscribe-link .icon {
-  margin-right: .3rem;
+  width: 22px;
+  margin-right: .5rem;
 }
 
 .subscribe-text {
