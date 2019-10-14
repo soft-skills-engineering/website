@@ -34,6 +34,7 @@
   ul {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-between;
     margin-left: -.5rem;
     padding: 0;
   }

@@ -50,6 +50,11 @@ ul, ol {
 
 /* BASE: ELEMENTS */
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   color: var(--color1);
 }
@@ -266,6 +271,10 @@ a {
 
   + .block {
     margin-top: -2rem;
+  }
+
+  &.small img {
+    max-height: 80px;
   }
 }
 
