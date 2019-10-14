@@ -10,20 +10,32 @@ tags: subscribe
 </p>
 
 <p class="button-group">
-  <a href="{{ site.podcast_itunes_url }}" class="button">
+  <a
+    href="{{ site.podcast_itunes_url }}"
+    class="button">
     <span class="subscribe-link">
     <img
-      src="/img/apple.svg"
+      src="/img/apple-podcasts.svg"
       class="icon"
-      alt="Apple logo"
+      alt="Apple podcasts logo"
       aria-hidden="true" /> Apple Podcasts</span></a>
 
-  <a href="{{ site.podcast_android_url }}" class="button"><span class="subscribe-link">
+  <a
+    href="{{ site.podcast_android_url }}"
+    class="button"><span class="subscribe-link">
       <img
-        src="/img/google.svg"
+        src="/img/google-podcasts.svg"
         class="icon"
-        alt="Google logo"
+        alt="Google podcasts logo"
         aria-hidden="true" /> Google Podcasts</span></a>
+  <a
+    href="{{ site.podcast_spotify_url }}"
+    class="button"><span   class="subscribe-link">
+      <img
+        src="/img/spotify.svg"
+        class="icon"
+        alt="Spotify logo"
+        aria-hidden="true" /> Spotify</span></a>
 </p>
 
 <div class="feed-url-box text-center mt-4 mb-4">
@@ -57,12 +69,19 @@ tags: subscribe
   const textarea = document.querySelector('#feed-url-copy')
 
   btn.addEventListener('click', function(evt) {
+    const text = btn.textContent;
+
     textarea.select()
     textarea.setSelectionRange(0, 99999)
 
     document.execCommand("copy")
 
     btn.innerHTML = "<span>Copied!</span>"
-    btn.focus();
+    btn.focus()
+
+    // Reset button text
+    setTimeout(() => {
+      btn.innerHTML = `<span>${text}</span>`
+    }, 1000)
   });
 </script>
