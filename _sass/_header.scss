@@ -25,7 +25,7 @@
 
 .nav-toggler {
   order: 1;
-  margin: 0 -1rem 0 auto;
+  margin: 0 -1rem 0 1rem;
   padding: 1rem 2rem;
   width: 60px;
   height: 100%;
@@ -88,6 +88,10 @@
   height: 20px;
 }
 
+.patreon-link {
+  margin-left: auto;
+}
+
 .patreon-link small {
   display: block;
   font-size: .65rem;
@@ -95,6 +99,12 @@
 
 .patreon-link strong {
   font-weight: var(--font-bold);
+}
+
+.patreon-link img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -3px; /* Specific to image */
 }
 
 /* Specific Navs */
@@ -148,6 +158,10 @@
       pointer-events: none;
     }
 
+    .site-nav .patreon-link {
+      margin-left: 0;
+    }
+
     /* Modifications to the subscription nav */
     .subscribe-nav {
       display: block;
@@ -169,6 +183,10 @@
       padding: 0;
       font-size: 1.3rem;
       transition: none;
+    }
+
+    .subscribe-link .icon {
+      width: 22px;
     }
 
     .subscribe-nav-label {
@@ -274,6 +292,10 @@
 
   .site-header .subscribe-link {
     font-size: .9rem;
+  }
+
+  .site-header-primary > .patreon-link {
+    display: none;
   }
 }
 

@@ -40,6 +40,15 @@ layout: default
       {% else %}
         {% include post_summary.html show_details="True" %}
       {% endif %}
+
+      {% if forloop.last == false %}
+        <div class="icon-sep small">
+          <img
+            src="/img/mark.svg"
+            alt="A smiling speech bubble" />
+        </div>
+      {% endif %}
+
     {% endfor %}
 
     <footer class="posts-footer">

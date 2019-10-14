@@ -49,8 +49,9 @@
 }
 
 .subscribe-link .icon {
-  width: 22px;
-  margin-right: .5rem;
+  vertical-align: text-bottom;
+  width: 18px;
+  margin-right: .4rem;
 }
 
 .subscribe-text {
@@ -93,5 +94,9 @@
 
   .subscribe-text {
     display: none;
+  }
+
+  .subscribe-link .icon {
+    width: 24px;
   }
 }
