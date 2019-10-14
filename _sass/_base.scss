@@ -236,12 +236,20 @@ a {
     var(--color1) 100%);
   background-size: 14.14px 14.14px;
   font-size: 1.3rem;
+  text-decoration: none;
+}
+
+.button.small {
+  font-size: .9rem;
 }
 
 .button span {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: .5em 1em;
+  min-height: 44px;
   border: 2px solid var(--color1);
   border-radius: 8px;
   background: #FFF;
@@ -258,6 +266,10 @@ a {
 
 .button:hover span {
   transform: translateX(2px) translateY(2px);
+}
+
+#copy-cta span {
+  min-width: 160px;
 }
 
 .icon-sep {
@@ -290,6 +302,17 @@ a {
 .quotes-grid > * {
   margin: 0 auto var(--space) !important; /* Work around Twitter inline styles */
   break-inside: avoid;
+}
+
+.feed-url {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  font-size: 1.3rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 

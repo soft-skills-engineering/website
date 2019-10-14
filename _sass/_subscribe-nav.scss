@@ -59,6 +59,10 @@
   line-height: 1.2;
 }
 
+.button .subscribe-link:hover {
+  opacity: 1;
+}
+
 @media (min-width: 768px) {
   .subscribe-nav {
     border-radius: 4px;
