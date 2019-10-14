@@ -13,6 +13,11 @@
   color: #494949;
 }
 
+.subscribe-link-sublabel {
+  display: none;
+  margin-left: .5ch; // Works around flexbox issues
+}
+
 .subscribe-nav ul {
   flex: 0 1 100%;
 }
@@ -26,7 +31,7 @@
 
 .subscribe-nav ul {
   flex-flow: row wrap;
-  border-radius: 0 4px 4px;
+  border-radius: 4px;
   background-color: var(--subscribe-nav-color);
 }
 
@@ -39,6 +44,7 @@
   align-items: center;
   justify-content: center;
   flex-flow: row wrap;
+  width: 100%;
   padding: .5rem .65rem;
   font-size: .95rem;
   transition: all var(--anim-speed);
@@ -90,6 +96,10 @@
     background-repeat: no-repeat;
     background-size: auto 100%;
     content: "";
+  }
+
+  .subscribe-link-sublabel {
+    display: inline-block;
   }
 
   .subscribe-nav ul {
