@@ -9,30 +9,60 @@ tags: subscribe
   To subscribe, search for "Soft Skills Engineering" in your favorite podcast app, or use one of these links:
 </p>
 
-
-<a href="{{ site.podcast_itunes_url }}" class="subscribe-link">
-  <img
-    src="/img/itunes.svg"
-    class="icon"
-    alt="iTunes logo"
-    aria-hidden="true" /> Apple Podcasts</a>
-
-<a href="{{ site.podcast_android_url }}" class="subscribe-link">
+<p class="button-group">
+  <a href="{{ site.podcast_itunes_url }}" class="button">
+    <span class="subscribe-link">
     <img
-      src="/img/android.svg"
+      src="/img/apple.svg"
       class="icon"
-      alt="Android logo"
-      aria-hidden="true" /> Google Podcasts</a>
+      alt="Apple logo"
+      aria-hidden="true" /> Apple Podcasts</span></a>
 
-
-<p>
-  Copy and paste the feed URL:
-  <a class="subscribe-link" href="{{site.podcast_feed_url}}">{{site.podcast_feed_url}}</a>
+  <a href="{{ site.podcast_android_url }}" class="button"><span class="subscribe-link">
+      <img
+        src="/img/google.svg"
+        class="icon"
+        alt="Google logo"
+        aria-hidden="true" /> Google Podcasts</span></a>
 </p>
 
+<div class="feed-url-box text-center mt-4 mb-4">
+  <h2>Direct Feed</h2>
+  <p>
+    <strong>OR</strong> copy and paste the feed URL:<br />
+
+    <a href="{{site.podcast_feed_url}}" class="feed-url">
+        {{ site.podcast_feed_url }}</a>
+  </p>
+
+
+  <textarea
+    class="sr-only"
+    id="feed-url-copy"
+    aria-hidden="true">{{site.podcast_feed_url}}</textarea>
+
+  <p class="text-center">
+    <button class="button small" id="copy-cta"><span>Copy to clipboard</span></button>
+  </p>
+</div>
 
 <div class="icon-sep">
   <img
     src="/img/computer.svg"
     alt="A computer" />
 </div>
+
+<script>
+  const btn = document.querySelector('#copy-cta')
+  const textarea = document.querySelector('#feed-url-copy')
+
+  btn.addEventListener('click', function(evt) {
+    textarea.select()
+    textarea.setSelectionRange(0, 99999)
+
+    document.execCommand("copy")
+
+    btn.innerHTML = "<span>Copied!</span>"
+    btn.focus();
+  });
+</script>
