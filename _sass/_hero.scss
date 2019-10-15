@@ -2,12 +2,12 @@
   padding-top: 5rem;
 }
 
-.hero.home-hero {
+.hero.icon-pattern {
   padding-bottom: calc(18vw - 2.5rem);
   background-image: url(/img/icon-pattern.svg);
-  background-position: center bottom -5vw;
+  background-position: center bottom -15vw;
   background-repeat: no-repeat;
-  background-size: 200% auto;
+  background-size: cover;
 }
 
 .hero .container {
@@ -39,9 +39,8 @@
 
 
 @media (min-width: 768px) {
-  .hero.home-hero {
-    background-position: center bottom -20vw;
-    background-size: 100% auto;
+  .hero.icon-pattern {
+    background-size: cover;
   }
 
   .hero h1 {
