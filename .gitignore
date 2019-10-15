@@ -4,8 +4,11 @@ _site
 .*.sw*
 .DS_Store
 *.md-e*
-trello-auth.json
 ve
+venv
 __pycache__
 .bundle
 vendor
+
+trello-auth.json
+twitter-auth.json

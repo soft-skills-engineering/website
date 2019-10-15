@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. I'm a junior developer on a team of seniors, and I'm also the Scrum Master. Our team has *lots* of problems. What do I do?
 2. Jamison openly talks about not finishing his degree. How did he put it on his resume or explain it to potential employers?
