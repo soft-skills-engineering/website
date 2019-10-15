@@ -269,6 +269,22 @@ a {
   transform: translateX(2px) translateY(2px);
 }
 
+.subscribe-badge {
+  background: none;
+  border: none;
+
+  span {
+    padding: 1rem 1.5rem;
+    height: 80px;
+    border-color: #E9E9E9;
+    transform: none;
+  }
+
+  img {
+    height: 40px;
+  }
+}
+
 #copy-cta span {
   min-width: 160px;
 }
