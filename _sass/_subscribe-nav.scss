@@ -109,9 +109,13 @@
   .subscribe-link .icon {
     width: 24px;
   }
+
+  .subscribe-link-sublabel {
+    display: none;
+  }
 }
 
-@media (min-width: 940px) {
+@media (min-width: 980px) {
   .subscribe-link-sublabel {
     display: inline-block;
   }
