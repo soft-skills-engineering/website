@@ -180,13 +180,14 @@
     }
 
     .subscribe-link {
+      justify-content: flex-start;
       padding: 0;
       font-size: 1.3rem;
       transition: none;
     }
 
     .subscribe-link-sublabel {
-      display: none;
+      display: inline-block;
     }
 
     .subscribe-link .icon {

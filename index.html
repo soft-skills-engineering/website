@@ -22,40 +22,41 @@ layout: default
       <li>and much much more...</li>
     </ul>
 
-    <div class="button-group">
-      <a href="{{ site.patreon_url }}" class="button">
-        <span>Supprt on Patreon</span>
-      </a>
-    </div>
+    <section class="subscribe-box">
+      <p class="button-group">
+        <a
+          href="{{ site.podcast_itunes_url }}"
+          aria-label="Listen on Apple Podcasts"
+          class="button subscribe-badge">
+          <span>
+            <img
+              src="/img/apple-podcasts-badge.svg"
+              alt=""
+              aria-hidden="true" />
+          </span>
+        </a>
 
+        <a
+          href="{{ site.podcast_android_url }}"
+          aria-label="Listen on Google Podcasts"
+          class="button subscribe-badge">
+          <span>
+            <img
+              src="/img/google-podcasts-badge.svg"
+              alt=""
+              aria-hidden="true" />
+          </span>
+        </a>
+      </p>
+    </section>
 
-    <div class="subscribe-box">
+    <section class="support-box">
+      <p class="lead">Soft Skills Engineering is made possible through generous donations from listeners.
+      <a href="{{ site.patreon_url }}" class="support-link">
+        <img src="/img/heart.svg" alt="A heart with a striped shadow" />Support us on Patreon</a>
+    </p>
+    </section>
 
-      <a
-        href="{{ site.podcast_itunes_url }}"
-        aria-label="Listen on Apple Podcasts"
-        class="button subscribe-badge">
-        <span>
-          <img
-            src="/img/apple-podcasts-badge.svg"
-            alt=""
-            aria-hidden="true" />
-        </span>
-      </a>
-
-      <a
-        href="{{ site.podcast_android_url }}"
-        aria-label="Listen on Google Podcasts"
-        class="button subscribe-badge">
-        <span>
-          <img
-            src="/img/google-podcasts-badge.svg"
-            alt=""
-            aria-hidden="true" />
-        </span>
-      </a>
-
-    </div>
   </div>
 </div>
 
