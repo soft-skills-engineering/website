@@ -307,6 +307,22 @@ a {
   }
 }
 
+.support-box {
+  max-width: 600px;
+  margin: 3rem auto var(--double-space);
+}
+
+.support-link {
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+}
+
+.support-link img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 40px;
+  margin-right: .5ch;
+}
 
 /* Quotes Grid */
 
