@@ -10,7 +10,7 @@ categories: episode
 enable_comments: true
 ---
 
-[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jergason) answer these questions:
+[Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:
 
 1. I went through the interview process, and as last step I had an interview with the VP of engineering. At the end of interview he asked if I had any questions for him. I didn't know what to ask. What do you ask?
 2. I'm a front-end web developer on a SCRUM team. Our Product Owner is also our tester, but she has a very busy schedule and she hardly has any time to test anymore.
