@@ -98,10 +98,6 @@
     content: "";
   }
 
-  .subscribe-link-sublabel {
-    display: inline-block;
-  }
-
   .subscribe-nav ul {
     flex: 1;
   }
@@ -112,5 +108,11 @@
 
   .subscribe-link .icon {
     width: 24px;
+  }
+}
+
+@media (min-width: 940px) {
+  .subscribe-link-sublabel {
+    display: inline-block;
   }
 }
