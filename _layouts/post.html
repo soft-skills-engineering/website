@@ -8,6 +8,9 @@ body_class: focused
   {% assign minutes = 1 %}
 {% endif %}
 
+{% capture playback_url %}{{ page.file }}{% endcapture %}
+{% capture playback_guid %}{{ page.guid }}{% endcapture %}
+
 <article>
   <div class="hero post-hero">
     <div class="container">
@@ -25,7 +28,7 @@ body_class: focused
 
   <div class="container audio-block">
     {% if page.file %}
-      {% include audio_player.html %}
+      {% include audio_player.html playback_url=playback_url playback_guid=playback_guid %}
     {% endif %}
   </div>
 
