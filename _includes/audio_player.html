@@ -1,0 +1,46 @@
+<figure class="audio-player">
+  <audio
+    src="{{ post.file }}?website_player=true"
+    preload="none"
+    controls="true"
+    type="audio/mp3"
+    id="audio-{{ post.guid }}"
+    data-id="{{ post.guid }}">
+    Your browser doesn't support the <code>audio</code> element.
+  </audio>
+
+  {% comment %}
+  <div class="player" id="player-{{ post.guid }}">
+    <span class="player-controls">
+      <button
+        class="player-button player-play"
+        id="player-play-{{ post.guid }}"
+        data-player-play>
+        <span>
+          <img
+            src="/img/play.svg"
+            alt="A Play triangle, pointing to the right"
+            height="28" />
+        </span>
+      </button>
+      <button
+        class="player-button player-pause"
+        id="player-pause-{{ post.guid }}"
+        data-player-pause>
+        <span>
+          <img
+            src="/img/pause.svg"
+            alt="Two vertical bars, denoting Pause"
+            height="28" />
+        </span>
+      </button>
+    </span>
+    <span class="player-progress" id="player-progress-{{ post.guid }}">
+      <span id="player-nub-{{ post.guid }}" class="player-nub">&nbsp;</span>
+    </span>
+  </div>
+  {% endcomment %}
+
+
+  <a href="{{ post.file }}?website_download=true">Download</a>
+</figure>

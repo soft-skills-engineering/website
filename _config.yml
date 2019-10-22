@@ -12,7 +12,9 @@ og_image_url: "https://download.softskills.audio/avatar1.png"
 podcast_feed_url: "https://feeds.feedburner.com/SoftSkillsEngineering"
 podcast_itunes_url: "https://itunes.apple.com/us/podcast/soft-skills-engineering/id1091341048?mt=2"
 podcast_android_url: "https://subscribeonandroid.com/feeds.feedburner.com/SoftSkillsEngineering"
+podcast_google_url: "https://www.google.com/podcasts?feed=aHR0cHM6Ly9zb2Z0c2tpbGxzLmF1ZGlvL2ZlZWQueG1s"
 podcast_cover_art_url: "https://download.softskills.audio/sse-cover-art.png"
+podcast_spotify_url: "https://open.spotify.com/show/59I1XnvAB9fQzSj9SIKCoI?si=boL4WEvkR-S8uBIByNMpNQ"
 twitter_dm_url: "https://twitter.com/messages/compose?recipient_id=707699773642383361"
 patreon_url: "https://patreon.com/SoftSkillsEng"
 
@@ -26,26 +28,9 @@ devmountain_marketing_url: "https://devmountain.com/?utm_source=Soft%20Skills%20
 pluralsight_marketing_url: "https://pluralsight.com/softskills"
 velocity_marketing_url: "http://velocityconf.com/skills"
 
-# Optional features
-animated:             false
-show_related_posts:   false
-show_post_footers:    false
-show_social_icons:    false
-ajaxify_contact_form: false
-enable_mathjax: false
-extended_fonts: false
-enable_anchorjs: false
-estimate_reading_time: false
-
 # Disqus post comments
 # (leave blank to disable Disqus)
 disqus_shortname: 'softskillseng'
-
-# Facebook Comments plugin
-# (leave blank to disable Facebook Comments, otherwise set it to true)
-facebook_comments:
-facebook_appid:
-facebook_comments_number: 10
 
 # Social icons
 github_username:
@@ -61,19 +46,6 @@ medium_id:
 bitcoin_url:
 paypal_url:
 flattr_button:
-
-# Post sharing icons
-show_sharing_icons: false
-# Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: true
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
 
 text:
   pagination:

@@ -1,0 +1,49 @@
+.hero {
+  padding-top: 5rem;
+}
+
+.hero.icon-pattern {
+  padding-bottom: calc(18vw - 2.5rem);
+  background-image: url(/img/icon-pattern.svg);
+  background-position: center bottom -15vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero .container {
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  margin: 0 auto var(--double-space);
+  font-size: 2.4rem;
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+.hero .lead {
+  margin: 0 auto var(--double-space);
+  max-width: 66ch;
+  text-align: center;
+}
+
+.hero .split-list {
+  margin-bottom: var(--double-space);
+  font-size: var(--lead-font-size);
+}
+
+.hero .discussion-list {
+  margin: 0 auto var(--double-space);
+  max-width: 75%;
+}
+
+
+@media (min-width: 768px) {
+  .hero.icon-pattern {
+    background-size: cover;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+}

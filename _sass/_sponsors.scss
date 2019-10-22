@@ -1,0 +1,18 @@
+.sponsor {
+  margin-bottom: 3rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.sponsor img {
+  display: block;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  max-height: 98px;
+}
+
+@media (min-width: 768px) {
+  max-width: 400px;
+}

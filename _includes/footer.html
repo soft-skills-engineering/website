@@ -1,13 +1,30 @@
-<footer class="center">
-  <div class="measure">
-    <small>
-      Soft Skills Engineering is by <a href="https://twitter.com/djsmith42">Dave Smith</a> and <a href="https://twitter.com/jamison_dance">Jamison Dance</a>, who think you are neat.
-    </small>
+<footer class="site-footer">
+  <div class="container">
+    <nav class="subscribe-nav-flat">
+      <span class="subscribe-nav-label">Where to listen</span>
+      {% include subscribe_nav.html %}
+
+      <p class="subscribe-text"><small>Search for <strong>"Soft Skills Engineering"</strong> in your favorite podcast app.</small></p>
+    </nav>
+
+    {% include social_links.html %}
+  </div>
+
+  <div class="attribution">
+    <div class="container">
+      <small>
+        Soft Skills Engineering is by
+        <span class="attribution-hosts">
+          <a href="https://twitter.com/djsmith42" class="avatar-link"><img
+            src="/img/dave.jpg"
+            alt="Dave Smith"
+            width="42" /> <span>Dave Smith</span></a> &amp;
+          <a href="https://twitter.com/jamison_dance" class="avatar-link"><img
+            src="/img/jamison.jpg"
+            alt="Jamison Dance"
+            width="42" /> <span>Jamison Dance</span></a></span> who think you are neat.
+        </span>
+      </small>
+    </div>
   </div>
 </footer>
-{% if site.enable_anchorjs %}<!-- AnchorJS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.0.0/anchor.min.js"></script>
-<script>
-    anchors.options.visible = 'always';
-    anchors.add('article h2, article h3, article h4, article h5, article h6');
-</script>{% endif %}

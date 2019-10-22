@@ -2,79 +2,126 @@
 layout: default
 ---
 
-<div class="home">
-  <h2 class="tag-line">It takes more than great code to be a great engineer.</h2>
-  <div class="clearfix"></div>
+<div class="hero icon-pattern">
+  <div class="container">
+    <h1>It takes more than great code to be a great engineer.</h1>
 
-  <div style="text-align: center; margin-bottom: 20px">
-    <a href="/subscribe/" class="button button-blue">Subscribe Now</a>
-    <a href="{{site.patreon_url}}" class="button button-blue" style="background-color:green">Support us on Patreon</a>
+    <p class="lead">
+      Soft Skills Engineering is a weekly advice podcast for software developers. We discuss topics and answer questions around:
+    </p>
+
+    <ul class="discussion-list split-list">
+      <li>pay raises</li>
+      <li>hiring</li>
+      <li>going into management</li>
+      <li>annoying co-workers</li>
+      <li>quitting your job</li>
+      <li>meetings</li>
+      <li>micromanagers</li>
+      <li>installing a ball pit in your office</li>
+      <li>and much much more...</li>
+    </ul>
+
+    <section class="subscribe-box">
+      <p class="button-group">
+        <a
+          href="{{ site.podcast_itunes_url }}"
+          aria-label="Listen on Apple Podcasts"
+          class="button subscribe-badge">
+          <span>
+            <img
+              src="/img/apple-podcasts-badge.svg"
+              alt=""
+              aria-hidden="true" />
+          </span>
+        </a>
+
+        <a
+          href="{{ site.podcast_google_url }}"
+          aria-label="Listen on Google Podcasts"
+          class="button subscribe-badge">
+          <span>
+            <img
+              src="/img/google-podcasts-badge.svg"
+              alt=""
+              aria-hidden="true" />
+          </span>
+        </a>
+      </p>
+    </section>
+
+    <section class="support-box">
+      <p class="lead">Soft Skills Engineering is made possible through generous donations from listeners.
+      <a href="{{ site.patreon_url }}" class="support-link">
+        <img src="/img/heart.svg" alt="A heart with a striped shadow" />Support us on Patreon</a>
+    </p>
+    </section>
   </div>
-
-  <p>
-    Soft Skills Engineering is a weekly advice podcast for software developers. We answer questions about
-    all the stuff you didn't realize you needed to know about being an engineer:
-  </p>
-
-  <ul>
-    <li>pay raises</li>
-    <li>hiring</li>
-    <li>going into management</li>
-    <li>annoying co-workers</li>
-    <li>quitting your job</li>
-    <li>meetings</li>
-    <li>micromanagers</li>
-    <li>installing a ball pit in your office</li>
-    <li>and much much more...</li>
-  </ul>
-
-  <p>
-  For answers to these and other questions, our hosts <a href="https://twitter.com/djsmith42">Dave Smith</a> and
-  <a href="https://twitter.com/jamison_dance">Jamison Dance</a> are here to help.
-  </p>
-
-  <div style="text-align: center">
-    <img style="height: 80px;" src="/img/bolt.svg" />
-    <img style="height: 80px;" src="/img/computer.svg" />
-    <img style="height: 80px;" src="/img/heart.svg" />
-    <img style="height: 80px;" src="/img/controls.svg" />
-    <img style="height: 80px;" src="/img/speaker.svg" />
-    <img style="height: 80px;" src="/img/talk.svg" />
-  </div>
-
-  <h2>Why should you listen?</h2>
-  <p>Soft Skills Engineering listeners are awesome. Here's what they are saying about the podcast.</p>
-
-  <p>Jack says:</p>
-  <blockquote class="testimonial">
-    Not only did Soft Skills Engineering help me land my first gig, I also used your advice to negotiate a $10,000 raise!
-    I love your podcast and will continue to heartily recommend you to everyone I know!
-  </blockquote>
-
-  <p style="margin-top:30px">Hdennen says:</p>
-  <blockquote class="testimonial">
-    Facing a 9 hour drive, I grabbed a bunch of podcasts to listen to. I don't even know what the other ones are.
-    Seriously, this podcast is full of massively helpful and relevant content from two people who are experienced, funny, and insightful.
-  </blockquote>
-
-  <p style="margin-top:30px">Saad says:</p>
-  <blockquote class="testimonial">
-    Listening to Soft Skills Engineering has completely shifted my thoughts on what it means to be an engineer.
-    It’s probably one of the more useful things I’ve gained during my time at Amazon.
-    It definitely helped me grow, and I’m totally indebted to you for that.
-  </blockquote>
-
-  <h2>Follow the show</h2>
-  <p>Follow the show on social media for the latest news:</p>
-  <p>Facebook: <a href="https://www.facebook.com/SoftSkillsEng/">https://www.facebook.com/SoftSkillsEng/</a></p>
-  <p>Twitter: <a href="https://twitter.com/SoftSkillsEng/">https://twitter.com/SoftSkillsEng/</a></p>
-
-  <h2 style="margin-top:3rem">Recent Episodes:</h2>
-  <div class="posts">
-    {% for post in paginator.posts %}
-      {% include post_summary.html %}
-    {% endfor %}
-  </div>
-
-  {% include pagination.html %}
 </div>
+
+
+<h2 class="sr-only">Recent Episodes</h2>
+<div class="posts">
+  <div class="container">
+    {% for post in paginator.posts limit:4 %}
+      {% if forloop.first == true %}
+        {% include post_summary.html show_details="True" show_latest="True" %}
+      {% else %}
+        {% include post_summary.html show_details="True" %}
+      {% endif %}
+
+      {% if forloop.last == false %}
+        <div class="icon-sep small">
+          <img
+            src="/img/mark.svg"
+            alt="A smiling speech bubble" />
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+    <footer class="posts-footer">
+      <h2 class="posts-footer-heading">We've produced over 150 delightful episodes.<br/>Check 'em out!</h2>
+
+      <div class="button-group">
+        <a href="/episodes" class="button"><span>View all episodes</span></a>
+        <a href="/favorites" class="button"><span>See community favorites</span></a>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="block quotes">
+  <header class="block-header text-center">
+    <div class="container">
+      <img
+        src="/img/talk.svg"
+        alt="A speech bubble"
+        width="140" />
+      <h2 class="block-heading type-h1">Why should you listen?</h2>
+      <p class="lead">Soft Skills Engineering listeners are awesome. Here's what they are saying about the podcast.</p>
+      <p class="lead"><strong>Are you a fan?</strong> Say hello on social media!</p>
+    </div>
+  </header>
+  <section class="quotes-grid">
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Started listening to <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> and it’s such a great resource! People often forget how important soft skills are especially in the dev world. It’s definitely something that you can invest in now that will benefit you during your whole career!</p>&mdash; Kyle 🤙 (@DesignByKyle) <a href="https://twitter.com/DesignByKyle/status/1164216658933817344?ref_src=twsrc%5Etfw">August 21, 2019</a></blockquote>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Hands down <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> has the best intros. I&#39;m in tears most of the times 😂😂😂</p>&mdash; Bassam Ismail 🚴 (@skippednote) <a href="https://twitter.com/skippednote/status/1163374922518761477?ref_src=twsrc%5Etfw">August 19, 2019</a></blockquote>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Being a good software engineer also means that you focus on soft skills as well. Let me recommend a great podcast from <a href="https://twitter.com/jamison_dance?ref_src=twsrc%5Etfw">@jamison_dance</a> and <a href="https://twitter.com/djsmith42?ref_src=twsrc%5Etfw">@djsmith42</a>, the <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a>!<a href="https://t.co/l0Rq1gy8fX">https://t.co/l0Rq1gy8fX</a></p>&mdash; Gábor Horváth (@hhgabor) <a href="https://twitter.com/hhgabor/status/1162796380999626752?ref_src=twsrc%5Etfw">August 17, 2019</a></blockquote>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">.<a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> continues to be my favorite podcast. I laugh at loud at least once an episode and the content is super on-point.</p>&mdash; ████ Sager (@adfontes__) <a href="https://twitter.com/adfontes__/status/1162157584087998465?ref_src=twsrc%5Etfw">August 16, 2019</a></blockquote>
+
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Listen to every episode of <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> 🤓 Nothing has a more profound impact on your career growth than soft skills.</p>&mdash; Mike Kerr (@codecareercoach) <a href="https://twitter.com/codecareercoach/status/1156657543399129088?ref_src=twsrc%5Etfw">July 31, 2019</a></blockquote>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I just discovered <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> but it is amazing, I always learn something new from them. Also all episodes have a fun and friendly feeling</p>&mdash; Daniel Peñaloza (@danp1925) <a href="https://twitter.com/danp1925/status/1153683341369122816?ref_src=twsrc%5Etfw">July 23, 2019</a></blockquote>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I love <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> .. although it&#39;s not directly focused on technical side of Software Engineering, it takes a huge often not-discussed part of the job such as the team communication, management, ethics, etc...<br><br>The hosts are really good, I literally listen to every episode ❤️</p>&mdash; Nigo (@lenaggar) <a href="https://twitter.com/lenaggar/status/1128405640077107203?ref_src=twsrc%5Etfw">May 14, 2019</a></blockquote>
+
+    <blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/WanderingHogan?ref_src=twsrc%5Etfw">@WanderingHogan</a> I’ve been looking for new podcasts and added <a href="https://twitter.com/SoftSkillsEng?ref_src=twsrc%5Etfw">@SoftSkillsEng</a> when you mentioned it. Just listened to EP 149 and totally relevant to me as a 40-year-old dev. Thanks for sharing! Also, nice to hear your name in the shoutouts!</p>&mdash; Andrew Serff (@andrewserff) <a href="https://twitter.com/andrewserff/status/1114300319997939712?ref_src=twsrc%5Etfw">April 5, 2019</a></blockquote>
+  </section>
+</div>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+

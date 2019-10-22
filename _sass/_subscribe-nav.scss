@@ -1,0 +1,122 @@
+.subscribe-nav {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.subscribe-nav-label {
+  flex: 0 1 auto;
+  position: relative;
+  padding: .275rem 1rem .2rem;
+  border-radius: 4px 4px 0 0;
+  font-size: .825rem;
+  font-weight: var(--font-bold);
+  color: #494949;
+}
+
+.subscribe-link-sublabel {
+  display: none;
+  margin-left: .5ch; // Works around flexbox issues
+}
+
+.subscribe-nav ul {
+  flex: 0 1 100%;
+}
+
+.subscribe-nav ul,
+.subscribe-nav li {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.subscribe-nav ul {
+  flex-flow: row wrap;
+  border-radius: 4px;
+  background-color: var(--subscribe-nav-color);
+}
+
+.subscribe-nav li {
+  flex: 1;
+}
+
+.subscribe-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 100%;
+  padding: .5rem .65rem;
+  font-size: .95rem;
+  transition: all var(--anim-speed);
+}
+
+.subscribe-link:hover {
+  opacity: .7;
+}
+
+.subscribe-link .icon {
+  vertical-align: text-bottom;
+  width: 20px;
+  margin-right: .4rem;
+}
+
+.subscribe-text {
+  max-width: 30ch;
+  line-height: 1.2;
+}
+
+.button .subscribe-link:hover {
+  opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .subscribe-nav {
+    border-radius: 4px;
+    background-color: var(--subscribe-nav-color);
+  }
+
+  .subscribe-nav-label {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem 0 0;
+    border-radius: 4px 0 0 4px;
+    background-color: var(--color3);
+    font-size: 1rem;
+    color: #FFF;
+  }
+
+  .subscribe-nav-label:after {
+    position: absolute;
+    top: 0;
+    right: -22px;
+    display: inline-block;
+    width: 30px;
+    height: 100%;
+    background-image: url(/img/rounded-end.svg);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    content: "";
+  }
+
+  .subscribe-nav ul {
+    flex: 1;
+  }
+
+  .subscribe-text {
+    display: none;
+  }
+
+  .subscribe-link .icon {
+    width: 24px;
+  }
+
+  .subscribe-link-sublabel {
+    display: none;
+  }
+}
+
+@media (min-width: 980px) {
+  .subscribe-link-sublabel {
+    display: inline-block;
+  }
+}
