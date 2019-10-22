@@ -63,7 +63,7 @@ layout: default
 <h2 class="sr-only">Recent Episodes</h2>
 <div class="posts">
   <div class="container">
-    {% for post in paginator.posts limit:4 %}
+    {% for post in paginator.posts limit:3 %}
       {% if forloop.first == true %}
         {% include post_summary.html show_details="True" show_latest="True" %}
       {% else %}
