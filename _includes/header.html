@@ -1,18 +1,73 @@
-<header class="site-header px2 px-responsive">
-  <div class="mt2 wrap">
-    <div class="measure">
-      <h1 class="h3 site-title">
-        <a class="site-title-link" href="{{ site.url }}">
-          <img class="header-logo" src="/img/logo-transparent-bg.png" alt="Soft Skills Engineering Podcast" />
-        </a>
-      </h1>
-      <nav class="site-nav">
-        {% include navigation.html %}
-      </nav>
-      <div class="clearfix"></div>
-      {% if site.show_social_icons %}
+<header class="site-header" id="SiteHeader">
+  <div class="container">
+    <div class="site-header-primary">
+      <button class="nav-toggler" id="NavToggler">Menu</button>
+      <a class="site-title-link" href="{{ site.url }}">
+        <img
+          class="header-logo logo-stacked"
+          src="/img/logo.svg"
+          width="120"
+          alt="Soft Skills Engineering Podcast" />
+
+        <img
+          class="header-logo logo-landscape"
+          src="/img/logo-wide.svg"
+          width="120"
+          alt="Soft Skills Engineering Podcast"
+          aria-hidden="true" />
+      </a>
+      <a href="{{ site.patreon_url }}" class="patreon-link">
+        <small>Support us on</small>
+        <span class="patreon-link-label">
+          <img src="/img/heart.svg" alt="Heart" aria-hidden="true" width="20" />
+          <strong>Patreon</strong>
+        </span>
+      </a>
+    </div>
+
+    <div class="site-header-navs">
+      <div class="site-header-navs-wrap">
+        <nav class="site-nav">
+          <ul>
+            <li>
+              <a href="/episodes/">Episodes</a>
+            </li>
+            <li>
+              <a href="/meet-the-hosts/">Meet the Hosts</a>
+            </li>
+            <li>
+              <a href="/ask/">Ask a Question</a>
+            </li>
+            <li>
+              <a href="/sponsors/">Sponsors</a>
+            </li>
+            <li>
+              <a href="/slack/">Slack</a>
+            </li>
+            <li class="patreon-cta">
+              <a href="{{ site.patreon_url }}" class="patreon-link">
+                <small>Support us on</small>
+                <span class="patreon-link-label">
+                  <img src="/img/heart.svg" alt="Heart" aria-hidden="true" width="20" />
+                  <strong>Patreon</strong>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="subscribe-nav">
+          <span class="subscribe-nav-label">Where to listen</span>
+          {% include subscribe_nav.html %}
+
+          <p class="subscribe-text"><small>Search for <strong>"Soft Skills Engineering"</strong> in your favorite podcast app.</small></p>
+        </nav>
+
+
         {% include social_links.html %}
-      {% endif %}
+      </div>
     </div>
   </div>
 </header>
+
+

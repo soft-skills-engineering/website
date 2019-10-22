@@ -1,0 +1,40 @@
+.social-nav {
+  display: flex;
+  margin-bottom: var(--space);
+}
+
+.social-nav a,
+.social-nav p {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-nav p {
+  margin-bottom: 0;
+}
+
+.social-nav a {
+  transition: all var(--anim-speed);
+}
+
+.social-nav a:hover {
+  opacity: .7;
+}
+
+.social-nav strong {
+  font-weight: var(--font-medium);
+}
+
+.social-nav-heading {
+  width: 50%;
+  max-width: 140px; // Dependent upon text
+  font-size: .95rem;
+  line-height: 1.2;
+}
+
+.social-nav .icon {
+  margin-left: 1rem;
+  width: 32px;
+  height: 32px;
+}

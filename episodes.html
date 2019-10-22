@@ -1,0 +1,20 @@
+---
+layout: page
+title: Episodes
+permalink: /episodes/
+---
+
+<div class="hero">
+  <div class="container">
+    <h1>All Episodes</h1>
+    <p class="lead">Showing all {{ site.posts | size }} episodes!</p>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    {% for post in site.posts %}
+      {% include post_summary.html compact="True" %}
+    {% endfor %}
+  </div>
+</div>

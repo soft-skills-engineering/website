@@ -1,50 +1,45 @@
 ---
 layout: default
+body_class: focused
 ---
 
 {% assign minutes = content | strip_html | number_of_words | divided_by: 180 %}
 {% if minutes == 0 %}
-{% assign minutes = 1 %}
+  {% assign minutes = 1 %}
 {% endif %}
 
-<div class="post-header mb2">
-  <h1>{{ page.title }}</h1>
-  <span class="post-meta">{{ page.date | date: site.date_format }}</span><br>
-  {% if page.update_date %}
-    <span class="post-meta">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span><br>
-  {% endif %}
-  {% if site.estimate_reading_time %}
-    <span class="post-meta small">
-      {% if page.minutes %}
-        {{ page.minutes }} {{ site.text.post.minute_read }}
-      {% else %}
-        {{ minutes }} {{ site.text.post.minute_read }}
-      {% endif %}
-    </span>
-  {% endif %}
-</div>
-
-<article class="post-content">
-
-  {% if page.file %}
-    <div class="audio-player">
-      <audio src="{{ page.file }}?source=webplayer" preload="none" controls="controls" type="audio/mp3">
-        Your browser doesn't support the <code>audio</code> element.
-      </audio>
-
-      <a href="{{ page.file }}?source=webdownload">Download</a>
+<article>
+  <div class="hero post-hero">
+    <div class="container">
+      <h1 class="post-title" data-post-title>{{ page.title }}</h1>
+      <p class="post-meta">
+        <time class="post-timestamp">
+          {{ page.date | date: site.date_format }}</time>
+          <br>
+          {% if page.update_date %}
+            <span class="post-updated">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span>
+          {% endif %}
+      </p>
     </div>
-  {% endif %}
+  </div>
 
-  {{ content }}
+  <div class="container audio-block">
+    {% if page.file %}
+      {% include audio_player.html %}
+    {% endif %}
+  </div>
+
+  <div class="container">
+    {{ content }}
+  </div>
 </article>
 
-{% if site.show_sharing_icons %}
-  {% include share_buttons.html %}
-{% endif %}
+<div class="container">
 
-<div style="text-align: center">
-  <img style="height: 80px;" src="/img/talk.svg" />
+<div class="icon-sep">
+  <img
+    src="/img/talk.svg"
+    alt="A speech bubble" />
 </div>
 
 {% if page.enable_comments %}
@@ -53,7 +48,4 @@ layout: default
 {% else %}
   <h2 class="disqus_header disqus_disabled">Comments are disabled for this episode</h2>
 {% endif %}
-
-{% if site.show_post_footers %}
-  {% include post_footer.html %}
-{% endif %}
+</div>
