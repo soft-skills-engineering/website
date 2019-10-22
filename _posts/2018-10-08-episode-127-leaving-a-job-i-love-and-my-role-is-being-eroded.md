@@ -7,6 +7,7 @@ duration: "21:20"
 length: 18104827
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-127.mp3"
 categories: episode
+favorite: true
 enable_comments: true
 ---
 

@@ -7,6 +7,7 @@ duration: "25:33"
 length: 23422891
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-007.mp3"
 enable_comments: true
+favorite: true
 categories: episode
 ---
 
