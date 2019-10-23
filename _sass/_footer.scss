@@ -33,6 +33,7 @@
 
   ul {
     display: flex;
+    justify-content: center;
     flex-flow: row wrap;
     margin-left: -.5rem;
     padding: 0;
@@ -71,6 +72,10 @@
   }
 }
 
+.site-footer .subscribe-nav-flat {
+  text-align: center;
+}
+
 .site-footer .subscribe-nav-label {
   margin-bottom: var(--space);
   padding: 0;
@@ -87,6 +92,11 @@
   display: block;
   width: auto;
   max-width: 100%;
+}
+
+.site-footer .social-nav {
+  margin-bottom: var(--double-space);
+  justify-content: center;
 }
 
 .attribution {
@@ -159,10 +169,16 @@
   }
 
   .site-footer .subscribe-nav-flat {
+    text-align: left;
+
     li {
       margin-bottom: 0;
       width: auto;
     }
+  }
+
+  .site-footer .subscribe-nav-label {
+    margin-bottom: .5rem;
   }
 
   .attribution-hosts {
