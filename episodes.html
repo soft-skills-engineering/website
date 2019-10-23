@@ -14,7 +14,11 @@ permalink: /episodes/
 <div class="block">
   <div class="container">
     {% for post in site.posts %}
-      {% include post_summary.html compact="True" %}
+      {% if forloop.first == true %}
+        {% include post_summary.html show_latest="True" compact="True" %}
+      {% else %}
+        {% include post_summary.html compact="True" %}
+      {% endif %}
     {% endfor %}
   </div>
 </div>
