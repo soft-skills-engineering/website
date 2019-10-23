@@ -34,15 +34,18 @@
   ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
     margin-left: -.5rem;
     padding: 0;
   }
 
   li {
+    margin-right: var(--space);
     margin-bottom: var(--space);
-    width: 50%;
     list-style: none;
+  }
+
+  li:last-child {
+    margin-right: 0;
   }
 
   a {
@@ -57,6 +60,10 @@
 
   a:hover {
     opacity: .7;
+  }
+
+  .icon {
+    width: 24px;
   }
 
   .subscribe-link-sublabel {
