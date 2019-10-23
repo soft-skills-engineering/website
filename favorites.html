@@ -12,7 +12,7 @@ permalink: /favorites/
 </div>
 
 <div class="block">
-  <div class="container">
+  <div class="container favorite-posts">
     {% for post in site.posts %}
       {% if post.favorite %}
         {% include post_summary.html compact="True" %}

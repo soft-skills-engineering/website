@@ -7,19 +7,20 @@ layout: default
     <h1>It takes more than great code to be a great engineer.</h1>
 
     <p class="lead">
-      Soft Skills Engineering is a weekly advice podcast for software developers. We discuss topics and answer questions around:
+      Soft Skills Engineering is a weekly advice podcast for software developers about non-technical topics.
+
+      Each week, the hosts answer questions from listeners about topics such as:
     </p>
 
     <ul class="discussion-list split-list">
       <li>pay raises</li>
-      <li>hiring</li>
-      <li>going into management</li>
-      <li>annoying co-workers</li>
+      <li>hiring and firing developers</li>
+      <li>technical leadership</li>
+      <li>learning new technologies</li>
       <li>quitting your job</li>
-      <li>meetings</li>
-      <li>micromanagers</li>
-      <li>installing a ball pit in your office</li>
-      <li>and much much more...</li>
+      <li>getting promoted</li>
+      <li>code review etiquette</li>
+      <li>and much more...</li>
     </ul>
 
     <section class="subscribe-box">
@@ -63,7 +64,7 @@ layout: default
 <h2 class="sr-only">Recent Episodes</h2>
 <div class="posts">
   <div class="container">
-    {% for post in paginator.posts limit:4 %}
+    {% for post in paginator.posts limit:3 %}
       {% if forloop.first == true %}
         {% include post_summary.html show_details="True" show_latest="True" %}
       {% else %}

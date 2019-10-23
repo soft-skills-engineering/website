@@ -7,6 +7,7 @@ duration: "31:9"
 length: 29899776
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-051.mp3"
 categories: episode
+favorite: true
 enable_comments: true
 ---
 

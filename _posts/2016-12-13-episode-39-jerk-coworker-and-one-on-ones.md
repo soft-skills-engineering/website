@@ -7,6 +7,7 @@ duration: "30:40"
 length: 29435136
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-039.mp3"
 categories: episode
+favorite: true
 enable_comments: true
 ---
 
