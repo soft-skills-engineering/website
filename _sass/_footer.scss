@@ -119,6 +119,15 @@
   }
 }
 
+.attribution .website-by {
+  margin-top: var(--double-space);
+
+  small {
+    font-size: .9rem;
+    opacity: .8;
+  }
+}
+
 .attribution-hosts {
   display: block;
   margin-top: .35rem;
