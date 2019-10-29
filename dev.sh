@@ -4,7 +4,10 @@ set -e
 
 cd "$(dirname "$0")"
 
-which bundle >/dev/null || sudo gem install bundler
+if ! which bundle >/dev/null; then
+  echo "Can't find a bundle executable. Please install it. You may need to run 'rvm use 2.6.5'"
+  exit 1
+fi
 
 bundle install
 rm -rf _site
