@@ -30,8 +30,12 @@ def create_pull_request(github_client, episode_number):
     base='gh-pages',
     maintainer_can_modify=True,
   )
+
+  pull_request.set_labels('episode')
+
   pull_request_url = PULL_REQUEST_URL_TEMPLATE.format(
     repo_full_path=REPO_FULL_PATH,
     pull_request_number=pull_request.number,
   )
+
   return pull_request_url
