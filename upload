@@ -128,10 +128,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   git add "$episode_markdown_file"
   git commit -m "Episode $episode_number"
   git push origin $branch_name
+  pull_request_url=$(./create-pull-request $episode_number)
   echo
-  echo Go here to create the pull request:
+  echo Merge this pull request when ready to publish:
   echo
-  echo "https://github.com/soft-skills-engineering/website/tree/$branch_name"
+  echo $pull_request_url
   echo
 fi
 echo
