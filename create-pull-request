@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+import sys
+from githubapi import create_github_client, create_pull_request
+
+if len(sys.argv) != 2:
+  print("Usage: {} <episode-number>".format(sys.argv[0]))
+  sys.exit(1)
+
+episode_number = sys.argv[1]
+github_client = create_github_client()
+url = create_pull_request(github_client, episode_number)
+print(url)
