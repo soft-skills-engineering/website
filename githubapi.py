@@ -34,4 +34,11 @@ def create_pull_request(github_client, episode_number):
     repo_full_path=REPO_FULL_PATH,
     pull_request_number=pull_request.number,
   )
+
+  pull_request.set_labels(['episode'])
+
+  # The GitHub API treats PRs 
+  #issue = repo.get_issue(pull_request.number)
+  #issue.edit(labels=['episode'])
+
   return pull_request_url
