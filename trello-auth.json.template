@@ -1,4 +1,4 @@
 {
-  "key": "Your Trello Key Here",
+  "key": "Your Trello key from https://trello.com/app-key",
   "token": "Your Trello Token Here"
 }
