@@ -121,17 +121,18 @@ echo
 read -p "Preview the file above. Add and push to github now? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   branch_name=episode-$prefixed_episode_number
-  echo "Checking out the gh-pages branch, and creating a new branch called $branch_name"
-  git checkout gh-pages
-  git pull
-  git checkout -b $branch_name
-  git add "$episode_markdown_file"
-  git commit -m "Episode $episode_number"
-  git push origin $branch_name
+  echo "Checking out the gh-pages branch, and creating pull request for new branch $branch_name"
+  git checkout gh-pages >/dev/null
+  git pull >/dev/null
+  git checkout -b $branch_name >/dev/null
+  git add "$episode_markdown_file" >/dev/null
+  git commit -m "Episode $episode_number" >/dev/null
+  git push origin $branch_name >/dev/null
+  pull_request_url=$(./create-pull-request $episode_number)
   echo
-  echo Go here to create the pull request:
+  echo Merge this pull request when ready to publish:
   echo
-  echo "https://github.com/soft-skills-engineering/website/tree/$branch_name"
+  echo $pull_request_url
   echo
 fi
 echo
