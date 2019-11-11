@@ -11,13 +11,13 @@ def read_auth_token():
   script_path = os.path.dirname(os.path.realpath(__file__))
   auth_file = script_path + "/github-auth.json"
   if not os.path.exists(auth_file):
-    print("Cannot access GitHub: Missing {}".format(auth_file))
-    print("Create a Personal Access Token token with 'repo' scope if you don't already have one: https://github.com/settings/tokens")
+    sys.stderr.write("Cannot access GitHub: Missing {}\n".format(auth_file))
+    sys.stderr.write("Create a Personal Access Token token with 'repo' scope if you don't already have one: https://github.com/settings/tokens\n")
     sys.exit(1)
   with open("github-auth.json") as f:
     auth = json.loads(f.read())
   if not auth.get('token', '').strip():
-    print("Cannot access GitHub: Missing 'token' from {}".format(auth_file))
+    sys.stderr.write("Cannot access GitHub: Missing 'token' from {}\n".format(auth_file))
     sys.exit(1)
   return auth['token']
 

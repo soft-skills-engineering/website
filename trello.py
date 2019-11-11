@@ -6,21 +6,21 @@ def read_auth_info():
   script_path = os.path.dirname(os.path.realpath(__file__))
   auth_file = script_path + "/trello-auth.json"
   if not os.path.exists(auth_file):
-    print("Cannot access Trello: Missing {}".format(auth_file))
+    sys.stderr.write("Cannot access Trello: Missing {}\n".format(auth_file))
     sys.exit(1)
   with open("trello-auth.json") as f:
     auth = json.loads(f.read())
   if not auth.get('key', '').strip():
-    print("Cannot access Trello: Missing 'key' from {}".format(auth_file))
+    sys.stderr.write("Cannot access Trello: Missing 'key' from {}\n".format(auth_file))
     sys.exit(1)
   if not auth.get('token', '').strip():
-    print("Cannot access Trello: Missing 'token' from {}".format(auth_file))
+    sys.stderr.write("Cannot access Trello: Missing 'token' from {}\n".format(auth_file))
     sys.exit(1)
   return auth['key'], auth['token']
 
 def set_up():
   if len(sys.argv) != 2:
-    print("Usage: {} <episode-number>".format(sys.argv[0]))
+    sys.stderr.write("Usage: {} <episode-number>\n".format(sys.argv[0]))
     sys.exit(1)
   episode_number = sys.argv[1]
   key, token = read_auth_info()
@@ -30,7 +30,7 @@ def get_question_cards(key, token, episode_number):
   import requests
   list_id = find_episode_list_id(key, token, episode_number)
   if not list_id:
-    print("Could not find Trello list for episode {}".format(episode_number))
+    sys.stderr.write("Could not find Trello list for episode {}\n".format(episode_number))
     sys.exit(1)
   response = requests.get('https://api.trello.com/1/lists/{}/cards?key={}&token={}'.format(list_id, key, token))
   cards = json.loads(response.content)

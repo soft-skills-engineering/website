@@ -1,5 +1,4 @@
 import os.path, json, tweepy
-from pprint import pprint
 
 def tweet(api, episode_number, episode_summary, episode_url):
   TWEET_TEMPLATE="Episode {episode_number}: {episode_summary}\n\n{episode_url}"
@@ -22,14 +21,14 @@ def twitter_api():
   script_path = os.path.dirname(os.path.realpath(__file__))
   auth_file = script_path + "/twitter-auth.json"
   if not os.path.exists(auth_file):
-    print("Cannot access Twitter: Missing {}".format(auth_file))
+    sys.stderr.write("Cannot access Twitter: Missing {}\n".format(auth_file))
     sys.exit(1)
   with open("twitter-auth.json") as f:
     auth_json = json.loads(f.read())
 
   missing_fields = [x for x in REQUIRED_AUTH_FIELDS if not auth_json.get(x, '').strip()]
   if missing_fields:
-    print("Cannot access Twitter: Missing field{} {} from {}".format(
+    sys.stderr.write("Cannot access Twitter: Missing field{} {} from {}\n".format(
         's' if len(missing_fields) > 1 else '',
         ', '.join(missing_fields),
         reqauth_file),
@@ -37,7 +36,6 @@ def twitter_api():
     sys.exit(1)
 
   auth = tweepy.OAuthHandler(auth_json['consumer_token'], auth_json['consumer_secret'])
-  #print(auth.get_username())
   auth.set_access_token(auth_json['access_token'], auth_json['access_token_secret'])
   api = tweepy.API(auth)
   return api
