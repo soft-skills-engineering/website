@@ -1,5 +1,5 @@
 from github import Github
-import os.path, json
+import os.path, json, sys
 
 REPO_FULL_PATH='soft-skills-engineering/website'
 PULL_REQUEST_URL_TEMPLATE = 'https://github.com/{repo_full_path}/pull/{pull_request_number}'
