@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 189: Building relationships and handling negative feedback"
+title: "Episode 189: Building relationships and handling negative feedback with speical guest Jeff Leiken"
 date: 2019-12-23 12:00:00 -0700
 guid: 779f2f2e-6538-4e1c-85a6-bc8314375507
 duration: "43:09"
@@ -18,3 +18,5 @@ In this episode, Dave and Jamison answer these questions:
 
 
 2. I just got my annual performance review at work. The overall rating was "meets expectations", but I worked really hard this year and thought I did great work. I was hoping for a higher rating than that. Maybe worse, this means I got a smaller raise than I expected. The review contained some suggestions for improvement. I feel pretty demotivated by the whole situation. How do I get out of this funk?
+
+You can get in touch with Jeff Leiken at <a href="https://www.evolutionmentoring.com/">https://www.evolutionmentoring.com/</a>.
