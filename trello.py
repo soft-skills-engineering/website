@@ -27,23 +27,29 @@ def set_up():
   return episode_number, key, token
 
 def get_question_cards(key, token, episode_number):
-  import requests
   list_id = find_episode_list_id(key, token, episode_number)
   if not list_id:
     sys.stderr.write("Could not find Trello list for episode {}\n".format(episode_number))
     sys.exit(1)
-  response = requests.get('https://api.trello.com/1/lists/{}/cards?key={}&token={}'.format(list_id, key, token))
-  cards = json.loads(response.content)
+  cards = get_json('https://api.trello.com/1/lists/{}/cards?key={}&token={}'.format(list_id, key, token))
   question_cards = [card for card in cards if any(label['name'] == 'question' for label in card['labels'])]
   return question_cards
-  #for card in cards:
-  #  if lst['name'].lower() == "episode {}".format(episode_number):
-  #    return lst['id']
 
 def find_episode_list_id(key, token, episode_number):
-  import requests
-  response = requests.get('https://api.trello.com/1/boards/{}/lists?key={}&token={}'.format(BOARD_ID, key, token))
-  lists = json.loads(response.content)
+  lists = get_json('https://api.trello.com/1/boards/{}/lists?key={}&token={}'.format(BOARD_ID, key, token))
   for lst in lists:
     if lst['name'].lower().startswith("episode {}".format(episode_number)):
       return lst['id']
+
+def get_json(url):
+  import requests
+  response = requests.get(url)
+  if response.status_code == 200:
+    try:
+      return json.loads(response.content)
+    except json.decoder.JSONDecodeError as e:
+      sys.stderr("Invalid JSON returned from Trello API: {}, JSON: {}".format(e, response.content))
+      sys.exit(1)
+  else:
+    sys.stderr.write("Got error from Trello API. HTTP status code: {}, response content: {}\n".format(response.status_code, response.content))
+    sys.exit(1)
