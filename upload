@@ -105,7 +105,10 @@ fi
 
 read -p "Upload mp3 file to server now? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  scp "$mp3_file" "$username@thesmithfam.org:~/podcasts/${new_filename}"
+  host="thesmithfam.org"
+  dest_path="~/podcasts/${new_filename}"
+  scp "$mp3_file" "$username@$host:$dest_path"
+  ssh $username@$host "chmod 644 $dest_path"
 fi
 echo
 echo
