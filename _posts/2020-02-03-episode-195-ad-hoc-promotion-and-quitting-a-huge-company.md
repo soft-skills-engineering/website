@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 195: Ad-hoc promotion and quitting a huge company"
+title: "Episode 195: Ad-hoc promotion and quitting a huge company with Charity Majors"
 date: 2020-02-03 12:00:00 -0700
 guid: 11b585ea-eabf-41ad-a60b-1507c9dff1c8
 duration: "33:14"
@@ -10,7 +10,9 @@ categories: episode
 enable_comments: true
 ---
 
-In this episode, Dave and Jamison answer these questions:
+We're excited to have special guest [Charity Majors](https://twitter.com/mipsytipsy) on the show! Charity is the CTO and former CEO of [Honeycomb](https://www.honeycomb.io). She has worked at Second Life, Parse, Facebook, and more. She blogs at [charity.wtf](https://charity.wtf/).
+
+Dave, Jamison, and Charity answer these questions:
 
 1. I’ve had the role of tech lead informally for the past two years at a fast-growing tech startup. We were a team of 6 developers, and now we are 16. Recently, we had a department meeting in which the Software Development VP communicated that we have 3 teams and I was the tech lead of two of them. I was surprised. He hasn’t mentioned his decision of splitting the teams nor that I’ve been officially promoted to tech lead. I was expecting a one-on-one where he would “pop the question”: Will you be my tech lead?
    
