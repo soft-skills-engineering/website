@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 196: 'Offshore resources' and ageist layoffs"
+title: "Episode 196: \"Offshore resources\" and ageist layoffs"
 date: 2020-02-10 12:00:00 -0700
 guid: ab5ecbf1-d6ad-4574-9955-a526ca7fb6bf
 duration: "27:10"
