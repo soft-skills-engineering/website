@@ -50,9 +50,18 @@ if [ -z "$episode_date" ]; then
   episode_date=$(./upcoming-monday-date)
   read -p "Enter the publication date: [$episode_date] "
   if [ -n "$REPLY" ]; then
-    episode_date=$REPLY
+    if [ "$REPLY" == "y" ]; then
+      true # no op -- keep the episode_date unchanged
+    elif [[ $REPLY =~ ^[\d\d\d\d]-[\d\d]-[\d\d]$ ]]; then
+      episode_date=$REPLY
+    else
+      echo "ERROR: Invalid date '$REPLY'"
+      exit 1
+    fi
   fi
 fi
+
+echo "Using episode date: $episode_date"
 
 # Hack for Dave's Macs:
 username=$(whoami)
@@ -64,7 +73,7 @@ website_dir="$(realpath "$(dirname "$0")")"
 byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
 duration=`mp3info -p "%m:%02s" "$mp3_file"`
 episode_number=`echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1'`
-echo "Getting episode info from Trello for episode $episode_number ..."
+echo "Getting Trello info for episode $episode_number ..."
 ./trello-check $episode_number
 episode_title="$(./trello-episode-title $episode_number)"
 episode_url_title="$(./trello-episode-url $episode_number)"
