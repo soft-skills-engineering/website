@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 206: Micromanaging WFH and vaguely tech lead"
-date: y 12:00:00 -0700
+date: 2020-04-20 12:00:00 -0700
 guid: 3e13a993-32e1-400e-87b8-372e26668ac0
 duration: "32:40"
 length: 34258458
