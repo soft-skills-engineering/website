@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 207: Unclear gareer goals and garbage code"
+title: "Episode 207: Unclear career goals and garbage code"
 date: 2020-04-27 12:00:00 -0700
 guid: edddf2c0-04d5-4a6a-a580-f81e95a5b999
 duration: "34:46"
