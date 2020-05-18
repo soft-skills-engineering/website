@@ -52,7 +52,7 @@ if [ -z "$episode_date" ]; then
   if [ -n "$REPLY" ]; then
     if [ "$REPLY" == "y" ]; then
       true # no op -- keep the episode_date unchanged
-    elif [[ $REPLY =~ ^[\d\d\d\d]-[\d\d]-[\d\d]$ ]]; then
+    elif [[ $REPLY =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
       episode_date=$REPLY
     else
       echo "ERROR: Invalid date '$REPLY'"
