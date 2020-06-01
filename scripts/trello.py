@@ -26,14 +26,25 @@ def set_up():
   key, token = read_auth_info()
   return episode_number, key, token
 
-def get_question_cards(key, token, episode_number):
+def get_cards(key, token, episode_number):
   list_id = find_episode_list_id(key, token, episode_number)
   if not list_id:
     sys.stderr.write("Could not find Trello list for episode {}\n".format(episode_number))
     sys.exit(1)
-  cards = get_json('https://api.trello.com/1/lists/{}/cards?key={}&token={}'.format(list_id, key, token))
+  return get_json('https://api.trello.com/1/lists/{}/cards?key={}&token={}'.format(list_id, key, token))
+
+def get_question_cards(key, token, episode_number):
+  cards = get_cards(key, token, episode_number)
   question_cards = [card for card in cards if any(label['name'] == 'question' for label in card['labels'])]
   return question_cards
+
+# assuming there is only a single note card if it exists
+def get_show_notes(key, token, episode_number):
+  cards = get_cards(key, token, episode_number)
+  show_notes = [card for card in cards if any(label['name'] == 'notes' for label in card['labels'])]
+  if len(show_notes) > 0:
+    return show_notes[0]['desc']
+  return ""
 
 def find_episode_list_id(key, token, episode_number):
   lists = get_json('https://api.trello.com/1/boards/{}/lists?key={}&token={}'.format(BOARD_ID, key, token))
