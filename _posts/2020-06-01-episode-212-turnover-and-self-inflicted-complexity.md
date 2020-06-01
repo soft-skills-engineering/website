@@ -21,3 +21,5 @@ In this episode, Dave and Jamison answer these questions:
 
 
 2. I am the tech lead on a team at a large tech company. One of the developers on our team has consistently struggled to meet deadlines and project deliverables. He frequently seems to invent his way into impossibly complex software problems. Additionally, he also seems to lack the ability to focus on a single thread, and tries to tackle diverse kinds of work in parallel. I've tried to help mentor and coach him, advising him to stick to one problem at a time and try to raise his hand and has for help before he backs himself into a hermeneutically sealed NP-hard problem — but I haven't had much success. I wanted to see if you guys had any advice. Thanks a million!!!
+
+Actual study showing actual results that we actually linked in the show notes this episode: https://radford.aon.com/insights/infographics/2017/technology/q1-2017-turnover-rates-hiring-sentiment-by-industry-at-us-technology-companies
