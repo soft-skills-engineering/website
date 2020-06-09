@@ -93,6 +93,8 @@
           if (contentMetadata && contentMetadata.position) {
             var positions = contentMetadata.position
             episode.highlightedContent = createHighlightedContent(episode.content, positions)
+          } else {
+            episode.highlightedContent = episode.content
           }
         })
         return episode
