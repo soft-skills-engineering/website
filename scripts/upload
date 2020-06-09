@@ -69,7 +69,8 @@ if [ $username == "dasmithm" -o $username == "dsmith" ]; then # Dave's accounts
   username="dave"
 fi
 
-website_dir="$(realpath "$(dirname "$0")")"
+# This script is in the "scripts" directory:
+website_dir="$(realpath "$(dirname "$0")/..")"
 byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
 duration=`mp3info -p "%m:%02s" "$mp3_file"`
 episode_number=`echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1'`

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import re
-from trello import set_up, get_question_cards
+from trello import set_up, get_question_cards, get_show_notes
 
 def format_questions(questions):
   ret = []
@@ -25,7 +25,14 @@ episode_number, key, token = set_up()
 question_cards = get_question_cards(key, token, episode_number)
 questions = [card['desc'] for card in question_cards]
 questions = format_questions(questions)
+
+notes = get_show_notes(key, token, episode_number)
+
+print('## Questions\n')
 for count, question in enumerate(questions):
   print('{}. {}'.format(count+1, question))
   print('\n')
+
+if notes != '':
+  print('## Show Notes\n{}'.format(notes))
 
