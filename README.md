@@ -9,7 +9,7 @@ cd scripts
 ./upload path/to/episode/XXX.mp3
 ```
 
-* Review the mp3 by copying/pasting the URL into a browser. Make sure it's fully uploaded by listening to the very end.
+* Review the mp3 listed in the Jekyll post by copying/pasting the URL into a browser (it looks like `https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-XXX.mp3`). Make sure it's fully uploaded by listening to the very end.
 * Merge the pull request, the episode will go live in the feed immediately: http://softskills.audio/feed.xml
 * However, subscribers use feedburner (which pulls from the feed link above). Feedburner takes up to 30 minutes to get the newest episode.
 
