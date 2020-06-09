@@ -7,7 +7,7 @@ tags: in-nav
 <div class="container">
   <form id="search-form" action="#" onsubmit="return searchFormSubmitted()">
     <input type="text" id="search-box"/>
-    <input type="submit" value="search"/>
+    <input type="submit" value="Search Episodes"/>
   </form>
   <p id="search-results-summary"></p>
   <ul id="search-results"></ul>
@@ -18,8 +18,6 @@ tags: in-nav
     {% for episode in site.posts %}
       "{{ episode.url | slugify }}": {
         "title": "{{ episode.title | xml_escape }}",
-        "author": "{{ episode.author | xml_escape }}",
-        "category": "{{ episode.category | xml_escape }}",
         "content": {{ episode.content | strip_html | jsonify }},
         "url": "{{ episode.url | xml_escape }}"
       }

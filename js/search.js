@@ -3,7 +3,12 @@
   var idx = createSearchIndex()
   window.searchFormSubmitted = searchFormSubmitted
   window.addEventListener('popstate', urlChanged)
-  urlChanged()
+  onPageLoad()
+
+  function onPageLoad() {
+    urlChanged()
+    document.getElementById('search-box').focus()
+  }
 
   function urlChanged() {
     var searchTerm = getQueryVariable('q')
@@ -20,8 +25,6 @@
     return lunr(function () {
       this.field('id')
       this.field('title', { boost: 10 })
-      this.field('author')
-      this.field('category')
       this.field('content')
       this.metadataWhitelist.push('position')
 
@@ -94,7 +97,7 @@
             var positions = contentMetadata.position
             episode.highlightedContent = createHighlightedContent(episode.content, positions)
           } else {
-            episode.highlightedContent = episode.content
+            episode.highlightedContent = episode.content.slice(0, 150) + '...'
           }
         })
         return episode
@@ -118,6 +121,20 @@
         '</span> ' +
         highlightedContent.slice(end+1, highlightedContent.length)
     }
+
+    if (positions.length > 0) {
+      var firstPosition = positions[0]
+      var start = firstPosition[0]
+      if (start > 50) {
+        highlightedContent = '...'  + highlightedContent.slice(start-50)
+      }
+
+      var end = highlightedContent.lastIndexOf('</span>')
+      if (highlightedContent.length - end > 50) {
+        highlightedContent = highlightedContent.slice(0, end + 50) + '...'
+      }
+    }
+
     return highlightedContent
   }
 
