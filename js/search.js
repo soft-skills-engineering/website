@@ -123,18 +123,39 @@
     }
 
     if (positions.length > 0) {
+      highlightedContent = elideStartOfContent(highlightedContent, positions)
+      highlightedContent = elideEndOfContent(highlightedContent)
+    }
+
+    // Remove leading whitespace at the start of lines so it doesn't create fixed-width Markdown formatting (I think this is blockquote):
+    highlightedContent = highlightedContent.replace(/^\s+/g, '')
+
+    return highlightedContent
+  }
+
+  // Chops off content that doesn't match the search term from the start of the string and prefixes with "..."
+  function elideStartOfContent(highlightedContent, positions) {
+    if (positions.length > 0) {
       var firstPosition = positions[0]
       var start = firstPosition[0]
       if (start > 50) {
-        highlightedContent = '...'  + highlightedContent.slice(start-50)
-      }
-
-      var end = highlightedContent.lastIndexOf('</span>')
-      if (highlightedContent.length - end > 50) {
-        highlightedContent = highlightedContent.slice(0, end + 50) + '...'
+        var sliceStart = start-50
+        console.log("start char:", highlightedContent[sliceStart])
+        while (!highlightedContent[sliceStart].match(/[\s]/) && sliceStart > 0) {
+          console.log("Moved start from", sliceStart, "to", sliceStart-1)
+          sliceStart--
+        }
+        highlightedContent = '...'  + highlightedContent.slice(sliceStart)
       }
     }
+    return highlightedContent
+  }
 
+  function elideEndOfContent(highlightedContent) {
+    var end = highlightedContent.lastIndexOf('</span>')
+    if (highlightedContent.length - end > 50) {
+      highlightedContent = highlightedContent.slice(0, end + 50) + '...'
+    }
     return highlightedContent
   }
 
