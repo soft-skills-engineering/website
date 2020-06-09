@@ -14,20 +14,20 @@ tags: in-nav
 </div>
 
 <script>
-  window.postStore = {
-    {% for post in site.posts %}
-      "{{ post.url | slugify }}": {
-        "title": "{{ post.title | xml_escape }}",
-        "author": "{{ post.author | xml_escape }}",
-        "category": "{{ post.category | xml_escape }}",
-        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-        "url": "{{ post.url | xml_escape }}"
+  window.episodeStore = {
+    {% for episode in site.posts %}
+      "{{ episode.url | slugify }}": {
+        "title": "{{ episode.title | xml_escape }}",
+        "author": "{{ episode.author | xml_escape }}",
+        "category": "{{ episode.category | xml_escape }}",
+        "content": {{ episode.content | strip_html | jsonify }},
+        "url": "{{ episode.url | xml_escape }}"
       }
       {% unless forloop.last %},{% endunless %}
     {% endfor %}
   };
 </script>
 
+<script src="/js/showdown.js"></script>
 <script src="/js/lunr.js"></script>
 <script src="/js/search.js"></script>
-
