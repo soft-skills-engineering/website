@@ -1,7 +1,19 @@
 # Soft Skills Engineering
 
-## Running Locally
-To run the site locally:
+## Publishing An Episode
+
+One script generates the Jekyll page using info from Trello, uploads the mp3 file to the server, and makes a Github pull request:
+
+```bash
+cd scripts
+./upload path/to/episode/XXX.mp3
+```
+
+* Review the mp3 by copying/pasting the URL into a browser. Make sure it's fully uploaded by listening to the very end.
+* Merge the pull request, the episode will go live in the feed immediately: http://softskills.audio/feed.xml
+* However, subscribers use feedburner (which pulls from the feed link above). Feedburner takes up to 30 minutes to get the newest episode.
+
+## Running the Web Site Locally
 
 ```
 ./dev.sh
@@ -21,26 +33,3 @@ Then, add this to your `~/.bash_profile` to make it permanent:
 ```
 source ~/.rvm/scripts/rvm
 ```
-
-
-## Publishing An Episode
-Install the dependencies:
-```bash
-cd scripts
-pip3 install -r requirements.txt
-```
-
-```bash
-cd scripts
-./create-pull-request [episode-number]
-```
-
-Use the trello helper scripts to generate the body of the PR, the URL, and the title:
-```bash
-cd scripts
-./trello-episode-title [episode-number]
-./trello-episode-url [episode-number]
-./trello-episode-description [episode-number]
-```
-
-Review the PR, then merge when good. That will publish the new page to the site, and push out a new episode to the RSS feed.
