@@ -140,9 +140,7 @@
       var start = firstPosition[0]
       if (start > 50) {
         var sliceStart = start-50
-        console.log("start char:", highlightedContent[sliceStart])
         while (!highlightedContent[sliceStart].match(/[\s]/) && sliceStart > 0) {
-          console.log("Moved start from", sliceStart, "to", sliceStart-1)
           sliceStart--
         }
         highlightedContent = '...'  + highlightedContent.slice(sliceStart)
