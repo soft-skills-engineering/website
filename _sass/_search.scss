@@ -1,0 +1,35 @@
+#search-results {
+  margin: 0;
+  padding: 0;
+}
+
+#search-results li {
+  list-style: none;
+}
+
+#search-results-summary {
+  font-size: 1.35em;
+}
+
+#search-form {
+  text-align: center;
+  margin-top: 1.35em;
+  margin-bottom: 1.35em;
+}
+
+#search-form input {
+  font-size: 1.2em;
+}
+
+#search-box {
+  width: 400px;
+}
+
+#search-results li .search-result-highlight {
+  font-weight: bold;
+  color: #333;
+  background: #fdfde5;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  padding: 2px 6px 2px 6px;
+}
