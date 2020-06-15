@@ -128,7 +128,7 @@
     }
 
     // Remove leading whitespace at the start of lines so it doesn't create fixed-width Markdown formatting (I think this is blockquote):
-    highlightedContent = highlightedContent.replace(/^\s+/g, '')
+    highlightedContent = highlightedContent.replace(/^\s+/gm, '')
 
     return highlightedContent
   }
