@@ -23,6 +23,10 @@ function python_setup() {
   pip install -r requirements.txt >/dev/null
 }
 
+function escape_yaml_quotes() {
+  echo "$1" | sed -e 's/"/\\"/g'
+}
+
 # Usage:
 if [[ $# != 2 ]] && [[ $# != 1 ]]; then
   echo
@@ -38,12 +42,17 @@ if [[ $# != 2 ]] && [[ $# != 1 ]]; then
   exit 1
 fi
 
+# Command line args:
+
+# Use `realpath` so we can `cd` later and still have this path refer to the same file
+mp3_file="$(realpath "$1")"
+
+# Should be something like YYYY-MM-DD (optional)
+episode_date=$2
+
+cd "$(dirname "$0")"
 check_prereqs
 python_setup
-
-# Command line args:
-mp3_file=$1
-episode_date=$2
 
 if [ -z "$episode_date" ]; then
   echo "Determining next episode date..."
@@ -70,7 +79,6 @@ if [ $username == "dasmithm" -o $username == "dsmith" ]; then # Dave's accounts
 fi
 
 # This script is in the "scripts" directory:
-website_dir="$(realpath "$(dirname "$0")/..")"
 byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
 duration=`mp3info -p "%m:%02s" "$mp3_file"`
 episode_number=`echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1'`
@@ -83,7 +91,7 @@ uuid=`uuidgen | perl -ne 'print lc'`
 prefixed_episode_number="$(printf '%03d' $episode_number)"
 new_filename="sse-${prefixed_episode_number}.mp3"
 episode_timestamp="$episode_date 12:00:00 -0700"
-episode_markdown_file="$website_dir/_posts/$episode_date-episode-$episode_number-$episode_url_title.md"
+episode_markdown_file="../_posts/$episode_date-episode-$episode_number-$episode_url_title.md"
 
 if [ -e "$episode_markdown_file" ]; then
   echo
@@ -97,7 +105,7 @@ else
 cat << EOM > "$episode_markdown_file"
 ---
 layout: post
-title: "Episode $episode_number: $episode_title"
+title: "Episode $episode_number: $(escape_yaml_quotes "$episode_title")"
 date: $episode_timestamp
 guid: $uuid
 duration: "$duration"
