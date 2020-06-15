@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 214: Jumping ship and saying "I can't""
+title: "Episode 214: Jumping ship and saying I can't"
 date: 2020-06-15 12:00:00 -0700
 guid: 0ade65b3-375b-4acb-a32e-e83735c41812
 duration: "30:14"
