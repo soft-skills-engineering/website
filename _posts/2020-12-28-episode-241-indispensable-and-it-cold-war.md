@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Episode 241: Indispensable and IT cold war"
+title: "Episode 241 (Rerun of 184): Indispensable and IT cold war"
 date: 2020-12-28 12:00:00 -0700
 guid: 62e671f2-7a57-4a14-b11c-d20956788150
 duration: "33:58"
