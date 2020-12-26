@@ -74,21 +74,24 @@ echo "Using episode date: $episode_date"
 
 # Hack for Dave's Macs:
 username=$(whoami)
-if [ $username == "dasmithm" -o $username == "dsmith" ]; then # Dave's accounts
+if [ "$username" == "dasmithm" -o "$username" == "dsmith" ]; then # Dave's accounts
   username="dave"
+fi
+if [ "$username" == "j0d019y" ]; then # Jamison's accounts
+  username="jergason"
 fi
 
 # This script is in the "scripts" directory:
-byte_size=`ls -nl "$mp3_file" | awk '{print $5}'`
-duration=`mp3info -p "%m:%02s" "$mp3_file"`
-episode_number=`echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1'`
+byte_size=$(ls -nl "$mp3_file" | awk '{print $5}')
+duration=$(mp3info -p "%m:%02s" "$mp3_file")
+episode_number=$(echo "$mp3_file" | perl -ne'/-(\d+)\.mp3/ && print $1')
 echo "Getting Trello info for episode $episode_number ..."
-./trello-check $episode_number
-episode_title="$(./trello-episode-title $episode_number)"
-episode_url_title="$(./trello-episode-url $episode_number)"
-episode_question_text="$(./trello-episode-description $episode_number)"
-uuid=`uuidgen | perl -ne 'print lc'`
-prefixed_episode_number="$(printf '%03d' $episode_number)"
+./trello-check "$episode_number"
+episode_title="$(./trello-episode-title "$episode_number")"
+episode_url_title="$(./trello-episode-url "$episode_number")"
+episode_question_text="$(./trello-episode-description "$episode_number")"
+uuid=$(uuidgen | perl -ne 'print lc')
+prefixed_episode_number="$(printf '%03d' "$episode_number")"
 new_filename="sse-${prefixed_episode_number}.mp3"
 episode_timestamp="$episode_date 12:00:00 -0700"
 episode_markdown_file="../_posts/$episode_date-episode-$episode_number-$episode_url_title.md"
@@ -125,7 +128,7 @@ read -p "Upload mp3 file to server now? "
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   host="thesmithfam.org"
   dest_path="~/podcasts/${new_filename}"
-  scp "$mp3_file" "$username@$host:$dest_path"
+  rsync -avP "$mp3_file" "$username@$host:$dest_path"
   ssh $username@$host "chmod 644 $dest_path"
 fi
 echo
@@ -133,7 +136,7 @@ echo
 
 echo "Episode markdown has been created here:"
 echo
-echo $episode_markdown_file
+echo "$episode_markdown_file"
 echo
 echo
 cat "$episode_markdown_file"
@@ -146,15 +149,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "Checking out the gh-pages branch, and creating pull request for new branch $branch_name"
   git checkout gh-pages --quiet
   git pull --quiet
-  git checkout -b $branch_name --quiet
+  git checkout -b "$branch_name" --quiet
   git add "$episode_markdown_file"
   git commit -m "Episode $episode_number" --quiet
-  git push origin $branch_name --quiet
-  pull_request_url=$(./create-pull-request $episode_number)
+  git push origin "$branch_name" --quiet
+  pull_request_url=$(./create-pull-request "$episode_number")
   echo
   echo Merge this pull request when ready to publish:
   echo
-  echo $pull_request_url
+  echo "$pull_request_url"
   echo
 fi
 echo
