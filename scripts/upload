@@ -34,7 +34,7 @@ if [[ $# != 2 ]] && [[ $# != 1 ]]; then
   echo "  1. Create the episode markdown file (with info from Trello)"
   echo "  2. Upload the mp3 to the server"
   echo
-  echo "Usage: ./upload <audio-file> [<episode-date>]"
+  echo "Usage: ./upload [--unattended] <audio-file> [<episode-date>]"
   echo
   echo "Example: ./upload /tmp/sse-112.mp3"
   echo "Example: ./upload /tmp/sse-112.mp3 2018-06-12"
@@ -43,6 +43,12 @@ if [[ $# != 2 ]] && [[ $# != 1 ]]; then
 fi
 
 # Command line args:
+
+is_unattened=false
+if [ "$1" = "--unattended" ]; then
+    is_unattended=true
+    shift
+fi
 
 # Use `realpath` so we can `cd` later and still have this path refer to the same file
 mp3_file="$(realpath "$1")"
@@ -57,15 +63,17 @@ python_setup
 if [ -z "$episode_date" ]; then
   echo "Determining next episode date..."
   episode_date=$(./upcoming-monday-date)
-  read -p "Enter the publication date: [$episode_date] "
-  if [ -n "$REPLY" ]; then
-    if [ "$REPLY" == "y" ]; then
-      true # no op -- keep the episode_date unchanged
-    elif [[ $REPLY =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-      episode_date=$REPLY
-    else
-      echo "ERROR: Invalid date '$REPLY'"
-      exit 1
+  if [ "$is_unattended" = false ]; then
+    read -p "Enter the publication date: [$episode_date] "
+    if [ -n "$REPLY" ]; then
+      if [ "$REPLY" == "y" ]; then
+        true # no op -- keep the episode_date unchanged
+      elif [[ $REPLY =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+        episode_date=$REPLY
+      else
+        echo "ERROR: Invalid date '$REPLY'"
+        exit 1
+      fi
     fi
   fi
 fi
@@ -124,27 +132,45 @@ $episode_question_text
 EOM
 fi
 
-read -p "Upload mp3 file to server now? "
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+do_mp3_upload=false
+if [ "$is_unattended" = false ]; then
+  read -p "Upload mp3 file to server now? "
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    do_mp3_upload=true
+  fi
+else
+  do_mp3_upload=true
+fi
+
+if [ "$do_mp3_upload" = true ]; then
   host="thesmithfam.org"
   dest_path="~/podcasts/${new_filename}"
   rsync -avP "$mp3_file" "$username@$host:$dest_path"
   ssh $username@$host "chmod 644 $dest_path"
+  echo
+  echo
 fi
-echo
-echo
 
-echo "Episode markdown has been created here:"
-echo
-echo "$episode_markdown_file"
-echo
-echo
-cat "$episode_markdown_file"
-echo
-echo
 
-read -p "Preview the file above. Add and push to github now? "
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+do_github=false
+if [ "$is_unattended" = false ]; then
+  echo "Episode markdown has been created here:"
+  echo
+  echo "$episode_markdown_file"
+  echo
+  echo
+  cat "$episode_markdown_file"
+  echo
+  echo
+  read -p "Preview the file above. Add and push to github now? "
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    do_github=true
+  fi
+else
+  do_github=true
+fi
+
+if [ "$do_github" = true ]; then
   branch_name=episode-$prefixed_episode_number
   echo "Checking out the gh-pages branch, and creating pull request for new branch $branch_name"
   git checkout gh-pages --quiet
@@ -160,5 +186,3 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "$pull_request_url"
   echo
 fi
-echo
-echo
