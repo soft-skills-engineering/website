@@ -1,0 +1,44 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+tmpdir=$(mktemp -d -t sse-XXXXXXXXXX)
+exit_code=0
+
+latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
+        | egrep 'sse-[0-9]+\.mp3' \
+        | sed -e 's/.*sse-//' \
+        | sed -e 's/\.mp3.*//' \
+        | sort -n \
+        | tail -n 1)
+
+episode_number_to_publish=$((latest_published_epispode_number + 1))
+
+mp3_file_base_name="sse-$episode_number_to_publish.mp3"
+mp3_downloaded_absolute_file_path="$tmpdir/$mp3_file_base_name"
+s3_bucket_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
+
+curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
+ret=$?
+
+if [ "$ret" = 0 ]; then
+    if file "$mp3_downloaded_absolute_file_path" | grep -i "audio file" >/dev/null; then
+        ./upload --unattended "$mp3_downloaded_absolute_file_path"
+    else
+        exit_code=1
+        echo
+        echo "Error: downloaded mp3 file is not an audio file"
+        echo
+        file "$mp3_downloaded_absolute_file_path"
+        echo
+    fi
+else
+    exit_code=2
+    echo
+    echo "Error: Episode $episode_number_to_publish is not in S3 yet."
+    echo
+    echo "Searched for it here: $s3_bucket_url"
+    echo
+fi
+
+rm -rf "$tmpdir"
