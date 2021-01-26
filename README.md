@@ -13,6 +13,16 @@ cd scripts
 * Merge the pull request, the episode will go live in the feed immediately: http://softskills.audio/feed.xml
 * However, subscribers use feedburner (which pulls from the feed link above). Feedburner takes up to 30 minutes to get the newest episode.
 
+## Auto-publish cron job
+
+We have a script that you can run via cron job every Monday morning to do this automatically:
+
+```
+scripts/cron-auto-publish
+```
+
+There are instructions in that file for setting up the cron job.
+
 ## Running the Web Site Locally
 
 ```
