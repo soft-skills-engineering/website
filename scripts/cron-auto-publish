@@ -1,4 +1,30 @@
 #!/bin/bash
+#########################################################################################
+#
+# This script runs as a cron job. It looks in S3 for the most recent, unpublished
+# episode mp3 file, uploads it to the server, and creates a GitHub PR for the
+# episode.
+#
+# How doe it work?
+#   1. It looks at the RSS feed to determine the most recent published episode number.
+#   2. It looks in S3 for the *next* episode by adding 1 to the most recent episode number.
+#   3. It runs the `upload` script on that file.
+#
+# What if the file isn't in S3?
+#   The script will print an error to stdout and exit with a non-zero exit code
+#
+# How does the mp3 file get to S3?
+#   Zapier zap copies the file from Google Drive in the "SSE Edited Episodes" folder to S3.
+#
+# How does the mp3 file get into Google Drive?
+#   The editors manually put the mp3 into Google Drive after editing.
+#
+# What's the cron entry?
+#
+#   0 10 * * MON /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
+#   # This runs at 8am MT on Mondays (server is on east coast time)
+#
+##########################################################################################
 
 cd "$(dirname "$0")"
 
@@ -13,7 +39,6 @@ latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio
         | tail -n 1)
 
 episode_number_to_publish=$((latest_published_epispode_number + 1))
-
 mp3_file_base_name="sse-$episode_number_to_publish.mp3"
 mp3_downloaded_absolute_file_path="$tmpdir/$mp3_file_base_name"
 s3_bucket_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
@@ -42,3 +67,4 @@ else
 fi
 
 rm -rf "$tmpdir"
+exit $exit_code
