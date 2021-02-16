@@ -2,11 +2,12 @@
 import sys
 from githubapi import create_github_client, create_pull_request
 
-if len(sys.argv) != 2:
-  sys.stderr.write("Usage: {} <episode-number>\n".format(sys.argv[0]))
+if len(sys.argv) != 3:
+  sys.stderr.write("Usage: {} <episode-number> <episode-mp3-url>\n".format(sys.argv[0]))
   sys.exit(1)
 
 episode_number = sys.argv[1]
+episode_mp3_url = sys.argv[2]
 github_client = create_github_client()
-url = create_pull_request(github_client, episode_number)
+url = create_pull_request(github_client, episode_number, episode_mp3_url)
 print(url)
