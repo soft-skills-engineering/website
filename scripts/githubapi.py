@@ -21,12 +21,15 @@ def read_auth_token():
     sys.exit(1)
   return auth['token']
 
-def create_pull_request(github_client, episode_number):
+def create_pull_request(github_client, episode_number, episode_mp3_url):
   repo = github_client.get_repo(REPO_FULL_PATH)
   pull_request = repo.create_pull(
     title='Episode {}'.format(episode_number),
     head='episode-{}'.format(episode_number),
-    body='This is episode {} 🎉'.format(episode_number),
+    body='🎉 This is episode {episode_number}.\n\nPreivew it here: [{episode_mp3_url}]({episode_mp3_url})\n\nAfter listening to the episode, merge this PR to publish the episode. It will go live within 30 minutes. Why not immediate? Because most people use our [Feedburner feed](https://feeds.feedburner.com/SoftSkillsEngineering) which updates every 30 minutes'
+        .format(
+            episode_number=episode_number,
+            episode_mp3_url=episode_mp3_url),
     base='gh-pages',
     maintainer_can_modify=True,
   )
