@@ -22,3 +22,7 @@ In this episode, Dave and Jamison answer these questions:
 
 
 2. Greetings! First off, great show - thanks for the countless episodes, most of which result in me getting weird looks as I chuckle to myself while running and listening. I have a passion for technology which lead me to a career in development. I am very often researching new languages and software that will help us do our jobs and/or lives better in my free time. I get excited about these things I find and want to share them with my co-workers but often get rebuffed by them, asking me why I spend my free time "working". I know I can't expect everyone to share my enthusiasm and passion for this stuff, but I am finding it discouraging being on a team where this curiosity is not celebrated/encouraged. I love the company I work for and don't want to leave, but I find myself becoming more and more disconnected from my team because of this. Any suggestions on how I can share my passion with my co-workers is a way that is mutually beneficial to me and them? Thanks, keep up the great work!
+
+## Show notes
+
+Gary Bernhardt's WAT video from 2012: <a href="https://www.destroyallsoftware.com/talks/wat">https://www.destroyallsoftware.com/talks/wat</a>
