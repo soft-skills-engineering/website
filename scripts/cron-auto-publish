@@ -14,15 +14,16 @@
 #   The script will print an error to stdout and exit with a non-zero exit code
 #
 # How does the mp3 file get to S3?
-#   Zapier zap copies the file from Google Drive in the "SSE Edited Episodes" folder to S3.
+#   A Zapier zap copies the file from Google Drive (the "SSE Edited Episodes" folder) to S3.
 #
 # How does the mp3 file get into Google Drive?
-#   The editors manually put the mp3 into Google Drive after editing.
+#   The editors manually put the mp3 into Google Drive after editing. They must follow the
+#   naming convention `sse-XXX.mp3` for this automation to find the file.
 #
 # What's the cron entry?
 #
-#   0 10 * * MON /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
-#   # This runs at 8am MT on Mondays (server is on east coast time)
+#   45 6 * * MON /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
+#   # This runs at 4:45am MT on Mondays (server is on east coast time)
 #
 ##########################################################################################
 

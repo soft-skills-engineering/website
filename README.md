@@ -1,6 +1,6 @@
 # Soft Skills Engineering
 
-## Publishing An Episode
+## Publishing an Episode
 
 One script generates the Jekyll page using info from Trello, uploads the mp3 file to the server, and makes a Github pull request:
 
