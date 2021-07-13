@@ -95,4 +95,4 @@ plugins:
   - jekyll-mentions
   - jekyll-redirect-from
 # https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor, ve, scripts, dev.sh, '*auth.json', 'Gemfile*']
+exclude: [vendor, ve, scripts, dev.sh, '*auth.json', 'Gemfile*', .editorconfig, '*.rb', Rakefile]
