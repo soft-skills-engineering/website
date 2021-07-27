@@ -5,7 +5,7 @@ REPO_FULL_PATH='soft-skills-engineering/website'
 PULL_REQUEST_URL_TEMPLATE = 'https://github.com/{repo_full_path}/pull/{pull_request_number}'
 
 def create_github_client():
-    return Github(read_auth_token())
+  return Github(read_auth_token())
 
 def read_auth_token():
   script_path = os.path.dirname(os.path.realpath(__file__))
@@ -26,7 +26,7 @@ def create_pull_request(github_client, episode_number, episode_mp3_url):
   pull_request = repo.create_pull(
     title='Episode {}'.format(episode_number),
     head='episode-{}'.format(episode_number),
-    body='🎉 This is episode {episode_number}.\n\nPreivew it here: [{episode_mp3_url}]({episode_mp3_url})\n\nAfter listening to the episode, merge this PR to publish the episode. It will go live within 30 minutes. Why not immediate? Because most people use our [Feedburner feed](https://feeds.feedburner.com/SoftSkillsEngineering) which updates every 30 minutes'
+    body='🎉 This is episode {episode_number}.\n\nPreview it here: [{episode_mp3_url}]({episode_mp3_url})\n\nAfter listening to the episode, merge this PR to publish the episode. It will go live within 30 minutes. Why not immediate? Because most people use our [Feedburner feed](https://feeds.feedburner.com/SoftSkillsEngineering) which updates every 30 minutes'
         .format(
             episode_number=episode_number,
             episode_mp3_url=episode_mp3_url),
