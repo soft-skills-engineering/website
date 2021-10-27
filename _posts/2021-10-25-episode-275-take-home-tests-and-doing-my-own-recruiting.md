@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 275: Take-home tests and doing my own recruiting"
-date: 2021-11-01 12:00:00 -0700
+date: 2021-10-25 12:00:00 -0700
 guid: 53004a77-f74d-4d25-b9d7-84e2978ac146
 duration: "34:09"
 length: 31330075
