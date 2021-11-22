@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 279: (Rerun of 220) Premature leadership push and credit and status"
-date: 2020-07-27 12:00:00 -0700
+date: 2021-11-22 12:00:00 -0700
 guid: 729267de-d57e-46ac-ba37-41bdd29b79db
 duration: "33:39"
 length: 32993682
