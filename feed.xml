@@ -45,7 +45,6 @@ layout: null
         <itunes:explicit>no</itunes:explicit>
         <itunes:subtitle></itunes:subtitle>
         <description>{{ post.content | xml_escape }}</description>
-        <itunes:summary>{{ post.content | xml_escape }}</itunes:summary>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
       </item>
     {% endfor %}
