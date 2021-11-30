@@ -24,15 +24,13 @@ def format_questions(questions):
 episode_number, key, token = set_up()
 question_cards = get_question_cards(key, token, episode_number)
 questions = [card['desc'] for card in question_cards]
-questions = format_questions(questions)
+formatted_questions = format_questions(questions)
 
 notes = get_show_notes(key, token, episode_number)
 
-print('## Questions\n')
-for count, question in enumerate(questions):
-  print('{}. {}'.format(count+1, question))
-  print('\n')
+for count, question in enumerate(formatted_questions):
+  print('{}. {}\n'.format(count+1, question))
 
-if notes != '':
+if notes:
   print('## Show Notes\n{}'.format(notes))
 

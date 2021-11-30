@@ -8,7 +8,7 @@ def read_auth_info():
   if not os.path.exists(auth_file):
     sys.stderr.write("Cannot access Trello: Missing {}\n".format(auth_file))
     sys.exit(1)
-  with open("trello-auth.json") as f:
+  with open(auth_file) as f:
     auth = json.loads(f.read())
   if not auth.get('key', '').strip():
     sys.stderr.write("Cannot access Trello: Missing 'key' from {}\n".format(auth_file))
@@ -33,22 +33,23 @@ def get_cards(key, token, episode_number):
     sys.exit(1)
   return get_json('https://api.trello.com/1/lists/{}/cards?key={}&token={}'.format(list_id, key, token))
 
-def get_question_cards(key, token, episode_number):
+def get_cards_by_label(key, token, episode_number, label_to_find):
   cards = get_cards(key, token, episode_number)
-  question_cards = [card for card in cards if any(label['name'] == 'question' for label in card['labels'])]
-  return question_cards
+  return [card for card in cards if any(label['name'] == label_to_find for label in card['labels'])]
+
+def get_question_cards(key, token, episode_number):
+  return get_cards_by_label(key, token, episode_number, label_to_find='question')
 
 # assuming there is only a single note card if it exists
 def get_show_notes(key, token, episode_number):
-  cards = get_cards(key, token, episode_number)
-  show_notes = [card for card in cards if any(label['name'] == 'notes' for label in card['labels'])]
-  if len(show_notes) > 0:
-    return show_notes[0]['desc']
-  return ""
+  show_notes = get_cards_by_label(key, token, episode_number, label_to_find='notes')
+  return show_notes[0]['desc'] if len(show_notes) > 0 else ''
 
 def find_episode_list_id(key, token, episode_number):
   lists = get_json('https://api.trello.com/1/boards/{}/lists?key={}&token={}'.format(BOARD_ID, key, token))
   for lst in lists:
+    # FIXME Using `startswith` will break at episode 1000 since it will match episode 100.
+    #       At current weekly cadence, this will break in the year 2034.
     if lst['name'].lower().startswith("episode {}".format(episode_number)):
       return lst['id']
 
