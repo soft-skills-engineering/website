@@ -19,24 +19,20 @@ layout: null
     <itunes:explicit>no</itunes:explicit>
     <image>
       <link>{{ site.url }}{{ site.baseurl }}</link>
-      <url>https://download.softskills.audio/sse-logo-3.png</url>
+      <url>{{ site.podcast_cover_art_url }}</url>
       <title>{{ site.title | xml_escape }}</title>
     </image>
 
-    <itunes:subtitle>{{ site.description }}</itunes:subtitle>
+    <itunes:new-feed-url>https://softskills.audio/feed.xml</itunes:new-feed-url>
+    <itunes:subtitle>{{ site.description | xml_escape }}</itunes:subtitle>
     <itunes:author>Jamison Dance and Dave Smith</itunes:author>
     <itunes:keywords></itunes:keywords>
     <itunes:owner>
       <itunes:name>Jamison Dance and Dave Smith</itunes:name>
       <itunes:email>soft-skills-engineering@googlegroups.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://download.softskills.audio/sse-logo-3.png"></itunes:image>
-    <itunes:category text="Education">
-      <itunes:category text="Training"/>
-    </itunes:category>
-    <itunes:category text="Technology">
-      <itunes:category text="Software How-To"/>
-    </itunes:category>
+    <itunes:image href="{{ site.podcast_cover_art_url }}"></itunes:image>
+    <itunes:category text="Technology" />
 
     {% for post in site.posts %}
       <item>
@@ -46,14 +42,10 @@ layout: null
         <guid isPermaLink="false">{{ post.guid }}</guid>
         <itunes:author></itunes:author>
         <itunes:duration>{{ post.duration }}</itunes:duration>
-        <enclosure url="{{ post.file }}?rss=true" length="{{ post.length }}" type="audio/mpeg"/>
+        <enclosure url="{{ post.file }}?source=rss" length="{{ post.length }}" type="audio/mpeg"/>
         <itunes:explicit>no</itunes:explicit>
         <itunes:subtitle></itunes:subtitle>
         <description>{{ post.content | xml_escape }}</description>
-        <description><![CDATA[{{ post.content | markdownify | strip_html | cdata_escape }}]]></description>
-        <itunes:summary>{{ post.content | xml_escape }}</itunes:summary>
-
-        <!-- FIXME? -->
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
       </item>
     {% endfor %}
