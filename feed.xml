@@ -23,7 +23,7 @@ layout: null
       <title>{{ site.title | xml_escape }}</title>
     </image>
 
-    <!--<itunes:new-feed-url>{{ podcast_feed_url }}</itunes:new-feed-url>-->
+    <!--<itunes:new-feed-url>{{ site.podcast_feed_url }}</itunes:new-feed-url>-->
     <itunes:subtitle>{{ site.description | xml_escape }}</itunes:subtitle>
     <itunes:author>Jamison Dance and Dave Smith</itunes:author>
     <itunes:keywords></itunes:keywords>
