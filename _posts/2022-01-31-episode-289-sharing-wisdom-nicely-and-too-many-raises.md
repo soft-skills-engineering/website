@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 289: Sharing wisdom nicely and too many raises?"
-date: 2022-02-07 12:00:00 -0700
+date: 2022-01-31 12:00:00 -0700
 guid: a3163bc6-2582-4d87-bb4a-ad556c3da417
 duration: "19:52"
 length: 19580685
