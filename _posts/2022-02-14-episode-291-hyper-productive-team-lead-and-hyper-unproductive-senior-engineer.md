@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 291: Hyper-productive team lead and hyper-unproductive senior engineer"
-date: 2022-02-14 12:00:00 -0700
+date: 2022-02-14 06:00:00 -0700
 guid: 56e5cfc4-4e0e-4f28-9c59-b0384feab3d3
 duration: "25:43"
 length: 23811763

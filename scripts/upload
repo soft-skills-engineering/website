@@ -101,7 +101,7 @@ episode_question_text="$(./trello-episode-description "$episode_number")"
 uuid=$(uuidgen | perl -ne 'print lc')
 prefixed_episode_number="$(printf '%03d' "$episode_number")"
 new_filename="sse-${prefixed_episode_number}.mp3"
-episode_timestamp="$episode_date 07:00:00 -0700"
+episode_timestamp="$episode_date 06:00:00 -0700"
 episode_markdown_file="../_posts/$episode_date-episode-$episode_number-$episode_url_title.md"
 episode_mp3_url="https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-$prefixed_episode_number.mp3"
 
