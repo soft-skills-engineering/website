@@ -27,8 +27,9 @@ bing_verification:
 devmountain_marketing_url: "https://devmountain.com/?utm_source=Soft%20Skills%20Engineering%20Podcast&utm_campaign=Soft%20Skills%20Engineering%20Podcast"
 pluralsight_marketing_url: "https://pluralsight.com/softskills"
 velocity_marketing_url: "http://velocityconf.com/skills"
-vettery_marketing_url: "http://vettery.com/softskills"
+hired_marketing_url: "https://hired.com/softskills"
 monday_com_marketing_url: "https://monday.com/softskills"
+opslevel_marketing_url: "https://opslevel.com/softskills"
 
 # Disqus post comments
 # (leave blank to disable Disqus)
