@@ -10,6 +10,8 @@ categories: episode
 enable_comments: true
 ---
 
+We are celebrating our 300th episode by publishing unique songs about the podcast. To get access to the songs, join Patreon: [https://www.patreon.com/SoftSkillsEng](https://www.patreon.com/SoftSkillsEng)
+
 In this episode, Dave and Jamison answer these questions:
 
 1. Greetings! I have been with my current company for a number of years, and was recently promoted to Engineering Manager. I enjoy working here, and have a great manager and team. A job posting at another company recently piqued my interest (great salary, appealing company values, fully remote) and got me thinking, would it look terrible if I applied for, or switched jobs, so soon after a promotion to management?
