@@ -13,3 +13,5 @@ vendor
 trello-auth.json
 twitter-auth.json
 github-auth.json
+
+aws.env

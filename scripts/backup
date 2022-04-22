@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+cd "$(dirname "$0")"
+source ../aws.env
+
+cd /home/vhosts
+aws s3 sync . s3://s3-bucket-linode-backup-us-west-1/vhosts-backup/ \
+    --storage-class STANDARD_IA
