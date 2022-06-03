@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 306: Sabbaticals and betray my team"
-date: 2022-06-06 05:00:00 -0700
+date: 2022-05-30 05:00:00 -0700
 guid: 1a18e748-29e3-4603-8a8f-ced00572cf6c
 duration: "24:01"
 length: 21466389
