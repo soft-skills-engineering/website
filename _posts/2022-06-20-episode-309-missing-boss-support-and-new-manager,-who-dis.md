@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 309: Missing boss support and new manager, who dis"
-date: 2022-06-27 05:00:00 -0700
+date: 2022-06-20 05:00:00 -0700
 guid: eb98f2d3-439a-4b6f-882a-f9a68148d856
 duration: "30:05"
 length: 27222742
