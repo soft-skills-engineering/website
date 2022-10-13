@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 325: Surprise PIP and salary leak"
-date: 2022-10-17 05:00:00 -0700
+date: 2022-10-10 05:00:00 -0700
 guid: 33e353eb-ae36-47de-b9b4-ed242332dc1c
 duration: "34:27"
 length: 32124452
