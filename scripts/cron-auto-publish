@@ -48,7 +48,7 @@ curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
 ret=$?
 
 if [ "$ret" = 0 ]; then
-    if file "$mp3_downloaded_absolute_file_path" | grep -i "audio file" >/dev/null; then
+    if file "$mp3_downloaded_absolute_file_path" | grep -i -E '(audio file|MPEG.*layer III)' >/dev/null; then
         ./upload --unattended "$mp3_downloaded_absolute_file_path"
     else
         exit_code=1
