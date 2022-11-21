@@ -5,10 +5,11 @@
 # episode mp3 file, uploads it to the server, and creates a GitHub PR for the
 # episode.
 #
-# How doe it work?
+# How does it work?
 #   1. It looks at the RSS feed to determine the most recent published episode number.
 #   2. It looks in S3 for the *next* episode by adding 1 to the most recent episode number.
 #   3. It runs the `upload` script on that file.
+#   4. It keeps trying for 2 hours if the file is not in S3 yet.
 #
 # What if the file isn't in S3?
 #   The script will print an error to stdout and exit with a non-zero exit code
@@ -27,10 +28,10 @@
 #
 ##########################################################################################
 
+echo "Starting at: $(date)"
 cd "$(dirname "$0")"
 
-tmpdir=$(mktemp -d -t sse-XXXXXXXXXX)
-exit_code=0
+max_attempts=24
 
 latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
         | egrep 'sse-[0-9]+\.mp3' \
@@ -41,31 +42,45 @@ latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio
 
 episode_number_to_publish=$((latest_published_epispode_number + 1))
 mp3_file_base_name="sse-$episode_number_to_publish.mp3"
+tmpdir=$(mktemp -d -t sse-XXXXXXXXXX)
 mp3_downloaded_absolute_file_path="$tmpdir/$mp3_file_base_name"
 s3_bucket_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
 
-curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
-ret=$?
-
-if [ "$ret" = 0 ]; then
-    if file "$mp3_downloaded_absolute_file_path" | grep -i -E '(audio file|MPEG.*layer III)' >/dev/null; then
-        ./upload --unattended "$mp3_downloaded_absolute_file_path"
+curl_success=0
+for attempt_count in $(seq $max_attempts); do
+    curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
+    if [ $? -eq 0 ]; then
+        curl_success=1
     else
-        exit_code=1
+        echo "Error: Episode $episode_number_to_publish is not in S3 yet. Searched for it here: $s3_bucket_url"
+        echo "Waiting 5 minutes and trying again (attempt count: $attempt_count)"
+        echo "Current time: $(date)"
         echo
-        echo "Error: downloaded mp3 file is not an audio file"
-        echo
-        file "$mp3_downloaded_absolute_file_path"
-        echo
+        sleep 300
     fi
+done
+
+if [ $curl_success -eq 0 ]; then
+    echo "Gave up after $attempt_count attempts"
+    exit_code=1
+elif file "$mp3_downloaded_absolute_file_path" | grep -i -E '(audio file|MPEG.*layer III)' >/dev/null; then
+    ./upload --unattended "$mp3_downloaded_absolute_file_path"
+    exit_code=$?
 else
-    exit_code=2
+    exit_code=1
     echo
-    echo "Error: Episode $episode_number_to_publish is not in S3 yet."
+    echo "Error: downloaded mp3 file is not an audio file"
     echo
-    echo "Searched for it here: $s3_bucket_url"
-    echo
+    echo "File output we checked:"
+    file "$mp3_downloaded_absolute_file_path"
 fi
 
+# Clean up
 rm -rf "$tmpdir"
+
+if [ $exit_code -eq 0 ]; then
+    echo "Finished successfully at: $(date)"
+else
+    echo "Finshing unsuccessfully at: $(date)"
+fi
 exit $exit_code
