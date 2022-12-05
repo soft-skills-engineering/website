@@ -12,7 +12,7 @@
 #   4. It keeps trying for 2 hours if the file is not in S3 yet.
 #
 # What if the file isn't in S3?
-#   The script will print an error to stdout and exit with a non-zero exit code
+#   After trying for 3 hours, the script will print an error to stdout and exit with a non-zero exit code
 #
 # How does the mp3 file get to S3?
 #   A Zapier zap copies the file from Google Drive (the "SSE Edited Episodes" folder) to S3.
@@ -24,14 +24,14 @@
 # What's the cron entry?
 #
 #   45 6 * * MON /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
-#   # This runs at 4:45am MT on Mondays (server is on east coast time)
+#   # This runs at 6:45am MT on Mondays (server is on MT)
 #
 ##########################################################################################
 
 echo "Starting at: $(date)"
 cd "$(dirname "$0")"
 
-max_attempts=24
+max_attempts=36
 
 latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
         | egrep 'sse-[0-9]+\.mp3' \
