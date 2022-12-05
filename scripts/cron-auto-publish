@@ -48,9 +48,15 @@ s3_bucket_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.
 
 curl_success=0
 for attempt_count in $(seq $max_attempts); do
+    echo "Attempting to download from S3:"
+    echo "  Attempt count: $attempt_count"
+    echo "  S3 URL: $s3_bucket_url"
+    echo "  Target file: $mp3_downloaded_absolute_file_path"
     curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
     if [ $? -eq 0 ]; then
+        echo "Successful download!"
         curl_success=1
+        break
     else
         echo "Error: Episode $episode_number_to_publish is not in S3 yet. Searched for it here: $s3_bucket_url"
         echo "Waiting 5 minutes and trying again (attempt count: $attempt_count)"
