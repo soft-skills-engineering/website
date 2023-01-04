@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 337: Helping the principal and Manager conflict"
-date: 2023-01-09 05:00:00 -0700
+date: 2023-01-02 05:00:00 -0700
 guid: 5df7e734-caa0-44b9-9ed0-6dde2dd95b98
 duration: "33:46"
 length: 28854063
