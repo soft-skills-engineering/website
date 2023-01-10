@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 338: I am the golden handcuffs and Staying in management"
-date: 2023-01-16 05:00:00 -0700
+date: 2023-01-09 05:00:00 -0700
 guid: f3732607-cef1-45a8-b6a6-2d31f82735e2
 duration: "27:04"
 length: 26750127
