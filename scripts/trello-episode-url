@@ -3,5 +3,11 @@ from trello import set_up, get_question_cards
 
 episode_number, key, token = set_up()
 question_cards = get_question_cards(key, token, episode_number)
-titles = [card['name'].lower().replace(' ', '-') for card in question_cards]
+titles = [
+  card['name']
+    .lower()
+    .replace(' ', '-')
+    .replace('/', '-')
+  for card in question_cards
+]
 print('-and-'.join(titles))
