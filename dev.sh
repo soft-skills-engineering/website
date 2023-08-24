@@ -11,4 +11,4 @@ fi
 
 bundle install
 rm -rf _site
-bundle exec jekyll serve --watch --incremental --future --host 0.0.0.0
+bundle exec jekyll serve --watch --incremental --future --host localhost
