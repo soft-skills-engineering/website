@@ -6,8 +6,10 @@ jobs:
     name: display event info
     runs-on: ubuntu-latest
     steps:
+      - env:
+          GITHUB_EVENT_DESCRIPTION: ${{ github.event.description }}
       - name: display the info
-        run: echo 'the github info: ${{ github.event.deployment }}'
+        run: echo "the github info: $GITHUB_EVENT_DESCRIPTION"
   publish_episode_to_twitter:
     name: publish episode to twitter
     runs-on: ubuntu-latest
