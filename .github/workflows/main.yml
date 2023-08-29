@@ -1,9 +1,22 @@
+name: Post new episode to social media
 on:
   deployment
 jobs:
-  test_a_thing:
-    name: just testing
+  publish_episode_to_twitter:
+    name: publish episode to twitter
     runs-on: ubuntu-latest
     steps:
       - name: test a thing
-        run: echo "this is just a test"
+        run: echo "this is just a test for twitter"
+  publish_episode_to_linkedin:
+    name: publish episode to linkedin
+    runs-on: ubuntu-latest
+    steps:
+      - name: test a thing
+        run: echo "this is just a test for linkedin"
+  publish_episode_to_facebook:
+    name: publish episode to facebook
+    runs-on: ubuntu-latest
+    steps:
+      - name: test a thing
+        run: echo "this is just a test for facebook"
