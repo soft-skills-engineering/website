@@ -5,7 +5,7 @@ jobs:
   event_info:
     runs-on: ubuntu-latest
     steps:
-        run: |
+      - run: |
           echo "the github info: ${{ github.event }}"
   publish_episode_to_twitter:
     name: publish episode to twitter
