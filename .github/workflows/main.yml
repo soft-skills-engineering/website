@@ -6,8 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "github.event.description: ${{ github.event.description }}"
-          echo "github.event.deployment: ${{ github.event.deployment }}"
+          echo "github.event.action: ${{ github.event.action }}"
+          echo "github.event.deployment.creator: ${{ github.event.deployment.creator }}"
+          echo "github.event.deployment.description: ${{ github.event.deployment.description }}"
+          echo "github.event.deployment.ref: ${{ github.event.deployment.ref }}"
+          echo "github.event.deployment.sha: ${{ github.event.deployment.sha }}"
+          echo "github.event.deployment.task: ${{ github.event.deployment.task }}"
+          echo "github.event.deployment.creator: ${{ github.event.deployment.creator }}"
   publish_episode_to_twitter:
     name: publish episode to twitter
     runs-on: ubuntu-latest
