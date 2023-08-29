@@ -7,12 +7,11 @@ jobs:
     steps:
       - run: |
           echo "github.event.action: ${{ github.event.action }}"
-          echo "github.event.deployment.creator: ${{ github.event.deployment.creator }}"
           echo "github.event.deployment.description: ${{ github.event.deployment.description }}"
           echo "github.event.deployment.ref: ${{ github.event.deployment.ref }}"
           echo "github.event.deployment.sha: ${{ github.event.deployment.sha }}"
           echo "github.event.deployment.task: ${{ github.event.deployment.task }}"
-          echo "github.event.deployment.creator: ${{ github.event.deployment.creator }}"
+          echo "github.event.deployment.creator.login: ${{ github.event.deployment.creator.login }}"
   publish_episode_to_twitter:
     name: publish episode to twitter
     runs-on: ubuntu-latest
