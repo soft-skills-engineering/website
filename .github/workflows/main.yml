@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: display the info
-        run: echo 'the github info: ${{ github.event }}'
+        run: echo 'the github info: ${{ github.event.deployment }}'
   publish_episode_to_twitter:
     name: publish episode to twitter
     runs-on: ubuntu-latest
