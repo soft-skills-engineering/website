@@ -8,7 +8,6 @@ jobs:
     steps:
       - env:
           GITHUB_EVENT_DESCRIPTION: ${{ github.event.description }}
-      - name: display the info
         run: echo "the github info: $GITHUB_EVENT_DESCRIPTION"
   publish_episode_to_twitter:
     name: publish episode to twitter
