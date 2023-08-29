@@ -1,0 +1,9 @@
+on:
+  deployment
+jobs:
+  test_a_thing:
+    name: just testing
+    runs-on: ubuntu-latest
+    steps:
+      - name: test a thing
+        run: echo "this is just a test"
