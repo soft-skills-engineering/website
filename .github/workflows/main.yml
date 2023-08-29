@@ -2,6 +2,12 @@ name: Post new episode to social media
 on:
   deployment
 jobs:
+  event_info:
+    name: display event info
+    runs-on: ubuntu-latest
+    steps:
+      - name: display the info
+        run: echo "here's the github info: ${{ github.event }}"
   publish_episode_to_twitter:
     name: publish episode to twitter
     runs-on: ubuntu-latest
