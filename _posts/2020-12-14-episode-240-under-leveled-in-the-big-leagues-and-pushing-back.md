@@ -5,7 +5,7 @@ date: 2020-12-14 12:00:00 -0700
 guid: bc5bf7f8-fa78-41f8-80a8-a80ed7b7bf9b
 duration: "34:38"
 length: 34145347
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-240.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-240.mp3"
 categories: episode
 enable_comments: true
 ---

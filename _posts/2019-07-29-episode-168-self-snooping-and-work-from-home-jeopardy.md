@@ -5,7 +5,7 @@ date: 2019-07-29 12:00:00 -0700
 guid: 1bac38e4-36af-4011-8630-e585345d2a89
 duration: "31:00"
 length: 31281091
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-168.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-168.mp3"
 categories: episode
 enable_comments: true
 ---

@@ -5,7 +5,7 @@ date: 2021-04-05 12:00:00 -0700
 guid: a419332b-84a7-40f7-ab0c-3595bbf316e6
 duration: "25:09"
 length: 25474027
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-255.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-255.mp3"
 categories: episode
 enable_comments: true
 ---

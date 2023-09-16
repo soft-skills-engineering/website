@@ -5,7 +5,7 @@ date: 2020-05-18 12:00:00 -0700
 guid: 0c7339d3-6d6b-4eb0-a0ef-dc1b0a29f25b
 duration: "27:44"
 length: 27444211
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-210.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-210.mp3"
 categories: episode
 enable_comments: true
 ---

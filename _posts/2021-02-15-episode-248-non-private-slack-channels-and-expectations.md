@@ -5,7 +5,7 @@ date: 2021-02-15 12:00:00 -0700
 guid: f68af710-9c03-4259-9a2f-fc47d92a2741
 duration: "31:28"
 length: 30095669
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-248.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-248.mp3"
 categories: episode
 enable_comments: true
 ---

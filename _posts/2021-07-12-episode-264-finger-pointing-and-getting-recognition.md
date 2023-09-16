@@ -5,7 +5,7 @@ date: 2021-07-12 12:00:00 -0700
 guid: 8be8720f-468d-484a-8032-5e6cecfe863b
 duration: "29:12"
 length: 29735131
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-264.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-264.mp3"
 categories: episode
 enable_comments: true
 ---

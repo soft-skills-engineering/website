@@ -5,7 +5,7 @@ date: 2019-08-12 12:00:00 -0700
 guid: 0e681c87-4662-41da-ba1f-2650df68030f
 duration: "36:07"
 length: 36974491
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-170.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-170.mp3"
 categories: episode
 enable_comments: true
 ---

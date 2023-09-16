@@ -5,7 +5,7 @@ date: 2016-03-21 12:00:00 -0700
 guid: 103dab3b-0da1-4f8e-883e-59552132c115
 duration: "25:33"
 length: 30740779
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-003.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-003.mp3"
 enable_comments: true
 categories: episode
 ---

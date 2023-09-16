@@ -5,7 +5,7 @@ date: 2022-01-10 12:00:00 -0700
 guid: c1623be6-df4e-4f11-a01a-6e562774d637
 duration: "28:58"
 length: 27690715
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-286.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-286.mp3"
 categories: episode
 enable_comments: true
 ---

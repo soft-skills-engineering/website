@@ -5,7 +5,7 @@ date: 2023-01-16 05:00:00 -0700
 guid: 0c1cb8d9-bcb8-4904-ba0c-07387c33b0fd
 duration: "30:36"
 length: 25254932
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-339.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-339.mp3"
 categories: episode
 enable_comments: true
 ---

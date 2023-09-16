@@ -5,7 +5,7 @@ date: 2021-02-22 12:00:00 -0700
 guid: 4e93cd66-42f6-456c-9479-6fbfc69205f9
 duration: "28:57"
 length: 29773978
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-249.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-249.mp3"
 categories: episode
 enable_comments: true
 ---

@@ -5,7 +5,7 @@ date: 2023-05-22 05:00:00 -0700
 guid: 037f6bf6-18d7-40e1-95c1-ac471cbdbac5
 duration: "29:16"
 length: 25515632
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-357.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-357.mp3"
 categories: episode
 enable_comments: true
 ---

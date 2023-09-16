@@ -5,7 +5,7 @@ date: 2018-07-10 12:00:00 -0700
 guid: 8fe5697c-f9c1-4125-b0e4-40328cefeb7a
 duration: "21:41"
 length: 20817888
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-115.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-115.mp3"
 categories: episode
 enable_comments: true
 ---

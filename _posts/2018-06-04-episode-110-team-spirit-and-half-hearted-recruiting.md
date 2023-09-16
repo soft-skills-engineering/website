@@ -5,7 +5,7 @@ date: 2018-06-04 12:00:00 -0700
 guid: a637cbdb-ff38-4085-8bc0-947a6d2494cd
 duration: "27:12"
 length: 26109478
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-110.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-110.mp3"
 categories: episode
 enable_comments: true
 ---

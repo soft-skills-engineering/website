@@ -5,7 +5,7 @@ date: 2021-09-13 12:00:00 -0700
 guid: 4e6e78bd-3c90-4eb5-a4f9-3f8ccb653ca8
 duration: "31:19"
 length: 30712147
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-271.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-271.mp3"
 categories: episode
 enable_comments: true
 ---

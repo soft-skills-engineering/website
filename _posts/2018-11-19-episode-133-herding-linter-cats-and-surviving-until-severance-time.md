@@ -5,7 +5,7 @@ date: 2018-11-19 12:00:00 -0700
 guid: 5535e5a9-be61-4e5d-84af-a60883538c03
 duration: "29:22"
 length: 24872203
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-133.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-133.mp3"
 categories: episode
 enable_comments: true
 ---

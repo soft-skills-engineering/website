@@ -5,7 +5,7 @@ date: 2021-09-07 12:00:00 -0700
 guid: ac02d3d1-16f5-480a-9e86-2253fe7f5fbc
 duration: "30:59"
 length: 22458506
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-270.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-270.mp3"
 categories: episode
 enable_comments: true
 ---

@@ -5,7 +5,7 @@ date: 2021-10-11 12:00:00 -0700
 guid: fe62ea33-84ae-46d8-b3b0-dcda7f82b760
 duration: "25:06"
 length: 22231127
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-273.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-273.mp3"
 categories: episode
 enable_comments: true
 ---

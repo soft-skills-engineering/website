@@ -5,7 +5,7 @@ date: 2023-06-12 05:00:00 -0700
 guid: 3221b571-b193-489b-9573-9fd8300c9f6b
 duration: "37:22"
 length: 33559717
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-360.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-360.mp3"
 categories: episode
 enable_comments: true
 ---

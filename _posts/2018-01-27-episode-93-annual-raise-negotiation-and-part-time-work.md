@@ -5,7 +5,7 @@ date: 2018-01-27 12:00:00 -0700
 guid: 84ba5949-5168-437e-94f7-6b621679b7e9
 duration: "28:46"
 length: 27621668
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-093.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-093.mp3"
 categories: episode
 enable_comments: true
 ---

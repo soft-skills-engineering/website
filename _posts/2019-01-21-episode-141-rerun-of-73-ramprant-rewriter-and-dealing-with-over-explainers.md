@@ -5,7 +5,7 @@ date: 2019-01-21 12:00:00 -0700
 guid: e626a150-0eae-40c6-babf-d7a04996a634
 duration: "33:18"
 length: 25731187
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-141.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-141.mp3"
 categories: episode
 enable_comments: true
 ---

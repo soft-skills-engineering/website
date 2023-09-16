@@ -5,7 +5,7 @@ date: 2019-09-09 12:00:00 -0700
 guid: 15253a4b-ce01-460b-a32d-3626842a134b
 duration: "33:06"
 length: 31907179
-file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-174.mp3"
+file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-174.mp3"
 categories: episode
 enable_comments: true
 ---
