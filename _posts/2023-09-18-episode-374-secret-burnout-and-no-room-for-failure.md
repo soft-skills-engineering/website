@@ -10,6 +10,10 @@ categories: episode
 enable_comments: true
 ---
 
+<b>This episode is sposored by OneSchema, the best way to build CSV import into your product.</b>
+
+<b>Check OneSchema out at <a href="{{ site.one_schema_marketing_url }}">{{ site.one_schema_marketing_url }}</a></b>
+
 In this episode, Dave and Jamison answer these questions:
 
 1. Morning! I will cut straight to the chase: I'm burned out and tired. At the same time, I'm aiming to get a promotion during the next cycle. My manager is aware of the latter, but not the former. Should I tell them? I suspect that I would get a lighter work load and less responsibilities, but it might also impact my chances at getting a promotion. The project I'm working is a "high stakes, tight deadlines" mess. I usually would just take a week or two of PTO, but the tight deadlines make it hard. Do I grin and bear it till promotion cycle (another 4-6 months) or just tell my manager and risk losing the rewards?

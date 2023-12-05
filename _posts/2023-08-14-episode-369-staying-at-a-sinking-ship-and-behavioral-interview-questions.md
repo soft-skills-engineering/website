@@ -10,6 +10,10 @@ categories: episode
 enable_comments: true
 ---
 
+<b>This episode is sposored by OneSchema, the best way to build CSV import into your product.</b>
+
+<b>Check OneSchema out at <a href="{{ site.one_schema_marketing_url }}">{{ site.one_schema_marketing_url }}</a></b>
+
 In this episode, Dave and Jamison answer these questions:
 
 1. My employer offered a retention bonus after:

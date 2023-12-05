@@ -10,6 +10,10 @@ categories: episode
 enable_comments: true
 ---
 
+<b>This episode is sposored by OneSchema, the best way to build CSV import into your product.</b>
+
+<b>Check OneSchema out at <a href="{{ site.one_schema_marketing_url }}">{{ site.one_schema_marketing_url }}</a></b>
+
 In this episode, Dave and Jamison answer these questions:
 
 1. Hello Jave and Dames, Long time listener short time Dev. Big fan of the show, my confidence in my skills as a programmer has always been pretty low so having a podcast centered around the "soft skills" instead of more complex topics like "Covariance and Contravariance", "Temporal Logic", or "Basic Addition" gives me the strength to press further on.

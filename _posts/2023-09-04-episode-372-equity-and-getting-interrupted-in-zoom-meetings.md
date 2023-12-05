@@ -10,6 +10,10 @@ categories: episode
 enable_comments: true
 ---
 
+<b>This episode is sposored by OneSchema, the best way to build CSV import into your product.</b>
+
+<b>Check OneSchema out at <a href="{{ site.one_schema_marketing_url }}">{{ site.one_schema_marketing_url }}</a></b>
+
 In this episode, Dave and Jamison answer these questions:
 
 1. I joined a startup at the peak of the tech bubble which sadly means that my equity was based on the company's valuation which was very over-valued. To corroborate this, the company has not grown much in terms of users or revenue. The company also had a layoff just like many startups.
