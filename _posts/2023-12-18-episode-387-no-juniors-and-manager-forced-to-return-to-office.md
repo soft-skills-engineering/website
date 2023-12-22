@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 387: No juniors and manager forced to return to office"
-date: 2023-12-25 05:00:00 -0700
+date: 2023-12-18 05:00:00 -0700
 guid: 3e544d17-ce91-4ee1-8ec0-6651e87a2248
 duration: "32:23"
 length: 46641851
