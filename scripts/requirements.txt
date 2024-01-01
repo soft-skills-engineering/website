@@ -1,3 +1,4 @@
 requests
 tweepy
 PyGitHub
+boto3

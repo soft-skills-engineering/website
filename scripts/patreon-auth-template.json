@@ -1,0 +1,4 @@
+{
+  "patreon_client_id": "Your Patreon OAuth client ID from https://www.patreon.com/portal/registration/register-clients",
+  "patreon_client_secret": "Your Patreon OAuth client secret from https://www.patreon.com/portal/registration/register-clients"
+}

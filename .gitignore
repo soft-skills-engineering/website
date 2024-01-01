@@ -10,8 +10,6 @@ __pycache__
 .bundle
 vendor
 
-trello-auth.json
-twitter-auth.json
-github-auth.json
+*-auth.json
 
 aws.env
