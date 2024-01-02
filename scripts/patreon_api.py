@@ -109,11 +109,8 @@ def get_shoutouts(access_token):
 
 
 def sort_shoutouts(shoutouts):
-  return sorted(
-    shoutouts,
-    key=lambda member: (member['currently_entitled_amount_cents'], member['pledge_relationship_start']),
-    reverse=True,
-  )
+  return sorted(shoutouts, key=lambda s: s['pledge_relationship_start'], reverse=True)
+
 
 def get_all_members(access_token):
   campaign_id = get_patreon_campaign_id(access_token)
