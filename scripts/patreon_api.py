@@ -4,11 +4,13 @@ import json
 import os.path
 import sys
 from datetime import datetime, timedelta
-
 from aws_secrets_manager import get_secret, store_secret
 
 PATREON_DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%f%z'
 SECRET_NAME = 'patreon_api_credentials'
+WEEKLY_SHOUTOUT_MINIMUM_CENTS = 2000
+ONE_TIME_SHOUTOUT_MINIMUM_CENTS = 1000
+
 
 def get_patreon_access_token():
   script_path = os.path.dirname(os.path.realpath(__file__))
@@ -61,6 +63,7 @@ def refresh_patreon_access_token(patreon_client_id, patreon_client_secret):
 
   return new_access_token
 
+
 def get_patreon_campaign_id(access_token):
   response = requests.get('https://www.patreon.com/api/oauth2/api/current_user/campaigns', headers={'Authorization': f'Bearer {access_token}'})
   response.raise_for_status()
@@ -72,8 +75,34 @@ def get_patreon_campaign_id(access_token):
 
 
 def get_slack_invite_emails(access_token):
+  all_members = get_all_members(access_token)
+  cutoff_datetime = datetime.utcnow() - timedelta(days=60)
+  recent_members = [member for member in all_members
+                    if member['pledge_relationship_start'] > cutoff_datetime
+                    and member['last_charge_status'] == 'Paid'
+                    and member['currently_entitled_amount_cents'] > 0]
+  return [recent_member['email'] for recent_member in recent_members]
+
+
+def get_shoutouts(access_token):
+  from pprint import pprint
+  first_of_the_month = datetime.utcnow().replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
+  all_members = get_all_members(access_token)
+  for member in all_members:
+    member['start_month'] = member['pledge_relationship_start'].replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
+  weekly_shout_outs = [member for member in all_members if member['currently_entitled_amount_cents'] >= WEEKLY_SHOUTOUT_MINIMUM_CENTS]
+  one_time_shout_outs = [member for member in all_members
+                         if ONE_TIME_SHOUTOUT_MINIMUM_CENTS <= member['currently_entitled_amount_cents'] < WEEKLY_SHOUTOUT_MINIMUM_CENTS
+                         and member['campaign_lifetime_support_cents'] == member['currently_entitled_amount_cents']
+                         and member['start_month'] == first_of_the_month]
+  weekly_shout_outs = sorted(weekly_shout_outs, key=lambda member: (member['currently_entitled_amount_cents'], member['pledge_relationship_start']), reverse=True)
+  one_time_shout_outs = sorted(one_time_shout_outs, key=lambda member: (member['currently_entitled_amount_cents'], member['pledge_relationship_start']), reverse=True)
+  return weekly_shout_outs, one_time_shout_outs
+
+
+def get_all_members(access_token):
   campaign_id = get_patreon_campaign_id(access_token)
-  url = f'https://www.patreon.com/api/oauth2/v2/campaigns/{campaign_id}/members?page[count]=200&fields[member]=full_name,email,last_charge_date,last_charge_status,currently_entitled_amount_cents,patron_status,pledge_relationship_start'
+  url = f'https://www.patreon.com/api/oauth2/v2/campaigns/{campaign_id}/members?page[count]=200&fields[member]=full_name,email,last_charge_date,last_charge_status,currently_entitled_amount_cents,patron_status,pledge_relationship_start,campaign_lifetime_support_cents'
   all_members = []
   while url is not None:
     response = requests.get(url, headers={'Authorization': f'Bearer {access_token}'})
@@ -85,12 +114,8 @@ def get_slack_invite_emails(access_token):
       member['last_charge_date'] = parse_patreon_datetime(member['last_charge_date'])
       all_members.append(member)
     url = payload.get('links', {}).get('next')
-  cutoff_datetime = datetime.utcnow() - timedelta(days=60)
-  recent_members = [member for member in all_members
-                    if member['pledge_relationship_start'] > cutoff_datetime
-                    and member['last_charge_status'] == 'Paid'
-                    and member['currently_entitled_amount_cents'] > 0]
-  return [recent_member['email'] for recent_member in recent_members]
+  return all_members
+
 
 def parse_patreon_datetime(datetime_string):
   if datetime_string is None:

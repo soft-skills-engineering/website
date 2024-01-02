@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+from patreon_api import get_patreon_access_token, get_shoutouts
+
+def main():
+  access_token = get_patreon_access_token()
+  weekly_shout_outs, one_time_shoutouts = get_shoutouts(access_token)
+  print(f'{len(weekly_shout_outs)} weekly shoutouts:')
+  print()
+  for weekly_shout_out in weekly_shout_outs:
+    print(f' * {weekly_shout_out["full_name"]}')
+  print()
+  print(f'{len(one_time_shoutouts)} one-time shoutouts:')
+  print()
+  for one_time_shoutout in one_time_shoutouts:
+    print(f' * {one_time_shoutout["full_name"]}')
+  print()
+
+
+if __name__ == '__main__':
+  main()
