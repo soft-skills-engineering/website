@@ -3,15 +3,12 @@ import requests
 import json
 import os.path
 import sys
-from pprint import pprint
+from datetime import datetime, timedelta
 
 from aws_secrets_manager import get_secret, store_secret
 
+PATREON_DATETIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%f%z'
 SECRET_NAME = 'patreon_api_credentials'
-
-def test():
-  access_token = get_patreon_access_token()
-  get_shoutout_list(access_token)
 
 def get_patreon_access_token():
   script_path = os.path.dirname(os.path.realpath(__file__))
@@ -65,23 +62,39 @@ def refresh_patreon_access_token(patreon_client_id, patreon_client_secret):
   return new_access_token
 
 def get_patreon_campaign_id(access_token):
-  print('Getting campaign ID')
   response = requests.get('https://www.patreon.com/api/oauth2/api/current_user/campaigns', headers={'Authorization': f'Bearer {access_token}'})
   response.raise_for_status()
   payload = response.json()
   assert len(payload['data']) == 1
   campaign = payload['data'][0]
   campaign_id = campaign['id']
-  print(f'Got campaign ID: {campaign_id}')
   return campaign_id
 
 
-def get_shoutout_list(access_token):
+def get_slack_invite_emails(access_token):
   campaign_id = get_patreon_campaign_id(access_token)
-  response = requests.get(f'https://www.patreon.com/api/oauth2/api/campaigns/{campaign_id}/pledges?include=patron.user.email&fields[user]=email', headers={'Authorization': f'Bearer {access_token}'})
-  pprint(response.json())
-  return
+  url = f'https://www.patreon.com/api/oauth2/v2/campaigns/{campaign_id}/members?page[count]=200&fields[member]=full_name,email,last_charge_date,last_charge_status,currently_entitled_amount_cents,patron_status,pledge_relationship_start'
+  all_members = []
+  while url is not None:
+    response = requests.get(url, headers={'Authorization': f'Bearer {access_token}'})
+    payload = response.json()
+    members = payload['data']
+    for raw_member in members:
+      member = raw_member['attributes'].copy()
+      member['pledge_relationship_start'] = parse_patreon_datetime(member['pledge_relationship_start'])
+      member['last_charge_date'] = parse_patreon_datetime(member['last_charge_date'])
+      all_members.append(member)
+    url = payload.get('links', {}).get('next')
+  cutoff_datetime = datetime.utcnow() - timedelta(days=60)
+  recent_members = [member for member in all_members
+                    if member['pledge_relationship_start'] > cutoff_datetime
+                    and member['last_charge_status'] == 'Paid'
+                    and member['currently_entitled_amount_cents'] > 0]
+  return [recent_member['email'] for recent_member in recent_members]
 
-
-if __name__ == '__main__':
-  test()
+def parse_patreon_datetime(datetime_string):
+  if datetime_string is None:
+    return None
+  dt = datetime.strptime(datetime_string, PATREON_DATETIME_FORMAT)
+  dt = dt.replace(tzinfo=None)
+  return dt

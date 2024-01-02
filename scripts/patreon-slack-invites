@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+from patreon_api import get_patreon_access_token, get_slack_invite_emails
+
+def main():
+  access_token = get_patreon_access_token()
+  emails_to_invite_to_slack = get_slack_invite_emails(access_token)
+  print(f'{len(emails_to_invite_to_slack)} emails to invite to Slack (patrons who joined in the past 60 days):')
+  for email in emails_to_invite_to_slack:
+    print(email)
+
+if __name__ == '__main__':
+  main()
