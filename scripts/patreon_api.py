@@ -85,20 +85,35 @@ def get_slack_invite_emails(access_token):
 
 
 def get_shoutouts(access_token):
-  from pprint import pprint
-  first_of_the_month = datetime.utcnow().replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
+  current_month = datetime.utcnow().replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
   all_members = get_all_members(access_token)
-  for member in all_members:
-    member['start_month'] = member['pledge_relationship_start'].replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
-  weekly_shout_outs = [member for member in all_members if member['currently_entitled_amount_cents'] >= WEEKLY_SHOUTOUT_MINIMUM_CENTS]
-  one_time_shout_outs = [member for member in all_members
-                         if ONE_TIME_SHOUTOUT_MINIMUM_CENTS <= member['currently_entitled_amount_cents'] < WEEKLY_SHOUTOUT_MINIMUM_CENTS
-                         and member['campaign_lifetime_support_cents'] == member['currently_entitled_amount_cents']
-                         and member['start_month'] == first_of_the_month]
-  weekly_shout_outs = sorted(weekly_shout_outs, key=lambda member: (member['currently_entitled_amount_cents'], member['pledge_relationship_start']), reverse=True)
-  one_time_shout_outs = sorted(one_time_shout_outs, key=lambda member: (member['currently_entitled_amount_cents'], member['pledge_relationship_start']), reverse=True)
+
+  paying_members = [
+    member for member in all_members
+    if member['last_charge_status'] == 'Paid'
+  ]
+
+  weekly_shout_outs = sort_shoutouts([
+    member for member in paying_members
+    if member['currently_entitled_amount_cents'] >= WEEKLY_SHOUTOUT_MINIMUM_CENTS
+  ])
+
+  one_time_shout_outs = sort_shoutouts([
+    member for member in paying_members
+    if ONE_TIME_SHOUTOUT_MINIMUM_CENTS <= member['currently_entitled_amount_cents'] < WEEKLY_SHOUTOUT_MINIMUM_CENTS
+    and member['campaign_lifetime_support_cents'] == member['currently_entitled_amount_cents']
+    and member['start_month'] == current_month
+  ])
+
   return weekly_shout_outs, one_time_shout_outs
 
+
+def sort_shoutouts(shoutouts):
+  return sorted(
+    shoutouts,
+    key=lambda member: (member['currently_entitled_amount_cents'], member['pledge_relationship_start']),
+    reverse=True,
+  )
 
 def get_all_members(access_token):
   campaign_id = get_patreon_campaign_id(access_token)
@@ -112,6 +127,7 @@ def get_all_members(access_token):
       member = raw_member['attributes'].copy()
       member['pledge_relationship_start'] = parse_patreon_datetime(member['pledge_relationship_start'])
       member['last_charge_date'] = parse_patreon_datetime(member['last_charge_date'])
+      member['start_month'] = member['pledge_relationship_start'].replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
       all_members.append(member)
     url = payload.get('links', {}).get('next')
   return all_members
