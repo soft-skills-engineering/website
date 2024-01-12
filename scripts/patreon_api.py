@@ -86,6 +86,7 @@ def get_slack_invite_emails(access_token):
 
 def get_shoutouts(access_token):
   current_month = datetime.utcnow().replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
+  last_month = (current_month - timedelta(days=1)).replace(day=1)
   all_members = get_all_members(access_token)
 
   paying_members = [
@@ -102,7 +103,7 @@ def get_shoutouts(access_token):
     member for member in paying_members
     if ONE_TIME_SHOUTOUT_MINIMUM_CENTS <= member['currently_entitled_amount_cents'] < WEEKLY_SHOUTOUT_MINIMUM_CENTS
     and member['campaign_lifetime_support_cents'] == member['currently_entitled_amount_cents']
-    and member['start_month'] == current_month
+    and member['start_month'] in (current_month, last_month)
   ])
 
   return weekly_shout_outs, one_time_shout_outs
