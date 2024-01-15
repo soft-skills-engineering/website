@@ -64,7 +64,7 @@ def create_or_update_next_episode_list(key, token):
     print(f'Creating Trello list for episode {episode_number_to_set_up}')
     create_episode_list_from_template(key, token, episode_number_to_set_up, most_recent_episode_list_id)
   else:
-    print(f'Not setting up a new Trello list, because episode {most_recent_episode_number} stil needs to be finished')
+    print(f'Not setting up a new Trello list, because episode {most_recent_episode_number} still needs to be finished')
 
 
 def find_most_recent_episode_list(key, token):
