@@ -7,7 +7,7 @@ if [ ! -d "venv" ]; then
 fi
 
 source venv/bin/activate
-pip install -r requirements.txt
+pip3 --quiet install -r requirements.txt
 
 # Daily tasks to run:
 ./trello-setup-next-episode
