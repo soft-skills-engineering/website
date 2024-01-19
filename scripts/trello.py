@@ -7,6 +7,7 @@ import requests
 BOARD_ID_SHORT = 'Os1ByyJc'
 BOARD_ID_LONG  = '56d5bc8b5f9c1b7d798e04ee'
 TEMPLATE_LIST_NAME = 'Episode Template'
+SOURE_URL = 'https://github.com/soft-skills-engineering/website/blob/gh-pages/scripts/trello-setup-next-episode'
 
 # IDs of hosts, so we can alternate who is assigned to each card
 ASSIGNEE_IDS = ['4f07a508dc4ba55307159c68', '4f07b31df58973cd020694fe']
@@ -97,8 +98,17 @@ def populate_next_episode_list(key, token, episode_list, most_recent_episode_lis
   episode_list_id = episode_list['id']
   created_cards = get_json(f'https://api.trello.com/1/lists/{episode_list_id}/cards?key={key}&token={token}')
   print(f'Created list for episode with {len(created_cards)} cards')
+  append_source_card(key, token, episode_list_id)
   populate_patreon_shoutouts(key, token, created_cards)
   assign_hosts_to_cards(key, token, created_cards, most_recent_episode_list_id)
+
+
+def append_source_card(key, token, episode_list_id):
+  payload = {
+    'name': f'This list was created by a 🤖',
+    'desc': f'Find the script at {SOURE_URL}',
+  }
+  post_json(payload, f'https://api.trello.com/1/lists/{episode_list_id}/cards?key={key}&token={token}')
 
 
 def create_episode_list_from_template(key, token, episode_number, most_recent_episode_list_id):
