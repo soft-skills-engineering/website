@@ -1,5 +1,7 @@
 import sys, json, os, re
 from pprint import pprint
+from datetime import datetime
+from patreon_api import get_shoutouts, get_patreon_access_token
 import requests
 
 BOARD_ID_SHORT = 'Os1ByyJc'
@@ -56,13 +58,15 @@ def get_show_notes(key, token, episode_number):
 
 
 def create_or_update_next_episode_list(key, token):
+  print(f'Creating or updating next episode list...')
   most_recent_episode_number, most_recent_episode_list_id = find_most_recent_episode_list(key, token)
 
   # Need to create a new card?
   if is_episode_list_already_setup(key, token, most_recent_episode_list_id):
     episode_number_to_set_up = most_recent_episode_number + 1
-    print(f'Creating Trello list for episode {episode_number_to_set_up}')
-    create_episode_list_from_template(key, token, episode_number_to_set_up, most_recent_episode_list_id)
+    print(f'Next episode is {episode_number_to_set_up}')
+    episode_list = create_episode_list_from_template(key, token, episode_number_to_set_up, most_recent_episode_list_id)
+    populate_next_episode_list(key, token, episode_list, most_recent_episode_list_id)
   else:
     print(f'Not setting up a new Trello list, because episode {most_recent_episode_number} still needs to be finished')
 
@@ -89,6 +93,14 @@ def get_template_list_id(key, token):
   return None
 
 
+def populate_next_episode_list(key, token, episode_list, most_recent_episode_list_id):
+  episode_list_id = episode_list['id']
+  created_cards = get_json(f'https://api.trello.com/1/lists/{episode_list_id}/cards?key={key}&token={token}')
+  print(f'Created list for episode with {len(created_cards)} cards')
+  populate_patreon_shoutouts(key, token, created_cards)
+  assign_hosts_to_cards(key, token, created_cards, most_recent_episode_list_id)
+
+
 def create_episode_list_from_template(key, token, episode_number, most_recent_episode_list_id):
   list_name = f'Episode {episode_number}'
   template_list_id = get_template_list_id(key, token)
@@ -99,9 +111,11 @@ def create_episode_list_from_template(key, token, episode_number, most_recent_ep
     'pos': 'top',
   }
   created_list = post_json(list_payload, f'https://api.trello.com/1/lists?key={key}&token={token}')
-  list_id = created_list['id']
-  created_cards = get_json(f'https://api.trello.com/1/lists/{list_id}/cards?key={key}&token={token}')
+  return created_list
 
+
+def assign_hosts_to_cards(key, token, created_cards, most_recent_episode_list_id):
+  print('Assigning hosts to each card...')
   # Assign host to the intro for the next episode
   previous_episode_cards = get_json(f'https://api.trello.com/1/lists/{most_recent_episode_list_id}/cards?key={key}&token={token}')
   previous_episode_intro_card = find_intro_card(previous_episode_cards)
@@ -110,14 +124,41 @@ def create_episode_list_from_template(key, token, episode_number, most_recent_ep
   next_episode_intro_assignee = [id for id in ASSIGNEE_IDS if id != previous_intro_assignee][0]
   next_episode_intro_card = find_intro_card(created_cards)
   assign_member_to_card(key, token, next_episode_intro_card['id'], next_episode_intro_assignee)
-
-  # Assign hosts to the questions for the next episode, alternating
   next_assignee = previous_intro_assignee
   for card in created_cards:
-    if 'question' in [label['name'] for label in card['labels']]:
+    if is_question_card(card) or is_patreon_card(card):
       assign_member_to_card(key, token, card['id'], next_assignee)
       next_assignee = [id for id in ASSIGNEE_IDS if id != next_assignee][0]
 
+def populate_patreon_shoutouts(key, token, created_cards):
+  print('Adding Patreon shoutouts...')
+  patreon_card = [card for card in created_cards if is_patreon_card(card)][0]
+  weekly_shoutouts, one_time_shoutouts = get_shoutouts(get_patreon_access_token())
+
+  shoutout_string = f'{len(one_time_shoutouts)} one-time shoutouts:\n\n'
+  for one_time_shoutout in one_time_shoutouts:
+    shoutout_string += f' * {one_time_shoutout["full_name"]}\n'
+  shoutout_string += '\n\n'
+
+  shoutout_string += f'{len(weekly_shoutouts)} weekly shoutouts:'
+  shoutout_string += '\n\n'
+  for weekly_shout_out in weekly_shoutouts:
+    shoutout_string += f' * {weekly_shout_out["full_name"]}\n\n'
+  shoutout_string += '\n\n'
+
+  patreon_card['name'] = f'Patrons as of {datetime.now().date()}'
+  patreon_card['desc'] = shoutout_string
+  put_json(patreon_card, f'https://api.trello.com/1/cards/{patreon_card["id"]}?key={key}&token={token}')
+
+  print(f'Added {len(weekly_shoutouts)} weekly shoutouts and {len(one_time_shoutouts)} one-time shoutouts to Trello card...')
+
+
+def is_question_card(card):
+  return 'question' in [label['name'] for label in card['labels']]
+
+
+def is_patreon_card(card):
+  return 'patreon' in [label['name'] for label in card['labels']]
 
 
 def assign_member_to_card(key, token, card_id, member_id):
@@ -155,8 +196,19 @@ def find_episode_list_id(key, token, episode_number):
       return lst['id']
 
 
+def put_json(payload, url):
+  return put_or_post_json('put', payload, url)
+
 def post_json(payload, url):
-  response = requests.post(url, json=payload)
+  return put_or_post_json('post', payload, url)
+
+def put_or_post_json(put_or_post, payload, url):
+  if put_or_post == 'put':
+    response = requests.put(url, json=payload)
+  elif put_or_post == 'post':
+    response = requests.post(url, json=payload)
+  else:
+    raise ValueError(f'Invalid value for put_or_post. Expected "put" or "post", but got: "{put_or_post}"')
   if response.status_code != 200:
     sys.stderr.write("Got error from Trello API. HTTP status code: {}, response content: {}\n".format(response.status_code, response.content))
     sys.exit(1)

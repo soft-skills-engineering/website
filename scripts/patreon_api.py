@@ -83,30 +83,42 @@ def get_slack_invite_emails(access_token):
   return [recent_member['email'] for recent_member in recent_members]
 
 
-def get_shoutouts(access_token):
+def determine_months():
   current_month = datetime.utcnow().replace(day=1, hour=0, minute=0, second=0, microsecond=0).date()
   last_month = (current_month - timedelta(days=1)).replace(day=1)
+  return current_month, last_month
+
+
+def get_shoutouts(access_token):
   all_members = get_all_members(access_token)
+  weekly_shoutouts = sort_shoutouts(m for m in all_members if is_weekly_shoutout(m))
+  one_time_shoutouts = sort_shoutouts(m for m in all_members if is_one_time_shoutout(m))
+  return weekly_shoutouts, one_time_shoutouts
 
-  paying_members = [
-    member for member in all_members
-    if member['last_charge_status'] == 'Paid'
-  ]
+def is_one_time_shoutout(member):
+  current_month, last_month = determine_months()
+  if (member['last_charge_status'] == 'Paid'
+      # Check the amount contributed:
+      and ONE_TIME_SHOUTOUT_MINIMUM_CENTS <= member['currently_entitled_amount_cents'] < WEEKLY_SHOUTOUT_MINIMUM_CENTS
+      # They've only made one contribution:
+      and member['campaign_lifetime_support_cents'] == member['currently_entitled_amount_cents']
+      # They started contributing this month or the previous month:
+      and member['start_month'] in (current_month, last_month)):
+      return True
+  return False
 
-  weekly_shout_outs = sort_shoutouts([
-    member for member in paying_members
-    if member['currently_entitled_amount_cents'] >= WEEKLY_SHOUTOUT_MINIMUM_CENTS
-  ])
+def is_weekly_shoutout(member):
+  # FIXME We also want to shout out members who gave for multiple months in the past, but canceled during the previous month
 
-  one_time_shout_outs = sort_shoutouts([
-    member for member in paying_members
-    if ONE_TIME_SHOUTOUT_MINIMUM_CENTS <= member['currently_entitled_amount_cents'] < WEEKLY_SHOUTOUT_MINIMUM_CENTS
-    and member['campaign_lifetime_support_cents'] == member['currently_entitled_amount_cents']
-    and member['start_month'] in (current_month, last_month)
-  ])
+  current_month, last_month = determine_months()
+  if member['last_charge_status'] == 'Paid':
+    if member['currently_entitled_amount_cents'] >= WEEKLY_SHOUTOUT_MINIMUM_CENTS:
+      return True
+    # We want to shout out members who gave enough to qualify in the previous month and canceled:
+    if member['lifetime_support_cents'] >= WEEKLY_SHOUTOUT_MINIMUM_CENTS and member['pledge_relationship_start'].date() >= last_month:
+      return True
 
-  return weekly_shout_outs, one_time_shout_outs
-
+  return False
 
 def sort_shoutouts(shoutouts):
   return sorted(shoutouts, key=lambda s: s['pledge_relationship_start'], reverse=True)
@@ -114,10 +126,11 @@ def sort_shoutouts(shoutouts):
 
 def get_all_members(access_token):
   campaign_id = get_patreon_campaign_id(access_token)
-  url = f'https://www.patreon.com/api/oauth2/v2/campaigns/{campaign_id}/members?page[count]=200&fields[member]=full_name,email,last_charge_date,last_charge_status,currently_entitled_amount_cents,patron_status,pledge_relationship_start,campaign_lifetime_support_cents'
+  url = f'https://www.patreon.com/api/oauth2/v2/campaigns/{campaign_id}/members?page[count]=200&fields[member]=full_name,email,last_charge_date,last_charge_status,currently_entitled_amount_cents,will_pay_amount_cents,lifetime_support_cents,patron_status,pledge_relationship_start,campaign_lifetime_support_cents'
   all_members = []
   while url is not None:
     response = requests.get(url, headers={'Authorization': f'Bearer {access_token}'})
+    response.raise_for_status()
     payload = response.json()
     members = payload['data']
     for raw_member in members:
