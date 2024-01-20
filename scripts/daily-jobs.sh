@@ -3,8 +3,8 @@ set -e
 
 cd "$(dirname "$0")"
 
-git checkout gh-pages
-git pull
+git checkout gh-pages > /dev/null
+git pull > /dev/null
 
 if [ ! -d "./venv" ]; then
     echo "Virtual environment not found. Creating..."
