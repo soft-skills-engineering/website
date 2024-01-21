@@ -14,6 +14,8 @@ fi
 source venv/bin/activate
 pip3 --quiet install -r requirements.txt
 
+echo
+
 # Daily tasks to run:
 ./trello-setup-next-episode
 
