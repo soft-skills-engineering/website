@@ -59,17 +59,17 @@ def get_show_notes(key, token, episode_number):
 
 
 def create_or_update_next_episode_list(key, token):
-  print(f'Creating or updating next episode list...')
+  print(f'Checking Trello episode list...')
   most_recent_episode_number, most_recent_episode_list_id = find_most_recent_episode_list(key, token)
 
   # Need to create a new card?
-  if is_episode_list_already_setup(key, token, most_recent_episode_list_id):
+  if is_episode_list_already_done(key, token, most_recent_episode_list_id):
     episode_number_to_set_up = most_recent_episode_number + 1
-    print(f'Next episode is {episode_number_to_set_up}')
+    print(f'Creating episode Trello list for episode {episode_number_to_set_up}')
     episode_list = create_episode_list_from_template(key, token, episode_number_to_set_up, most_recent_episode_list_id)
     populate_next_episode_list(key, token, episode_list, most_recent_episode_list_id)
   else:
-    print(f'Not setting up a new Trello list, because episode {most_recent_episode_number} still needs to be finished')
+    print(f'Not creating a new Trello list, because episode {most_recent_episode_number} still needs to be finished')
 
 
 def find_most_recent_episode_list(key, token):
@@ -185,7 +185,7 @@ def find_intro_card(cards):
   assert False, 'Could not find intro card for episode'
 
 
-def is_episode_list_already_setup(key, token, list_id):
+def is_episode_list_already_done(key, token, list_id):
   episode_cards = get_json(f'https://api.trello.com/1/lists/{list_id}/cards?key={key}&token={token}')
   completed_question_cards = [
     card for card in episode_cards
