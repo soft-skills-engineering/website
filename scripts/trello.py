@@ -58,8 +58,8 @@ def get_show_notes(key, token, episode_number):
   return show_notes[0]['desc'] if len(show_notes) > 0 else ''
 
 
-def create_or_update_next_episode_list(key, token):
-  print(f'Checking Trello episode list...')
+def create_next_episode_list_if_needed(key, token):
+  print(f'Getting most recent episode from Trello...')
   most_recent_episode_number, most_recent_episode_list_id = find_most_recent_episode_list(key, token)
 
   # Need to create a new card?
