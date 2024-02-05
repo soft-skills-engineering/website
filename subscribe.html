@@ -5,10 +5,16 @@ permalink: /subscribe/
 tags: subscribe
 ---
 
-<p class="lead">
-  To subscribe, search for "Soft Skills Engineering" in your favorite podcast app, or use one of these links:
+<p class="lead text-center">
+  Search in your podcast app:
+  <div style="display:flex; justify-content: center">
+    <div class="typewriter">
+      <h1>soft skills engineering</h1>
+    </div>
+  </div>
 </p>
 
+<p class="lead button-group"  style="margin-top:50px">Or use one of these links:</p>
 <p class="button-group">
   <a
     href="{{ site.podcast_itunes_url }}"
@@ -21,14 +27,6 @@ tags: subscribe
       aria-hidden="true" /> Apple Podcasts</span></a>
 
   <a
-    href="{{ site.podcast_youtube_music_url }}"
-    class="button"><span class="subscribe-link">
-      <img
-        src="/img/youtube-music-icon.svg"
-        class="icon"
-        alt="YouTube Music logo"
-        aria-hidden="true" /> YouTube Music</span></a>
-  <a
     href="{{ site.podcast_spotify_url }}"
     class="button"><span   class="subscribe-link">
       <img
@@ -36,17 +34,19 @@ tags: subscribe
         class="icon"
         alt="Spotify logo"
         aria-hidden="true" /> Spotify Podcasts</span></a>
+  <a
+    href="{{ site.podcast_youtube_music_url }}"
+    class="button"><span class="subscribe-link">
+      <img
+        src="/img/youtube-music-icon.svg"
+        class="icon"
+        alt="YouTube Music logo"
+        aria-hidden="true" /> YouTube Music</span></a>
 </p>
 
-<div class="feed-url-box text-center mt-4 mb-4">
-  <h2>Direct Feed</h2>
-  <p>
-    <strong>OR</strong> copy and paste the feed URL:<br />
-
-    <a href="{{site.podcast_feed_url}}" class="feed-url">
-        {{ site.podcast_feed_url }}</a>
-  </p>
-
+<div class="lead feed-url-box text-center" style="margin-top:50px">
+  <p>Or copy and paste the feed URL:</p>
+  <p><a href="{{site.podcast_feed_url}}" class="feed-url">{{ site.podcast_feed_url }}</a></p>
 
   <textarea
     class="sr-only"

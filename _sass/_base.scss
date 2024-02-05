@@ -285,7 +285,7 @@ a {
   }
 }
 
-.subscribe-badge.youtube-music {
+.subscribe-badge.spotify {
   img {
     height: 60px;
   }
@@ -346,7 +346,6 @@ a {
 .feed-url {
   display: inline-block;
   max-width: 100%;
-  margin-top: 1rem;
   margin-bottom: .5rem;
   font-size: 1.3rem;
   text-overflow: ellipsis;
@@ -404,4 +403,31 @@ a {
   .quotes-grid {
     column-count: 3;
   }
+}
+
+/* Typing animation effect */
+.typewriter h1 {
+  color: #555;
+  font-size: 1.6rem;
+  text-align: center;
+  overflow: hidden;
+  border-right: .15em solid black;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .10em;
+  animation:
+    typing 1.0s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black; }
 }
