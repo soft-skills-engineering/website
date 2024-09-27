@@ -5,7 +5,7 @@ date: 2024-07-08 05:00:00 -0700
 guid: 117833f2-ca31-4ea8-a95b-420b165d8724
 duration: "24:25"
 length: 35159155
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-416.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-416.mp3"
 categories: episode
 enable_comments: true
 ---

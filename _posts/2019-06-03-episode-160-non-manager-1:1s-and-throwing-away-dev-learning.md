@@ -5,7 +5,7 @@ date: 2019-06-03 12:00:00 -0700
 guid: d36494b0-c3aa-40fd-b233-9db023036974
 duration: "25:23"
 length: 24748517
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-160.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-160.mp3"
 categories: episode
 enable_comments: true
 ---

@@ -5,7 +5,7 @@ date: 2022-11-14 05:00:00 -0700
 guid: a0b78c15-be3a-440a-b194-6f53d601318e
 duration: "30:00"
 length: 28052634
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-330.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-330.mp3"
 categories: episode
 enable_comments: true
 ---

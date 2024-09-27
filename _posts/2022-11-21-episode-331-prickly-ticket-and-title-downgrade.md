@@ -5,7 +5,7 @@ date: 2022-11-21 05:00:00 -0700
 guid: 2b10fcec-8d4b-459d-b871-d85d30b02a53
 duration: "32:33"
 length: 27680686
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-331.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-331.mp3"
 categories: episode
 enable_comments: true
 ---

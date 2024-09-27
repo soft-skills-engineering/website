@@ -5,7 +5,7 @@ date: 2020-10-05 12:00:00 -0700
 guid: e8847bb9-79ea-4fa5-8170-9fcf55513090
 duration: "28:46"
 length: 48053465
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-230.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-230.mp3"
 categories: episode
 enable_comments: true
 ---

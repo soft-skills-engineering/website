@@ -5,7 +5,7 @@ date: 2020-03-16 12:00:00 -0700
 guid: 3a81b83b-e9e3-4063-a757-dbd83d5e180e
 duration: "36:16"
 length: 38897275
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-201.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-201.mp3"
 categories: episode
 enable_comments: true
 ---

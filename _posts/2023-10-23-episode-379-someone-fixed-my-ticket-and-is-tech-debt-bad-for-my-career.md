@@ -5,7 +5,7 @@ date: 2023-10-23 05:00:00 -0700
 guid: e9e9d544-6fcc-4c46-9f89-3716db8ad68f
 duration: "36:20"
 length: 52332574
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-379.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-379.mp3"
 categories: episode
 enable_comments: true
 ---

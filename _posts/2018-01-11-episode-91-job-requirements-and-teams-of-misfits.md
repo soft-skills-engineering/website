@@ -5,7 +5,7 @@ date: 2018-01-11 12:00:00 -0700
 guid: 38dba74b-fbc8-4e59-a47c-58b093daf656
 duration: "27:40"
 length: 26559140
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-091.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-091.mp3"
 categories: episode
 enable_comments: true
 ---

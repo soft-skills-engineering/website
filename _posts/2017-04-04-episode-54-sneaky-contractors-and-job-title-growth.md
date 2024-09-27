@@ -5,7 +5,7 @@ date: 2017-04-04 12:00:00 -0700
 guid: 964b78f1-5132-480b-8177-6ffb4d16086f
 duration: "41:38"
 length: 39960960
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-054.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-054.mp3"
 categories: episode
 enable_comments: true
 ---

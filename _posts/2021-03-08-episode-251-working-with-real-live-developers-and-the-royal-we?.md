@@ -5,7 +5,7 @@ date: 2021-03-08 12:00:00 -0700
 guid: ebfb16c3-cd4f-472b-bb86-49bc528c2f00
 duration: "23:57"
 length: 22506246
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-251.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-251.mp3"
 categories: episode
 enable_comments: true
 ---

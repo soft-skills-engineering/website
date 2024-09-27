@@ -5,7 +5,7 @@ date: 2020-11-09 12:00:00 -0700
 guid: 0e853e23-2e29-4879-bcf0-869fa61128a2
 duration: "27:13"
 length: 25621597
-file: "https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-235.mp3"
+file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-235.mp3"
 categories: episode
 enable_comments: true
 ---

@@ -103,7 +103,7 @@ prefixed_episode_number="$(printf '%03d' "$episode_number")"
 new_filename="sse-${prefixed_episode_number}.mp3"
 episode_timestamp="$episode_date 05:00:00 -0700"
 episode_markdown_file="../_posts/$episode_date-episode-$episode_number-$episode_url_title.md"
-episode_mp3_url="https://chrt.fm/track/FD81F6/dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-$prefixed_episode_number.mp3"
+episode_mp3_url="https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-$prefixed_episode_number.mp3"
 
 if [ -e "$episode_markdown_file" ]; then
   echo
