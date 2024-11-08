@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from trello import read_auth_info, create_next_episode_list_if_needed
+from trello import read_auth_info, create_or_update_next_episode
 
 key, token = read_auth_info()
-create_next_episode_list_if_needed(key, token)
+create_or_update_next_episode(key, token)

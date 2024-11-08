@@ -58,18 +58,21 @@ def get_show_notes(key, token, episode_number):
   return show_notes[0]['desc'] if len(show_notes) > 0 else ''
 
 
-def create_next_episode_list_if_needed(key, token):
+def create_or_update_next_episode(key, token):
   print(f'Getting most recent episode from Trello...')
   most_recent_episode_number, most_recent_episode_list_id = find_most_recent_episode_list(key, token)
 
   # Need to create a new card?
-  if is_episode_list_already_done(key, token, most_recent_episode_list_id):
+  episode_list = fetch_episode_list(key, token, most_recent_episode_list_id)
+  if is_episode_list_already_done(key, token, episode_list):
     episode_number_to_set_up = most_recent_episode_number + 1
     print(f'Creating episode Trello list for episode {episode_number_to_set_up}')
     episode_list = create_episode_list_from_template(key, token, episode_number_to_set_up, most_recent_episode_list_id)
     populate_next_episode_list(key, token, episode_list, most_recent_episode_list_id)
   else:
-    print(f'Not creating a new Trello list, because episode {most_recent_episode_number} still needs to be finished')
+    print(f'Not creating a new Trello list, because episode {most_recent_episode_number} still needs to be finished, but refreshing the Patreon shout-outs')
+    populate_patreon_shoutouts(key, token, episode_list)
+
 
 
 def find_most_recent_episode_list(key, token):
@@ -140,6 +143,7 @@ def assign_hosts_to_cards(key, token, created_cards, most_recent_episode_list_id
       assign_member_to_card(key, token, card['id'], next_assignee)
       next_assignee = [id for id in ASSIGNEE_IDS if id != next_assignee][0]
 
+
 def populate_patreon_shoutouts(key, token, created_cards):
   print('Adding Patreon shoutouts...')
   patreon_card = [card for card in created_cards if is_patreon_card(card)][0]
@@ -185,8 +189,13 @@ def find_intro_card(cards):
   assert False, 'Could not find intro card for episode'
 
 
-def is_episode_list_already_done(key, token, list_id):
+def fetch_episode_list(key, token, list_id):
   episode_cards = get_json(f'https://api.trello.com/1/lists/{list_id}/cards?key={key}&token={token}')
+  return episode_cards
+
+
+def is_episode_list_already_done(key, token, episode_cards):
+  #episode_cards = fetch_episode_list(key, token, list_id)
   completed_question_cards = [
     card for card in episode_cards
     if 'question' in [label['name'] for label in card['labels']]
