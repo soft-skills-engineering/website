@@ -79,9 +79,10 @@ Membership in the Soft Skills Engineering Slack is a privilege, not a right. Whi
 
 ## Administrators
 
-The administrator(s) of Soft Skills Engineering as of June 18th, 2019:
+The administrator(s) of Soft Skills Engineering as of March 20th, 2025:
 
-@jamison ([Jamison Dance](mailto:hi@jamison.dance))
+[@jamison](https://softskillsengineering.slack.com/team/UGZCTFAFL)
+[@Dave_Smith](https://softskillsengineering.slack.com/team/UGX1E2L9W)
 
 ## Thanks
 
@@ -89,6 +90,6 @@ Thank you to every Soft Skills Engineering Slack community member for helping to
 
 Thank you to the [Rands Leadership Slack](https://github.com/randsleadershipslack/documents-and-resources/blob/master/code-of-conduct.md), which we cribbed this from.
 
-V1.2 of this Code of Conduct was published on July 15th, 2019.
+V1.3 of this Code of Conduct was published on March 20th, 2025.
 
 This Code of Conduct is released under the [CC0 public domain license](https://creativecommons.org/publicdomain/zero/1.0/).
