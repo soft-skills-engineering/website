@@ -81,8 +81,8 @@ Membership in the Soft Skills Engineering Slack is a privilege, not a right. Whi
 
 The administrator(s) of Soft Skills Engineering as of March 20th, 2025:
 
-[@jamison](https://softskillsengineering.slack.com/team/UGZCTFAFL)
-[@Dave_Smith](https://softskillsengineering.slack.com/team/UGX1E2L9W)
+* [@jamison](https://softskillsengineering.slack.com/team/UGZCTFAFL)
+* [@Dave_Smith](https://softskillsengineering.slack.com/team/UGX1E2L9W)
 
 ## Thanks
 
