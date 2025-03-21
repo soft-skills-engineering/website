@@ -60,6 +60,6 @@ The administrator(s) of the Soft Skills Engineering Slack as of June 18th, 2019:
 
 ## Version and Copyright
 
-V1.0 of this Code of Conduct was published on June 18th, 2019.
+V1.3 of this Incident Response was published on March 21st, 2025.
 
 This Code of Conduct is released under the [CC0 public domain license](https://creativecommons.org/publicdomain/zero/1.0/).
