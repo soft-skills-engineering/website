@@ -54,7 +54,9 @@ In cases that result in account suspension, the individual suspended may appeal 
 
 The administrator(s) of the Soft Skills Engineering Slack as of June 18th, 2019:
 
-@jamison ([Jamison Dance](mailto:hi@jamison.dance))
+* [@jamison](https://softskillsengineering.slack.com/team/UGZCTFAFL)
+* [@Dave Smith](https://softskillsengineering.slack.com/team/UGX1E2L9W)
+
 
 ## Version and Copyright
 
