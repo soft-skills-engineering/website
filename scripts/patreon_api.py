@@ -10,8 +10,7 @@ SECRET_NAME = 'patreon_api_credentials'
 WEEKLY_SHOUTOUT_MINIMUM_CENTS = 2000
 ONE_TIME_SHOUTOUT_MINIMUM_CENTS = 1000
 
-
-def get_patreon_access_token():
+def get_patreon_local_credentials():
   script_path = os.path.dirname(os.path.realpath(__file__))
   auth_file = script_path + "/patreon-auth.json"
   if not os.path.exists(auth_file):
@@ -27,6 +26,11 @@ def get_patreon_access_token():
     sys.exit(1)
   patreon_client_id = auth["patreon_client_id"]
   patreon_client_secret = auth["patreon_client_secret"]
+  return patreon_client_id, patreon_client_secret
+
+
+def get_patreon_access_token():
+  patreon_client_id, patreon_client_secret = get_patreon_local_credentials()
   return refresh_patreon_access_token(patreon_client_id, patreon_client_secret)
 
 
@@ -36,7 +40,7 @@ def refresh_patreon_access_token(patreon_client_id, patreon_client_secret):
   response = requests.post(
     auth_url,
     headers={
-      'Conent-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     data = {
       'grant_type': 'refresh_token',
@@ -141,6 +145,41 @@ def get_all_members(access_token):
       all_members.append(member)
     url = payload.get('links', {}).get('next')
   return all_members
+
+
+def generate_new_access_and_refresh_tokens(code):
+  '''
+  This gets you a new refresh token and aceces token if we lost them due to Patreon's stupid
+  forced refresh implementation.
+
+  To use this function, YOU MUST FIRST:
+
+  1. In a browser, go to: https://www.patreon.com/oauth2/authorize?response_type=code&client_id={patreon_client_id}&redirect_uri=https://softskills.audio&scope=identity+campaigns+campaigns.members
+  2. Log in
+  3. Note the "code" query param in the redirected URL, like https://softskills.audio/?code={copy_the_code_from_here}&state=None
+  4. Call this function and pass in the code as the function arg
+  5. Store the new access token and refresh token in AWS Secrets Manager
+  '''
+  patreon_client_id, patreon_client_secret = get_patreon_local_credentials()
+  url = 'https://www.patreon.com/api/oauth2/token'
+  response = requests.post(url, data={
+    'grant_type': 'authorization_code',
+    'code': code,
+    'client_id': patreon_client_id,
+    'client_secret': patreon_client_secret,
+    'redirect_uri': 'https://softskills.audio',
+  })
+
+  if response.status_code != 200:
+    message = f'Could not get a new access/refresh token from Patreon API: {response.status_code}: {response.text}'
+    raise ValueError(message)
+
+  print(response.text)
+  payload = response.json()
+  new_access_token = payload['access_token']
+  new_refresh_token = payload['refresh_token']
+  print(f'Your new Patreon tokens:\n\nAccess token: {new_access_token}\nRefresh token: {new_refresh_token}\n\n')
+  return new_access_token, new_refresh_token
 
 
 def parse_patreon_datetime(datetime_string):
