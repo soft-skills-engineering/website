@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 463: CTO w/ weak resume and I tried management and it was TERRIBLE"
-date: 2025-06-09 05:00:00 -0700
+date: 2025-06-02 05:00:00 -0700
 guid: 47c45473-88a7-4c80-8720-d25164995b92
 duration: "27:16"
 length: 39272946
