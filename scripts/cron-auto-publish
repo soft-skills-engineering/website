@@ -1,18 +1,13 @@
 #!/bin/bash
 #########################################################################################
 #
-# This script runs as a cron job. It looks in S3 for the most recent, unpublished
-# episode mp3 file, uploads it to the server, and creates a GitHub PR for the
-# episode.
+# This script runs as a cron job every hour to try to publish
 #
 # How does it work?
-#   1. It looks at the RSS feed to determine the most recent published episode number.
-#   2. It looks in S3 for the *next* episode by adding 1 to the most recent episode number.
+#   1. It looks at the RSS feed to determine the most next episode number
+#   2. It checks if a pull request already exists for that episode number in GitHub, and if so, there is nothing else to do
+#   3. It looks in S3 for the next episode mp3 file
 #   3. It runs the `upload` script on that file.
-#   4. It keeps trying for 2 hours if the file is not in S3 yet.
-#
-# What if the file isn't in S3?
-#   After trying for 3 hours, the script will print an error to stdout and exit with a non-zero exit code
 #
 # How does the mp3 file get to S3?
 #   A Zapier zap copies the file from Google Drive (the "SSE Edited Episodes" folder) to S3.
@@ -23,15 +18,12 @@
 #
 # What's the cron entry?
 #
-#   45 6 * * MON /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
-#   # This runs at 6:45am MT on Mondays (server is on MT)
+#   0 * * * * /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
 #
 ##########################################################################################
 
 echo "Starting at: $(date)"
 cd "$(dirname "$0")"
-
-max_attempts=36
 
 latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
         | egrep 'sse-[0-9]+\.mp3' \
@@ -41,33 +33,30 @@ latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio
         | tail -n 1)
 
 episode_number_to_publish=$((latest_published_epispode_number + 1))
+
+if ./fetch-pull-request $episode_number_to_publish; then
+    echo "Nothing to do. Pull request already exists for episode $episode_number_to_publish"
+    exit 0
+fi
+
 mp3_file_base_name="sse-$episode_number_to_publish.mp3"
 tmpdir=$(mktemp -d -t sse-XXXXXXXXXX)
 mp3_downloaded_absolute_file_path="$tmpdir/$mp3_file_base_name"
 s3_bucket_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
 
 curl_success=0
-for attempt_count in $(seq $max_attempts); do
-    echo "Attempting to download from S3:"
-    echo "  Attempt count: $attempt_count"
-    echo "  S3 URL: $s3_bucket_url"
-    echo "  Target file: $mp3_downloaded_absolute_file_path"
-    curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
-    if [ $? -eq 0 ]; then
-        echo "Successful download!"
-        curl_success=1
-        break
-    else
-        echo "Error: Episode $episode_number_to_publish is not in S3 yet. Searched for it here: $s3_bucket_url"
-        echo "Waiting 5 minutes and trying again (attempt count: $attempt_count)"
-        echo "Current time: $(date)"
-        echo
-        sleep 300
-    fi
-done
+echo "Attempting to download from S3:"
+echo "  S3 URL: $s3_bucket_url"
+echo "  Target file: $mp3_downloaded_absolute_file_path"
+curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
+if [ $? -eq 0 ]; then
+    echo "Successful download!"
+    curl_success=1
+else
+    echo "Error: Episode $episode_number_to_publish is not in S3 yet. Searched for it here: $s3_bucket_url"
+fi
 
 if [ $curl_success -eq 0 ]; then
-    echo "Gave up after $attempt_count attempts"
     exit_code=1
 elif file "$mp3_downloaded_absolute_file_path" | grep -i -E '(audio file|MPEG.*layer III)' >/dev/null; then
     ./upload --unattended "$mp3_downloaded_absolute_file_path"

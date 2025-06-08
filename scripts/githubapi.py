@@ -1,7 +1,9 @@
 from github import Github
 import os.path, json, sys
+from pprint import pprint
 
 REPO_FULL_PATH='soft-skills-engineering/website'
+WEBSITE_BRANCH_NAME='gh-pages'
 PULL_REQUEST_URL_TEMPLATE = 'https://github.com/{repo_full_path}/pull/{pull_request_number}'
 
 def create_github_client():
@@ -21,6 +23,16 @@ def read_auth_token():
     sys.exit(1)
   return auth['token']
 
+
+def fetch_pull_request(github_client, episode_number):
+  repo = github_client.get_repo(REPO_FULL_PATH)
+  pull_requests = repo.get_pulls(state='open', head=WEBSITE_BRANCH_NAME)
+  for pr in pull_requests:
+    if pr.title == f'Episode {episode_number}' and 'episode' in set(label.name for label in pr.labels):
+      return pr
+  return None
+
+
 def create_pull_request(github_client, episode_number, episode_mp3_url):
   repo = github_client.get_repo(REPO_FULL_PATH)
   pull_request = repo.create_pull(
@@ -30,7 +42,7 @@ def create_pull_request(github_client, episode_number, episode_mp3_url):
         .format(
             episode_number=episode_number,
             episode_mp3_url=episode_mp3_url),
-    base='gh-pages',
+    base=WEBSITE_BRANCH_NAME,
     maintainer_can_modify=True,
   )
 

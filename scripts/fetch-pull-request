@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+import sys
+from githubapi import create_github_client, fetch_pull_request
+
+if len(sys.argv) != 2:
+  sys.stderr.write("Usage: {} <episode-number>\n".format(sys.argv[0]))
+  sys.exit(1)
+
+episode_number = sys.argv[1]
+github_client = create_github_client()
+pull_request = fetch_pull_request(github_client, episode_number)
+if pull_request is None:
+  sys.stderr.write("No pull request found for episode {}\n".format(episode_number))
+  sys.exit(1)
+else:
+  print(f'Pull Request:')
+  print(f'  Title: {pull_request.title}')
+  print(f'  Labels: {", ".join(label.name for label in pull_request.labels)}')
+  print(f'  URL: {pull_request.html_url}')
+  print(f'  Created at: {pull_request.created_at}')
