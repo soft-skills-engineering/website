@@ -22,7 +22,6 @@
 #
 ##########################################################################################
 
-echo "Starting at: $(date)"
 cd "$(dirname "$0")"
 
 latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
@@ -34,7 +33,7 @@ latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio
 
 episode_number_to_publish=$((latest_published_epispode_number + 1))
 
-if ./fetch-pull-request $episode_number_to_publish; then
+if ./fetch-pull-request $episode_number_to_publish >/dev/null; then
     echo "Nothing to do. Pull request already exists for episode $episode_number_to_publish"
     exit 0
 fi
