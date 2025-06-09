@@ -18,63 +18,67 @@
 #
 # What's the cron entry?
 #
+# See `crontab -l`:
+#
 #   0 * * * * /home/dave/soft-skills-engineering/website/scripts/cron-auto-publish
 #
 ##########################################################################################
 
+# Change to 1 to see debug output
+DEBUG=0
+
+[ $DEBUG -eq 1 ] && echo "Starting at $(date)"
+
 cd "$(dirname "$0")"
 
+# Determine the next episode number to publish:
 latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
         | egrep 'sse-[0-9]+\.mp3' \
         | sed -e 's/.*sse-//' \
         | sed -e 's/\.mp3.*//' \
         | sort -n \
-        | tail -n 1)
+        | tail -n 1
+    )
 
 episode_number_to_publish=$((latest_published_epispode_number + 1))
 
-if ./fetch-pull-request $episode_number_to_publish >/dev/null; then
-    echo "Nothing to do. Pull request already exists for episode $episode_number_to_publish"
+[ $DEBUG -eq 1 ] && echo "Checking for pull request for episode $episode_number_to_publish"
+if ./fetch-pull-request $episode_number_to_publish >/dev/null 2>&1; then
+    [ $DEBUG -eq 1 ] && echo "Pull request already exists for episode $episode_number_to_publish, so we have nothing to do"
     exit 0
 fi
 
 mp3_file_base_name="sse-$episode_number_to_publish.mp3"
+mp3_s3_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
 tmpdir=$(mktemp -d -t sse-XXXXXXXXXX)
-mp3_downloaded_absolute_file_path="$tmpdir/$mp3_file_base_name"
-s3_bucket_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
+mp3_local_file_name="$tmpdir/$mp3_file_base_name"
 
-curl_success=0
-echo "Attempting to download from S3:"
-echo "  S3 URL: $s3_bucket_url"
-echo "  Target file: $mp3_downloaded_absolute_file_path"
-curl --fail --silent "$s3_bucket_url" > "$mp3_downloaded_absolute_file_path"
-if [ $? -eq 0 ]; then
-    echo "Successful download!"
-    curl_success=1
-else
-    echo "Error: Episode $episode_number_to_publish is not in S3 yet. Searched for it here: $s3_bucket_url"
+if [ $DEBUG -eq 1 ]; then
+    echo "Attempting to download from S3:"
+    echo "  S3 URL: $mp3_s3_url"
+    echo "  Target file: $mp3_local_file_name"
 fi
 
-if [ $curl_success -eq 0 ]; then
+curl --fail --silent "$mp3_s3_url" > "$mp3_local_file_name"
+if [ $? -ne 0 ]; then
+    [ $DEBUG -eq 1 ] && echo "Error: Episode $episode_number_to_publish is not in S3 yet. Searched for it here: $mp3_s3_url"
     exit_code=1
-elif file "$mp3_downloaded_absolute_file_path" | grep -i -E '(audio file|MPEG.*layer III)' >/dev/null; then
-    ./upload --unattended "$mp3_downloaded_absolute_file_path"
+elif file "$mp3_local_file_name" | grep -i -E '(audio file|MPEG.*layer III)' >/dev/null; then
+    [ $DEBUG -eq 1 ] && echo "Successful mp3 download. Confirmed mp3 file type. Publishing episode..."
+    ./upload --unattended "$mp3_local_file_name"
     exit_code=$?
 else
     exit_code=1
-    echo
-    echo "Error: downloaded mp3 file is not an audio file"
-    echo
-    echo "File output we checked:"
-    file "$mp3_downloaded_absolute_file_path"
+    echo "Error: downloaded mp3 file is not an audio file: $mp3_s3_url"
 fi
 
 # Clean up
 rm -rf "$tmpdir"
 
 if [ $exit_code -eq 0 ]; then
-    echo "Finished successfully at: $(date)"
+    [ $DEBUG -eq 1 ] && echo "Finished successfully at: $(date)"
 else
-    echo "Finshing unsuccessfully at: $(date)"
+    [ $DEBUG -eq 1 ] && echo "Finshing unsuccessfully at: $(date)"
 fi
+
 exit $exit_code

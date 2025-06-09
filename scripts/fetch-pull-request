@@ -10,7 +10,7 @@ episode_number = sys.argv[1]
 github_client = create_github_client()
 pull_request = fetch_pull_request(github_client, episode_number)
 if pull_request is None:
-  sys.stderr.write("No pull request found for episode {}\n".format(episode_number))
+  sys.stderr.write(f"No pull request found for episode {episode_number}\n")
   sys.exit(1)
 else:
   print(f'Pull Request:')
