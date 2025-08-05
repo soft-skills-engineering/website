@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd "$(dirname "$0")"
+
+./patreon-slack-invites | \
+   mail -s "$(date +'%B %Y') Soft Skills Engineering Slack Invites" \
+      'Dave Smith <dave@thesmithfam.org>'  \
+      'Jamison Dance <jergason@gmail.com>'
+
