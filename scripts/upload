@@ -20,7 +20,7 @@ function python_setup() {
   which virtualenv >/dev/null || pip3 install virtualenv
   [ -d ve ] || virtualenv ve --python=python3
   source ve/bin/activate
-  pip install -r requirements.txt >/dev/null
+  pip3 install -r requirements.txt >/dev/null
 }
 
 function escape_yaml_quotes() {
