@@ -30,6 +30,7 @@ DEBUG=0
 [ $DEBUG -eq 1 ] && echo "Starting at $(date)"
 
 cd "$(dirname "$0")"
+source ve/bin/activate
 
 # Determine the next episode number to publish:
 latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
