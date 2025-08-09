@@ -18,8 +18,8 @@ function check_prereqs() {
 
 function python_setup() {
   which virtualenv >/dev/null || pip3 install virtualenv
-  [ -d ve ] || virtualenv ve --python=python3
-  source ve/bin/activate
+  [ -d venv ] || virtualenv venv --python=python3
+  source venv/bin/activate
   pip3 install -r requirements.txt >/dev/null
 }
 
