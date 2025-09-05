@@ -2,6 +2,8 @@
 
 cd "$(dirname "$0")"
 
+source venv/bin/activate
+
 ./patreon-slack-invites | \
    mail -s "$(date +'%B %Y') Soft Skills Engineering Slack Invites" \
       'Dave Smith <dave@thesmithfam.org>'  \
