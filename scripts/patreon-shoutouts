@@ -15,6 +15,7 @@ def main():
   print()
   for weekly_shout_out in weekly_shout_outs:
     print(f' * {weekly_shout_out["full_name"]}')
+    print(f'   * Last charged ${weekly_shout_out["currently_entitled_amount_cents"]/100:,.2f} on {weekly_shout_out["last_charge_date"]}')
   print()
 
 

@@ -157,8 +157,10 @@ def populate_patreon_shoutouts(key, token, created_cards):
   shoutout_string += f'{len(weekly_shoutouts)} weekly shoutouts:'
   shoutout_string += '\n\n'
   for weekly_shout_out in weekly_shoutouts:
-    shoutout_string += f' * {weekly_shout_out["full_name"]}\n\n'
+    shoutout_string += f' * {weekly_shout_out["full_name"]}\n'
+    shoutout_string += f'   * *Last charged ${weekly_shout_out["currently_entitled_amount_cents"]/100:,.2f} on {weekly_shout_out["last_charge_date"]}*\n\n'
   shoutout_string += '\n\n'
+  shoutout_string = shoutout_string.replace('\\', '\\\\')
 
   patreon_card['name'] = f'Patrons as of {datetime.now().date()}'
   patreon_card['desc'] = shoutout_string
