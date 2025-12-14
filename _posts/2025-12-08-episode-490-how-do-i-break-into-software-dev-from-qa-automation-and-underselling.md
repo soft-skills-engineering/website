@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 490: How do I break into software dev from QA automation and underselling"
-date: 2025-12-01 05:00:00 -0700
+date: 2025-12-08 05:00:00 -0700
 guid: 1bede9de-a060-47a4-ba04-7c282055dc55
 duration: "26:14"
 length: 37774770
