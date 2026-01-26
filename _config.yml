@@ -35,6 +35,7 @@ opslevel_marketing_url: "https://opslevel.com/softskills"
 compiler_marketing_url: "https://link.chtbl.com/compiler?sid=podcast.softskillsengineering"
 one_schema_marketing_url: "https://oneschema.co/softskills"
 notion_marketing_url: "https://notion.com/softskills"
+retool_marketing_url: "https://retool.com/softskills"
 
 # Disqus post comments
 # (leave blank to disable Disqus)
