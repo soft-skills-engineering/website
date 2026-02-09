@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 498: Testing in big corporations and how to get my first management job"
-date: 2026-01-26 05:00:00 -0700
+date: 2026-02-02 05:00:00 -0700
 guid: 53f36522-0152-42c3-aed4-1909dd2a3330
 duration: "31:52"
 length: 27963840
