@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 504: Should I quit my AI job before my first day and professional button-clicker"
-date: 2026-03-09 05:00:00 -0700
+date: 2026-03-16 05:00:00 -0700
 guid: 4b870751-7d96-4f53-8451-51005f83a89a
 duration: "32:15"
 length: 29505768
