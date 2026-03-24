@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Episode 505: Called to the principal's office and my team leads are super dogmatic"
-date: 2026-03-30 05:00:00 -0700
+date: 2026-03-23 05:00:00 -0700
 guid: 2e24be50-1d91-4df8-b860-d921d59b7fd4
 duration: "45:53"
 length: 38814883
