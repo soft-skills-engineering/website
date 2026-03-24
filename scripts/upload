@@ -133,23 +133,27 @@ $episode_question_text
 EOM
 fi
 
-do_mp3_upload=false
-if [ "$is_unattended" = false ]; then
-  read -p "Upload mp3 file to server now? "
-  if [[ $REPLY =~ ^[Yy]$ ]]; then
+
+# Put the mp3 file into place to be hosted:
+host="thesmithfam.org"
+dest_path="/home/dave/podcasts/${new_filename}"
+if [ "$(hostname)" = "$host" ]; then
+  cp -v "$mp3_file" "$dest_path"
+  chmod 644 "$dest_path"
+else
+  do_mp3_upload=false
+  if [ "$is_unattended" = false ]; then
+    read -p "Upload mp3 file to server now? "
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      do_mp3_upload=true
+    fi
+  else
     do_mp3_upload=true
   fi
-else
-  do_mp3_upload=true
-fi
-
-if [ "$do_mp3_upload" = true ]; then
-  host="thesmithfam.org"
-  dest_path="~/podcasts/${new_filename}"
-  rsync -avP "$mp3_file" "$username@$host:$dest_path"
-  ssh $username@$host "chmod 644 $dest_path"
-  echo
-  echo
+  if [ "$do_mp3_upload" = true ]; then
+    rsync -avP "$mp3_file" "$username@$host:$dest_path"
+    ssh $username@$host "chmod 644 $dest_path"
+  fi
 fi
 
 
