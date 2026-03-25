@@ -2,9 +2,9 @@
 set -e
 
 cd "$(dirname "$0")"
-
 echo Running daily jobs from directory $(pwd)
 
+source $HOME/.keychain/$(hostname)-sh
 if [ $(git branch --show-current) != "gh-pages" ]; then
   git checkout gh-pages > /dev/null
 fi
