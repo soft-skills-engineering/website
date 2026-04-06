@@ -176,6 +176,12 @@ else
 fi
 
 if [ "$do_github" = true ]; then
+  keychain_file="$HOME/.keychain/$(hostname)-sh"
+  if [ -f "$keychain_file" ]; then
+      source "$keychain_file"
+  else
+      echo "Warning: Keychain environment file not found at "$keychain_file". Git pull will likely fail."
+  fi
   branch_name=episode-$prefixed_episode_number
   echo "Checking out the gh-pages branch, and creating pull request for new branch $branch_name"
   git checkout gh-pages --quiet
