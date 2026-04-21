@@ -1,6 +1,3 @@
----
-# Jekyll front matter to allow template processing if ever needed
----
 User-agent: *
 Allow: /
 
