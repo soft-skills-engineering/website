@@ -54,3 +54,10 @@ def create_pull_request(github_client, episode_number, episode_mp3_url):
   )
 
   return pull_request_url
+
+def check_credentials(github_client):
+  try:
+    github_client.get_repo(REPO_FULL_PATH)
+    return True
+  except Exception:
+    return False

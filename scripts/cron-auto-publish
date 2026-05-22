@@ -41,6 +41,17 @@ latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio
         | tail -n 1
     )
 
+if ./check-github-credentials; then
+    [ $DEBUG -eq 1 ] && echo "GitHub credentials are good"
+else
+    echo
+    echo "GitHub credentials aren't working or are missing. Check ./github-auth.json"
+    echo "You may need a new Personal Access Token (fine-grained) with permissions in this org on ALL repos: Metadata Read, and Pull Requests: Read and Write"
+    echo
+    echo "Go here to create one: from https://github.com/settings/personal-access-tokens"
+    exit 1
+fi
+
 episode_number_to_publish=$((latest_published_epispode_number + 1))
 
 [ $DEBUG -eq 1 ] && echo "Checking for pull request for episode $episode_number_to_publish"

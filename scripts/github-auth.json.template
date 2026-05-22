@@ -1,3 +1,4 @@
 {
-  "token": "Your GitHub Personal Access Token with 'repo' scope from https://github.com/settings/tokens"
+  "token": "Your GitHub Personal Access fine-grained Token",
+  "comment": "Needs permissions on ALL repos: Metadata Read, and Pull Requests: Read and Write, from https://github.com/settings/personal-access-tokens"
 }
