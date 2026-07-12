@@ -60,6 +60,13 @@ if ./fetch-pull-request $episode_number_to_publish >/dev/null 2>&1; then
     exit 0
 fi
 
+branch_name="origin/episode-$episode_number_to_publish"
+if git branch -la  | grep "$branch_name" >/dev/null; then
+    [ $DEBUG -eq 1 ] && echo "Branch $branch_name already exists, which means this episode is already published, so we have nothing to do"
+    exit 0
+fi
+
+
 mp3_file_base_name="sse-$episode_number_to_publish.mp3"
 mp3_s3_url="https://s3-bucket-us-west-1-public-podcast-episodes.s3-us-west-1.amazonaws.com/$mp3_file_base_name"
 tmpdir=$(mktemp -d -t sse-XXXXXXXXXX)
