@@ -68,7 +68,7 @@ def refresh_patreon_access_token(patreon_client_id, patreon_client_secret):
 
 
 def get_patreon_campaign_id(access_token):
-  response = requests.get('https://www.patreon.com/api/oauth2/api/current_user/campaigns', headers={'Authorization': f'Bearer {access_token}'})
+  response = requests.get('https://www.patreon.com/api/oauth2/v2/campaigns', headers={'Authorization': f'Bearer {access_token}'})
   response.raise_for_status()
   payload = response.json()
   assert len(payload['data']) == 1
@@ -154,7 +154,7 @@ def generate_new_access_and_refresh_tokens(code):
 
   To use this function, YOU MUST FIRST:
 
-  1. In a browser, go to: https://www.patreon.com/oauth2/authorize?response_type=code&client_id={patreon_client_id}&redirect_uri=https://softskills.audio&scope=identity+campaigns+campaigns.members
+  1. In a browser, go to: https://www.patreon.com/oauth2/authorize?response_type=code&client_id={patreon_client_id}&redirect_uri=https://softskills.audio&scope=identity+campaigns+campaigns.members+campaigns.members%5Bemail%5D
   2. Log in
   3. Note the "code" query param in the redirected URL, like https://softskills.audio/?code={copy_the_code_from_here}&state=None
   4. Call this function and pass in the code as the function arg
