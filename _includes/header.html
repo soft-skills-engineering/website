@@ -2,7 +2,13 @@
   <div class="container">
     <div class="site-header-primary">
       <button class="nav-toggler" id="NavToggler">Menu</button>
-      <a class="site-title-link" href="/">
+      {%- comment -%}
+        Both logos inside this link are hidden from assistive tech at one
+        breakpoint or the other -- the stacked one by CSS, the landscape one by
+        aria-hidden -- which left the site-wide home link with no accessible
+        name at all. Name the link itself so it does not depend on either image.
+      {%- endcomment -%}
+      <a class="site-title-link" href="/" aria-label="Soft Skills Engineering Podcast home">
         <img
           class="header-logo logo-stacked"
           src="/img/logo.svg"

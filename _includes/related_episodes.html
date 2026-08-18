@@ -1,0 +1,90 @@
+{%- comment -%}
+  "More episodes like this one" for an episode page.
+
+  Every episode already links to its topic hubs, but the hubs are one hop away
+  and the only episode-to-episode links are the two chronological neighbours.
+  That leaves the archive shaped like a chain: an episode from 2019 is reachable
+  only by walking it. These links cross-connect episodes that share a subject,
+  which is how a reader (and a crawler) gets from any episode to the rest of the
+  ones that answer the same kind of question.
+
+  The window is centred on this episode's own position within its topic rather
+  than always showing the newest episodes in that topic. Taking the newest would
+  point every one of the 500+ pages at the same handful of episodes and leave
+  the back catalogue with no inbound links at all.
+
+  Expects `include.post`.
+{%- endcomment -%}
+
+{%- assign rel_title_lc = include.post.title | downcase -%}
+
+{%- comment -%} The episode's first matching topic decides the neighbourhood. {%- endcomment -%}
+{%- assign rel_topic = nil -%}
+{%- for topic in site.data.topics -%}
+  {%- unless rel_topic -%}
+    {%- for keyword in topic.keywords -%}
+      {%- if rel_title_lc contains keyword -%}
+        {%- assign rel_topic = topic -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- if rel_topic -%}
+  {%- comment -%}
+    Collect the topic's episodes into a delimited string. Liquid has no way to
+    build an array, and the delimiters are picked to be things an episode title
+    cannot contain.
+  {%- endcomment -%}
+  {%- assign rel_count = 0 -%}
+  {%- assign rel_position = 0 -%}
+  {%- capture rel_serialized -%}
+    {%- for post in site.posts -%}
+      {%- assign rel_post_title_lc = post.title | downcase -%}
+      {%- assign rel_is_match = false -%}
+      {%- for keyword in rel_topic.keywords -%}
+        {%- if rel_post_title_lc contains keyword -%}
+          {%- assign rel_is_match = true -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if rel_is_match -%}
+        {%- if post.url == include.post.url -%}{%- assign rel_position = rel_count -%}{%- endif -%}
+        {%- if rel_count > 0 %}|~|{% endif -%}
+        {{- post.url }}|^|{{ post.title -}}
+        {%- assign rel_count = rel_count | plus: 1 -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+
+  {%- assign rel_title_downcased = rel_topic.title | downcase -%}
+  {%- assign rel_phrase = rel_topic.phrase | default: rel_title_downcased -%}
+  {%- assign rel_wanted = 6 -%}
+  {%- if rel_count > 1 -%}
+    {%- assign rel_entries = rel_serialized | strip | split: '|~|' -%}
+
+    {%- comment -%} Centre a window of rel_wanted+1 slots on this episode, then clamp it to the list. {%- endcomment -%}
+    {%- assign rel_span = rel_wanted | plus: 1 -%}
+    {%- assign rel_start = rel_position | minus: 3 -%}
+    {%- assign rel_last_start = rel_count | minus: rel_span -%}
+    {%- if rel_start > rel_last_start -%}{%- assign rel_start = rel_last_start -%}{%- endif -%}
+    {%- if rel_start < 0 -%}{%- assign rel_start = 0 -%}{%- endif -%}
+    {%- assign rel_end = rel_start | plus: rel_span | minus: 1 -%}
+    {%- if rel_end > rel_count -%}{%- assign rel_end = rel_count -%}{%- endif -%}
+    {%- assign rel_end = rel_end | minus: 1 -%}
+
+<section class="related-episodes">
+  <h2 class="related-episodes-heading">More episodes about {{ rel_phrase }}</h2>
+  <ul class="related-episodes-list">
+    {%- for index in (rel_start..rel_end) -%}
+      {%- assign rel_entry = rel_entries[index] | split: '|^|' -%}
+      {%- unless rel_entry[0] == include.post.url -%}
+      <li><a href="{{ rel_entry[0] | prepend: site.baseurl }}">{{ rel_entry[1] }}</a></li>
+      {%- endunless -%}
+    {%- endfor -%}
+  </ul>
+  <p class="related-episodes-all"><a href="/topics/{{ rel_topic.slug }}/">All {{ rel_count }} episodes about {{ rel_phrase }}</a></p>
+</section>
+  {%- endif -%}
+{%- endif -%}

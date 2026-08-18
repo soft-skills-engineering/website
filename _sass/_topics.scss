@@ -121,3 +121,61 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Related episodes on an episode page */
+
+.related-episodes {
+  margin-bottom: var(--double-space);
+}
+
+.related-episodes-heading {
+  margin-bottom: .75rem;
+  font-size: .8rem;
+  font-weight: var(--font-medium);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: .75;
+}
+
+.related-episodes-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+}
+
+.related-episodes-list li {
+  line-height: 1.4;
+}
+
+.related-episodes-list a {
+  display: block;
+  padding: .75rem 1rem;
+  border: 3px solid var(--post-border-color);
+  border-radius: 8px;
+  background-color: var(--post-bg-color);
+  text-decoration: none;
+  color: var(--font-color);
+
+  &:hover,
+  &:focus {
+    border-color: var(--color7);
+    background-color: var(--color5);
+  }
+}
+
+.related-episodes-all {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: .9rem;
+}
+
+@media (min-width: 768px) {
+  .related-episodes-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}

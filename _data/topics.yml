@@ -8,6 +8,10 @@
 # title. Keep them as word stems ("promot" catches promote/promoted/promotion)
 # and keep them specific enough not to drag in unrelated episodes -- a hub full
 # of loosely-related episodes is worse than a smaller, accurate one.
+#
+# `phrase` is the topic's name as it reads mid-sentence ("every episode about
+# <phrase>"). It defaults to the lowercased title, so only set it where that
+# would be wrong -- lowercasing an acronym gives you "ai at work".
 
 - slug: getting-promoted
   title: Getting Promoted
@@ -223,6 +227,13 @@
     - time off
     - on-call
     - on call
+    - sabbatical
+    - mental health
+    - mini-retirement
+    - flexible schedule
+    - unfulfilled
+    - hate my job
+    - 60 hours
 
 - slug: layoffs-and-job-security
   title: Layoffs and Job Security
@@ -269,3 +280,231 @@
     - convince
     - buy-in
     - buy in
+
+- slug: ai-and-llms
+  title: AI at Work
+  phrase: AI at work
+  heading: AI, LLMs and Software Engineering Careers
+  description: "Podcast episodes on AI and software engineering careers: AI-generated slop in code review, managers mandating LLMs, and whether AI is coming for your job."
+  intro: >-
+    AI arrived in engineering orgs faster than anyone worked out what to do with
+    it. These episodes cover reviewing code nobody actually wrote, managers who
+    mandate LLM use, teammates whose output quality quietly changed, and the
+    question underneath all of it: is this job still going to exist.
+  keywords:
+    - "ai "
+    - " ai"
+    - llm
+    - chatgpt
+    - copilot
+    - vibecod
+    - slop
+    - artificial intelligence
+
+- slug: performance-reviews-and-feedback
+  title: Performance Reviews and Feedback
+  heading: Performance Reviews and Feedback for Engineers
+  description: "Podcast episodes on engineering performance reviews and feedback: a bad review, vague ratings, giving hard feedback to a peer, and getting credit for your work."
+  intro: >-
+    Review season turns a year of work into a paragraph and a rating. These
+    episodes cover reading a bad review, feedback so vague it tells you nothing,
+    how to give a peer something honest without wrecking the relationship, and
+    what to do when the work you did never made it into the writeup.
+  keywords:
+    - feedback
+    - performance review
+    - perf review
+    - review season
+    - annual review
+    - annual reviewers
+    - peer review
+    - "1:1"
+    - one on one
+    - recognition
+    - criticism
+
+- slug: estimates-and-deadlines
+  title: Estimates, Deadlines and Process
+  heading: Estimates, Deadlines and Agile Process
+  description: "Podcast episodes on engineering estimates and deadlines: story points, sprints that always slip, deadlines set without you, and process that gets in the way."
+  intro: >-
+    Every team has a process, and most of them hurt somewhere. These episodes
+    cover estimates treated as commitments, deadlines handed down without you in
+    the room, retrospectives where nothing changes, and the difference between
+    process that helps and process for its own sake.
+  keywords:
+    - estimat
+    - deadline
+    - " agile"
+    - scrum
+    - sprint
+    - story point
+    - retrospective
+    - stand up
+    - standup
+    - stand-up
+    - velocity
+    - roadmap
+    - too much process
+    - heavy process
+    - process renegades
+    - measuring productivity
+    - jira
+
+- slug: learning-and-staying-current
+  title: Learning and Staying Current
+  heading: Learning, Skills and Staying Current
+  description: "Podcast episodes on keeping engineering skills current: generalist vs specialist, degrees and certifications, finding time to learn, and fear of falling behind."
+  intro: >-
+    The technology moves and the worry that you are falling behind moves with
+    it. These episodes cover generalist versus specialist, whether degrees and
+    certifications are worth it, finding real time to learn inside a full-time
+    job, and switching stacks without starting over.
+  keywords:
+    - learning
+    - learn new
+    - keeping up
+    - latest technology
+    - obsolete
+    - tech stack
+    - certification
+    - degree
+    - bootcamp
+    - generalist
+    - specialist
+    - self-study
+    - study time
+    - graduate school
+    - masters
+    - training
+    - falling behind
+    - old and behind
+    - stagnant
+
+- slug: code-quality-and-tech-debt
+  title: Code Quality and Tech Debt
+  heading: Code Quality, Code Review and Tech Debt
+  description: "Podcast episodes on code quality: inheriting a bad codebase, arguing about tech debt, rewrites that never end, and code review that stays civil."
+  intro: >-
+    The codebase is a people problem in disguise. These episodes cover
+    inheriting code nobody wants to touch, making the case for paying down tech
+    debt, rewrites that never finish, documentation nobody reads, and running
+    code review so your teammates still talk to you afterward.
+  keywords:
+    - tech debt
+    - technical debt
+    - legacy code
+    - bad code
+    - garbage code
+    - rewrite
+    - rewriter
+    - code review
+    - refactor
+    - documentation
+    - code owner
+    - self-inflicted complexity
+    - unit test
+    - testing in
+
+- slug: personal-brand-and-speaking
+  title: Personal Brand and Speaking
+  heading: Personal Brand, Speaking and Side Projects
+  description: "Podcast episodes on building a reputation as an engineer: conference talks, blogging, open source, side projects, LinkedIn, and getting noticed at work."
+  intro: >-
+    Being good at the job and being known for it are different problems. These
+    episodes cover speaking at conferences, blogging and open source, whether
+    side projects are worth the evenings, updating LinkedIn without setting off
+    alarms, and getting visible work inside your own company.
+  keywords:
+    - conference
+    - meetup
+    - personal brand
+    - open source
+    - side project
+    - side hustle
+    - linkedin
+    - public speaking
+    - for speaking
+    - through speaking
+    - visibility
+    - networking
+
+- slug: contracting-and-consulting
+  title: Contracting and Consulting
+  heading: Contracting, Consulting and Freelance Engineering
+  description: "Podcast episodes on contract and consulting work in software: contract vs full-time, difficult clients, rates and getting paid, and working alongside contractors."
+  intro: >-
+    Contract work runs on different rules. These episodes cover choosing between
+    contract and full-time, clients who will not decide, getting paid on time,
+    what happens when a contractor is treated as second-class, and leading a
+    team that is half employees and half agency.
+  keywords:
+    - contract
+    - consult
+    - freelanc
+    - ad agency
+    - over-employed
+    - overemployed
+    - moonlight
+
+- slug: startups-and-big-tech
+  title: Startups and Big Tech
+  heading: Startups vs Big Tech for Software Engineers
+  description: "Podcast episodes on choosing between a startup and big tech: equity and risk, chaos versus bureaucracy, FAANG levels, and surviving an acquisition."
+  intro: >-
+    The same engineer has a completely different career at a ten-person startup
+    and at a hundred-thousand-person company. These episodes cover the trade
+    between equity and stability, chaos versus bureaucracy, leveling inside big
+    tech, and what happens to your job after an acquisition.
+  keywords:
+    - startup
+    - start-up
+    - big tech
+    - faang
+    - big company
+    - the goog
+    - google
+    - amazon
+    - microsoft
+    - saas
+    - big corporation
+    - corporate
+    - enterprise
+    - co-founder
+    - founder
+    - acquisition
+    - acquired
+    - big fish
+
+- slug: communication-at-work
+  title: Communication at Work
+  heading: Communication Skills for Software Engineers
+  description: "Podcast episodes on communication for developers: saying no, speaking up in meetings, writing that gets read, async and Slack etiquette, and awkward conversations."
+  intro: >-
+    Most of the job is talking to people about the work. These episodes cover
+    saying no without damage, speaking up when the room is senior to you,
+    writing that people actually read, async and chat etiquette, and the
+    conversations everyone puts off having.
+  keywords:
+    - communicat
+    - saying no
+    - politely, no
+    - can't say no
+    - speaking up
+    - asking for help
+    - presentation
+    - slack channel
+    - slack etti
+    - slack etiq
+    - email
+    - awkward
+    - social skill
+    - accents
+    - correcting english
+    - small talk
+    - over-explain
+    - overexplain
+    - brainstorming
+    - consensus
+    - influenc
+    - soft skills

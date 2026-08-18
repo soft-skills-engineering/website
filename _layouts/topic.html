@@ -12,6 +12,8 @@ layout: default
 {%- endfor -%}
 
 {% include topic_episodes.html topic=topic %}
+{%- assign topic_title_lc = topic.title | downcase -%}
+{%- assign topic_phrase = topic.phrase | default: topic_title_lc -%}
 
 <div class="hero">
   <div class="container">
@@ -38,7 +40,7 @@ layout: default
 
 <div class="block">
   <div class="container">
-    <h2>Every episode about {{ topic.title | downcase }}</h2>
+    <h2>Every episode about {{ topic_phrase }}</h2>
     <ol class="topic-episodes">
       {{ topic_episode_list }}
     </ol>
