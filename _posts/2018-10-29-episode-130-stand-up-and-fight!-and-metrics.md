@@ -7,6 +7,7 @@ duration: "47:18"
 length: 45404628
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-130.mp3"
 categories: episode
+canonical_url: "/2017/12/14/episode-87-pushover-coworkers-and-productivity-metrics/"
 ---
 
 This is a rerun of episode 87 from December 14, 2017.

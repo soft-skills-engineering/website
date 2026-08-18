@@ -1,5 +1,7 @@
 ---
 layout: default
+seo_title: "Career Advice Podcast for Software Engineers &#8211; Soft Skills Engineering"
+description: "A weekly advice podcast for software engineers. Two experienced developers answer your questions about raises, promotions, managers, job hunting and career growth."
 ---
 
 <div class="hero icon-pattern">
@@ -116,5 +118,53 @@ layout: default
   </div>
 </div>
 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+  // The eight listener quotes are Twitter embeds, and widgets.js turns each one
+  // into an iframe. Loading that on page load costs the homepage -- our best
+  // ranking page -- a large chunk of its render budget for content that sits
+  // well below the fold. Hold the script until the quotes are nearly in view.
+  (function () {
+    var quotes = document.querySelector('.quotes-grid')
+    if (!quotes) return
+
+    var loaded = false
+    function loadWidgets() {
+      if (loaded) return
+      loaded = true
+      var script = document.createElement('script')
+      script.src = 'https://platform.twitter.com/widgets.js'
+      script.charset = 'utf-8'
+      script.async = true
+      document.body.appendChild(script)
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      loadWidgets()
+      return
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries.some(function (entry) { return entry.isIntersecting })) {
+        done()
+      }
+    }, { rootMargin: '200px' })
+
+    observer.observe(quotes)
+
+    // Backstop: an instant jump (anchor link, restored scroll position) can land
+    // past the quotes without the observer ever seeing them intersect. Catch the
+    // case where the reader is already at or below the section.
+    function onScroll() {
+      if (quotes.getBoundingClientRect().top < window.innerHeight + 200) done()
+    }
+
+    function done() {
+      observer.disconnect()
+      window.removeEventListener('scroll', onScroll)
+      loadWidgets()
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+  })()
+</script>
 

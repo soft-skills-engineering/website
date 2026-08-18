@@ -43,6 +43,8 @@ body_class: focused
     loading="lazy" />
 </div>
 
+{% include post_topics.html post=page %}
+
 {%- comment -%}
   Episode-to-episode links. Without these the only path to the back catalog is
   the single /episodes/ page, which buries older episodes for both listeners

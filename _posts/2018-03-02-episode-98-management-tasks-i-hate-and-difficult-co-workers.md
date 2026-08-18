@@ -7,6 +7,7 @@ duration: "35:00"
 length: 33594721
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-098.mp3"
 categories: episode
+canonical_url: "/2017/04/25/episode-57-management-tasks-i-hate-and-difficult-co-workers/"
 ---
 
 [Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:

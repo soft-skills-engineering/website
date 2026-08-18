@@ -1,0 +1,32 @@
+{%- comment -%}
+  Renders the episode list for one topic hub.
+
+  Expects `include.topic` (an entry from _data/topics.yml). Matching is a
+  case-insensitive substring test of the episode title against the topic's
+  keywords, so it stays correct as new episodes are published without anyone
+  having to tag them by hand.
+
+  The list is captured rather than printed directly so the count is known
+  before the heading that reports it is written out.
+{%- endcomment -%}
+
+{%- assign topic_episode_count = 0 -%}
+{%- capture topic_episode_list -%}
+  {%- for post in site.posts -%}
+    {%- assign post_title_lc = post.title | downcase -%}
+    {%- assign is_match = false -%}
+    {%- for keyword in include.topic.keywords -%}
+      {%- if post_title_lc contains keyword -%}
+        {%- assign is_match = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if is_match -%}
+      {%- assign topic_episode_count = topic_episode_count | plus: 1 -%}
+      <li class="topic-episode">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <time class="topic-episode-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: site.date_format }}</time>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}

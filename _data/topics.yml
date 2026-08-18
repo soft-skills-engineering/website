@@ -1,0 +1,271 @@
+# Topic hubs.
+#
+# The archive is 500+ episodes whose only index is one giant chronological
+# list, so nothing on the site groups episodes by the thing a listener is
+# actually dealing with. These entries drive /topics/ and the pages under it.
+#
+# `keywords` are matched, case-insensitively, as substrings of the episode
+# title. Keep them as word stems ("promot" catches promote/promoted/promotion)
+# and keep them specific enough not to drag in unrelated episodes -- a hub full
+# of loosely-related episodes is worse than a smaller, accurate one.
+
+- slug: getting-promoted
+  title: Getting Promoted
+  heading: Getting Promoted as a Software Engineer
+  description: "Podcast episodes on getting promoted as a software engineer: promotion criteria, making your case, senior and staff levels, and what to do when a promotion stalls."
+  intro: >-
+    Promotions are the questions we get asked about most. These episodes cover
+    how promotion decisions actually get made, how to build a case your manager
+    can take upstairs, what changes between the junior, senior and staff levels,
+    and what to do when you have done the work but the title has not followed.
+  keywords:
+    - promot
+    - demot
+    - career ladder
+    - job title
+    - title
+    - senior
+    - staff engineer
+    - principal engineer
+    - level up
+    - career growth
+    - climbing
+
+- slug: salary-and-raises
+  title: Salary and Raises
+  heading: Salary, Raises and Negotiation for Developers
+  description: "Podcast episodes on software engineer pay: asking for a raise, negotiating an offer, equity, bonuses, and finding out you are underpaid compared to your team."
+  intro: >-
+    Nobody teaches engineers how to talk about money. These episodes cover
+    asking for a raise, negotiating a new offer, what to do when you learn a
+    teammate is paid more for the same work, and how equity, bonuses and
+    counteroffers really work.
+  keywords:
+    - raise
+    - salary
+    - compensat
+    - negotiat
+    - underpaid
+    - pay cut
+    - equity
+    - stock option
+    - bonus
+    - money
+    - counteroffer
+    - counter offer
+
+- slug: quitting-your-job
+  title: Quitting Your Job
+  heading: Quitting Your Job as a Software Engineer
+  description: "Podcast episodes on quitting a software job: knowing when to leave, giving notice, handling a counteroffer, and leaving a manager or team you like."
+  intro: >-
+    Deciding whether to leave is rarely about the job alone. These episodes
+    cover how to tell a rough patch from a real problem, how to give notice
+    without burning the relationship, what to do with a counteroffer, and how to
+    leave a team you genuinely like.
+  keywords:
+    - quit
+    - resign
+    - leaving
+    - leave my job
+    - notice
+    - two weeks
+    - should i stay
+    - moving on
+    - new job
+    - job hop
+
+- slug: interviewing-and-job-hunting
+  title: Interviewing and Job Hunting
+  heading: Interviewing and Job Hunting for Engineers
+  description: "Podcast episodes on the software engineering job hunt: technical interviews, resumes, recruiters, take-home projects, and evaluating an offer before you sign."
+  intro: >-
+    These episodes cover the whole job hunt: writing a resume that survives a
+    skim, dealing with recruiters, getting through technical and take-home
+    interviews, spotting red flags during the process, and evaluating an offer
+    once you have one.
+  keywords:
+    - interview
+    - resume
+    - cv
+    - recruit
+    - job hunt
+    - job search
+    - applying
+    - application
+    - take home
+    - whiteboard
+    - job offer
+    - offer
+    - hiring
+    - candidate
+
+- slug: working-with-your-manager
+  title: Working With Your Manager
+  heading: Working With Your Manager
+  description: "Podcast episodes on managing up: bad managers, useful 1:1s, performance reviews, giving your boss feedback, and what to do when your manager is the problem."
+  intro: >-
+    Your manager shapes your day more than almost anything else. These episodes
+    cover getting something useful out of your 1:1s, giving feedback upward,
+    surviving a performance review, and what to do when your manager is absent,
+    overbearing, or simply the problem.
+  keywords:
+    - manager
+    - managing
+    - management
+    - my boss
+    - boss
+    - 1:1
+    - one-on-one
+    - one on one
+    - skip level
+    - performance review
+    - managing up
+
+- slug: difficult-coworkers
+  title: Difficult Coworkers
+  heading: Dealing With Difficult Coworkers
+  description: "Podcast episodes on hard people problems at work: coworkers who will not collaborate, credit stealing, team conflict, toxic teams, and disagreeing without blowing up."
+  intro: >-
+    Most engineering problems turn out to be people problems. These episodes
+    cover coworkers who will not budge in technical discussions, credit taken
+    for your work, teammates who go quiet, and how to disagree with someone you
+    have to keep working with.
+  keywords:
+    - coworker
+    - co-worker
+    - colleague
+    - teammate
+    - conflict
+    - toxic
+    - jerk
+    - annoying
+    - disagree
+    - argument
+    - credit
+    - gossip
+    - blame
+
+- slug: new-developers
+  title: New Developers
+  heading: Advice for Junior and New Software Developers
+  description: "Podcast episodes for junior developers and career changers: first jobs, bootcamp grads, imposter syndrome, asking for help, and finding a mentor early on."
+  intro: >-
+    The first couple of years are the steepest. These episodes cover landing and
+    surviving a first job, coming in from a bootcamp or another career, asking
+    for help without feeling like a burden, finding a mentor, and the imposter
+    syndrome that shows up for nearly everyone.
+  keywords:
+    - junior
+    - intern
+    - entry level
+    - first job
+    - new grad
+    - bootcamp
+    - career change
+    - mentor
+    - imposter
+    - impostor
+    - new developer
+    - beginner
+    - self taught
+    - self-taught
+
+- slug: remote-work-and-meetings
+  title: Remote Work and Meetings
+  heading: Remote Work, Meetings and Focus
+  description: "Podcast episodes on remote and hybrid engineering work: return-to-office mandates, staying visible from home, too many meetings, and protecting focus time."
+  intro: >-
+    These episodes cover working from home and the meeting culture that comes
+    with it: staying visible when nobody sees you work, return-to-office
+    mandates, calendars with no gaps left in them, and getting focus time back.
+  keywords:
+    - remote
+    - work from home
+    - wfh
+    - hybrid
+    - return to office
+    - in the office
+    - distributed team
+    - meeting
+    - standup
+    - stand-up
+    - calendar
+    - focus time
+
+- slug: burnout-and-work-life-balance
+  title: Burnout and Work-Life Balance
+  heading: Burnout, Stress and Work-Life Balance
+  description: "Podcast episodes on engineering burnout: overwork, on-call stress, boredom and disengagement, unrealistic deadlines, and recovering without quitting outright."
+  intro: >-
+    Burnout rarely announces itself. These episodes cover overwork and crunch,
+    the boredom and disengagement that look like laziness but are not,
+    unrealistic deadlines, on-call that never lets up, and what recovery
+    actually takes.
+  keywords:
+    - burnout
+    - burn out
+    - burned out
+    - stress
+    - overwork
+    - overtime
+    - crunch
+    - work-life
+    - work life
+    - balance
+    - bored
+    - disengaged
+    - motivat
+    - unmotivated
+    - depress
+    - anxiety
+    - vacation
+    - time off
+    - on-call
+    - on call
+
+- slug: layoffs-and-job-security
+  title: Layoffs and Job Security
+  heading: Layoffs, PIPs and Job Security
+  description: "Podcast episodes on layoffs and job security for engineers: surviving a round of cuts, performance improvement plans, getting fired, and what to do next."
+  intro: >-
+    These episodes cover the anxious end of the job: reading the signs before a
+    round of layoffs, what a performance improvement plan really means, being
+    let go, and how to talk about any of it in your next interview.
+  keywords:
+    - layoff
+    - laid off
+    - fired
+    - firing
+    - let go
+    - pip
+    - performance improvement
+    - job security
+    - severance
+    - downsiz
+    - restructur
+
+- slug: technical-leadership
+  title: Technical Leadership
+  heading: Technical Leadership and Influence
+  description: "Podcast episodes on technical leadership: leading without authority, tech lead roles, driving decisions, code review culture, and the move into management."
+  intro: >-
+    Leading starts well before the title does. These episodes cover influencing
+    technical decisions without authority, the tech lead role, running code
+    review so people still speak to you afterward, mentoring others, and whether
+    to move into management at all.
+  keywords:
+    - tech lead
+    - technical lead
+    - leadership
+    - leading
+    - influence
+    - architect
+    - code review
+    - mentoring
+    - become a manager
+    - into management
+    - technical decision
+    - convince
+    - buy-in
+    - buy in

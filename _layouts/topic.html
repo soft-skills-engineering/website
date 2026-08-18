@@ -1,0 +1,83 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  Topic hub. Front matter supplies `topic_slug`; everything the page says comes
+  from the matching entry in _data/topics.yml so the copy lives in one place.
+{%- endcomment -%}
+{%- assign topic = nil -%}
+{%- for candidate in site.data.topics -%}
+  {%- if candidate.slug == page.topic_slug -%}{%- assign topic = candidate -%}{%- endif -%}
+{%- endfor -%}
+
+{% include topic_episodes.html topic=topic %}
+
+<div class="hero">
+  <div class="container">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
+      <a href="/topics/">Topics</a> <span aria-hidden="true">/</span>
+      <span aria-current="page">{{ topic.title }}</span>
+    </nav>
+    <h1>{{ topic.heading }}</h1>
+    <p class="lead">{{ topic.intro }}</p>
+    <p class="lead">
+      {{ topic_episode_count }} episodes of
+      <a href="/">Soft Skills Engineering</a>, the weekly advice podcast where
+      <a href="/meet-the-hosts/">Dave Smith and Jamison Dance</a> answer software
+      engineers' questions. Every episode is free, and each page below has the
+      listener's question in full.
+    </p>
+    <p class="button-group">
+      <a href="{{ site.podcast_itunes_url }}" class="button"><span>Listen on Apple Podcasts</span></a>
+      <a href="{{ site.podcast_spotify_url }}" class="button"><span>Listen on Spotify</span></a>
+    </p>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <h2>Every episode about {{ topic.title | downcase }}</h2>
+    <ol class="topic-episodes">
+      {{ topic_episode_list }}
+    </ol>
+
+    <h2>Other topics</h2>
+    <ul class="topic-links">
+      {%- for other in site.data.topics -%}
+        {%- unless other.slug == topic.slug %}
+        <li><a href="/topics/{{ other.slug }}/">{{ other.title }}</a></li>
+        {%- endunless -%}
+      {%- endfor %}
+    </ul>
+
+    <p><a href="/episodes/">Browse all {{ site.posts | size }} episodes</a> or <a href="/ask/">ask Dave and Jamison your own question</a>.</p>
+  </div>
+</div>
+
+{%- comment -%}
+  ItemList tells Google this is a curated collection rather than a duplicate of
+  the main archive, and names the episodes it points at.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ page.url | prepend: site.url | jsonify }},
+  "url": {{ page.url | prepend: site.url | jsonify }},
+  "name": {{ topic.heading | jsonify }},
+  "description": {{ topic.description | jsonify }},
+  "inLanguage": "en",
+  "isPartOf": { "@id": {{ site.url | append: '/#website' | jsonify }} },
+  "about": { "@id": {{ site.url | append: '/#series' | jsonify }} },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ site.url | append: '/' | jsonify }} },
+      { "@type": "ListItem", "position": 2, "name": "Topics", "item": {{ site.url | append: '/topics/' | jsonify }} },
+      { "@type": "ListItem", "position": 3, "name": {{ topic.title | jsonify }} }
+    ]
+  }
+}
+</script>

@@ -7,6 +7,7 @@ duration: "24:41"
 length: 23690112
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-063.mp3"
 categories: episode
+canonical_url: "/2016/12/28/episode-41-management-snobs-and-two-bosses/"
 ---
 
 Jamison and Dave were out this week, so here is a *DEEP CUT* from the archives.

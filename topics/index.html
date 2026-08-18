@@ -1,0 +1,39 @@
+---
+layout: default
+title: Podcast Episodes by Topic
+permalink: /topics/
+description: "Browse 500+ Soft Skills Engineering episodes by topic: raises, promotions, quitting, interviewing, difficult coworkers, burnout, layoffs and technical leadership."
+---
+
+<div class="hero">
+  <div class="container">
+    <h1>Browse Episodes by Topic</h1>
+    <p class="lead">
+      Soft Skills Engineering is a weekly advice podcast for software engineers.
+      Since 2016, <a href="/meet-the-hosts/">Dave Smith and Jamison Dance</a> have
+      published {{ site.posts | size }} episodes answering listener questions
+      about the parts of the job that have nothing to do with code.
+    </p>
+    <p class="lead">
+      The <a href="/episodes/">full archive</a> is in date order. If you came
+      here with a specific problem, start with the topic that matches it.
+    </p>
+  </div>
+</div>
+
+<div class="block">
+  <div class="container">
+    <ul class="topic-cards">
+      {%- for topic in site.data.topics %}
+      {%- include topic_episodes.html topic=topic %}
+      <li class="topic-card">
+        <h2><a href="/topics/{{ topic.slug }}/">{{ topic.heading }}</a></h2>
+        <p>{{ topic.intro }}</p>
+        <p class="topic-card-meta"><a href="/topics/{{ topic.slug }}/">{{ topic_episode_count }} episodes</a></p>
+      </li>
+      {%- endfor %}
+    </ul>
+
+    <p>Not finding it? <a href="/search/">Search every episode</a> or <a href="/ask/">ask Dave and Jamison your own question</a>.</p>
+  </div>
+</div>

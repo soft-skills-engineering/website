@@ -7,6 +7,7 @@ duration: "33:58"
 length: 35305019
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-241.mp3"
 categories: episode
+canonical_url: "/2019/11/18/episode-184-indispensable-and-it-cold-war/"
 ---
 
 In this episode, Dave and Jamison answer these questions:

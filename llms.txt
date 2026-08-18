@@ -11,6 +11,8 @@ Every episode page contains the full text of the listener questions answered in 
 ## Key pages
 
 - [All episodes](https://softskills.audio/episodes/): complete chronological archive of every episode
+- [Episodes by topic](https://softskills.audio/topics/): every episode grouped by subject{% for topic in site.data.topics %}
+  - [{{ topic.heading }}](https://softskills.audio/topics/{{ topic.slug }}/){% endfor %}
 - [Community favorites](https://softskills.audio/favorites/): the episodes listeners recommend most
 - [Meet the hosts](https://softskills.audio/meet-the-hosts/): about Dave Smith and Jamison Dance
 - [Ask a question](https://softskills.audio/ask/): submit a question for the show

@@ -31,19 +31,80 @@
   {%- assign seo_description = page.description -%}
 {%- elsif is_episode -%}
   {%- assign seo_body = page.content | strip_html | normalize_whitespace | strip -%}
+  {%- comment -%}
+    Drop the standing intro sentence so the description starts on the actual
+    question. Both the "questions"/"question" wordings appear in the archive.
+  {%- endcomment -%}
   {%- assign seo_body_parts = seo_body | split: 'answer these questions:' -%}
-  {%- if seo_body_parts.size > 1 -%}
-    {%- assign seo_body = seo_body_parts[1] | strip | remove_first: '1. ' | strip -%}
+  {%- if seo_body_parts.size == 1 -%}
+    {%- assign seo_body_parts = seo_body | split: 'answer this question:' -%}
   {%- endif -%}
+  {%- if seo_body_parts.size > 1 -%}
+    {%- assign seo_body = seo_body_parts[1] -%}
+  {%- endif -%}
+  {%- comment -%}
+    `page.content` is rendered HTML, so its entities are already encoded. Decode
+    them here or the xml_escape below double-encodes ("&amp;amp;" in the SERP).
+  {%- endcomment -%}
+  {%- assign seo_body = seo_body | replace: '&#8217;', "'" | replace: '&#39;', "'" | replace: '&quot;', '"' | replace: '&#8220;', '"' | replace: '&#8221;', '"' | replace: '&lt;', '<' | replace: '&gt;', '>' | replace: '&amp;', '&' -%}
   {%- comment -%} Strip zero-width joiners and stray list markers left over from the Markdown source {%- endcomment -%}
-  {%- assign seo_body = seo_body | remove: '‌' | remove: '​' | normalize_whitespace | strip -%}
-  {%- assign seo_description = seo_body | truncate: 165 -%}
+  {%- assign seo_body = seo_body | remove: '‌' | remove: '​' | replace: '“', '"' | replace: '”', '"' | normalize_whitespace | strip -%}
+  {%- assign seo_body = seo_body | remove_first: '1. ' | remove_first: 'Questions ' | remove_first: 'Question ' | strip -%}
+  {%- comment -%}
+    Listener questions almost all open with a greeting and a "long time
+    listener" preamble. Left in place it crowds the topic out of the ~160
+    characters Google shows, and makes most episodes look identical in the
+    SERP. Peel the common openers off the front.
+  {%- endcomment -%}
+  {%- comment -%}
+    Some questions are introduced as "Listener Kate asks, ...". Drop that lead-in
+    when it is short enough to clearly be an attribution rather than the question.
+  {%- endcomment -%}
+  {%- assign seo_asks = seo_body | split: ' asks, ' -%}
+  {%- if seo_asks.size > 1 -%}
+    {%- assign seo_asks_lead = seo_asks[0] | size -%}
+    {%- if seo_asks_lead < 30 -%}
+      {%- assign seo_body = seo_body | remove_first: seo_asks[0] | remove_first: ' asks, ' | strip -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- assign seo_openers = 'Hi Dave and Jamison,|Hi Dave and Jamison!|Hi Dave & Jamison,|Hi Dave & Jamison!|Hey Dave and Jamison,|Hey Dave and Jamison!|Hey Dave & Jamison,|Hey Dave & Jamison!|Hello Dave and Jamison,|Hello Dave and Jamison!|Hello Dave & Jamison,|Dave and Jamison,|Hi Dave,|Hi Dave!|Hey Dave,|Hi folks,|Hey folks,|Hi there,|Hey there,|Hi guys,|Hi guys!|Hey guys,|Hey guys!|Hello!|Hello,|Hi!|Hi,|Hey!|Hey,' | split: '|' -%}
+  {%- for pass in (1..3) -%}
+    {%- for opener in seo_openers -%}
+      {%- assign seo_body = seo_body | remove_first: opener | strip -%}
+    {%- endfor -%}
+    {%- assign seo_body = seo_body | remove_first: 'Long time listener, first time question asker.' | remove_first: 'Long time listener, first time caller.' | remove_first: 'Long time listener.' | remove_first: 'Long-time listener.' | remove_first: 'First time question asker.' | remove_first: 'First time caller.' | remove_first: 'Love the podcast.' | remove_first: 'Love the show.' | remove_first: 'Thanks for the great podcast.' | remove_first: 'Thank you for the show!' | remove_first: 'thank you for the show!' | remove_first: 'First of all thank you for the show!' | remove_first: 'first of all thank you for the show!' | remove_first: 'Thanks for the show!' | remove_first: 'Love your show.' | remove_first: 'Love the pod.' | strip -%}
+  {%- endfor -%}
+  {%- assign seo_description = seo_body | truncate: 158 -%}
 {%- else -%}
   {%- assign seo_description = site.description -%}
 {%- endif -%}
 {%- assign seo_description = seo_description | strip_html | normalize_whitespace | strip -%}
 
-<title>{% if page.title %}{{ seo_title }} &#8211; {% endif %}{{ site.head_title | strip_html }}</title>
+{%- comment -%}
+  Title tag. Google shows roughly the first 60 characters, so the leading
+  characters are the scarce resource. Episode titles spend theirs on an
+  "Episode 526: " prefix nobody searches for, which pushes the part people do
+  search for -- the listener's question -- out of the visible snippet. Strip the
+  prefix here only; the H1, the URL and the page body all still carry the
+  number. Pages can override the whole tag with `seo_title` in front matter.
+{%- endcomment -%}
+{%- if page.seo_title -%}
+  {%- assign seo_head_title = page.seo_title -%}
+{%- else -%}
+  {%- assign seo_head_title = seo_title -%}
+  {%- if is_episode and seo_head_title contains 'Episode ' -%}
+    {%- assign seo_title_tail = seo_head_title | split: ': ' -%}
+    {%- if seo_title_tail.size > 1 -%}
+      {%- assign seo_head_title = seo_head_title | remove_first: seo_title_tail[0] | remove_first: ': ' | strip -%}
+    {%- endif -%}
+  {%- endif -%}
+  {%- if page.title -%}
+    {%- capture seo_head_title -%}{{ seo_head_title }} &#8211; {{ site.head_title | strip_html }}{%- endcapture -%}
+  {%- else -%}
+    {%- assign seo_head_title = site.head_title | strip_html -%}
+  {%- endif -%}
+{%- endif -%}
+<title>{{ seo_head_title }}</title>
 <meta name="description" content="{{ seo_description | xml_escape }}">
 <meta name="author" content="{{ site.author }}">
 {% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">{% endif %}
@@ -72,7 +133,7 @@
 {%- endif %}
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@{{ site.twitter_username }}">
 <meta name="twitter:title" content="{{ seo_title | xml_escape }}">
 <meta name="twitter:description" content="{{ seo_description | xml_escape }}">

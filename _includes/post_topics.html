@@ -1,0 +1,42 @@
+{%- comment -%}
+  Links an episode to the topic hubs it belongs to, using the same title
+  matching as the hub pages themselves (see _data/topics.yml).
+
+  This is what connects the archive together: without it the hubs are only
+  reachable from the nav, and every episode page is a dead end apart from its
+  two neighbours.
+
+  Expects `include.post`.
+{%- endcomment -%}
+
+{%- assign post_title_lc = include.post.title | downcase -%}
+{%- assign matched_topic_count = 0 -%}
+{%- capture matched_topic_links -%}
+  {%- for topic in site.data.topics -%}
+    {%- assign is_match = false -%}
+    {%- for keyword in topic.keywords -%}
+      {%- if post_title_lc contains keyword -%}
+        {%- assign is_match = true -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if is_match -%}
+      {%- assign matched_topic_count = matched_topic_count | plus: 1 -%}
+      <li><a class="topic-tag" href="/topics/{{ topic.slug }}/">{{ topic.title }}</a></li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<nav class="post-topics" aria-label="Topics">
+  {%- if matched_topic_count > 0 %}
+  <span class="post-topics-label">More episodes about</span>
+  <ul class="post-topics-list">
+    {{ matched_topic_links }}
+  </ul>
+  {%- else %}
+  <span class="post-topics-label">Find more episodes</span>
+  <ul class="post-topics-list">
+    <li><a class="topic-tag" href="/topics/">Browse all topics</a></li>
+  </ul>
+  {%- endif %}
+</nav>
