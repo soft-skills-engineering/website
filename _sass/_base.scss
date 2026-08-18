@@ -333,14 +333,17 @@ a {
 /* Quotes Grid */
 
 .quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space);
   margin: 0 auto;
   padding: 0 var(--gutters);
   max-width: 1500px;
 }
 
 .quotes-grid > * {
-  margin: 0 auto var(--space) !important; /* Work around Twitter inline styles */
-  break-inside: avoid;
+  margin: 0 auto !important; /* Work around Twitter inline styles */
+  align-self: start;
 }
 
 .feed-url {
@@ -368,8 +371,7 @@ a {
 
 @media (min-width: 768px) {
   .quotes-grid {
-    column-count: 2;
-    column-gap: var(--space);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .split-list {
@@ -401,7 +403,7 @@ a {
 
 @media (min-width: 1200px) {
   .quotes-grid {
-    column-count: 3;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
