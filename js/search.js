@@ -33,8 +33,6 @@
         this.add({
           'id': key,
           'title': post.title,
-          'author': post.author,
-          'category': post.category,
           'content': post.content
         }, this)
       }
@@ -54,7 +52,7 @@
     }
   }
   
-  function displaySearchResults(episodes, episodeStore) {
+  function displaySearchResults(episodes) {
     var summaryLabel = document.getElementById('search-results-summary')
     var resultList = document.getElementById('search-results')
   
@@ -104,7 +102,7 @@
       })
 
       updateQueryString(originalSearch)
-      displaySearchResults(episodes, window.episodeStore)
+      displaySearchResults(episodes)
     }
   }
 

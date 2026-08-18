@@ -7,7 +7,6 @@ duration: "29:29"
 length: 30527419
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-200.mp3"
 categories: episode
-enable_comments: true
 ---
 
 ## 🎉🎉🎉 Celebrating 200 episodes! 🎉🎉🎉

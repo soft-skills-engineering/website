@@ -8,7 +8,6 @@ length: 40030875
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-071.mp3"
 categories: episode
 favorite: true
-enable_comments: true
 ---
 
 Jamison and Dave answer these questions:

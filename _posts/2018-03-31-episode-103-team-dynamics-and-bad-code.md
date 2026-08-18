@@ -7,7 +7,6 @@ duration: "30:35"
 length: 29358502
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-103.mp3"
 categories: episode
-enable_comments: true
 ---
 
 A listener named Dan talks about ThanksBot, an internal tool at Facebook to support gratitude.

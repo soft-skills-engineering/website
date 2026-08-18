@@ -7,7 +7,6 @@ duration: "36:43"
 length: 35245570
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-074.mp3"
 categories: episode
-enable_comments: true
 ---
 
 Jamison and Dave will be at the UtahJS Conference on September 18th. See [conf.utahjs.com](https://conf.utahjs.com) for more info and to buy tickets. Come say hi!

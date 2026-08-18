@@ -7,7 +7,6 @@ duration: "29:23"
 length: 28095984
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-300.mp3"
 categories: episode
-enable_comments: true
 ---
 
 We are celebrating our 300th episode by publishing unique songs about the podcast. To get access to the songs, join Patreon: [https://www.patreon.com/SoftSkillsEng](https://www.patreon.com/SoftSkillsEng)

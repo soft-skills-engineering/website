@@ -7,7 +7,6 @@ duration: "33:39"
 length: 32993682
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-279.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This is a rerun of episode 220.

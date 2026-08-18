@@ -7,7 +7,6 @@ duration: "24:41"
 length: 23690112
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-063.mp3"
 categories: episode
-enable_comments: true
 ---
 
 Jamison and Dave were out this week, so here is a *DEEP CUT* from the archives.

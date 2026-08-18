@@ -7,7 +7,6 @@ duration: "43:10"
 length: 34866786
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-149.mp3"
 categories: episode
-enable_comments: true
 ---
 
 Joining us this episode is special guest <a href="https://twitter.com/AminiNedda">Nedda Amini</a>!

@@ -9,13 +9,9 @@
     }
     </script>
     <title>{% if page.title %}{{ page.title | strip_html }} &#8211; {% endif %}{{ site.head_title | strip_html }}</title>
-    <link rel="dns-prefetch" href="//cdn.mathjax.org">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% if page.meta_description %}{{ page.meta_description | xml_escape }}{% elsif page.summary %}{{ page.summary | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
-    {% if page.meta_robots %}<meta name="robots" content="{{ page.meta_robots }}">
-    {% else %}<meta name="robots" content="all">{% endif %}
+    <meta name="description" content="{{ site.description | xml_escape }}">
+    <meta name="robots" content="all">
     <meta name="author" content="{{ site.author }}">
     {% if page.categories %}<meta name="keywords" content="{{ page.categories | join: ', ' }}">{% endif %}
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
@@ -29,39 +25,23 @@
     <!-- Fonts -->
     <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 
-    <!-- MathJax -->
-    {% if site.enable_mathjax %}
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    {% endif %}
-
-    <!-- Verifications -->
-    {% if site.google_verification %}
-      <meta name="google-site-verification" content="{{ site.google_verification }}" />
-    {% endif %}
-    {% if site.bing_verification %}
-      <meta name="msvalidate.01" content="{{ site.bing_verification }}" />
-    {% endif %}
-
     <!-- Open Graph -->
     <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
     <meta property="og:locale" content="{{ site.text.og_locale }}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{% if page.title %}{{ page.title | xml_escape }}{% else %}{{ site.title | xml_escape }}{% endif %}">
-    <meta property="og:description" content="{% if page.description %}{{ page.description | xml_escape }}{% else %}{{ site.description | xml_escape }}{% endif %}">
+    <meta property="og:description" content="{{ site.description | xml_escape }}">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:site_name" content="{{ site.title | xml_escape }}">
     <meta property="og:image" content="{{ site.og_image_url }}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    {% if site.twitter_username %}
-        <meta name="twitter:site" content="@{{ site.twitter_username }}" />
-    {% endif %}
+    <meta name="twitter:site" content="@{{ site.twitter_username }}" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-    <meta name="twitter:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:description" content="{{ site.description }}" />
     <meta name="twitter:url" content="{{ site.url }}{{ page.url }}" />
-    <meta name="twitter:image" content="https://download.softskills.audio/avatar1.png" />
+    <meta name="twitter:image" content="{{ site.og_image_url }}" />
 
     <!-- Icons -->
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">

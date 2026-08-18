@@ -7,7 +7,6 @@ duration: "25:00"
 length: 21580983
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-242.mp3"
 categories: episode
-enable_comments: true
 ---
 
 It's one more re-run before we are back with new stuff! Enjoy this episode from November 2018, back when Tiger King didn't yet exist.

@@ -7,7 +7,6 @@ duration: "47:18"
 length: 45404628
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-130.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This is a rerun of episode 87 from December 14, 2017.

@@ -7,7 +7,6 @@ duration: "34:52"
 length: 33466995
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-061.mp3"
 categories: episode
-enable_comments: true
 ---
 
 We answer these two questions:

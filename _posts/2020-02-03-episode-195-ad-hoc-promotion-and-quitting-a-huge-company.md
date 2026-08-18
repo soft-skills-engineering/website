@@ -7,7 +7,6 @@ duration: "33:14"
 length: 32735347
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-195.mp3"
 categories: episode
-enable_comments: true
 ---
 
 We're excited to have special guest [Charity Majors](https://twitter.com/mipsytipsy) on the show! Charity is the CTO and former CEO of [Honeycomb](https://www.honeycomb.io). She has worked at Second Life, Parse, Facebook, and more. She blogs at [charity.wtf](https://charity.wtf/).

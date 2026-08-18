@@ -7,7 +7,6 @@ duration: "33:03"
 length: 28045496
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-523.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This is a rerun of episode 331.

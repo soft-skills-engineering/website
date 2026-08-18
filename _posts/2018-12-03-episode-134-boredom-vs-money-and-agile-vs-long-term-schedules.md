@@ -7,7 +7,6 @@ duration: "36:30"
 length: 30475957
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-134.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This episode is sponsored by Pluralsight. Pluralsight is hiring data scientists, machine learning engineers, and software engineers.

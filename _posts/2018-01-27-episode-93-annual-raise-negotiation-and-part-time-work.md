@@ -7,7 +7,6 @@ duration: "28:46"
 length: 27621668
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-093.mp3"
 categories: episode
-enable_comments: true
 ---
 
 

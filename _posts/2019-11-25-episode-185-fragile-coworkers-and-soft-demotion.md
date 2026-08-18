@@ -7,7 +7,6 @@ duration: "32:59"
 length: 30425371
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-185.mp3"
 categories: episode
-enable_comments: true
 ---
 
 In this episode, Dave and Jamison answer these questions:

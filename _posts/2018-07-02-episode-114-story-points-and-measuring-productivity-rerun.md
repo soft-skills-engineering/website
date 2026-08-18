@@ -7,7 +7,6 @@ duration: "39:00"
 length: 37438245
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-114.mp3"
 categories: episode
-enable_comments: true
 ---
 
 In this re-run of episode 79, Dave and Jamison answer these questions:

@@ -7,7 +7,6 @@ duration: "34:45"
 length: 33353166
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-057.mp3"
 categories: episode
-enable_comments: true
 ---
 
 1. I've been pushed in to doing management tasks I really don't enjoy. What do I do?

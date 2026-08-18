@@ -8,4 +8,4 @@ _Generated: {{ site.time | date_to_rfc822 }}
 The links below take you to the raw Markdown content for each Soft Skills Engineering podcast episode:.
 
 {% for post in site.posts %}- [{{ post.title }}](https://raw.githubusercontent.com/soft-skills-engineering/website/refs/heads/gh-pages/{{ post.path }})
-{% endfor %}g
+{% endfor %}

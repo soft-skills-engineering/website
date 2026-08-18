@@ -7,7 +7,6 @@ duration: "30:28"
 length: 43878305
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-374.mp3"
 categories: episode
-enable_comments: true
 ---
 
 <b>This episode is sposored by OneSchema, the best way to build CSV import into your product.</b>

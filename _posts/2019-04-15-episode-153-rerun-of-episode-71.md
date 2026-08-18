@@ -7,7 +7,6 @@ duration: "41:49"
 length: 37513171
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-153.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This episode is a rerun of episode 71 from August 2017.

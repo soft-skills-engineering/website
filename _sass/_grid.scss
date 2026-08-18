@@ -31,7 +31,6 @@ body.focused main .container,
 
 .block {
   position: relative;
-  margin-bottom: var(--gutter-gaps);
   padding: var(--block-space) 0;
 }
 
@@ -48,14 +47,4 @@ img + .block-heading {
 }
 
 /* SPACING */
-.mt-1 { margin-top: var(--space); }
 .mt-2 { margin-top: var(--double-space); }
-.mt-3 { margin-top: calc(var(--space) * 3); }
-.mt-4 { margin-top: calc(var(--double-space) * 2); }
-.mt-large { margin-top: calc(var(--double-space) * 4); }
-
-.mb-1 { margin-bottom: var(--space); }
-.mb-2 { margin-bottom: var(--double-space); }
-.mb-3 { margin-bottom: calc(var(--space) * 3); }
-.mb-4 { margin-bottom: calc(var(--double-space) * 2); }
-.mb-large { margin-bottom: calc(var(--double-space) * 4); }

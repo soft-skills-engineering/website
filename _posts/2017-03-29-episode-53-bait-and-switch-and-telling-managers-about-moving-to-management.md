@@ -7,7 +7,6 @@ duration: "29:46"
 length: 28568448
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-053.mp3"
 categories: episode
-enable_comments: true
 ---
 
 [Dave](https://twitter.com/djsmith42) and [Jamison](https://twitter.com/jamison_dance) answer these questions:

@@ -7,7 +7,6 @@ duration: "34:06"
 length: 35542819
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-192.mp3"
 categories: episode
-enable_comments: true
 ---
 
 Hey, want to use Dropbox as your app's production database? Well, <a href="https://www.reddit.com/r/sysadmin/comments/eaphr8/a_dropbox_account_gave_me_stomach_ulcers/">check here</a>.

@@ -7,7 +7,6 @@ duration: "36:07"
 length: 36974491
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-170.mp3"
 categories: episode
-enable_comments: true
 ---
 
 <h2>

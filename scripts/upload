@@ -124,7 +124,6 @@ duration: "$duration"
 length: $byte_size
 file: "$episode_mp3_url"
 categories: episode
-enable_comments: true
 ---
 
 In this episode, Dave and Jamison answer these questions:

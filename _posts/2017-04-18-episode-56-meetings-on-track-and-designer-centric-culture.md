@@ -7,7 +7,6 @@ duration: "30:45"
 length: 29525864
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-056.mp3"
 categories: episode
-enable_comments: true
 ---
 
 1. How do I keep meetings on track?

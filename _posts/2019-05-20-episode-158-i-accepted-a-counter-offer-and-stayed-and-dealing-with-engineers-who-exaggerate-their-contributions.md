@@ -7,7 +7,6 @@ duration: "27:10"
 length: 23515439
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-158.mp3"
 categories: episode
-enable_comments: true
 ---
 
 <b>This episode is sponsored by the O'Reilly Velocity conference. Register today and use discount

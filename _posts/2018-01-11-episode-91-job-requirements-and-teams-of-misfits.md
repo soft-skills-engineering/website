@@ -7,7 +7,6 @@ duration: "27:40"
 length: 26559140
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-091.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This week Jamison and Dave answer these questions:

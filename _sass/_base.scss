@@ -17,7 +17,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 
 h1, h2, h3 {
   margin-top: var(--double-space);
-  margin-bottom: var(--double-space);
+  margin-bottom: var(--space);
   font-style: normal;
   font-weight: var(--font-medium);
   line-height: 1.2;
@@ -28,13 +28,11 @@ h1,
   font-size: 2.5rem;
 }
 
-h2,
-.type-h2 {
+h2 {
   font-size: 2.125rem;
 }
 
-h3,
-.type-h3 {
+h3 {
   font-size: 1.65rem;
 }
 
@@ -55,110 +53,14 @@ body {
   flex-direction: column;
 }
 
-a {
-  color: var(--color1);
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 p, ol, ul {
   margin-bottom: var(--space);
   line-height: var(--line-height);
 }
 
-sup {
-  position: relative;
-  vertical-align: middle;
-  top: -0.9em;
-}
-
-h1, h2, h3 {
-  margin-bottom: var(--space);
-}
-
-.gist,
-.gist .highlight .p {
-  font-size: .75rem;
-}
-
-.gist .lines {
-  width: 100%;
-}
-
-pre,
-pre code {
-  background-color: transparent;
-  border-radius: 4px;
-}
-
-pre,
 code {
   font-family: Monospace; // TODO
-}
-
-code {
   color: #7A7A7A; // TODO
-}
-
-img {
-  max-width: 100%;
-}
-
-pre {
-  padding: 1.125em;
-  line-height: 1.11;
-  overflow-x: scroll;
-  margin-bottom: 0.88em;
-}
-
-.highlight .p {
-  font-size: 1.125rem;
-  line-height: 1;
-}
-
-pre {
-  counter-reset: line-numbering;
-  white-space: pre;
-  overflow-x: auto;
-  word-break: inherit;
-  word-wrap: inherit;
-}
-
-pre a {
-  background-image: none;
-}
-
-pre a::before {
-  content: counter(line-numbering);
-  counter-increment: line-numbering;
-  padding-right: 1em; /* space after numbers */
-  width: 25px;
-  text-align: right;
-  opacity: 0.7;
-  display: inline-block;
-  color: #F9F9F9; // TODO
-  margin-right: 16px;
-  font-size: 13px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-pre a:first-of-type::before {
-  padding-top: 10px;
-}
-
-pre a:last-of-type::before {
-  padding-bottom: 10px;
-}
-
-pre a:only-of-type::before {
-  padding: 10px;
 }
 
 .lead {

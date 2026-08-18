@@ -7,7 +7,6 @@ duration: "33:18"
 length: 25731187
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-141.mp3"
 categories: episode
-enable_comments: true
 ---
 
 This is a re-broadcast of episode 73 from August 2017. We'll be back next week with a new episode!

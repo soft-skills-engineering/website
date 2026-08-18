@@ -1,29 +1,23 @@
 # Site settings
 title:       "Soft Skills Engineering" # for the <h1> on the nav bar (don't make it too long, or it wraps the nav bar)
 head_title:  "Soft Skills Engineering Podcast" # for the <title> element
-email:       soft-skills-engineering@googlegroups.com
 author:      "Jamison Dance and Dave Smith"
 description: "It takes more than great code to be a great engineer. Soft Skills Engineering is a weekly advice podcast for software developers about the non-technical stuff that goes into being a great software developer."
 baseurl:     ""
 url:         "https://softskills.audio"
 date_format: "%b %-d, %Y"
-logo_url: "https://download.softskills.audio/sse-logo-4.png"
 og_image_url: "https://download.softskills.audio/avatar1.png"
 podcast_feed_url: "https://softskills.audio/feed.xml"
 podcast_itunes_url: "https://itunes.apple.com/us/podcast/soft-skills-engineering/id1091341048?mt=2"
-podcast_android_url: "https://subscribeonandroid.com/softskills.audio/feed.xml"
 # Google deprecated Google Podcasts in March 2024
 #podcast_google_url: "https://www.google.com/podcasts?feed=aHR0cHM6Ly9zb2Z0c2tpbGxzLmF1ZGlvL2ZlZWQueG1s"
 podcast_youtube_music_url: "https://www.youtube.com/playlist?list=PL9GpY_N5_oDQIE99cHcGpFrp683b-B5cf"
 podcast_cover_art_url: "https://download.softskills.audio/sse-cover-art.png"
 podcast_spotify_url: "https://open.spotify.com/show/59I1XnvAB9fQzSj9SIKCoI?si=boL4WEvkR-S8uBIByNMpNQ"
-twitter_dm_url: "https://twitter.com/messages/compose?recipient_id=707699773642383361"
+twitter_dm_url: "https://x.com/messages/compose?recipient_id=707699773642383361"
 patreon_url: "https://patreon.com/SoftSkillsEng"
 
-google_verification:
 google_analytics: "UA-81663582-1"
-google_tag_manager:
-bing_verification:
 
 # Spsonors
 devmountain_marketing_url: "https://devmountain.com/?utm_source=Soft%20Skills%20Engineering%20Podcast&utm_campaign=Soft%20Skills%20Engineering%20Podcast"
@@ -37,67 +31,19 @@ one_schema_marketing_url: "https://oneschema.co/softskills"
 notion_marketing_url: "https://notion.com/softskills"
 retool_marketing_url: "https://retool.com/softskills"
 
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname: 'softskillseng'
-
-# Social icons
-github_username:
-bitbucket_username:
-stackoverflow_id:
 twitter_username: SoftSkillsEng
-skype_username:
-steam_nickname:
-google_plus_id:
-linkedin_username:
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
 
 text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-  share_buttons:
-    text:         'Share this post!'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
   post:
-    updated:        'Updated'
-    minute_read:    'minute read'
-    related_posts:  'Related Posts'
-  index:
-    coming_soon: 'Coming soon...'
-  contact:
-    email:    'Email Address'
-    content:  'What would you like to say?'
-    subject:  'New submission!'
-    submit:   'Say Hello'
-    ajax:
-      sending:  'sending..'
-      sent:     'Message sent!'
-      error:    'Error!'
+    updated: 'Updated'
   og_locale: 'en_US'
 
 # Build settings
 markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
 permalink:    "/:year/:month/:day/:title/"
-paginate:     10
 sass:
-  compressed: true
+  style: compressed
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-mentions
   - jekyll-redirect-from

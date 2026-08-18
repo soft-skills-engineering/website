@@ -8,7 +8,6 @@ length: 23457408
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-041.mp3"
 categories: episode
 favorite: true
-enable_comments: true
 ---
 
 In this episode, Dave and Jamison answer these questions:

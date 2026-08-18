@@ -7,7 +7,6 @@ duration: "41:46"
 length: 40102734
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-058.mp3"
 categories: episode
-enable_comments: true
 ---
 
 Dave and Jamison were out this week, so we have a re-run of a DEEP CUT for you.

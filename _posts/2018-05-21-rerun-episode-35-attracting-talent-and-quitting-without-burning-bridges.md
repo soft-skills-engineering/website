@@ -7,7 +7,6 @@ duration: "40:49"
 length: 39179664
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-035-rerun.mp3"
 categories: episode
-enable_comments: true
 ---
 
 We've got another re-run this week, as Jamison and Dave both recover from being sick. We'll be back with a new episode next week.
