@@ -2,17 +2,18 @@
 layout: subpage
 title: Soft Skills Engineering Slack Team Code of Conduct
 permalink: /code-of-conduct
+description: "The code of conduct all participants in the Soft Skills Engineering Slack community are required to follow."
 ---
 
 All participants in the Soft Skills Engineering Slack are required to comply with the following Code of Conduct. Administrators (see below for definition of administrators) will enforce this code throughout the Soft Skills Engineering Slack.
 
-# The Short Version
+## The Short Version
 
 Be respectful of other people; respectfully ask people to stop if you are bothered; respect privacy; understand we're mostly not-for-profit; and if you can’t resolve an issue then contact the Administrators. If you are being a problem, it will be apparent and you may be booted from the Soft Skills Engineering Slack.
 
-# The Long Version
+## The Long Version
 
-## Respect
+### Respect
 
 The Soft Skills Engineering Slack is an intentionally positive community that recognizes and celebrates the creativity and collaboration of independent members and the diversity of skills, talents, experiences, cultures, and opinions that they bring to our community.
 
@@ -29,7 +30,7 @@ Respectful behavior includes but is not limited to:
 
 Disrespectful behavior outside this community may be considered a violation of this code of conduct at the discretion of the Administrators.
 
-## Privacy
+### Privacy
 
 This community is not a public space. However, no one has signed an non-disclosure agreement (“NDA”) to participate, and you should not presume anything you say here will remain private, so act accordingly. Protect IP and legally-protected information.
 
@@ -37,7 +38,7 @@ If you want to publicly disclose anything discussed here, use the [Chatham House
 
 For attribution of specific content found on this Slack, we ask that you ask the originator of the content for permission. If you don’t receive consent in a reasonable period of time, we ask that you credit the “Soft Skills Engineering Slack.”
 
-## Not For Profit
+### Not For Profit
 
 This community is mostly not a place for obvious commercial activity such as recruiting or marketing except in channels dedicated to that purpose which include:
 
@@ -55,7 +56,7 @@ We believe the above protocol is a useful approach for other types of non-obviou
 
 If you join this community simply to take value from the community rather than contribute, the community will quickly notice and react. If you are wondering whether a specific action is commercial or not, please ask and calibrate in #slack-rules.
 
-## Resolve Peacefully
+### Resolve Peacefully
 
 We believe peer-to-peer discussions, feedback, and corrections can help build a stronger, safer, and more welcoming community.
 
@@ -63,11 +64,11 @@ If you see someone violating any part of this Code of Conduct, we urge you to re
 
 If you experience disrespectful behavior toward yourself or anyone else and feel in any way unable or unwilling to respond or resolve it respectfully (for any reason), please bring it to the attention of an Administrator. We want to hear from you about anything that you feel is disrespectful, threatening, or just something that could make someone feel distressed in any way. We will listen and work to resolve the matter.
 
-## Apologize for Mistakes
+### Apologize for Mistakes
 
 Should you catch yourself behaving disrespectfully, or be confronted as such, listen intently, own up to your words and actions, and apologize accordingly. No one is perfect, and even well-intentioned people make mistakes. What matters is how you handle them and that you avoid repeating them in the future.
 
-## Consequences
+### Consequences
 
 If you are unable to resolve a situation peacefully, please refer to our [Incident Process](/incident-process) and choose a course of action that suits the situation.
 
@@ -77,14 +78,14 @@ As Administrators, we will seek to resolve conflicts peacefully and in a manner 
 
 Membership in the Soft Skills Engineering Slack is a privilege, not a right. While we will try our best to communicate clearly and enforce well-understood rules, the Administrators may remove anyone from the Slack at any time for any reason.
 
-## Administrators
+### Administrators
 
 The administrator(s) of Soft Skills Engineering as of March 20th, 2025:
 
 * [@jamison](https://softskillsengineering.slack.com/team/UGZCTFAFL)
 * [@Dave_Smith](https://softskillsengineering.slack.com/team/UGX1E2L9W)
 
-## Thanks
+### Thanks
 
 Thank you to every Soft Skills Engineering Slack community member for helping to make our home the respectful and inclusive community that it is.
 

@@ -7,6 +7,7 @@ duration: "39:00"
 length: 37438245
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-114.mp3"
 categories: episode
+canonical_url: "/2017/10/19/episode-79-story-points-and-developer-productivity/"
 ---
 
 In this re-run of episode 79, Dave and Jamison answer these questions:

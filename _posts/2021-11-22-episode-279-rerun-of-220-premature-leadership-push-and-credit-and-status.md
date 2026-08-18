@@ -7,6 +7,7 @@ duration: "33:39"
 length: 32993682
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-279.mp3"
 categories: episode
+canonical_url: "/2020/07/27/episode-220-premature-leadership-push-and-credit-and-status/"
 ---
 
 This is a rerun of episode 220.

@@ -11,11 +11,11 @@ body_class: focused
     <div class="container">
       <h1 class="post-title" data-post-title>{{ page.title }}</h1>
       <p class="post-meta">
-        <time class="post-timestamp">
+        <time class="post-timestamp" datetime="{{ page.date | date_to_xmlschema }}">
           {{ page.date | date: site.date_format }}</time>
           <br>
           {% if page.update_date %}
-            <span class="post-updated">{{ site.text.post.updated }}: {{ page.update_date | date: site.date_format }}</span>
+            <span class="post-updated">{{ site.text.post.updated }}: <time datetime="{{ page.update_date | date_to_xmlschema }}">{{ page.update_date | date: site.date_format }}</time></span>
           {% endif %}
       </p>
     </div>
@@ -37,7 +37,34 @@ body_class: focused
 <div class="icon-sep">
   <img
     src="/img/talk.svg"
-    alt="A speech bubble" />
+    alt="A speech bubble"
+    width="140"
+    height="140"
+    loading="lazy" />
 </div>
+
+{%- comment -%}
+  Episode-to-episode links. Without these the only path to the back catalog is
+  the single /episodes/ page, which buries older episodes for both listeners
+  and crawlers.
+{%- endcomment -%}
+<nav class="episode-nav" aria-label="More episodes">
+  {%- if page.previous %}
+  <a class="episode-nav-link episode-nav-prev" href="{{ page.previous.url | prepend: site.baseurl }}" rel="prev">
+    <span class="episode-nav-label">Previous episode</span>
+    <span class="episode-nav-title">{{ page.previous.title }}</span>
+  </a>
+  {%- endif %}
+  {%- if page.next %}
+  <a class="episode-nav-link episode-nav-next" href="{{ page.next.url | prepend: site.baseurl }}" rel="next">
+    <span class="episode-nav-label">Next episode</span>
+    <span class="episode-nav-title">{{ page.next.title }}</span>
+  </a>
+  {%- endif %}
+</nav>
+
+<p class="episode-nav-all">
+  <a href="/episodes/">Browse all {{ site.posts | size }} episodes</a>
+</p>
 
 </div>

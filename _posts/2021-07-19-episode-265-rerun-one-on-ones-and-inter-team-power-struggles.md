@@ -7,6 +7,7 @@ duration: "32:17"
 length: 30692265
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-265.mp3"
 categories: episode
+canonical_url: "/2020/06/29/episode-216-one-on-ones-and-inter-team-power-struggles/"
 ---
 
 In this episode, Dave and Jamison answer these questions:

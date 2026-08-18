@@ -7,6 +7,7 @@ duration: "32:59"
 length: 35506781
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-162.mp3"
 categories: episode
+canonical_url: "/2018/06/25/episode-113-quitting-the-first-job-and-too-many-responsibilities/"
 ---
 
 In this episode, Dave and Jamison answer these questions:

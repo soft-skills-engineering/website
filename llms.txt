@@ -1,11 +1,27 @@
 ---
 layout: null
 ---
+# Soft Skills Engineering
 
-_Generated: {{ site.time | date_to_rfc822 }}
+> It takes more than great code to be a great engineer. Soft Skills Engineering is a weekly advice podcast for software developers about the non-technical stuff that goes into being a great software developer. Hosts Dave Smith and Jamison Dance answer listener questions about pay raises, promotions, hiring and firing, technical leadership, management, quitting, code review etiquette, coworkers, and career growth.
 
-## All Episodes
-The links below take you to the raw Markdown content for each Soft Skills Engineering podcast episode:.
+Hosted by Dave Smith and Jamison Dance. Published weekly since March 2016.
+Every episode page contains the full text of the listener questions answered in that episode.
 
-{% for post in site.posts %}- [{{ post.title }}](https://raw.githubusercontent.com/soft-skills-engineering/website/refs/heads/gh-pages/{{ post.path }})
+## Key pages
+
+- [All episodes](https://softskills.audio/episodes/): complete chronological archive of every episode
+- [Community favorites](https://softskills.audio/favorites/): the episodes listeners recommend most
+- [Meet the hosts](https://softskills.audio/meet-the-hosts/): about Dave Smith and Jamison Dance
+- [Ask a question](https://softskills.audio/ask/): submit a question for the show
+- [Subscribe](https://softskills.audio/subscribe/): where to listen
+- [RSS feed](https://softskills.audio/feed.xml): podcast feed with every episode and its questions
+
+## All episodes
+
+Each entry links to the episode page on softskills.audio, followed by the raw Markdown source.
+
+{% for post in site.posts -%}
+- [{{ post.title }}]({{ post.url | prepend: site.url }}) — {{ post.date | date: "%Y-%m-%d" }} — [Markdown](https://raw.githubusercontent.com/soft-skills-engineering/website/refs/heads/gh-pages/{{ post.path }})
 {% endfor %}
+_Generated: {{ site.time | date_to_rfc822 }}_

@@ -7,6 +7,7 @@ duration: "33:03"
 length: 28045496
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-523.mp3"
 categories: episode
+canonical_url: "/2022/11/21/episode-331-prickly-ticket-and-title-downgrade/"
 ---
 
 This is a rerun of episode 331.

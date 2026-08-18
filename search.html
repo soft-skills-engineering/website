@@ -2,6 +2,11 @@
 layout: page
 title: Search Episodes
 permalink: /search/
+description: "Search every Soft Skills Engineering episode by keyword to find advice on raises, promotions, management, interviews, and working with other developers."
+# This page inlines the full text of every episode for client-side search, which
+# would otherwise duplicate all 500+ episode pages in the index.
+noindex: true
+sitemap: false
 ---
 <div class="container">
   <form id="search-form" action="#" onsubmit="return searchFormSubmitted()">

@@ -7,6 +7,7 @@ duration: "33:13"
 length: 31883136
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-040-rerun.mp3"
 categories: episode
+canonical_url: "/2016/12/21/episode-40-office-visibility-and-new-tech/"
 ---
 
 In this episode, Dave and Jamison answer these questions:

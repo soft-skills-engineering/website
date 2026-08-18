@@ -162,3 +162,65 @@
     font-size: 3.2rem;
   }
 }
+
+/* Episode-to-episode navigation */
+
+.episode-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: var(--space);
+}
+
+.episode-nav-link {
+  display: block;
+  padding: 1.25rem 1.5rem;
+  border: 4px solid var(--post-border-color);
+  border-radius: 8px;
+  background-color: var(--post-bg-color);
+  text-decoration: none;
+  color: var(--font-color);
+
+  &:hover,
+  &:focus {
+    border-color: var(--color7);
+    background-color: var(--color5);
+  }
+}
+
+.episode-nav-label {
+  display: block;
+  margin-bottom: .25rem;
+  font-size: .8rem;
+  font-weight: var(--font-medium);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  opacity: .75;
+}
+
+.episode-nav-title {
+  display: block;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.episode-nav-next {
+  text-align: right;
+}
+
+.episode-nav-all {
+  margin-bottom: var(--double-space);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .episode-nav {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Keep "Next" on the right even when there is no "Previous" */
+  .episode-nav-next:only-child {
+    grid-column: 2;
+  }
+}

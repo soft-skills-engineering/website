@@ -1,0 +1,202 @@
+{%- comment -%}
+  Centralized SEO metadata: unique per-page titles and descriptions, canonical
+  URL, Open Graph, Twitter Cards, and Schema.org JSON-LD.
+
+  Pages can override the description with `description:` in their front matter.
+  Episode pages derive one from the listener questions in the post body.
+{%- endcomment -%}
+
+{%- assign seo_url = page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url -%}
+{%- comment -%}
+  Pages that republish another page's content (episode reruns) set
+  `canonical_url` in front matter so search engines consolidate the ranking
+  signal onto the original instead of splitting it between two pages.
+{%- endcomment -%}
+{%- if page.canonical_url -%}
+  {%- assign seo_canonical = page.canonical_url | prepend: site.url -%}
+{%- else -%}
+  {%- assign seo_canonical = seo_url -%}
+{%- endif -%}
+{%- assign is_episode = false -%}
+{%- if page.layout == 'post' -%}{%- assign is_episode = true -%}{%- endif -%}
+
+{%- if page.title -%}
+  {%- assign seo_title = page.title | strip_html | strip -%}
+{%- else -%}
+  {%- assign seo_title = site.title -%}
+{%- endif -%}
+
+{%- comment -%} Description: front matter wins, then episode questions, then site default {%- endcomment -%}
+{%- if page.description -%}
+  {%- assign seo_description = page.description -%}
+{%- elsif is_episode -%}
+  {%- assign seo_body = page.content | strip_html | normalize_whitespace | strip -%}
+  {%- assign seo_body_parts = seo_body | split: 'answer these questions:' -%}
+  {%- if seo_body_parts.size > 1 -%}
+    {%- assign seo_body = seo_body_parts[1] | strip | remove_first: '1. ' | strip -%}
+  {%- endif -%}
+  {%- comment -%} Strip zero-width joiners and stray list markers left over from the Markdown source {%- endcomment -%}
+  {%- assign seo_body = seo_body | remove: '‌' | remove: '​' | normalize_whitespace | strip -%}
+  {%- assign seo_description = seo_body | truncate: 165 -%}
+{%- else -%}
+  {%- assign seo_description = site.description -%}
+{%- endif -%}
+{%- assign seo_description = seo_description | strip_html | normalize_whitespace | strip -%}
+
+<title>{% if page.title %}{{ seo_title }} &#8211; {% endif %}{{ site.head_title | strip_html }}</title>
+<meta name="description" content="{{ seo_description | xml_escape }}">
+<meta name="author" content="{{ site.author }}">
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% else %}<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">{% endif %}
+<link rel="canonical" href="{{ seo_canonical }}">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="{{ site.text.og_locale }}">
+<meta property="og:type" content="{% if is_episode %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{{ seo_title | xml_escape }}">
+<meta property="og:description" content="{{ seo_description | xml_escape }}">
+<meta property="og:url" content="{{ seo_url }}">
+<meta property="og:site_name" content="{{ site.title | xml_escape }}">
+<meta property="og:image" content="{{ site.og_image_url }}">
+<meta property="og:image:alt" content="{{ site.title | xml_escape }} podcast artwork">
+{%- if is_episode %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{%- if page.update_date %}
+<meta property="article:modified_time" content="{{ page.update_date | date_to_xmlschema }}">
+{%- endif %}
+<meta property="article:author" content="Dave Smith">
+<meta property="article:author" content="Jamison Dance">
+{%- if page.file %}
+<meta property="og:audio" content="{{ page.file }}">
+<meta property="og:audio:type" content="audio/mpeg">
+{%- endif %}
+{%- endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{ site.twitter_username }}">
+<meta name="twitter:title" content="{{ seo_title | xml_escape }}">
+<meta name="twitter:description" content="{{ seo_description | xml_escape }}">
+<meta name="twitter:url" content="{{ seo_url }}">
+<meta name="twitter:image" content="{{ site.og_image_url }}">
+<meta name="twitter:image:alt" content="{{ site.title | xml_escape }} podcast artwork">
+
+<!-- Schema.org structured data -->
+{%- if is_episode -%}
+  {%- assign duration_parts = page.duration | split: ':' -%}
+  {%- if duration_parts.size == 3 -%}
+    {%- capture iso_duration -%}PT{{ duration_parts[0] | plus: 0 }}H{{ duration_parts[1] | plus: 0 }}M{{ duration_parts[2] | plus: 0 }}S{%- endcapture -%}
+  {%- elsif duration_parts.size == 2 -%}
+    {%- capture iso_duration -%}PT{{ duration_parts[0] | plus: 0 }}M{{ duration_parts[1] | plus: 0 }}S{%- endcapture -%}
+  {%- endif -%}
+  {%- assign episode_number = 0 -%}
+  {%- if seo_title contains 'Episode ' -%}
+    {%- assign title_after_episode = seo_title | split: 'Episode ' -%}
+    {%- assign episode_number = title_after_episode[1] | split: ':' | first | strip | plus: 0 -%}
+  {%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastEpisode",
+  "@id": {{ seo_url | jsonify }},
+  "url": {{ seo_url | jsonify }},
+  "name": {{ seo_title | jsonify }},
+  "description": {{ seo_description | jsonify }},
+  "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+  {% if page.update_date %}"dateModified": {{ page.update_date | date_to_xmlschema | jsonify }},{% endif %}
+  {% if iso_duration %}"duration": {{ iso_duration | jsonify }},{% endif %}
+  {% if episode_number > 0 %}"episodeNumber": {{ episode_number }},{% endif %}
+  "image": {{ site.podcast_cover_art_url | jsonify }},
+  "inLanguage": "en",
+  "author": [
+    { "@type": "Person", "name": "Dave Smith" },
+    { "@type": "Person", "name": "Jamison Dance" }
+  ],
+  "partOfSeries": {
+    "@type": "PodcastSeries",
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | append: '/' | jsonify }},
+    "webFeed": {{ site.podcast_feed_url | jsonify }}
+  }
+  {%- if page.file %},
+  "associatedMedia": {
+    "@type": "AudioObject",
+    "contentUrl": {{ page.file | jsonify }},
+    "encodingFormat": "audio/mpeg"
+    {%- if iso_duration %},
+    "duration": {{ iso_duration | jsonify }}
+    {%- endif %}
+  }
+  {%- endif %}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": {{ site.url | append: '/' | jsonify }} },
+    { "@type": "ListItem", "position": 2, "name": "Episodes", "item": {{ site.url | append: '/episodes/' | jsonify }} },
+    { "@type": "ListItem", "position": 3, "name": {{ seo_title | jsonify }} }
+  ]
+}
+</script>
+{%- else -%}
+{%- capture search_url_template -%}{{ site.url }}/search/?q={% raw %}{search_term_string}{% endraw %}{%- endcapture -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: '/#website' | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "name": {{ site.head_title | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "en",
+      "publisher": { "@id": {{ site.url | append: '/#series' | jsonify }} },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ search_url_template | jsonify }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "PodcastSeries",
+      "@id": {{ site.url | append: '/#series' | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "alternateName": {{ site.head_title | jsonify }},
+      "url": {{ site.url | append: '/' | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "webFeed": {{ site.podcast_feed_url | jsonify }},
+      "image": {{ site.podcast_cover_art_url | jsonify }},
+      "inLanguage": "en",
+      "genre": ["Technology", "Careers", "Software Engineering"],
+      "author": [
+        { "@type": "Person", "name": "Dave Smith", "url": "https://x.com/djsmith42" },
+        { "@type": "Person", "name": "Jamison Dance", "url": "https://x.com/jamison_dance" }
+      ],
+      "sameAs": [
+        {{ site.podcast_itunes_url | jsonify }},
+        {{ site.podcast_spotify_url | jsonify }},
+        {{ site.podcast_youtube_music_url | jsonify }},
+        "https://x.com/{{ site.twitter_username }}"
+      ]
+    }
+    {%- if page.url == '/' %},
+    {
+      "@type": "WebPage",
+      "@id": {{ seo_url | jsonify }},
+      "url": {{ seo_url | jsonify }},
+      "name": {{ site.head_title | jsonify }},
+      "description": {{ seo_description | jsonify }},
+      "isPartOf": { "@id": {{ site.url | append: '/#website' | jsonify }} },
+      "about": { "@id": {{ site.url | append: '/#series' | jsonify }} }
+    }
+    {%- endif %}
+  ]
+}
+</script>
+{%- endif -%}

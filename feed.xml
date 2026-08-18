@@ -11,10 +11,10 @@ layout: null
 
     <language>en</language>
     <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <managingEditor>Jamison Dance and Dave Smith</managingEditor>
-    <webMaster>Jamison Dance and Dave Smith</webMaster>
-    <copyright>2016 Jamison Dance and Dave Smith</copyright>
-    <lastBuildDate>{{ site.posts.first.date }}</lastBuildDate>
+    <managingEditor>soft-skills-engineering@googlegroups.com (Jamison Dance and Dave Smith)</managingEditor>
+    <webMaster>soft-skills-engineering@googlegroups.com (Jamison Dance and Dave Smith)</webMaster>
+    <copyright>&#169; 2016-{{ site.time | date: "%Y" }} Jamison Dance and Dave Smith</copyright>
+    <lastBuildDate>{{ site.posts.first.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
     <itunes:explicit>no</itunes:explicit>
     <image>
       <link>{{ site.url }}{{ site.baseurl }}</link>
@@ -25,13 +25,14 @@ layout: null
     <itunes:new-feed-url>{{ site.podcast_feed_url }}</itunes:new-feed-url>
     <itunes:subtitle>{{ site.description | xml_escape }}</itunes:subtitle>
     <itunes:author>Jamison Dance and Dave Smith</itunes:author>
-    <itunes:keywords></itunes:keywords>
+    <itunes:keywords>software engineering, career advice, soft skills, engineering management, developer career, tech leadership, promotions, salary negotiation, coworkers, job interviews</itunes:keywords>
     <itunes:owner>
       <itunes:name>Jamison Dance and Dave Smith</itunes:name>
       <itunes:email>soft-skills-engineering@googlegroups.com</itunes:email>
     </itunes:owner>
     <itunes:image href="{{ site.podcast_cover_art_url }}"></itunes:image>
     <itunes:category text="Technology" />
+    <itunes:category text="Business"><itunes:subcategory text="Careers" /></itunes:category>
 
     {% for post in site.posts %}
       <item>
@@ -39,11 +40,13 @@ layout: null
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <source url="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</source>
         <guid isPermaLink="false">{{ post.guid }}</guid>
-        <itunes:author></itunes:author>
+        <itunes:author>{{ site.author | xml_escape }}</itunes:author>
         <itunes:duration>{{ post.duration }}</itunes:duration>
         <enclosure url="{{ post.file }}?source=rss" length="{{ post.length }}" type="audio/mpeg"/>
         <itunes:explicit>no</itunes:explicit>
-        <itunes:subtitle></itunes:subtitle>
+        <itunes:title>{{ post.title | xml_escape }}</itunes:title>
+        <itunes:subtitle>{{ post.content | strip_html | normalize_whitespace | strip | truncate: 250 | xml_escape }}</itunes:subtitle>
+        <itunes:summary>{{ post.content | xml_escape }}</itunes:summary>
         <description>{{ post.content | xml_escape }}</description>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
       </item>

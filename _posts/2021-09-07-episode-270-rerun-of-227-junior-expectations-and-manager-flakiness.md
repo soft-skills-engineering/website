@@ -7,6 +7,7 @@ duration: "30:59"
 length: 22458506
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-270.mp3"
 categories: episode
+canonical_url: "/2020/09/14/episode-227-junior-expectations-and-manager-flakiness/"
 ---
 
 In this episode, Dave and Jamison answer these questions:

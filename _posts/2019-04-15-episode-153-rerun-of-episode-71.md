@@ -7,6 +7,7 @@ duration: "41:49"
 length: 37513171
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-153.mp3"
 categories: episode
+canonical_url: "/2017/08/14/episode-71-informal-leadership-and-dealing-with-burnout/"
 ---
 
 This episode is a rerun of episode 71 from August 2017.
