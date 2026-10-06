@@ -32,56 +32,79 @@ HIGHPASS=highpass=f=70
 DEFAULT_BITRATE=128k  # Used only if the source bitrate can't be determined
 
 if [[ $# != 2 ]]; then
-  echo "Usage: ./normalize-audio <input.mp3> <output.mp3>"
+  echo "Usage: ./normalize-audio-volume <input.mp3> <output.mp3>" >&2
   exit 1
 fi
 
-in="$1"
-out="$2"
+input_file_path="$1"
+output_file_path="$2"
 
-if ! which ffmpeg >/dev/null 2>&1; then
-  echo "Cannot find ffmpeg executable. Install it!"
+for executable in ffmpeg ffprobe; do
+  if ! which "$executable" >/dev/null 2>&1; then
+    echo "Cannot find $executable executable. Install it!" >&2
+    exit 1
+  fi
+done
+
+if [ ! -f "$input_file_path" ]; then
+  echo "No such file: $input_file_path" >&2
   exit 1
 fi
 
-if [ ! -f "$in" ]; then
-  echo "No such file: $in"
-  exit 1
-fi
-
-if [ -e "$out" ] && [ "$in" -ef "$out" ]; then
-  echo "Output file must be different from the input file"
+if [ -e "$output_file_path" ] && [ "$input_file_path" -ef "$output_file_path" ]; then
+  echo "Output file must be different from the input file" >&2
   exit 1
 fi
 
 # Pass 1: measure
 loudnorm="loudnorm=I=$TARGET_I:TP=$TARGET_TP:LRA=$TARGET_LRA"
-stats=$(ffmpeg -hide_banner -nostats \
-        -i "$in" \
-        -af "$HIGHPASS,$loudnorm:print_format=json" \
-        -f null - \
-        2>&1 \
-        | sed -n '/^{/,/^}/p')
+if ! pass1_output=$(ffmpeg -hide_banner -nostats \
+                    -i "$input_file_path" \
+                    -map 0:a:0 \
+                    -af "$HIGHPASS,$loudnorm:print_format=json" \
+                    -f null - \
+                    2>&1); then
+  echo "$pass1_output" >&2
+  echo "Failed to measure loudness of $input_file_path" >&2
+  exit 1
+fi
+stats=$(echo "$pass1_output" | sed -n '/^{/,/^}/p')
 
-function stat() {
-  echo "$stats" | sed -n "s/.*\"$1\" *: *\"\([^\"]*\)\".*/\1/p"
+function loudnorm_stat() {
+  local value
+  value=$(echo "$stats" | sed -n "s/.*\"$1\" *: *\"\([^\"]*\)\".*/\1/p")
+  # e.g. "-inf" for silent audio, which loudnorm can't correct
+  if [[ ! $value =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+    echo "Unusable loudness measurement $1='$value' for $input_file_path" >&2
+    exit 1
+  fi
+  echo "$value"
 }
 
-measured="measured_I=$(stat input_i):measured_TP=$(stat input_tp):measured_LRA=$(stat input_lra)"
-measured="$measured:measured_thresh=$(stat input_thresh):offset=$(stat target_offset)"
+measured_i=$(loudnorm_stat input_i)
+measured_tp=$(loudnorm_stat input_tp)
+measured_lra=$(loudnorm_stat input_lra)
+measured_thresh=$(loudnorm_stat input_thresh)
+target_offset=$(loudnorm_stat target_offset)
+measured="measured_I=$measured_i:measured_TP=$measured_tp:measured_LRA=$measured_lra"
+measured="$measured:measured_thresh=$measured_thresh:offset=$target_offset"
 
 function probe() {
-  ffprobe -v error -select_streams a:0 -show_entries "stream=$1" -of csv=p=0 "$in"
+  ffprobe -v error -select_streams a:0 -show_entries "stream=$1" -of csv=p=0 "$input_file_path"
 }
 
 # loudnorm upsamples to 192 kHz internally, so resample back to the source rate
 sample_rate=$(probe sample_rate)
+if [[ ! $sample_rate =~ ^[0-9]+$ ]]; then
+  echo "Cannot determine the sample rate of $input_file_path" >&2
+  exit 1
+fi
 
 # Size in bytes of the ID3v2 tag(s) at the start of the input file (0 if none)
 function id3v2_size() {
   local total=0 header size
   while true; do
-    header=($(tail -c +$((total + 1)) "$in" | head -c 10 | od -An -tu1))
+    header=($(tail -c +$((total + 1)) "$input_file_path" | head -c 10 | od -An -tu1))
     # Must start with "ID3"
     if [[ ${#header[@]} -lt 10 || ${header[0]} != 73 || ${header[1]} != 68 || ${header[2]} != 51 ]]; then
       break
@@ -95,13 +118,14 @@ function id3v2_size() {
 
 # Whether the input file ends with a 128-byte ID3v1 tag
 function has_id3v1() {
-  [ "$(tail -c 128 "$in" | head -c 3)" = "TAG" ]
+  # Strip null bytes, which bash can't hold in a variable (and would warn about)
+  [ "$(tail -c 128 "$input_file_path" | head -c 3 | tr -d '\0')" = "TAG" ]
 }
 
 # Read a big-endian unsigned integer of $2 bytes at byte offset $1 of the input file
 function read_uint() {
   local value=0 byte
-  for byte in $(tail -c +$(($1 + 1)) "$in" | head -c "$2" | od -An -tu1); do
+  for byte in $(tail -c +$(($1 + 1)) "$input_file_path" | head -c "$2" | od -An -tu1); do
     value=$(( (value << 8) | byte ))
   done
   echo $value
@@ -113,7 +137,7 @@ function read_uint() {
 function vbr_quality() {
   local first_frame xing flags offset quality
   first_frame=$(id3v2_size)
-  xing=$(tail -c +$((first_frame + 1)) "$in" | head -c 64 | LC_ALL=C grep -abo Xing | head -1 | cut -d: -f1 || true)
+  xing=$(tail -c +$((first_frame + 1)) "$input_file_path" | head -c 64 | LC_ALL=C grep -abo Xing | head -1 | cut -d: -f1 || true)
   [ -n "$xing" ] || return 0
   offset=$((first_frame + xing + 4))
   flags=$(read_uint $offset 4)
@@ -139,22 +163,40 @@ else
   encoding=(-b:a "$bitrate")
 fi
 
+audio_only_temp_file_path=""
+output_temp_file_path=""
+function cleanup() {
+  rm -f "$audio_only_temp_file_path" "$output_temp_file_path"
+}
+trap cleanup EXIT
+trap 'exit 130' INT TERM HUP  # Make sure cleanup runs when interrupted
+
 audio_only_temp_file_path=$(mktemp "${TMPDIR:-/tmp}/normalize-audio-volume.XXXXXX")
-trap 'rm -f "$audio_only_temp_file_path"' EXIT
+output_temp_file_path=$(mktemp "${TMPDIR:-/tmp}/normalize-audio-volume.XXXXXX")
 
 # Pass 2: apply (writing bare audio frames, with no tags)
-ffmpeg -hide_banner -nostats -loglevel error -y -i "$in" \
+ffmpeg -hide_banner -nostats -loglevel error -y -i "$input_file_path" \
     -af "$HIGHPASS,$loudnorm:$measured,aresample=$sample_rate" \
-    -map 0:a -map_metadata -1 -map_chapters -1 -fflags +bitexact \
+    -map 0:a:0 -map_metadata -1 -map_chapters -1 -fflags +bitexact \
     -id3v2_version 0 -write_id3v1 0 \
     -c:a libmp3lame "${encoding[@]}" \
     -f mp3 "$audio_only_temp_file_path"
 
+if [ ! -s "$audio_only_temp_file_path" ]; then
+  echo "ffmpeg produced no audio for $input_file_path" >&2
+  exit 1
+fi
+
 # Reassemble: original ID3v2 tag + new audio + original ID3v1 tag
+id3v2_bytes=$(id3v2_size)
 {
-  head -c "$(id3v2_size)" "$in"
+  head -c "$id3v2_bytes" "$input_file_path"
   cat "$audio_only_temp_file_path"
   if has_id3v1; then
-    tail -c 128 "$in"
+    tail -c 128 "$input_file_path"
   fi
-} > "$out"
+} > "$output_temp_file_path"
+
+# mktemp creates files as 0600; give the output the usual permissions for a new file
+chmod "$(printf '%o' $(( 0666 & ~$(umask) )))" "$output_temp_file_path"
+mv -f "$output_temp_file_path" "$output_file_path"
