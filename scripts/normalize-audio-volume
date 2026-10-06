@@ -1,0 +1,160 @@
+#!/usr/bin/env bash
+#########################################################################################
+#
+# Normalize an episode mp3 so it plays at a consistent, comfortable volume.
+#
+# Usage: ./normalize-audio <input.mp3> <output.mp3>
+#
+# What does it do?
+#   1. Sets the integrated loudness to -16 LUFS (the Apple/Spotify podcast standard),
+#      so episodes aren't too quiet and every episode sounds equally loud.
+#   2. Reduces the loudness range (big swings between quiet and loud stretches).
+#   3. Caps true peaks at -1.5 dBTP so nothing clips.
+#   4. Removes sub-70 Hz rumble (desk thumps, HVAC), which wastes headroom.
+#   5. Preserves the ID3v2 and ID3v1 tags byte-for-byte (title, cover art, chapters, etc.)
+#
+# How does it work?
+#   ffmpeg's loudnorm filter (EBU R128) in two passes: pass 1 measures the episode,
+#   pass 2 applies the correction using those measurements. ffmpeg would rewrite the
+#   tags (dropping frames it doesn't understand), so instead the encoded audio is written
+#   tag-free and the original tag bytes are copied around it.
+#
+# Written by Opus-5.5
+#
+##########################################################################################
+
+set -euo pipefail
+
+TARGET_I=-16    # Integrated loudness, LUFS
+TARGET_TP=-1.5  # True peak ceiling, dBTP
+TARGET_LRA=7    # Loudness range, LU (lower = more consistent; speech sounds natural ~5-8)
+HIGHPASS=highpass=f=70
+DEFAULT_BITRATE=128k  # Used only if the source bitrate can't be determined
+
+if [[ $# != 2 ]]; then
+  echo "Usage: ./normalize-audio <input.mp3> <output.mp3>"
+  exit 1
+fi
+
+in="$1"
+out="$2"
+
+if ! which ffmpeg >/dev/null 2>&1; then
+  echo "Cannot find ffmpeg executable. Install it!"
+  exit 1
+fi
+
+if [ ! -f "$in" ]; then
+  echo "No such file: $in"
+  exit 1
+fi
+
+if [ -e "$out" ] && [ "$in" -ef "$out" ]; then
+  echo "Output file must be different from the input file"
+  exit 1
+fi
+
+# Pass 1: measure
+loudnorm="loudnorm=I=$TARGET_I:TP=$TARGET_TP:LRA=$TARGET_LRA"
+stats=$(ffmpeg -hide_banner -nostats \
+        -i "$in" \
+        -af "$HIGHPASS,$loudnorm:print_format=json" \
+        -f null - \
+        2>&1 \
+        | sed -n '/^{/,/^}/p')
+
+function stat() {
+  echo "$stats" | sed -n "s/.*\"$1\" *: *\"\([^\"]*\)\".*/\1/p"
+}
+
+measured="measured_I=$(stat input_i):measured_TP=$(stat input_tp):measured_LRA=$(stat input_lra)"
+measured="$measured:measured_thresh=$(stat input_thresh):offset=$(stat target_offset)"
+
+function probe() {
+  ffprobe -v error -select_streams a:0 -show_entries "stream=$1" -of csv=p=0 "$in"
+}
+
+# loudnorm upsamples to 192 kHz internally, so resample back to the source rate
+sample_rate=$(probe sample_rate)
+
+# Size in bytes of the ID3v2 tag(s) at the start of the input file (0 if none)
+function id3v2_size() {
+  local total=0 header size
+  while true; do
+    header=($(tail -c +$((total + 1)) "$in" | head -c 10 | od -An -tu1))
+    # Must start with "ID3"
+    if [[ ${#header[@]} -lt 10 || ${header[0]} != 73 || ${header[1]} != 68 || ${header[2]} != 51 ]]; then
+      break
+    fi
+    size=$(( (header[6] << 21) | (header[7] << 14) | (header[8] << 7) | header[9] ))
+    (( header[5] & 0x10 )) && size=$((size + 10))  # Footer present
+    total=$((total + 10 + size))
+  done
+  echo $total
+}
+
+# Whether the input file ends with a 128-byte ID3v1 tag
+function has_id3v1() {
+  [ "$(tail -c 128 "$in" | head -c 3)" = "TAG" ]
+}
+
+# Read a big-endian unsigned integer of $2 bytes at byte offset $1 of the input file
+function read_uint() {
+  local value=0 byte
+  for byte in $(tail -c +$(($1 + 1)) "$in" | head -c "$2" | od -An -tu1); do
+    value=$(( (value << 8) | byte ))
+  done
+  echo $value
+}
+
+# The LAME VBR quality ("-V" level, 0-9) of the input file, or nothing if it isn't VBR.
+# VBR files start with a "Xing" header frame, whose optional quality field LAME sets to
+# 100 - 10*V - q.
+function vbr_quality() {
+  local first_frame xing flags offset quality
+  first_frame=$(id3v2_size)
+  xing=$(tail -c +$((first_frame + 1)) "$in" | head -c 64 | LC_ALL=C grep -abo Xing | head -1 | cut -d: -f1 || true)
+  [ -n "$xing" ] || return 0
+  offset=$((first_frame + xing + 4))
+  flags=$(read_uint $offset 4)
+  offset=$((offset + 4))
+  (( flags & 1 )) && offset=$((offset + 4))    # Frame count
+  (( flags & 2 )) && offset=$((offset + 4))    # Byte count
+  (( flags & 4 )) && offset=$((offset + 100))  # Seek table
+  quality=2  # LAME's default
+  if (( flags & 8 )); then
+    quality=$(( (100 - $(read_uint $offset 4)) / 10 ))
+    (( quality >= 0 && quality <= 9 )) || quality=2
+  fi
+  echo $quality
+}
+
+# Encode the way the source was encoded: same VBR quality, or same constant bitrate
+vbr_quality=$(vbr_quality)
+if [ -n "$vbr_quality" ]; then
+  encoding=(-q:a "$vbr_quality")
+else
+  bitrate=$(probe bit_rate)
+  [[ $bitrate =~ ^[0-9]+$ ]] || bitrate=$DEFAULT_BITRATE
+  encoding=(-b:a "$bitrate")
+fi
+
+audio_only_temp_file_path=$(mktemp "${TMPDIR:-/tmp}/normalize-audio-volume.XXXXXX")
+trap 'rm -f "$audio_only_temp_file_path"' EXIT
+
+# Pass 2: apply (writing bare audio frames, with no tags)
+ffmpeg -hide_banner -nostats -loglevel error -y -i "$in" \
+    -af "$HIGHPASS,$loudnorm:$measured,aresample=$sample_rate" \
+    -map 0:a -map_metadata -1 -map_chapters -1 -fflags +bitexact \
+    -id3v2_version 0 -write_id3v1 0 \
+    -c:a libmp3lame "${encoding[@]}" \
+    -f mp3 "$audio_only_temp_file_path"
+
+# Reassemble: original ID3v2 tag + new audio + original ID3v1 tag
+{
+  head -c "$(id3v2_size)" "$in"
+  cat "$audio_only_temp_file_path"
+  if has_id3v1; then
+    tail -c 128 "$in"
+  fi
+} > "$out"

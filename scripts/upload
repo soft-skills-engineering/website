@@ -8,9 +8,12 @@ function realpath() {
 
 function check_prereqs() {
   if ! which mp3info >/dev/null 2>&1; then
-    echo "Cannot find mp3info executable. Install it with:"
+    echo "Cannot find mp3info executable. Install it!"
     echo
-    echo "brew install mp3info"
+    exit 1
+  fi
+  if ! which ffmpeg >/dev/null 2>&1; then
+    echo "Cannot find ffmpeg executable. Install it!"
     echo
     exit 1
   fi
@@ -31,8 +34,9 @@ function escape_yaml_quotes() {
 if [[ $# != 2 ]] && [[ $# != 1 ]]; then
   echo
   echo "This script does the following after the audio file is edited:"
-  echo "  1. Create the episode markdown file (with info from Trello)"
-  echo "  2. Upload the mp3 to the server"
+  echo "  1. Normalize the audio volume"
+  echo "  2. Create the episode markdown file (with info from Trello)"
+  echo "  3. Upload the mp3 to the server"
   echo
   echo "Usage: ./upload [--unattended] <audio-file> [<episode-date>]"
   echo
@@ -88,6 +92,13 @@ fi
 if [ "$username" == "j0d019y" ]; then # Jamison's accounts
   username="jergason"
 fi
+
+normalize_work_dir=$(mktemp -d "${TMPDIR:-/tmp}/sse-normalize-volume-work-dir.XXXXXX")
+trap 'rm -rf "$normalize_work_dir"' EXIT
+normalized_mp3_file="$normalize_work_dir/$(basename "$mp3_file")"
+echo "Normalizing audio volume in $normalize_work_dir"
+./normalize-audio-volume "$mp3_file" "$normalized_mp3_file"
+mp3_file="$normalized_mp3_file"
 
 # This script is in the "scripts" directory:
 byte_size=$(ls -nl "$mp3_file" | awk '{print $5}')
