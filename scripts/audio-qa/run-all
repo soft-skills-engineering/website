@@ -15,8 +15,9 @@
 # priority, so the rest of the server keeps priority. Re-running skips finished work.
 # Watch progress from another terminal with: ./report <results-dir>
 #
-# The first run creates a virtualenv here with numpy and faster-whisper, and the
-# transcription model (~500 MB) is downloaded into ./models.
+# Uses ../venv (creating it if needed), adding faster-whisper from
+# requirements-transcripts.txt to it. The first run downloads the transcription
+# model (~500 MB) into ./models.
 #
 ##########################################################################################
 
@@ -32,18 +33,16 @@ normalized="$2"
 results="$3"
 jobs="${4:-$(nproc)}"
 here="$(cd "$(dirname "$0")" && pwd)"
-python="$here/venv/bin/python"
+venv="$here/../venv"
+python="$venv/bin/python"
 
 if ! which ffmpeg >/dev/null 2>&1; then
   echo "Cannot find ffmpeg executable. Install it!"
   exit 1
 fi
 
-if [ ! -x "$python" ]; then
-  echo "Creating virtualenv in $here/venv"
-  python3 -m venv "$here/venv"
-  "$here/venv/bin/pip" install -q -r "$here/requirements.txt"
-fi
+[ -x "$python" ] || virtualenv "$venv" --python=python3
+"$python" -m pip install -q -r "$here/../requirements.txt" -r "$here/requirements-transcripts.txt"
 
 mkdir -p "$results/pairs"
 for path in "$normalized"/*.mp3; do

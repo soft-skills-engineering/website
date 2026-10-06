@@ -26,8 +26,6 @@
 #
 ##########################################################################################
 
-import use_venv  # noqa: F401 (must come before the third-party imports)
-
 import argparse
 import concurrent.futures
 import os

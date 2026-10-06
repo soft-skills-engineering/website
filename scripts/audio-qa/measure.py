@@ -1,43 +1,31 @@
-#!/usr/bin/env python3
-#########################################################################################
-#
-# Compare one original episode mp3 with its normalized copy, and save the measurements.
-#
-# Usage: ./check-pair <originals-dir> <normalized-dir> <results-dir> <file.mp3>
-#
-# Writes <results-dir>/<file.mp3>.json. Judging the measurements (pass/fail) is left to
-# ./report, so thresholds can be tuned without re-running this.
-#
-# What does it measure?
-#   Structural:
-#     - Duration of the decoded audio of each file
-#     - Decoder errors/warnings in each file
-#     - Whether the ID3v2 and ID3v1 tags were preserved byte-for-byte
-#   Loudness: integrated loudness, loudness range and true peak of each file (EBU R128)
-#   Content (normalization changes every sample's level, so these ignore gain):
-#     - Chromaprint fingerprint similarity, overall and per 30-second chunk
-#     - Waveform cross-correlation: the time offset between the files, then the
-#       correlation of each 1-second window, which pinpoints where content differs.
-#       Windows are short so the gain is near-constant within each one: matching audio
-#       scores ~1.0, peak limiting dips it a little, and missing or garbled audio
-#       drops it toward 0.
-#     - Silence map: whether the pauses in speech line up in both files
-#
-# Each file is decoded once, by one ffmpeg run that feeds all of its analyses.
-#
-##########################################################################################
+"""Measurements comparing an original episode with its normalized copy. Judging them
+(pass/fail) is left to judge.py, so thresholds can be tuned without re-measuring.
 
-import use_venv  # noqa: F401 (must come before the third-party imports)
+What does it measure?
+  Structural:
+    - Duration of the decoded audio of each file
+    - Decoder errors/warnings in each file
+    - Whether the ID3v2 and ID3v1 tags were preserved byte-for-byte
+  Loudness: integrated loudness, loudness range and true peak of each file (EBU R128)
+  Content (normalization changes every sample's level, so these ignore gain):
+    - Chromaprint fingerprint similarity, overall and per 30-second chunk
+    - Waveform cross-correlation: the time offset between the files, then the
+      correlation of each 1-second window, which pinpoints where content differs.
+      Windows are short so the gain is near-constant within each one: matching audio
+      scores ~1.0, peak limiting dips it a little, and missing or garbled audio
+      drops it toward 0.
+    - Silence map: whether the pauses in speech line up in both files
+
+Each file is decoded once, by one ffmpeg run that feeds all of its analyses."""
 
 import os
 import re
 import subprocess
-import sys
 import tempfile
 
 import numpy as np
 
-from common import FP_ITEM_SECONDS, HIGHPASS, PCM_RATE, window_correlations, write_json
+from common import FP_ITEM_SECONDS, HIGHPASS, PCM_RATE, window_correlations
 
 FP_CHUNK_SECONDS = 30         # Fingerprint similarity chunk
 MAX_LAG_SECONDS = 1           # Largest time offset searched between the files
@@ -234,28 +222,16 @@ def compare_fingerprints(a, b):
     }
 
 
-def main():
-    if len(sys.argv) != 5:
-        print('Usage: ./check-pair <originals-dir> <normalized-dir> <results-dir> <file.mp3>')
-        sys.exit(1)
-    originals, normalized, results, name = sys.argv[1:]
-    original_path = os.path.join(originals, name)
-    normalized_path = os.path.join(normalized, name)
-    out = os.path.join(results, name + '.json')
-
-    # Already checked, and neither file has changed since
-    if os.path.exists(out) and os.path.getmtime(out) > max(os.path.getmtime(original_path),
-                                                           os.path.getmtime(normalized_path)):
-        return
-
+def measure_pair(original_path, normalized_path):
+    """Every measurement comparing the two files"""
     with tempfile.TemporaryDirectory(prefix='check-pair.') as workdir:
         stats_a, fp_a, pcm_a = analyze(original_path, True, workdir)
         stats_b, fp_b, pcm_b = analyze(normalized_path, False, workdir)
 
     lag = find_lag(pcm_a, pcm_b)
     a, b = align(pcm_a, pcm_b, lag)
-    write_json(out, {
-        'episode': name,
+    return {
+        'episode': os.path.basename(normalized_path),
         'original': {**stats_a, 'duration': round(len(pcm_a) / PCM_RATE, 3)},
         'normalized': {**stats_b, 'duration': round(len(pcm_b) / PCM_RATE, 3)},
         'tags': check_tags(original_path, normalized_path),
@@ -263,9 +239,4 @@ def main():
         'fingerprint': compare_fingerprints(fp_a, fp_b),
         'xcorr': compare_windows(a, b),
         'silence': compare_silences(a, b),
-    })
-    print(f'checked {name}', flush=True)
-
-
-if __name__ == '__main__':
-    main()
+    }

@@ -1,0 +1,117 @@
+#!/usr/bin/env python3
+#########################################################################################
+#
+# Check that normalize-audio-volume kept one episode's content intact, and pass or fail.
+#
+# Usage: ./check-normalized-audio-volume <original.mp3> [normalized.mp3]
+#
+# Compares the normalized episode with its original: structure, tags, loudness,
+# fingerprint, waveform and pause comparisons (see audio-qa/measure.py), judged by the
+# same thresholds as audio-qa/report (see audio-qa/judge.py). Without [normalized.mp3],
+# normalizes a temporary copy of the original with ./normalize-audio-volume and checks
+# that.
+#
+# Exit status: 0 if it passes, 1 if it fails, 2 if it couldn't check.
+#
+# Needs numpy from requirements.txt, so run it with ./venv activated (./upload does).
+#
+##########################################################################################
+
+import os
+import sys
+
+here = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(here, 'audio-qa'))
+
+import shutil  # noqa: E402
+import subprocess  # noqa: E402
+import tempfile  # noqa: E402
+
+import judge  # noqa: E402
+from common import timestamp  # noqa: E402
+from measure import measure_pair  # noqa: E402
+
+
+def fmt(value, spec):
+    return '?' if value is None else format(value, spec)
+
+
+def show(p):
+    o, n = p['original'], p['normalized']
+    tags, fp, x, s = p['tags'], p['fingerprint'], p['xcorr'], p['silence']
+
+    def row(label, original, normalized, limit=''):
+        print(f'  {label:<30}{original:>12}{normalized:>12}   {limit}')
+
+    row('', 'original', 'normalized')
+    row('Duration', timestamp(o['duration']), timestamp(n['duration']),
+        f"changed {n['duration'] - o['duration']:+.3f}s (limit ±{judge.MAX_DURATION_CHANGE}s)")
+    row('Loudness (LUFS)', fmt(o['loudness_i'], '.1f'), fmt(n['loudness_i'], '.1f'),
+        f'target {judge.TARGET_I} ±{judge.MAX_LOUDNESS_MISS}')
+    row('True peak (dBTP)', fmt(o['true_peak'], '.1f'), fmt(n['true_peak'], '.1f'),
+        f'max {judge.MAX_TRUE_PEAK}')
+    row('Loudness range (LU)', fmt(o['lra'], '.1f'), fmt(n['lra'], '.1f'))
+    row('Decoder errors', str(o['decode_complaint_count']), str(n['decode_complaint_count']),
+        'no more than the original')
+    print()
+    print(f"  {'ID3v2 tag':<30}{'identical' if tags['id3v2_identical'] else 'CHANGED'} "
+          f"({tags['id3v2_bytes']} bytes)")
+    print(f"  {'ID3v1 tag':<30}"
+          + ('CHANGED' if not tags['id3v1_identical'] else 'identical' if tags['id3v1_present'] else 'none'))
+    print(f"  {'Time offset between versions':<30}{p['lag_seconds']:.4f}s")
+    print(f"  {'Fingerprint similarity':<30}{fp['similarity']:.3f} overall (min {judge.MIN_FP_SIMILARITY}), "
+          f"worst 30s {fmt(fp.get('chunk_min'), '.3f')} (min {judge.MIN_FP_CHUNK})")
+    print(f"  {'Waveform correlation':<30}median {x['r_median']:.4f}, 1st percentile {x['r_p1']:.3f} "
+          f"(min {judge.MIN_XCORR_P1}), {x['windows_below_0_5']} of {x['windows_compared']} "
+          f"seconds don't match (max {judge.MAX_XCORR_DROPOUTS})")
+    print(f"  {'Pauses that line up':<30}{s['match']:.0%} of {s['silences_original']} vs "
+          f"{s['silences_normalized']} (min {judge.MIN_SILENCE_MATCH:.0%})")
+
+
+def main():
+    if len(sys.argv) not in (2, 3):
+        print('Usage: ./check-normalized-audio-volume <original.mp3> [normalized.mp3]', file=sys.stderr)
+        sys.exit(2)
+    if not shutil.which('ffmpeg'):
+        print('Cannot find ffmpeg executable. Install it!', file=sys.stderr)
+        sys.exit(2)
+    original = sys.argv[1]
+    for path in sys.argv[1:]:
+        if not os.path.isfile(path):
+            print(f'No such file: {path}', file=sys.stderr)
+            sys.exit(2)
+
+    with tempfile.TemporaryDirectory(prefix='check-normalized-audio-volume.') as workdir:
+        if len(sys.argv) == 3:
+            normalized = sys.argv[2]
+        else:
+            normalized = os.path.join(workdir, os.path.basename(original))
+            print(f'Normalizing {original} into a temporary copy', flush=True)
+            normalizer = os.path.join(here, 'normalize-audio-volume')
+            if subprocess.run([normalizer, original, normalized]).returncode != 0:
+                print(f'FAIL: {normalizer} failed on {original}')
+                sys.exit(1)
+
+        print(f'Checking {normalized} against original {original}\n', flush=True)
+        try:
+            p = measure_pair(original, normalized)
+        except RuntimeError as e:
+            print(e, file=sys.stderr)
+            sys.exit(2)
+
+    show(p)
+    reasons, listen = judge.judge(p)
+    print()
+    if not reasons:
+        print(f"PASS: {p['episode']}")
+        return
+    print(f"FAIL: {p['episode']}")
+    for reason in reasons:
+        print(f'  - {reason}')
+    if listen:
+        print('  Listen at: ' + ', '.join(timestamp(t) for t in listen[:10]))
+    sys.exit(1)
+
+
+if __name__ == '__main__':
+    main()

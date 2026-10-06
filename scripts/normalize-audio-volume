@@ -9,15 +9,21 @@
 #   1. Sets the integrated loudness to -16 LUFS (the Apple/Spotify podcast standard),
 #      so episodes aren't too quiet and every episode sounds equally loud.
 #   2. Reduces the loudness range (big swings between quiet and loud stretches).
-#   3. Caps true peaks at -1.5 dBTP so nothing clips.
+#   3. Caps true peaks at -1.5 dBTP in the finished mp3, so nothing clips.
 #   4. Removes sub-70 Hz rumble (desk thumps, HVAC), which wastes headroom.
 #   5. Preserves the ID3v2 and ID3v1 tags byte-for-byte (title, cover art, chapters, etc.)
 #
 # How does it work?
-#   ffmpeg's loudnorm filter (EBU R128) in two passes: pass 1 measures the episode,
-#   pass 2 applies the correction using those measurements. ffmpeg would rewrite the
-#   tags (dropping frames it doesn't understand), so instead the encoded audio is written
-#   tag-free and the original tag bytes are copied around it.
+#   1. Measure the episode with ffmpeg's loudnorm filter (EBU R128).
+#   2. Measure what loudnorm produces from those measurements. When it has to even out
+#      a dynamic episode it tends to land below the target, so note how far.
+#   3. Apply loudnorm, make up that shortfall with a fixed gain, and catch the few peaks
+#      the extra gain pushes too high with a look-ahead limiter. Then encode the mp3.
+#   4. Measure the mp3. Encoding overshoots peaks (by over 1 dB on some episodes), and
+#      limiting harder lowers the loudness a little, so if either is off target, adjust
+#      the limiter and gain and encode again.
+#   ffmpeg would rewrite the tags (dropping frames it doesn't understand), so instead
+#   the encoded audio is written tag-free and the original tag bytes are copied around it.
 #
 # Written by Opus-5.5
 #
@@ -26,9 +32,15 @@
 set -euo pipefail
 
 TARGET_I=-16    # Integrated loudness, LUFS
-TARGET_TP=-1.5  # True peak ceiling, dBTP
+TARGET_TP=-1.5  # True peak ceiling of the finished mp3, dBTP
 TARGET_LRA=7    # Loudness range, LU (lower = more consistent; speech sounds natural ~5-8)
+MAX_LOUDNESS_ERROR=0.5  # LU the finished mp3 may be from TARGET_I
+LIMITER_HEADROOM=0.5    # dB below TARGET_TP to set the limiter at first, for mp3 overshoot
+MAX_ENCODES=4           # Attempts at getting the mp3 on target
 HIGHPASS=highpass=f=70
+# mp3 encoding discards the highest frequencies, which raises peaks. Removing them before
+# the limiter lets it see (most of) the peaks the mp3 will have. Speech has little up here.
+LOWPASS=lowpass=f=16000:poles=2
 DEFAULT_BITRATE=128k  # Used only if the source bitrate can't be determined
 
 if [[ $# != 2 ]]; then
@@ -55,6 +67,35 @@ if [ -e "$output_file_path" ] && [ "$input_file_path" -ef "$output_file_path" ];
   echo "Output file must be different from the input file" >&2
   exit 1
 fi
+
+# Prints "<integrated loudness LUFS> <true peak dBTP>" of a file's audio after the given
+# filters (if any)
+function measure() {
+  local file="$1" filters="${2:+$2,}" output loudness peak
+  if ! output=$(ffmpeg -hide_banner -nostats -i "$file" -map 0:a:0 \
+                -af "${filters}ebur128=framelog=quiet:peak=true" -f null - 2>&1); then
+    echo "$output" >&2
+    echo "Failed to measure loudness of $file" >&2
+    exit 1
+  fi
+  loudness=$(echo "$output" | sed -n 's/^ *I: *\([^ ]*\) LUFS$/\1/p' | tail -1)
+  peak=$(echo "$output" | sed -n 's/^ *Peak: *\([^ ]*\) dBFS$/\1/p' | tail -1)
+  if [[ ! $loudness =~ ^-?[0-9]+(\.[0-9]+)?$ || ! $peak =~ ^-?[0-9]+(\.[0-9]+)?$ ]]; then
+    echo "Unusable loudness measurement of $file: I='$loudness' TP='$peak'" >&2
+    exit 1
+  fi
+  echo "$loudness $peak"
+}
+
+# Prints the result of an arithmetic expression, e.g. calc "-16 - -17.2"
+function calc() {
+  awk "BEGIN { printf \"%.4f\", $1 }"
+}
+
+# Succeeds if a numeric comparison holds, e.g. holds "-1.2 <= -1.5"
+function holds() {
+  awk "BEGIN { exit !($1) }"
+}
 
 # Pass 1: measure
 loudnorm="loudnorm=I=$TARGET_I:TP=$TARGET_TP:LRA=$TARGET_LRA"
@@ -174,18 +215,51 @@ trap 'exit 130' INT TERM HUP  # Make sure cleanup runs when interrupted
 audio_only_temp_file_path=$(mktemp "${TMPDIR:-/tmp}/normalize-audio-volume.XXXXXX")
 output_temp_file_path=$(mktemp "${TMPDIR:-/tmp}/normalize-audio-volume.XXXXXX")
 
-# Pass 2: apply (writing bare audio frames, with no tags)
-ffmpeg -hide_banner -nostats -loglevel error -y -i "$input_file_path" \
-    -af "$HIGHPASS,$loudnorm:$measured,aresample=$sample_rate" \
-    -map 0:a:0 -map_metadata -1 -map_chapters -1 -fflags +bitexact \
-    -id3v2_version 0 -write_id3v1 0 \
-    -c:a libmp3lame "${encoding[@]}" \
-    -f mp3 "$audio_only_temp_file_path"
+# Pass 2: how far short of the target loudness loudnorm lands
+normalized="$HIGHPASS,$loudnorm:$measured"
+measurement=$(measure "$input_file_path" "$normalized,aresample=$sample_rate")
+read -r loudnorm_i _ <<< "$measurement"
+gain=$(calc "$TARGET_I - $loudnorm_i")
 
-if [ ! -s "$audio_only_temp_file_path" ]; then
-  echo "ffmpeg produced no audio for $input_file_path" >&2
-  exit 1
-fi
+# Pass 3: apply, limiting peaks to $1 dBTP, and encode (bare audio frames, with no tags).
+# Uses the current $gain. loudnorm outputs 192 kHz, so limiting before resampling also
+# catches the peaks between samples. The limiter's latency compensation keeps the audio
+# in sync with the original.
+function encode() {
+  local limit
+  limit=$(calc "10 ^ ($1 / 20)")
+  ffmpeg -hide_banner -nostats -loglevel error -y -i "$input_file_path" \
+      -af "$normalized,volume=${gain}dB,$LOWPASS,alimiter=limit=$limit:level=disabled:latency=enabled,aresample=$sample_rate" \
+      -map 0:a:0 -map_metadata -1 -map_chapters -1 -fflags +bitexact \
+      -id3v2_version 0 -write_id3v1 0 \
+      -c:a libmp3lame "${encoding[@]}" \
+      -f mp3 "$audio_only_temp_file_path"
+  if [ ! -s "$audio_only_temp_file_path" ]; then
+    echo "ffmpeg produced no audio for $input_file_path" >&2
+    exit 1
+  fi
+}
+
+# Pass 4: measure the mp3, and re-encode with a corrected limit and gain if it's off target
+ceiling=$(calc "$TARGET_TP - $LIMITER_HEADROOM")
+for attempt in $(seq "$MAX_ENCODES"); do
+  encode "$ceiling"
+  measurement=$(measure "$audio_only_temp_file_path")
+  read -r final_i final_tp <<< "$measurement"
+  if holds "$final_tp <= $TARGET_TP && $final_i >= $TARGET_I - $MAX_LOUDNESS_ERROR && $final_i <= $TARGET_I + $MAX_LOUDNESS_ERROR"; then
+    break
+  fi
+  if (( attempt == MAX_ENCODES )); then
+    echo "Warning: $input_file_path is $final_i LUFS, $final_tp dBTP after $MAX_ENCODES encodes" \
+         "(target $TARGET_I LUFS, $TARGET_TP dBTP)" >&2
+    break
+  fi
+  # Lower the limit by the overshoot, plus a little more so the next try lands under
+  if holds "$final_tp > $TARGET_TP"; then
+    ceiling=$(calc "$ceiling - ($final_tp - $TARGET_TP) - 0.2")
+  fi
+  gain=$(calc "$gain + $TARGET_I - $final_i")
+done
 
 # Reassemble: original ID3v2 tag + new audio + original ID3v1 tag
 id3v2_bytes=$(id3v2_size)
