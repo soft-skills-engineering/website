@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+#########################################################################################
+#
+# Transcribe the same clips from a sample of original and normalized episodes, and
+# compare the transcripts.
+#
+# Usage: ./check-transcripts <originals-dir> <normalized-dir> <results-dir>
+#                            [--sample N] [--outliers N] [--clips N] [--clip-seconds N]
+#                            [--jobs N] [--model NAME]
+#
+# Run ./check-pair on every episode first: the sample includes the episodes it found
+# most changed, and it supplies the time offset between each pair.
+#
+# Writes <results-dir>/transcripts/<file.mp3>.json with both transcripts of each clip
+# and their word error rate (the fraction of words that differ). ./report judges them.
+#
+# Which episodes?
+#   --sample episodes spread evenly across the whole catalog, plus the --outliers
+#   episodes with the largest loudness change, the most peak limiting, and the lowest
+#   fingerprint and waveform similarity.
+#
+# How is it kept fair?
+#   Both versions of a clip are cut at the same moment (corrected for the measured time
+#   offset) and transcribed with deterministic settings (greedy decoding, temperature 0,
+#   no context carried between clips), so differences come from the audio alone.
+#
+##########################################################################################
+
+import use_venv  # noqa: F401 (must come before the third-party imports)
+
+import argparse
+import concurrent.futures
+import os
+import re
+import subprocess
+import sys
+
+import numpy as np
+
+from common import natural_key, read_results, window_correlations, write_json
+
+WHISPER_RATE = 16000
+EDGE_WORDS = 3  # Words at each end of a clip may be cut off differently, so ignore them
+FILLERS = {'um', 'umm', 'uh', 'uhm', 'hmm', 'mm', 'mhm', 'ah', 'er', 'oh'}
+
+here = os.path.dirname(os.path.abspath(__file__))
+model = None
+
+
+def load_model(name):
+    global model
+    from faster_whisper import WhisperModel
+    model = WhisperModel(name, device='cpu', compute_type='int8', cpu_threads=1,
+                         download_root=os.path.join(here, 'models'))
+
+
+def clip(path, start, seconds):
+    cmd = ['ffmpeg', '-nostdin', '-v', 'error', '-ss', f'{max(0, start):.3f}', '-t', str(seconds),
+           '-i', path, '-map', '0:a:0', '-ac', '1', '-ar', str(WHISPER_RATE), '-f', 'f32le', '-']
+    return np.frombuffer(subprocess.run(cmd, capture_output=True, check=True).stdout, '<f4')
+
+
+def transcribe(audio):
+    segments, _ = model.transcribe(audio, language='en', beam_size=1, temperature=0.0,
+                                   condition_on_previous_text=False, vad_filter=False,
+                                   without_timestamps=True)
+    return ' '.join(s.text.strip() for s in segments)
+
+
+def words(text):
+    found = [w for w in re.findall(r"[a-z0-9']+", text.lower()) if w not in FILLERS]
+    return found[EDGE_WORDS:-EDGE_WORDS] if len(found) > 2 * EDGE_WORDS else []
+
+
+def edit_distance(a, b):
+    row = list(range(len(b) + 1))
+    for i, x in enumerate(a, 1):
+        prev, row[0] = row[0], i
+        for j, y in enumerate(b, 1):
+            prev, row[j] = row[j], min(row[j] + 1, row[j - 1] + 1, prev + (x != y))
+    return row[-1]
+
+
+def check_episode(task):
+    name, originals, normalized, out, starts, seconds, lag, reasons = task
+    clips = []
+    for start in starts:
+        audio_a = clip(os.path.join(originals, name), start, seconds)
+        audio_b = clip(os.path.join(normalized, name), start + lag, seconds)
+        original, normal = transcribe(audio_a), transcribe(audio_b)
+        # Whisper sometimes skips a sentence over tiny audio differences, so also record
+        # whether the waveforms themselves match here
+        r, active, _ = window_correlations(audio_a, audio_b, WHISPER_RATE)
+        a, b = words(original), words(normal)
+        clips.append({
+            'start': round(start, 1),
+            'seconds': seconds,
+            'original': original,
+            'normalized': normal,
+            'words': len(a),
+            'wer': round(edit_distance(a, b) / len(a), 4) if a else (0.0 if not b else 1.0),
+            'waveform_r_min': round(float(r[active].min()), 4) if active.any() else None,
+        })
+    write_json(out, {'episode': name, 'selected_because': reasons, 'clips': clips})
+    return name
+
+
+def select(pairs, sample, outliers):
+    """Episodes to transcribe, with why each was chosen"""
+    names = sorted(pairs, key=natural_key)
+    chosen = {}
+    for i in np.unique(np.linspace(0, len(names) - 1, min(sample, len(names))).round().astype(int)):
+        chosen.setdefault(names[i], []).append('evenly spaced sample')
+    rankings = {
+        'largest loudness change': lambda p: -abs(p['normalized']['loudness_i'] - p['original']['loudness_i']),
+        'most peak limiting': lambda p: -(p['original']['true_peak'] - p['normalized']['true_peak']),
+        'lowest fingerprint similarity': lambda p: p['fingerprint']['similarity'],
+        'lowest waveform correlation': lambda p: p['xcorr']['r_p1'],
+    }
+    for reason, key in rankings.items():
+        for name in sorted(names, key=lambda n: key(pairs[n]))[:outliers]:
+            chosen.setdefault(name, []).append(reason)
+    return chosen
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Compare transcripts of original and normalized clips')
+    parser.add_argument('originals')
+    parser.add_argument('normalized')
+    parser.add_argument('results')
+    parser.add_argument('--sample', type=int, default=48)
+    parser.add_argument('--outliers', type=int, default=4, help='per ranking')
+    parser.add_argument('--clips', type=int, default=3, help='per episode')
+    parser.add_argument('--clip-seconds', type=int, default=60)
+    parser.add_argument('--jobs', type=int, default=os.cpu_count())
+    parser.add_argument('--model', default='small.en')
+    args = parser.parse_args()
+
+    pairs = read_results(os.path.join(args.results, 'pairs'))
+    if not pairs:
+        sys.exit('No ./check-pair results yet; run it first')
+    out_dir = os.path.join(args.results, 'transcripts')
+    os.makedirs(out_dir, exist_ok=True)
+
+    tasks = []
+    for name, reasons in select(pairs, args.sample, args.outliers).items():
+        out = os.path.join(out_dir, name + '.json')
+        if os.path.exists(out):
+            continue
+        duration = pairs[name]['original']['duration']
+        # Clip centres spread evenly through the episode, e.g. 1/6, 1/2 and 5/6 of the way
+        starts = [duration * (i + 0.5) / args.clips - args.clip_seconds / 2 for i in range(args.clips)]
+        tasks.append((name, args.originals, args.normalized, out, starts, args.clip_seconds,
+                      pairs[name]['lag_seconds'], reasons))
+
+    print(f'{len(tasks)} episodes to transcribe ({args.clips} x {args.clip_seconds}s clips, '
+          f'both versions, model {args.model}, {args.jobs} at a time)', flush=True)
+    with concurrent.futures.ProcessPoolExecutor(args.jobs, initializer=load_model,
+                                                initargs=(args.model,)) as pool:
+        futures = [pool.submit(check_episode, task) for task in tasks]
+        for done, future in enumerate(concurrent.futures.as_completed(futures), 1):
+            print(f'transcribed {future.result()} ({done}/{len(tasks)})', flush=True)
+
+
+if __name__ == '__main__':
+    main()
