@@ -3,3 +3,4 @@ tweepy
 PyGitHub
 boto3
 numpy>=2  # check-normalized-audio-volume; 2.0 added bitwise_count
+faster-whisper  # check-normalized-audio-volume

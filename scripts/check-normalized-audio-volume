@@ -3,16 +3,27 @@
 #
 # Check that normalize-audio-volume kept one episode's content intact, and pass or fail.
 #
-# Usage: ./check-normalized-audio-volume <original.mp3> [normalized.mp3]
+# Usage: ./check-normalized-audio-volume [--transcript-check-level LEVEL]
+#                                        <original.mp3> [normalized.mp3]
 #
 # Compares the normalized episode with its original: structure, tags, loudness,
-# fingerprint, waveform and pause comparisons (see audio-qa/measure.py), judged by the
-# thresholds in audio-qa/judge.py. Without [normalized.mp3], normalizes a temporary copy
-# of the original with ./normalize-audio-volume and checks that.
+# fingerprint, waveform and pause comparisons (see audio-qa/measure.py), and speech-to-text
+# of matching clips from both (see audio-qa/transcripts.py), judged by the thresholds in
+# audio-qa/judge.py. Without [normalized.mp3], normalizes a temporary copy of the original
+# with ./normalize-audio-volume and checks that.
+#
+# --transcript-check-level controls how much of the episode is transcribed (the other
+# checks always run). Times are the whole check, for a 33 minute episode on 4 CPUs:
+#   complete  The whole episode, as back-to-back one-minute clips (default, ~7.5 minutes)
+#   8x120     8 two-minute clips spread through the episode
+#   4x60      4 one-minute clips
+#   2x30      2 thirty-second clips
+#   skip      No transcription (~50 seconds)
 #
 # Exit status: 0 if it passes, 1 if it fails, 2 if it couldn't check.
 #
-# Needs numpy from requirements.txt, so run it with ./venv activated (./upload does).
+# Needs numpy and faster-whisper from requirements.txt, so run it with ./venv activated
+# (./upload does). The first run downloads the transcription model (~500 MB).
 #
 ##########################################################################################
 
@@ -22,6 +33,7 @@ import sys
 here = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(here, 'audio-qa'))
 
+import argparse  # noqa: E402
 import shutil  # noqa: E402
 import subprocess  # noqa: E402
 import tempfile  # noqa: E402
@@ -29,6 +41,9 @@ import tempfile  # noqa: E402
 import judge  # noqa: E402
 from common import timestamp  # noqa: E402
 from measure import measure_pair  # noqa: E402
+from transcripts import compare_transcripts, full_clips, sample_clips  # noqa: E402
+
+TRANSCRIPT_CHECK_LEVELS = ('complete', '8x120', '4x60', '2x30', 'skip')
 
 
 def fmt(value, spec):
@@ -65,24 +80,46 @@ def show(p):
           f"seconds don't match (max {judge.MAX_XCORR_DROPOUTS})")
     print(f"  {'Pauses that line up':<30}{s['match']:.0%} of {s['silences_original']} vs "
           f"{s['silences_normalized']} (min {judge.MIN_SILENCE_MATCH:.0%})")
+    if 'transcript' not in p:
+        print(f"  {'Transcripts':<30}not checked")
+        return
+    clips = p['transcript']['clips']
+    worst = max(clips, key=lambda c: c['wer'])
+    minutes = sum(c['seconds'] for c in clips) / 60
+    print(f"  {'Transcripts':<30}{len(clips)} clips ({minutes:.0f} minutes), worst {worst['wer']:.0%} of words "
+          f"differ at {timestamp(worst['start'])} (max {judge.MAX_WER:.0%} per clip)")
+    for c in clips:
+        if c['wer'] > judge.MAX_WER:
+            quirk = ' (transcriber quirk: the waveforms match)' if judge.transcriber_quirk(c) else ''
+            print(f"  {'  clip at ' + timestamp(c['start']):<30}{c['wer']:.0%} of {c['words']} words differ{quirk}")
 
 
 def main():
-    if len(sys.argv) not in (2, 3):
-        print('Usage: ./check-normalized-audio-volume <original.mp3> [normalized.mp3]', file=sys.stderr)
-        sys.exit(2)
+    parser = argparse.ArgumentParser(
+        prog='./check-normalized-audio-volume',
+        description='Check that normalize-audio-volume kept one episode\'s content intact.')
+    parser.add_argument('--transcript-check-level', choices=TRANSCRIPT_CHECK_LEVELS, default='complete',
+                        help='how much of the episode to transcribe and compare: complete (the default), '
+                             'skip, or <clips>x<seconds>; see the top of this script')
+    parser.add_argument('original')
+    parser.add_argument('normalized', nargs='?')
+    try:
+        args = parser.parse_args()
+    except SystemExit as e:
+        sys.exit(0 if e.code == 0 else 2)  # Bad usage means "couldn't check", not "failed"
+
     if not shutil.which('ffmpeg'):
         print('Cannot find ffmpeg executable. Install it!', file=sys.stderr)
         sys.exit(2)
-    original = sys.argv[1]
-    for path in sys.argv[1:]:
+    original = args.original
+    for path in filter(None, [args.original, args.normalized]):
         if not os.path.isfile(path):
             print(f'No such file: {path}', file=sys.stderr)
             sys.exit(2)
 
     with tempfile.TemporaryDirectory(prefix='check-normalized-audio-volume.') as workdir:
-        if len(sys.argv) == 3:
-            normalized = sys.argv[2]
+        if args.normalized:
+            normalized = args.normalized
         else:
             normalized = os.path.join(workdir, os.path.basename(original))
             print(f'Normalizing {original} into a temporary copy', flush=True)
@@ -91,13 +128,22 @@ def main():
                 print(f'FAIL: {normalizer} failed on {original}')
                 sys.exit(1)
 
-        print(f'Checking {normalized} against original {original}\n', flush=True)
+        print(f'Checking {normalized} against original {original} (--transcript-check-level {args.transcript_check_level})', flush=True)
         try:
             p = measure_pair(original, normalized)
-        except RuntimeError as e:
+            level, duration = args.transcript_check_level, p['original']['duration']
+            if level != 'skip':
+                if level == 'complete':
+                    clips = full_clips(duration)
+                else:
+                    count, seconds = map(int, level.split('x'))
+                    clips = sample_clips(duration, count, seconds)
+                p['transcript'] = compare_transcripts(original, normalized, clips, p['lag_seconds'])
+        except (RuntimeError, ImportError) as e:
             print(e, file=sys.stderr)
             sys.exit(2)
 
+    print()
     show(p)
     reasons, listen = judge.judge(p)
     print()

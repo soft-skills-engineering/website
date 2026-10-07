@@ -98,8 +98,8 @@ trap 'rm -rf "$normalize_work_dir"' EXIT
 normalized_mp3_file="$normalize_work_dir/$(basename "$mp3_file")"
 echo "Normalizing audio volume in $normalize_work_dir"
 ./normalize-audio-volume "$mp3_file" "$normalized_mp3_file"
-echo "Checking the normalized audio against the original"
-if ! check_output=$(./check-normalized-audio-volume "$mp3_file" "$normalized_mp3_file" 2>&1); then
+echo "Checking normalized audio"
+if ! check_output=$(./check-normalized-audio-volume --transcript-check-level complete "$mp3_file" "$normalized_mp3_file" 2>&1); then
   echo "$check_output"
   echo "Not publishing: the normalized audio failed its checks (see above)"
   exit 1

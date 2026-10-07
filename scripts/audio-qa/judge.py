@@ -1,4 +1,5 @@
-"""Pass/fail judgment of the measurements from measure.py"""
+"""Pass/fail judgment of the measurements from measure.py (and, when present, the
+transcript comparison from transcripts.py)"""
 
 from common import timestamp
 
@@ -14,6 +15,7 @@ MIN_XCORR_P1 = 0.80           # 1st percentile of 1-second waveform correlations
 MAX_XCORR_DROPOUTS = 0        # 1-second windows correlating below 0.5 (missing/garbled audio)
 MIN_SILENCE_MATCH = 0.80      # Fraction of pauses found in both versions
 MIN_SILENCES = 10             # ... only judged when there are enough pauses to judge
+MAX_WER = 0.10                # Fraction of words that differ in a transcribed clip
 
 
 def judge(p):
@@ -57,5 +59,16 @@ def judge(p):
                        f"({s['silences_original']} vs {s['silences_normalized']})")
         listen += s['unmatched_at'][:3]
 
+    t = p.get('transcript')
+    if t:
+        for c in t['clips']:
+            if c['wer'] > MAX_WER and not transcriber_quirk(c):
+                reasons.append(f"transcript differs {c['wer']:.0%} in clip at {timestamp(c['start'])}")
+                listen.append(c['start'])
     return reasons, sorted(set(round(t) for t in listen))
 
+
+def transcriber_quirk(c):
+    """Whisper sometimes skips or rewords a sentence over tiny audio differences. When
+    the waveforms match second by second throughout the clip, that's what happened."""
+    return c.get('waveform_r_min') is not None and c['waveform_r_min'] >= 0.5
