@@ -7,9 +7,8 @@
 #
 # Compares the normalized episode with its original: structure, tags, loudness,
 # fingerprint, waveform and pause comparisons (see audio-qa/measure.py), judged by the
-# same thresholds as audio-qa/report (see audio-qa/judge.py). Without [normalized.mp3],
-# normalizes a temporary copy of the original with ./normalize-audio-volume and checks
-# that.
+# thresholds in audio-qa/judge.py. Without [normalized.mp3], normalizes a temporary copy
+# of the original with ./normalize-audio-volume and checks that.
 #
 # Exit status: 0 if it passes, 1 if it fails, 2 if it couldn't check.
 #

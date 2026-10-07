@@ -1,8 +1,4 @@
-"""Helpers shared by the normalization test scripts."""
-
-import json
-import os
-import re
+"""Helpers shared by measure.py and judge.py, which check-normalized-audio-volume uses."""
 
 import numpy as np
 
@@ -35,32 +31,6 @@ def window_correlations(a, b, rate):
     r = (A * B).mean(axis=1) / np.sqrt(power_a * power_b + 1e-24)
     gain = 10 * np.log10((power_b + 1e-12) / (power_a + 1e-12))
     return r, active, gain
-
-
-def natural_key(name):
-    """Sort sse-2.mp3 before sse-10.mp3"""
-    return [int(part) if part.isdigit() else part for part in re.split(r'(\d+)', name)]
-
-
-def write_json(path, data):
-    """Write atomically, so an interrupted run never leaves a half-written result"""
-    tmp = path + '.part'
-    with open(tmp, 'w') as f:
-        json.dump(data, f, indent=1)
-    os.replace(tmp, path)
-
-
-def read_json(path):
-    with open(path) as f:
-        return json.load(f)
-
-
-def read_results(directory):
-    """All result files in a directory, keyed by episode file name"""
-    if not os.path.isdir(directory):
-        return {}
-    return {name[:-len('.json')]: read_json(os.path.join(directory, name))
-            for name in os.listdir(directory) if name.endswith('.json')}
 
 
 def timestamp(seconds):

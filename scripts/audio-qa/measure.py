@@ -1,5 +1,5 @@
 """Measurements comparing an original episode with its normalized copy. Judging them
-(pass/fail) is left to judge.py, so thresholds can be tuned without re-measuring.
+(pass/fail) is left to judge.py.
 
 What does it measure?
   Structural:
@@ -224,7 +224,7 @@ def compare_fingerprints(a, b):
 
 def measure_pair(original_path, normalized_path):
     """Every measurement comparing the two files"""
-    with tempfile.TemporaryDirectory(prefix='check-pair.') as workdir:
+    with tempfile.TemporaryDirectory(prefix='measure.') as workdir:
         stats_a, fp_a, pcm_a = analyze(original_path, True, workdir)
         stats_b, fp_b, pcm_b = analyze(normalized_path, False, workdir)
 

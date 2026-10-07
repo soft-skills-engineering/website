@@ -3,7 +3,7 @@
 #
 # Normalize an episode mp3 so it plays at a consistent, comfortable volume.
 #
-# Usage: ./normalize-audio <input.mp3> <output.mp3>
+# Usage: ./normalize-audio-volume <input.mp3> <output.mp3>
 #
 # What does it do?
 #   1. Sets the integrated loudness to -16 LUFS (the Apple/Spotify podcast standard),
