@@ -15,9 +15,9 @@
 # --transcript-check-level controls how much of the episode is transcribed (the other
 # checks always run). Times are the whole check, for a 33 minute episode on 4 CPUs:
 #   complete  The whole episode, as back-to-back one-minute clips (default, ~7.5 minutes)
-#   8x120     8 two-minute clips spread through the episode
-#   4x60      4 one-minute clips
-#   2x30      2 thirty-second clips
+#   8x120     8 two-minute clips spread through the episode (~5 minutes)
+#   4x60      4 one-minute clips (~2.5 minutes)
+#   2x30      2 thirty-second clips (~1.5 minutes)
 #   skip      No transcription (~50 seconds)
 #
 # Exit status: 0 if it passes, 1 if it fails, 2 if it couldn't check.
@@ -86,11 +86,11 @@ def show(p):
     clips = p['transcript']['clips']
     worst = max(clips, key=lambda c: c['wer'])
     minutes = sum(c['seconds'] for c in clips) / 60
-    print(f"  {'Transcripts':<30}{len(clips)} clips ({minutes:.0f} minutes), worst {worst['wer']:.0%} of words "
+    print(f"  {'Transcripts':<30}{len(clips)} clips ({minutes:.0f} min), worst {worst['wer']:.0%} of words "
           f"differ at {timestamp(worst['start'])} (max {judge.MAX_WER:.0%} per clip)")
     for c in clips:
         if c['wer'] > judge.MAX_WER:
-            quirk = ' (transcriber quirk: the waveforms match)' if judge.transcriber_quirk(c) else ''
+            quirk = ' (transcriber quirk: the waveforms match)' if judge.transcriber_quirk(c, p) else ''
             print(f"  {'  clip at ' + timestamp(c['start']):<30}{c['wer']:.0%} of {c['words']} words differ{quirk}")
 
 

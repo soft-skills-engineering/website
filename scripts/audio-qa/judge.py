@@ -9,12 +9,15 @@ TARGET_I = -16
 MAX_DURATION_CHANGE = 0.1     # seconds
 MAX_LOUDNESS_MISS = 1.0       # LU away from TARGET_I
 MAX_TRUE_PEAK = -0.5          # dBTP (the target is -1.5; MP3 encoding overshoots a little)
-MIN_FP_SIMILARITY = 0.90      # Whole-episode fingerprint (unrelated audio scores ~0.5)
+MIN_FP_SIMILARITY = 0.85      # Whole-episode fingerprint (unrelated audio scores ~0.5; re-encoding
+                              # heavily compressed VBR episodes scores ~0.89)
 MIN_FP_CHUNK = 0.80           # Worst 30-second fingerprint chunk
 MIN_XCORR_P1 = 0.80           # 1st percentile of 1-second waveform correlations
 MAX_XCORR_DROPOUTS = 0        # 1-second windows correlating below 0.5 (missing/garbled audio)
-MIN_SILENCE_MATCH = 0.80      # Fraction of pauses found in both versions
-MIN_SILENCES = 10             # ... only judged when there are enough pauses to judge
+MIN_SILENCE_MATCH = 0.60      # Fraction of pauses found in both versions (normalizing raises the
+                              # noise in pauses relative to speech, so some stop counting as pauses)
+MIN_SILENCES = 50             # ... only judged when there are enough pauses that a few more or
+                              # fewer don't swing the fraction
 MAX_WER = 0.10                # Fraction of words that differ in a transcribed clip
 
 
@@ -62,13 +65,18 @@ def judge(p):
     t = p.get('transcript')
     if t:
         for c in t['clips']:
-            if c['wer'] > MAX_WER and not transcriber_quirk(c):
+            if c['wer'] > MAX_WER and not transcriber_quirk(c, p):
                 reasons.append(f"transcript differs {c['wer']:.0%} in clip at {timestamp(c['start'])}")
                 listen.append(c['start'])
     return reasons, sorted(set(round(t) for t in listen))
 
 
-def transcriber_quirk(c):
+def transcriber_quirk(c, p):
     """Whisper sometimes skips or rewords a sentence over tiny audio differences. When
-    the waveforms match second by second throughout the clip, that's what happened."""
-    return c.get('waveform_r_min') is not None and c['waveform_r_min'] >= 0.5
+    the waveforms match second by second throughout the clip, that's what happened. The
+    clip's own comparison can count near-silent seconds (whose noise doesn't correlate), so
+    the whole-episode comparison finding no mismatched seconds in the clip also counts."""
+    if c.get('waveform_r_min') is not None and c['waveform_r_min'] >= 0.5:
+        return True
+    end = c['start'] + c['seconds']
+    return not any(start < end and stop > c['start'] for start, stop in p['xcorr'].get('mismatch_regions', []))
