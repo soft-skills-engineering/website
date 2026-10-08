@@ -4,7 +4,7 @@ title: "Episode 297: Flat decisions and pointy-haired boss"
 date: 2022-03-28 06:00:00 -0700
 guid: fcda9401-1c78-41e7-ab97-fed359fbea45
 duration: "30:07"
-length: 27562801
+length: 29126830
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-297.mp3"
 categories: episode
 ---

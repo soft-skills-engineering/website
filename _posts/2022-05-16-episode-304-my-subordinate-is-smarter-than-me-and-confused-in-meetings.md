@@ -4,7 +4,7 @@ title: "Episode 304: My subordinate is smarter than me and confused in meetings"
 date: 2022-05-16 06:00:00 -0700
 guid: ff26299b-f396-4354-b608-bfb53ec1607d
 duration: "26:58"
-length: 24474573
+length: 26200115
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-304.mp3"
 categories: episode
 ---

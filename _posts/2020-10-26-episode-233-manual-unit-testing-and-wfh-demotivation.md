@@ -4,7 +4,7 @@ title: "Episode 233: Manual unit testing and WFH demotivation"
 date: 2020-10-26 12:00:00 -0700
 guid: 5a3d5bf1-0fce-4b03-9f90-500803b4753c
 duration: "34:10"
-length: 30887865
+length: 33652761
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-233.mp3"
 categories: episode
 ---

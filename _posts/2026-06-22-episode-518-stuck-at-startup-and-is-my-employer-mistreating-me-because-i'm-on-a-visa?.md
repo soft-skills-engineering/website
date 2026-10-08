@@ -4,7 +4,7 @@ title: "Episode 518: stuck at startup and is my employer mistreating me because 
 date: 2026-06-22 05:00:00 -0700
 guid: cba21321-07b5-4227-bc51-1c84a63cc198
 duration: "32:59"
-length: 31349016
+length: 34473120
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-518.mp3"
 categories: episode
 ---

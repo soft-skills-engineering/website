@@ -4,7 +4,7 @@ title: "Episode 471: Why does my junior engineer do so little and I fell asleep 
 date: 2025-07-28 05:00:00 -0700
 guid: 42de87a8-5049-4014-b7e6-59e4da3a9b35
 duration: "28:34"
-length: 26816011
+length: 27619531
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-471.mp3"
 categories: episode
 ---

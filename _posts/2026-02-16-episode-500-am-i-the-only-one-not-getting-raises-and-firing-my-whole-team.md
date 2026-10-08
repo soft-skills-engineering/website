@@ -4,7 +4,7 @@ title: "Episode 500: Am I the only one not getting raises and firing my whole te
 date: 2026-02-16 05:00:00 -0700
 guid: 23b1f3d7-30ca-441c-92d6-382f2c1a51b5
 duration: "36:15"
-length: 32062099
+length: 34760419
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-500.mp3"
 categories: episode
 ---

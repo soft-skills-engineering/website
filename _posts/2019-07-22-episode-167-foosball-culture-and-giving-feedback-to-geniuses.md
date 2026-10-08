@@ -4,7 +4,7 @@ title: "Episode 167: Foosball culture and giving feedback to geniuses"
 date: 2019-07-22 12:00:00 -0700
 guid: eff11867-7182-499a-980a-6734d3c1cd90
 duration: "35:08"
-length: 31327651
+length: 34533403
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-167.mp3"
 categories: episode
 ---

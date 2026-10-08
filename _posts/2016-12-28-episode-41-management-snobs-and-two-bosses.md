@@ -4,7 +4,7 @@ title: 'Episode 41: Management Snobs and Two Bosses'
 date: 2016-12-28 12:00:00 -0700
 guid: a3b0b49f-a631-4004-8895-aa4b14b07c9e
 duration: "24:26"
-length: 23457408
+length: 23457024
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-041.mp3"
 categories: episode
 favorite: true

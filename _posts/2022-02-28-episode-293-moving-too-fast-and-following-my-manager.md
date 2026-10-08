@@ -4,7 +4,7 @@ title: "Episode 293: Moving TOO fast and following my manager"
 date: 2022-02-28 06:00:00 -0700
 guid: 51dba6ab-b678-4b67-a901-be4e1b8c3650
 duration: "21:37"
-length: 19884571
+length: 21156451
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-293.mp3"
 categories: episode
 ---

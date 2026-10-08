@@ -4,7 +4,7 @@ title: "Episode 245: Sweating the small stuff and quit my first job?"
 date: 2021-01-25 12:00:00 -0700
 guid: 82edfdb9-0283-4d08-b6cd-54ad5b05f2f6
 duration: "29:24"
-length: 28960492
+length: 30027432
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-245.mp3"
 categories: episode
 ---

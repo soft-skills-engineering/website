@@ -4,7 +4,7 @@ title: "Episode 484: How to get a raise after slacking off for YEARS and my PM w
 date: 2025-10-27 05:00:00 -0700
 guid: 20003c52-794e-4f85-8153-0e197912fc9b
 duration: "29:27"
-length: 25419955
+length: 27884155
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-484.mp3"
 categories: episode
 ---

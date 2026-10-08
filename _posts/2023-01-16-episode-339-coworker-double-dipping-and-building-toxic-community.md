@@ -4,7 +4,7 @@ title: "Episode 339: Coworker double-dipping and building toxic community"
 date: 2023-01-16 05:00:00 -0700
 guid: 0c1cb8d9-bcb8-4904-ba0c-07387c33b0fd
 duration: "30:36"
-length: 25254932
+length: 28296359
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-339.mp3"
 categories: episode
 ---

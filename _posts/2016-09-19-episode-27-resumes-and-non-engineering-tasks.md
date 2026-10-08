@@ -4,7 +4,7 @@ title: 'Episode 27: Writing Great Resumes and Pushing Back on Non-Engineering Ta
 date: 2016-09-19 12:00:00 -0700
 guid: f78ecf48-7665-4ede-8bda-d342a3c1fd6c
 duration: "42:41"
-length: 40977408
+length: 40977024
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-027.mp3"
 categories: episode
 ---

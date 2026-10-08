@@ -4,7 +4,7 @@ title: "Episode 509: I hate AI software dev, so should I become a manager and le
 date: 2026-04-20 05:00:00 -0700
 guid: 06fd047b-4574-47a7-8d42-6748a03d7adf
 duration: "36:09"
-length: 29776675
+length: 33205075
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-509.mp3"
 categories: episode
 ---

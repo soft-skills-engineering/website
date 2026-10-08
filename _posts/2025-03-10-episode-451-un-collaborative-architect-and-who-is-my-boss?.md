@@ -4,7 +4,7 @@ title: "Episode 451: Un-collaborative architect and who is my boss?"
 date: 2025-03-10 05:00:00 -0700
 guid: 01626cba-e206-4033-93c7-6df95a1f2ca0
 duration: "32:47"
-length: 29572735
+length: 32019028
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-451.mp3"
 categories: episode
 ---

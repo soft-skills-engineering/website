@@ -4,7 +4,7 @@ title: "Episode 513: Forgotten employee and what skills actually matter in the A
 date: 2026-05-18 05:00:00 -0700
 guid: 59c94183-cd7c-4232-ae85-a6c4368cdcf8
 duration: "36:55"
-length: 32789208
+length: 35540544
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-513.mp3"
 categories: episode
 ---

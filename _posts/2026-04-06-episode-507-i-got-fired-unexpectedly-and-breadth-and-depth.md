@@ -4,7 +4,7 @@ title: "Episode 507: I got fired unexpectedly and breadth and depth"
 date: 2026-04-06 05:00:00 -0700
 guid: a300bd5d-cb90-4124-8b71-96fe03f1c799
 duration: "33:15"
-length: 28929552
+length: 31652352
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-507.mp3"
 categories: episode
 ---

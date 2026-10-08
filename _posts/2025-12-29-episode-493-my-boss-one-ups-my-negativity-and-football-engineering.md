@@ -4,7 +4,7 @@ title: "Episode 493: My boss one-ups my negativity and football engineering"
 date: 2025-12-29 05:00:00 -0700
 guid: 5cd35828-72d5-4640-bf69-c7462f2b87f5
 duration: "21:01"
-length: 19212936
+length: 20185320
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-493.mp3"
 categories: episode
 ---

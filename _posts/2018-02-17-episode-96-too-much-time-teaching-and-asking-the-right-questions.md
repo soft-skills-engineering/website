@@ -4,7 +4,7 @@ title: "Episode 96: Teaching Burden and Unknown Unknowns"
 date: 2018-02-17 12:00:00 -0700
 guid: 312057b7-4614-4b14-b41e-4a5364f051a9
 duration: "27:49"
-length: 26703118
+length: 26702734
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-096.mp3"
 categories: episode
 ---

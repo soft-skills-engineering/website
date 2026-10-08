@@ -4,7 +4,7 @@ title: "Episode 448: Title over salary and from figure skater to software develo
 date: 2025-02-17 05:00:00 -0700
 guid: f6dfb57f-b1f9-4c7e-96ab-123fe38d67d5
 duration: "28:01"
-length: 27393066
+length: 28654779
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-448.mp3"
 categories: episode
 ---

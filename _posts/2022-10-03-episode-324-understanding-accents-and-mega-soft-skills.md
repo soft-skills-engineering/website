@@ -4,7 +4,7 @@ title: "Episode 324: Understanding accents and mega soft skills"
 date: 2022-10-03 05:00:00 -0700
 guid: d3b4a59a-f08b-4195-a38f-1c9a061ec55b
 duration: "28:54"
-length: 25957695
+length: 26716377
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-324.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 276: Startup or big company and negotiating your exit?"
 date: 2021-11-01 12:00:00 -0700
 guid: b1bd4a3c-457e-4c16-9955-3ad9d9f6ab2a
 duration: "28:41"
-length: 27106616
+length: 28455958
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-276.mp3"
 categories: episode
 ---

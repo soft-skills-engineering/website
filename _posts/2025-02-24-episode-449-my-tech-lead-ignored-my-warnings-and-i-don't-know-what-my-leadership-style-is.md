@@ -4,7 +4,7 @@ title: "Episode 449: My tech lead ignored my warnings and I don't know what my l
 date: 2025-02-24 05:00:00 -0700
 guid: e26439c5-accc-472a-a17f-5fb83a66af6d
 duration: "29:54"
-length: 28148757
+length: 29904278
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-449.mp3"
 categories: episode
 ---

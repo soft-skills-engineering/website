@@ -4,7 +4,7 @@ title: "Episode 253: Not coding after 2 years and fake data scientists"
 date: 2021-03-22 12:00:00 -0700
 guid: d03ecf44-ece9-4ae0-b429-d7b1a746bd86
 duration: "33:31"
-length: 31982755
+length: 34019803
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-253.mp3"
 categories: episode
 ---

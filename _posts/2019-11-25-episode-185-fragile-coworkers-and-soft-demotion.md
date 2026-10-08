@@ -4,7 +4,7 @@ title: "Episode 185: Fragile coworkers and soft demotion"
 date: 2019-11-25 12:00:00 -0700
 guid: e1ef117e-f09b-48cc-be2d-b36b2d876c49
 duration: "32:59"
-length: 30425371
+length: 35874186
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-185.mp3"
 categories: episode
 ---

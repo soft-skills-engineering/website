@@ -4,7 +4,7 @@ title: "Episode 462: Supporting laid-off employee and how to rebuild culture aft
 date: 2025-05-26 05:00:00 -0700
 guid: ea0edbe0-0626-4582-9a5d-cb1e932d33c2
 duration: "28:46"
-length: 29892742
+length: 30875725
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-462.mp3"
 categories: episode
 ---

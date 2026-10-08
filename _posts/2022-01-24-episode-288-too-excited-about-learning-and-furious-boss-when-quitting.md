@@ -4,7 +4,7 @@ title: "Episode 288: Too excited about learning and furious boss when quitting"
 date: 2022-01-24 12:00:00 -0700
 guid: 316229b8-3922-4a7c-a380-141166a3585a
 duration: "23:01"
-length: 20653075
+length: 22383807
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-288.mp3"
 categories: episode
 ---

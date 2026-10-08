@@ -4,7 +4,7 @@ title: "Episode 121: Working Remotely Without Hating It and Managing Rotating En
 date: 2018-08-27 12:00:00 -0700
 guid: 9bf870b2-8a09-4f6f-9934-80cde7d03d4f
 duration: "32:28"
-length: 27225541
+length: 29458333
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-121.mp3"
 categories: episode
 ---

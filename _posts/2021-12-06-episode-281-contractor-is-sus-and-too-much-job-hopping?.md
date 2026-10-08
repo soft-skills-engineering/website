@@ -4,7 +4,7 @@ title: "Episode 281: Contractor is sus and too much job hopping?"
 date: 2021-12-06 12:00:00 -0700
 guid: 65022392-42d2-4dda-a8fd-eea8bc350e17
 duration: "24:22"
-length: 23284171
+length: 24374035
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-281.mp3"
 categories: episode
 ---

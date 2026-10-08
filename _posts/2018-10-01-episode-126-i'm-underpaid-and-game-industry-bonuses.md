@@ -4,7 +4,7 @@ title: "Episode 126: I'm underpaid and Game Industry Bonuses"
 date: 2018-10-01 12:00:00 -0700
 guid: 2ec34d22-aa41-481e-b0fb-5ae59e62a798
 duration: "25:42"
-length: 22584464
+length: 24573056
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-126.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 511: Should I take a temporary management position and performan
 date: 2026-05-04 05:00:00 -0700
 guid: 51a2de0c-ca51-40e7-a07f-ae0b85970dcf
 duration: "35:06"
-length: 30825859
+length: 32996683
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-511.mp3"
 categories: episode
 ---

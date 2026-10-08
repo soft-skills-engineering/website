@@ -4,7 +4,7 @@ title: "Episode 356: Ummmmmmmmm and failed spikes"
 date: 2023-05-15 05:00:00 -0700
 guid: ec1ca155-8909-4e2e-b800-c57327f32c9c
 duration: "28:54"
-length: 23855019
+length: 26950548
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-356.mp3"
 categories: episode
 ---

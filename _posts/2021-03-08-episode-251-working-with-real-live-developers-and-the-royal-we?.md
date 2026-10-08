@@ -4,7 +4,7 @@ title: "Episode 251: Working with real live developers and the royal we?"
 date: 2021-03-08 12:00:00 -0700
 guid: ebfb16c3-cd4f-472b-bb86-49bc528c2f00
 duration: "23:57"
-length: 22506246
+length: 23684738
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-251.mp3"
 categories: episode
 ---

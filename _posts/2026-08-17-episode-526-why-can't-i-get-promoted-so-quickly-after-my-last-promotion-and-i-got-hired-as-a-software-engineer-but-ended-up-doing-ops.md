@@ -4,7 +4,7 @@ title: "Episode 526: Why can't I get promoted so quickly after my last promotion
 date: 2026-08-17 05:00:00 -0700
 guid: af1c9bf8-8149-4a6d-9529-4572ae551796
 duration: "32:38"
-length: 32147496
+length: 34244280
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-526.mp3"
 categories: episode
 ---

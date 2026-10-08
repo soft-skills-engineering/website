@@ -4,7 +4,7 @@ title: "Episode 300: Manager move and cultural or personal"
 date: 2022-04-18 06:00:00 -0700
 guid: c0db444a-a12a-41e5-85ee-c62f19b13719
 duration: "29:23"
-length: 28095984
+length: 29139672
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-300.mp3"
 categories: episode
 ---

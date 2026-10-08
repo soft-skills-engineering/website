@@ -4,7 +4,7 @@ title: "Episode 501: Vibecoding CEO and doing to teaching"
 date: 2026-02-23 05:00:00 -0700
 guid: 515991c3-e706-4dda-9648-bf86bb2fb52a
 duration: "29:17"
-length: 25909267
+length: 27982195
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-501.mp3"
 categories: episode
 ---

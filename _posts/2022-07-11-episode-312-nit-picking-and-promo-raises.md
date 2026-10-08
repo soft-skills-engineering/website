@@ -4,7 +4,7 @@ title: "Episode 312: Nit-picking and Promo raises"
 date: 2022-07-11 05:00:00 -0700
 guid: bf829714-b93e-4db2-befb-27cf431deb38
 duration: "30:38"
-length: 27538477
+length: 29469767
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-312.mp3"
 categories: episode
 ---

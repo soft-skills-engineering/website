@@ -4,7 +4,7 @@ title: "Episode 184: Indispensable and IT cold war"
 date: 2019-11-18 12:00:00 -0700
 guid: aeacbc8e-2a43-42d5-a853-7708116bd96c
 duration: "33:33"
-length: 35240586
+length: 37691129
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-184.mp3"
 categories: episode
 ---

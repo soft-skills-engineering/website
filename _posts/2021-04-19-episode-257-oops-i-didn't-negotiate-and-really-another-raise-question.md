@@ -4,7 +4,7 @@ title: "Episode 257: Oops I didn't negotiate and really another raise question"
 date: 2021-04-19 12:00:00 -0700
 guid: 8ad7d48e-54e2-4fd5-b1dd-743c3334ecec
 duration: "25:26"
-length: 22802344
+length: 25316947
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-257.mp3"
 categories: episode
 ---

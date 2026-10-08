@@ -4,7 +4,7 @@ title: "Episode 332: Layoff + baby survival and 18-year-old CS graduate"
 date: 2022-11-28 05:00:00 -0700
 guid: 841a966e-9afd-4d03-b335-c5b906fe6259
 duration: "35:59"
-length: 33560538
+length: 33852256
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-332.mp3"
 categories: episode
 ---

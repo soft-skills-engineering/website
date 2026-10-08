@@ -4,7 +4,7 @@ title: "Episode 259: Moving up to meetings and will remote work stay a thing?"
 date: 2021-05-10 12:00:00 -0700
 guid: 52d45272-6e5d-4720-ac5c-e307a73a96d2
 duration: "22:59"
-length: 21988706
+length: 22949001
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-259.mp3"
 categories: episode
 ---

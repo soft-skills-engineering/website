@@ -4,7 +4,7 @@ title: "Episode 508: My company is an unethical spammer and my coworkers take so
 date: 2026-04-13 05:00:00 -0700
 guid: b25f41e1-72dd-4444-a963-5338290424bb
 duration: "32:57"
-length: 28144344
+length: 30608424
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-508.mp3"
 categories: episode
 ---

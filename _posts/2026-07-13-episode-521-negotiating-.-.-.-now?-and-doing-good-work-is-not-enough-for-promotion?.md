@@ -4,7 +4,7 @@ title: "Episode 521: negotiating . . . now? and doing good work is not enough fo
 date: 2026-07-13 05:00:00 -0700
 guid: b701758c-02ab-4f77-880e-0f537dafa979
 duration: "31:10"
-length: 31729488
+length: 33859560
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-521.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 515: My junior team member won't listen to me and will I be the 
 date: 2026-06-01 05:00:00 -0700
 guid: 4eb45831-4243-49b7-bc95-133f8fa399c4
 duration: "35:19"
-length: 36095304
+length: 37834848
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-515.mp3"
 categories: episode
 ---

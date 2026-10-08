@@ -4,7 +4,7 @@ title: "Episode 159: Rejecting candidates and corporate image obsession"
 date: 2019-05-27 12:00:00 -0700
 guid: b13c61c0-b6c0-4872-bcc2-93611413c602
 duration: "27:22"
-length: 21551899
+length: 24800995
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-159.mp3"
 categories: episode
 ---

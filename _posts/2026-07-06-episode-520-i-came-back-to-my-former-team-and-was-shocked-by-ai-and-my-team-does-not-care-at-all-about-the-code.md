@@ -4,7 +4,7 @@ title: "Episode 520: I came back to my former team and was shocked by AI and my 
 date: 2026-07-06 05:00:00 -0700
 guid: 8e1b90c8-e61f-4dca-af08-443b65326f08
 duration: "40:27"
-length: 38012544
+length: 42000288
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-520.mp3"
 categories: episode
 ---

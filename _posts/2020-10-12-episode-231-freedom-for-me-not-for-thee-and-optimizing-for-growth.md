@@ -4,7 +4,7 @@ title: "Episode 231: Freedom for me not for thee and optimizing for growth"
 date: 2020-10-12 12:00:00 -0700
 guid: 1217fa79-96be-4ccd-b30b-7ae450e1fc7d
 duration: "15:43"
-length: 14438515
+length: 32897844
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-231.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 318: Staff and part time dev"
 date: 2022-08-22 05:00:00 -0700
 guid: f4cbd227-9f82-421d-978e-0927313fd567
 duration: "28:53"
-length: 25029874
+length: 27520810
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-318.mp3"
 categories: episode
 ---

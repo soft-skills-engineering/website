@@ -4,7 +4,7 @@ title: "Episode 229: Other people's code and moving into product management"
 date: 2020-09-28 12:00:00 -0700
 guid: 72266b14-b0ac-4fcc-b0f6-63665bc2910f
 duration: "27:10"
-length: 25728269
+length: 27749576
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-229.mp3"
 categories: episode
 ---

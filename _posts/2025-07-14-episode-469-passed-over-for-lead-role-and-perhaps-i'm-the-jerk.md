@@ -4,7 +4,7 @@ title: "Episode 469: Passed over for lead role and perhaps I'm the jerk"
 date: 2025-07-14 05:00:00 -0700
 guid: 02c79ebf-48cd-44a5-8470-f46662dc7f4c
 duration: "35:53"
-length: 31512115
+length: 34680691
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-469.mp3"
 categories: episode
 ---

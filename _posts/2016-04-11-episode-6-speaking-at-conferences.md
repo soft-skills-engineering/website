@@ -4,7 +4,7 @@ title: "Episode 6: Speaking at Conferences"
 date: 2016-04-11 12:00:00 -0700
 guid: bf6e52c8-6e52-411c-aed5-d36e068672c4
 duration: "25:33"
-length: 31376299
+length: 31375915
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-006.mp3"
 categories: episode
 ---

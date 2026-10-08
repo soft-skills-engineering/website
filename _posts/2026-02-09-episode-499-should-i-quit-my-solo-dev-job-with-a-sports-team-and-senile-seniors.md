@@ -4,7 +4,7 @@ title: "Episode 499: Should I quit my solo dev job with a sports team and senile
 date: 2026-02-09 05:00:00 -0700
 guid: 97d2be3d-9080-44d2-ab85-12fc9201b0b5
 duration: "33:11"
-length: 30683160
+length: 31838832
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-499.mp3"
 categories: episode
 ---

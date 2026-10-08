@@ -4,7 +4,7 @@ title: "Episode 187: Interview insanity and making up for lost time"
 date: 2019-12-09 12:00:00 -0700
 guid: d62d1638-b98c-45a1-855e-777ca3de2c1a
 duration: "38:41"
-length: 36843571
+length: 38181019
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-187.mp3"
 categories: episode
 ---

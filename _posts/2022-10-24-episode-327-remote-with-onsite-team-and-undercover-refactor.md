@@ -4,7 +4,7 @@ title: "Episode 327: Remote with onsite team and undercover refactor"
 date: 2022-10-24 05:00:00 -0700
 guid: 4ec1ddc3-4ef2-4b0b-883c-a9bacb57b36c
 duration: "31:19"
-length: 29087881
+length: 29845595
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-327.mp3"
 categories: episode
 ---

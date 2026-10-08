@@ -4,7 +4,7 @@ title: "Episode 523: (Rerun of 331) Prickly ticket and title downgrade"
 date: 2026-07-27 05:00:00 -0700
 guid: 597c0b80-ec25-47c7-a79e-c139446e92c6
 duration: "33:03"
-length: 28045496
+length: 30559731
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-523.mp3"
 categories: episode
 canonical_url: "/2022/11/21/episode-331-prickly-ticket-and-title-downgrade/"

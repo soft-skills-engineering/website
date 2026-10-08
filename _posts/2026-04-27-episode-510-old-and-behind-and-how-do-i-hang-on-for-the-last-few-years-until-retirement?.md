@@ -4,7 +4,7 @@ title: "Episode 510: Old and behind and how do I hang on for the last few years 
 date: 2026-04-27 05:00:00 -0700
 guid: 1e656a46-0b85-4723-a319-669dd8b3c5ac
 duration: "33:58"
-length: 28435027
+length: 31157707
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-510.mp3"
 categories: episode
 ---

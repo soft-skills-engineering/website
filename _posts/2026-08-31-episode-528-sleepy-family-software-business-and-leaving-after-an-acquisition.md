@@ -4,7 +4,7 @@ title: "Episode 528: Sleepy family software business and leaving after an acquis
 date: 2026-08-31 05:00:00 -0700
 guid: a8f5acde-8333-44c2-abc8-bfde534deb42
 duration: "34:00"
-length: 32873616
+length: 35120712
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-528.mp3"
 categories: episode
 ---

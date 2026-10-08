@@ -4,7 +4,7 @@ title: "Episode 263: Why am I bored and ver-boss-ity"
 date: 2021-07-05 12:00:00 -0700
 guid: dcae7b02-9244-4338-b951-91e9032afc07
 duration: "28:33"
-length: 26277502
+length: 28074193
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-263.mp3"
 categories: episode
 ---

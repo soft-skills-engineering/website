@@ -4,7 +4,7 @@ title: "Episode 217: Quitting words and double COVID internship"
 date: 2020-07-06 12:00:00 -0700
 guid: 30f88b8c-d034-4800-9093-1066ee1cd6fb
 duration: "30:19"
-length: 29228755
+length: 30882259
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-217.mp3"
 categories: episode
 ---

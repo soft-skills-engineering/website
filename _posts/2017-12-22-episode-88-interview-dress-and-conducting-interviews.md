@@ -4,7 +4,7 @@ title: "Episode 88: How To Dress For Interviews and Learning To Interview"
 date: 2017-12-22 12:00:00 -0700
 guid: 4c91c3b1-f674-4ab2-8808-f020e4a275bf
 duration: "38:01"
-length: 36490532
+length: 36490148
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-088.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 524: My CTO AI-codes big piles of slop and early mornings, late 
 date: 2026-08-03 05:00:00 -0700
 guid: 49c20c3f-b2d7-43f2-8afe-5091f9d294e3
 duration: "32:04"
-length: 31508184
+length: 33914856
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-524.mp3"
 categories: episode
 ---

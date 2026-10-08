@@ -4,7 +4,7 @@ title: "Episode 456: Will I look bad on the job market if I'm a crypto developer
 date: 2025-04-14 05:00:00 -0700
 guid: 61e752ea-6bfd-430d-ad45-d3c00af98118
 duration: "31:39"
-length: 29222277
+length: 31598745
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-456.mp3"
 categories: episode
 ---

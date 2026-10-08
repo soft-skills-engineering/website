@@ -4,7 +4,7 @@ title: "Episode 517: Is it good for my career to work at a SaaS company and why 
 date: 2026-06-15 05:00:00 -0700
 guid: 7b2f2994-a471-43a8-b8d2-09af94af7944
 duration: "32:04"
-length: 31377912
+length: 33125328
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-517.mp3"
 categories: episode
 ---

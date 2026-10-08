@@ -4,7 +4,7 @@ title: "Episode 171: Unwilling mentorship and tortoise vs hare DevOps"
 date: 2019-08-19 12:00:00 -0700
 guid: 9f4da5f7-0499-4ad6-8d9c-a1bf0d701585
 duration: "31:38"
-length: 27627811
+length: 29956699
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-171.mp3"
 categories: episode
 ---

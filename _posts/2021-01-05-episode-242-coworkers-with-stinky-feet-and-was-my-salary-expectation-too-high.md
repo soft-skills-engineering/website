@@ -4,7 +4,7 @@ title: "Episode 242 (Episode 131 re-run): Stinky feet and high salary expectatio
 date: 2021-01-05 12:00:00 -0700
 guid: 742d13b2-fc4f-4cb1-9a41-bef3fe955a98
 duration: "25:00"
-length: 21580983
+length: 22471446
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-242.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 4: Should I build my personal brand?"
 date: 2016-03-31 12:00:00 -0700
 guid: 45245e62-2797-4ac3-ada4-d550d12709c3
 duration: "25:33"
-length: 27917611
+length: 27917227
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-004.mp3"
 categories: episode
 ---

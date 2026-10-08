@@ -4,7 +4,7 @@ title: "Episode 192: Giving feedback and messaging a team change"
 date: 2020-01-13 12:00:00 -0700
 guid: 04be8669-40e3-430e-831d-f564614ea783
 duration: "34:06"
-length: 35542819
+length: 37197691
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-192.mp3"
 categories: episode
 ---

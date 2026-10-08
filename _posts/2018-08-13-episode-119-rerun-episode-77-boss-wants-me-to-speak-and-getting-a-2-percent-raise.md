@@ -4,7 +4,7 @@ title: "Episode 119 (rerun of episode 77): My boss wants me to speak at conferen
 date: 2018-08-13 12:00:00 -0700
 guid: bc44659d-792c-45ea-9818-a63a5a517b94
 duration: "19:54"
-length: 19107936
+length: 34075488
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-119.mp3"
 categories: episode
 canonical_url: "/2017/10/04/episode-77-new-speaking-and-the-2-percent-raise/"

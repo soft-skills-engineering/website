@@ -4,7 +4,7 @@ title: "Episode 19: Firing someone for a coding mistake and getting demoted"
 date: 2016-07-25 12:00:00 -0700
 guid: 1daa52dd-70fe-448b-b65a-34d7a26c65dc
 duration: "25:33"
-length: 24534912
+length: 24534528
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-019.mp3"
 categories: episode
 ---

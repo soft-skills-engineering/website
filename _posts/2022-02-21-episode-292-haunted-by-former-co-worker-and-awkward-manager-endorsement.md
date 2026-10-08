@@ -4,7 +4,7 @@ title: "Episode 292: Haunted by former co-worker and awkward manager endorsement
 date: 2022-02-21 06:00:00 -0700
 guid: ad68a33d-1237-4f81-9b91-f2c30efedda9
 duration: "22:57"
-length: 21215736
+length: 22139865
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-292.mp3"
 categories: episode
 ---

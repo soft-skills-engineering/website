@@ -4,7 +4,7 @@ title: "Episode 177: Work life vertigo and work life interviews"
 date: 2019-09-30 12:00:00 -0700
 guid: d82f97d1-42a3-4ed0-8af6-63213ef60351
 duration: "24:34"
-length: 25167556
+length: 27488372
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-177.mp3"
 categories: episode
 ---

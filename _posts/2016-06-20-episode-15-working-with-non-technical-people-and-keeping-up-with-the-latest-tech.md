@@ -4,7 +4,7 @@ title: "Episode 15: Working with non-technical people and keeping up with the la
 date: 2016-06-20 12:00:00 -0700
 guid: edb64367-a604-472a-acfd-e119f4aed6de
 duration: "25:33"
-length: 29193984
+length: 30816000
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-015.mp3"
 categories: episode
 ---

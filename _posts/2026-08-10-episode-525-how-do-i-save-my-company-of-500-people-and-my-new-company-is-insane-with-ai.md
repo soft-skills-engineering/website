@@ -4,7 +4,7 @@ title: "Episode 525: How do I save my company of 500 people and my new company i
 date: 2026-08-10 05:00:00 -0700
 guid: dc7f49d9-dd92-4221-a2cf-78e11d2b9e8d
 duration: "28:51"
-length: 27766824
+length: 30001176
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-525.mp3"
 categories: episode
 ---

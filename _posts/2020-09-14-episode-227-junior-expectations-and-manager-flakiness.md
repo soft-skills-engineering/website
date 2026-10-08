@@ -4,7 +4,7 @@ title: "Episode 227: Junior expectations and manager flakiness"
 date: 2020-09-14 12:00:00 -0700
 guid: 135db356-ee1f-42bb-9b9e-ed2aaea62a1e
 duration: "30:40"
-length: 30436029
+length: 31901426
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-227.mp3"
 categories: episode
 ---

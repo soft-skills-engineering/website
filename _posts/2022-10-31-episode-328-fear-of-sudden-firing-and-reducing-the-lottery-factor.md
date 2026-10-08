@@ -4,7 +4,7 @@ title: "Episode 328: Fear of sudden firing and reducing the lottery factor"
 date: 2022-10-31 05:00:00 -0700
 guid: ae53a63a-74ad-4eb1-8a6e-eb0ab0f0eec3
 duration: "26:51"
-length: 25298222
+length: 26058751
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-328.mp3"
 categories: episode
 ---

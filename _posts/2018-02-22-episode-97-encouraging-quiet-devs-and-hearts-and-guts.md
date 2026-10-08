@@ -4,7 +4,7 @@ title: "Episode 97: A Quiet Intern and Hearts and Guts"
 date: 2018-02-22 12:00:00 -0700
 guid: 5d5a9902-778c-4f37-85bd-654fbcb2fc61
 duration: "29:33"
-length: 28361636
+length: 28361252
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-097.mp3"
 categories: episode
 ---

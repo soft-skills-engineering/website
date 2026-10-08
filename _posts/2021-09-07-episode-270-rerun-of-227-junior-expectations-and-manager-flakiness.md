@@ -4,7 +4,7 @@ title: "Episode 270 (rerun of 227): Junior expectations and manager flakiness"
 date: 2021-09-07 12:00:00 -0700
 guid: ac02d3d1-16f5-480a-9e86-2253fe7f5fbc
 duration: "30:59"
-length: 22458506
+length: 31445931
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-270.mp3"
 categories: episode
 canonical_url: "/2020/09/14/episode-227-junior-expectations-and-manager-flakiness/"

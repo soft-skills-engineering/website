@@ -4,7 +4,7 @@ title: "Episode 151: Where are all the old developers and Do I not ask enough qu
 date: 2019-04-01 12:00:00 -0700
 guid: d660d651-4e53-45e7-a3de-323865765ad5
 duration: "25:03"
-length: 21335251
+length: 23654875
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-151.mp3"
 categories: episode
 ---

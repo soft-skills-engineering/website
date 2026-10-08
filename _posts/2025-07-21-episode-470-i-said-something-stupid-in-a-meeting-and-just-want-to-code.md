@@ -4,7 +4,7 @@ title: "Episode 470: I said something stupid in a meeting and just want to code"
 date: 2025-07-21 05:00:00 -0700
 guid: f0d3d44e-0967-4a53-b8c2-a5d6bf4108aa
 duration: "30:12"
-length: 27153619
+length: 29494723
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-470.mp3"
 categories: episode
 ---

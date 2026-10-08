@@ -4,7 +4,7 @@ title: "Episode 343: Tech lead/manager and discouraging seniors"
 date: 2023-02-13 05:00:00 -0700
 guid: 5bcfff6a-f612-4252-b541-50e48bb86486
 duration: "19:19"
-length: 15804194
+length: 17598817
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-343.mp3"
 categories: episode
 ---

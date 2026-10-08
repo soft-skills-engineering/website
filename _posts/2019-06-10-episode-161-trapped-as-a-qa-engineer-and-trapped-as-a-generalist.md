@@ -4,7 +4,7 @@ title: "Episode 161: Trapped as a QA engineer and trapped as a generalist"
 date: 2019-06-10 12:00:00 -0700
 guid: de453fcd-5730-4bea-ba40-319bd39f7fd8
 duration: "31:15"
-length: 27079852
+length: 29173721
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-161.mp3"
 categories: episode
 ---

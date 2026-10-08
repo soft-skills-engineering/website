@@ -4,7 +4,7 @@ title: "Episode 193: Playing the field and paying for speaking"
 date: 2020-01-20 12:00:00 -0700
 guid: 2dc40b16-3be0-4217-9989-2fe5a956b99c
 duration: "25:25"
-length: 22357459
+length: 24018139
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-193.mp3"
 categories: episode
 ---

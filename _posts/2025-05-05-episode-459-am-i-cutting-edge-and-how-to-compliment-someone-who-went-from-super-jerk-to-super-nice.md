@@ -4,7 +4,7 @@ title: "Episode 459: Am I cutting edge and how to compliment someone who went fr
 date: 2025-05-05 05:00:00 -0700
 guid: ecf5df86-c0fc-4009-8018-b84246302ba2
 duration: "22:44"
-length: 20150195
+length: 22286380
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-459.mp3"
 categories: episode
 ---

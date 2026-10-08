@@ -4,7 +4,7 @@ title: "Episode 261: Anxious about work and senior imposter"
 date: 2021-06-07 12:00:00 -0700
 guid: b22897e3-7bb8-400a-bb05-880d9119b8b3
 duration: "24:03"
-length: 24138378
+length: 25277394
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-261.mp3"
 categories: episode
 ---

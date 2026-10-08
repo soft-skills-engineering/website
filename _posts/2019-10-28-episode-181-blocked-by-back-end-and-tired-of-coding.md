@@ -4,7 +4,7 @@ title: "Episode 181: Blocked by back-end and tired of coding"
 date: 2019-10-28 12:00:00 -0700
 guid: 2c659856-ece3-40be-88ff-d0e9048b58d1
 duration: "30:51"
-length: 29771706
+length: 33183753
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-181.mp3"
 categories: episode
 ---

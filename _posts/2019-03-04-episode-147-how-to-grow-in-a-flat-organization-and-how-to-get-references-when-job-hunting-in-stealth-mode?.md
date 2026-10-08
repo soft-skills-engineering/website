@@ -4,7 +4,7 @@ title: "Episode 147: How to grow in a flat organization and how to get reference
 date: 2019-03-04 12:00:00 -0700
 guid: abea3c72-45bf-4929-98d3-789f6f394129
 duration: "3:35"
-length: 3014771
+length: 21282259
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-147.mp3"
 categories: episode
 ---

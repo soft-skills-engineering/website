@@ -4,7 +4,7 @@ title: "Episode 241 (Rerun of 184): Indispensable and IT cold war"
 date: 2020-12-28 12:00:00 -0700
 guid: 62e671f2-7a57-4a14-b11c-d20956788150
 duration: "33:58"
-length: 35305019
+length: 37743436
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-241.mp3"
 categories: episode
 canonical_url: "/2019/11/18/episode-184-indispensable-and-it-cold-war/"

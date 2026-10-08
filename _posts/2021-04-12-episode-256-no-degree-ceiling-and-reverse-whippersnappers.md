@@ -4,7 +4,7 @@ title: "Episode 256: No degree ceiling and reverse whippersnappers"
 date: 2021-04-12 12:00:00 -0700
 guid: 71a27a4e-6a47-4617-a8f0-665c251a772d
 duration: "31:02"
-length: 29621523
+length: 31136289
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-256.mp3"
 categories: episode
 ---

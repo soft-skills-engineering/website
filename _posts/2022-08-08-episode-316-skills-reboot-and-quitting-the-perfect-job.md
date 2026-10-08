@@ -4,7 +4,7 @@ title: "Episode 316: Skills reboot and quitting the perfect job"
 date: 2022-08-08 05:00:00 -0700
 guid: 88a7c23a-c9fb-452a-b73e-4bdfe476bbbc
 duration: "28:42"
-length: 24390945
+length: 26879793
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-316.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 195: Ad-hoc promotion and quitting a huge company with Charity M
 date: 2020-02-03 12:00:00 -0700
 guid: 11b585ea-eabf-41ad-a60b-1507c9dff1c8
 duration: "33:14"
-length: 32735347
+length: 33523003
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-195.mp3"
 categories: episode
 ---

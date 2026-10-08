@@ -4,7 +4,7 @@ title: "Episode 20: Stories from people who got fired and doing effective code r
 date: 2016-08-01 12:00:00 -0700
 guid: 9afdbaac-f5e7-454c-a486-d4c3e322c5b1
 duration: "30:31"
-length: 29302656
+length: 29302272
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-020.mp3"
 categories: episode
 ---

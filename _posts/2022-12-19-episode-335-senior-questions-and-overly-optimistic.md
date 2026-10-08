@@ -4,7 +4,7 @@ title: "Episode 335: Senior questions and overly optimistic"
 date: 2022-12-19 05:00:00 -0700
 guid: 6eeec504-1d33-4f6c-acd5-f3d5813062b3
 duration: "34:36"
-length: 32977291
+length: 33606091
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-335.mp3"
 categories: episode
 ---

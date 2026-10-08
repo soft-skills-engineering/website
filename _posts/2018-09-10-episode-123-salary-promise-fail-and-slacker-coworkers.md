@@ -4,7 +4,7 @@ title: "Episode 123: Salary Promise Fail and Slacker Coworkers"
 date: 2018-09-10 12:00:00 -0700
 guid: 41676567-fb35-4b50-aea5-ead69c9d5dc7
 duration: "29:26"
-length: 24145459
+length: 26735587
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-123.mp3"
 categories: episode
 ---

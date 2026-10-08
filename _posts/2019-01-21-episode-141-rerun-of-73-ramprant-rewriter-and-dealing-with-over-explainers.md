@@ -4,7 +4,7 @@ title: "Episode 141: A Rampant Rewriter and Dealing with an Overexplainer (rerun
 date: 2019-01-21 12:00:00 -0700
 guid: e626a150-0eae-40c6-babf-d7a04996a634
 duration: "33:18"
-length: 25731187
+length: 32418043
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-141.mp3"
 categories: episode
 canonical_url: "/2017/08/31/episode-73-rampant-rewriters-and-overexplainers/"

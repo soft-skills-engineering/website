@@ -4,7 +4,7 @@ title: "Episode 314: \"That guy\" and how to skip level"
 date: 2022-07-25 05:00:00 -0700
 guid: 881c1e0a-5bb3-4b51-bf93-38783143608b
 duration: "35:35"
-length: 32422268
+length: 34581198
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-314.mp3"
 categories: episode
 ---

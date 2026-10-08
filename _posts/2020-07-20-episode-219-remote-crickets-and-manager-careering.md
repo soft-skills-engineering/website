@@ -4,7 +4,7 @@ title: "Episode 219: Remote crickets and Manager Careering"
 date: 2020-07-20 12:00:00 -0700
 guid: abe1a410-5202-4c2f-a23a-f51751c64fcb
 duration: "30:30"
-length: 30450643
+length: 32820571
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-219.mp3"
 categories: episode
 ---

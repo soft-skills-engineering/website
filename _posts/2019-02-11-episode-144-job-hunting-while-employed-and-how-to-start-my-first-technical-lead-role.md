@@ -4,7 +4,7 @@ title: "Episode 144: Job hunting while employed and how to start my first techni
 date: 2019-02-11 12:00:00 -0700
 guid: c35c0c16-2aaf-48c9-8d9e-ad7d471fa1cd
 duration: "33:52"
-length: 29043355
+length: 31781011
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-144.mp3"
 categories: episode
 ---

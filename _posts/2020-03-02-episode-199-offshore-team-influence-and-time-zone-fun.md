@@ -4,7 +4,7 @@ title: "Episode 199: Offshore team influence and time zone fun"
 date: 2020-03-02 12:00:00 -0700
 guid: 6abd6b7d-b9c4-4fc9-8723-bcfd5f5a7ccc
 duration: "31:49"
-length: 34438098
+length: 35158554
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-199.mp3"
 categories: episode
 ---

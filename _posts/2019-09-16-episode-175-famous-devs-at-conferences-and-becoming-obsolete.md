@@ -4,7 +4,7 @@ title: "Episode 175: Famous devs at conferences and becoming obsolete"
 date: 2019-09-16 12:00:00 -0700
 guid: a832b991-6c0d-45bb-9da6-21ae9949b01d
 duration: "27:21"
-length: 22157659
+length: 25300555
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-175.mp3"
 categories: episode
 ---

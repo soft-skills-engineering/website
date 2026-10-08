@@ -4,7 +4,7 @@ title: "Episode 475: Am I too loyal to my big tech job and politely preserving t
 date: 2025-08-25 05:00:00 -0700
 guid: b1c7b593-74ff-4215-b73c-451a46c1dcc2
 duration: "33:26"
-length: 30040987
+length: 32205211
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-475.mp3"
 categories: episode
 ---

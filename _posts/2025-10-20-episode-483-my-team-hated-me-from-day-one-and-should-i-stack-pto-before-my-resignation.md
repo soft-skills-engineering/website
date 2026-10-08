@@ -4,7 +4,7 @@ title: "Episode 483: My team hated me from day one and should I stack PTO before
 date: 2025-10-20 05:00:00 -0700
 guid: a0d116a2-4c42-4f4c-b26c-f617b4cf9589
 duration: "38:22"
-length: 33195067
+length: 35983699
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-483.mp3"
 categories: episode
 ---

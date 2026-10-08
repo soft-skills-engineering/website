@@ -4,7 +4,7 @@ title: "Episode 55: Ng-Conf Live Episode"
 date: 2017-04-11 12:00:00 -0700
 guid: 3e86c3fc-b7a1-4dd1-94ba-edfe8d7ec7e1
 duration: "34:13"
-length: 32849501
+length: 32849083
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-055.mp3"
 categories: episode
 ---

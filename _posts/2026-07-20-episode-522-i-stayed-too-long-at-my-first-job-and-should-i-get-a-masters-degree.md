@@ -4,7 +4,7 @@ title: "Episode 522: I stayed too long at my first job and should I get a master
 date: 2026-07-20 05:00:00 -0700
 guid: f0fcc774-f0bc-4ac3-a198-9726e2c52f70
 duration: "28:41"
-length: 26680896
+length: 29643864
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-522.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 342: Losing my job to AI and bad review season"
 date: 2023-02-06 05:00:00 -0700
 guid: 6fe84c55-b39f-46ce-be26-c183b8336ad0
 duration: "31:51"
-length: 31004203
+length: 31305187
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-342.mp3"
 categories: episode
 ---

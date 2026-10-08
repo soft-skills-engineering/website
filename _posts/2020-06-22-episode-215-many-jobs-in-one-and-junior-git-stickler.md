@@ -4,7 +4,7 @@ title: "Episode 215: Many jobs in one and junior git stickler"
 date: 2020-06-22 12:00:00 -0700
 guid: a0d48e2b-360b-4185-938d-38be101a0e06
 duration: "32:40"
-length: 31586707
+length: 33855691
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-215.mp3"
 categories: episode
 ---

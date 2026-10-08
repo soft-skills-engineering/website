@@ -4,7 +4,7 @@ title: 'Episode 23: Joining a startup as a CTO and asking for a raise'
 date: 2016-08-22 12:00:00 -0700
 guid: cb1d6cb4-89ef-4b39-b503-e8164abe1b29
 duration: "37:33"
-length: 27918336
+length: 36049920
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-023.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 506: I hate my job with AI and my team-mate thinks I suck"
 date: 2026-03-30 05:00:00 -0700
 guid: ce65946d-51c6-46c1-b784-23ee7a628565
 duration: "40:48"
-length: 35164003
+length: 38245099
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-506.mp3"
 categories: episode
 ---

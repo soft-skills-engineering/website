@@ -4,7 +4,7 @@ title: "Episode 162 (rerun of episode 113): Quitting Your First Job and Too Many
 date: 2019-06-17 12:00:00 -0700
 guid: "8f0c8537-634c-4130-973f-575bbeca0e56"
 duration: "32:59"
-length: 35506781
+length: 35390789
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-162.mp3"
 categories: episode
 canonical_url: "/2018/06/25/episode-113-quitting-the-first-job-and-too-many-responsibilities/"

@@ -4,7 +4,7 @@ title: "Episode 503: Hardware is hard and my PMs are pushing AI slop code"
 date: 2026-03-09 05:00:00 -0700
 guid: 5f7cd696-1897-4f6c-b357-2539a7102e42
 duration: "36:30"
-length: 35799864
+length: 38393136
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-503.mp3"
 categories: episode
 ---

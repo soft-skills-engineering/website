@@ -4,7 +4,7 @@ title: "Episode 527: I lost my job after 10 years and am I too old to switch to 
 date: 2026-08-24 05:00:00 -0700
 guid: a87113c6-aa9c-4a08-bd91-5d0e883abef0
 duration: "37:30"
-length: 35594856
+length: 38329464
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-527.mp3"
 categories: episode
 ---

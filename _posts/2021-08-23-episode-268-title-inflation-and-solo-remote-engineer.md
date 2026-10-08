@@ -4,7 +4,7 @@ title: "Episode 268: Title inflation and solo remote engineer"
 date: 2021-08-23 12:01:01 -0700
 guid: bc2ee1c5-8d63-44e1-9708-4122bca7324f
 duration: "22:00"
-length: 21497539
+length: 22819627
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-268.mp3"
 categories: episode
 ---

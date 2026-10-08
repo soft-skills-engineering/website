@@ -4,7 +4,7 @@ title: "Episode 301: I forced the framework and product stealing credit"
 date: 2022-04-25 06:00:00 -0700
 guid: d5be690c-5d6b-4f65-8a14-8aae336a4ce7
 duration: "26:38"
-length: 24817834
+length: 26332673
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-301.mp3"
 categories: episode
 ---

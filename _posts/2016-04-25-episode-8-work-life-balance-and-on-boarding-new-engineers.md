@@ -4,7 +4,7 @@ title: "Episode 8: Work life balance and on-boarding new engineers"
 date: 2016-04-25 12:00:00 -0700
 guid: 2d83b763-cf40-4af5-abd4-63faaba39f9f
 duration: "25:33"
-length: 32489899
+length: 32489515
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-008.mp3"
 favorite: true
 categories: episode

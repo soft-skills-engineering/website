@@ -4,7 +4,7 @@ title: "Episode 353: Easter outage and unethical things"
 date: 2023-04-24 05:00:00 -0700
 guid: 37457223-4ee4-40b9-aca4-b39105ca5413
 duration: "30:30"
-length: 25970712
+length: 28862378
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-353.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 236: Making mistakes and Lowball offer"
 date: 2020-11-16 12:00:00 -0700
 guid: 0971e13f-a865-4b6f-b171-9307b0bd492d
 duration: "33:03"
-length: 33493546
+length: 34986933
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-236.mp3"
 categories: episode
 ---

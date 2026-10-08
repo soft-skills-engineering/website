@@ -4,7 +4,7 @@ title: "Episode 495: What to do when my boss quits and moving to Romania?"
 date: 2026-01-12 05:00:00 -0700
 guid: 6b123aa0-27e1-41fb-9314-cea956258beb
 duration: "32:14"
-length: 28776216
+length: 30747696
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-495.mp3"
 categories: episode
 ---

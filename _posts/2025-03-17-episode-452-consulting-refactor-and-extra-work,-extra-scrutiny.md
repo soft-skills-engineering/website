@@ -4,7 +4,7 @@ title: "Episode 452: Consulting refactor and extra work, extra scrutiny"
 date: 2025-03-17 05:00:00 -0700
 guid: 4141f02c-db6a-404b-bb53-392e3914825d
 duration: "25:12"
-length: 23629791
+length: 24973412
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-452.mp3"
 categories: episode
 ---

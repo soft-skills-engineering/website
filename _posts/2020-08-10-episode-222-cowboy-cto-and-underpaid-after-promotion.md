@@ -4,7 +4,7 @@ title: "Episode 222: Cowboy CTO and underpaid after promotion"
 date: 2020-08-10 12:00:00 -0700
 guid: bcea18d9-b3ac-4bfc-b104-0ba8cc9d0bb8
 duration: "26:04"
-length: 27663931
+length: 28942459
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-222.mp3"
 categories: episode
 ---

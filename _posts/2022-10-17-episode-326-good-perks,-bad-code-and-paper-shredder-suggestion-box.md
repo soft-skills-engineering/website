@@ -4,7 +4,7 @@ title: "Episode 326: Good perks, bad code and paper shredder suggestion box"
 date: 2022-10-17 05:00:00 -0700
 guid: 03e46fd8-618a-40ac-bdeb-35d6df7cece8
 duration: "31:13"
-length: 30726539
+length: 28708094
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-326.mp3"
 categories: episode
 ---

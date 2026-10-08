@@ -4,7 +4,7 @@ title: "Episode 512: Can non-engineers really contribute code with AI and not sh
 date: 2026-05-11 05:00:00 -0700
 guid: cb51ba9c-161f-4257-bda2-ca485a00b398
 duration: "42:30"
-length: 36972443
+length: 39316331
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-512.mp3"
 categories: episode
 ---

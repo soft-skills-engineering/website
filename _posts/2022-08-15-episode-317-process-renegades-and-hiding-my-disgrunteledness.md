@@ -4,7 +4,7 @@ title: "Episode 317: Process renegades and hiding my disgrunteledness"
 date: 2022-08-15 05:00:00 -0700
 guid: 19138542-effa-446b-ace5-e591355a9ba5
 duration: "36:21"
-length: 31267695
+length: 34472467
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-317.mp3"
 categories: episode
 ---

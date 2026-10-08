@@ -4,7 +4,7 @@ title: "Episode 203: Downturns and conflict"
 date: 2020-03-30 12:00:00 -0700
 guid: 3bc55cd1-9a5c-4241-8d2c-7958e39910c1
 duration: "38:05"
-length: 40748035
+length: 42124555
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-203.mp3"
 categories: episode
 ---

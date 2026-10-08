@@ -4,7 +4,7 @@ title: 'Episode 48: Quitting a Death March & Am  I Underpaid'
 date: 2017-02-21 12:00:00 -0700
 guid: 94234166-fe15-4121-a177-147072850493
 duration: "32:31"
-length: 31222055
+length: 31221671
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-048.mp3"
 categories: episode
 ---

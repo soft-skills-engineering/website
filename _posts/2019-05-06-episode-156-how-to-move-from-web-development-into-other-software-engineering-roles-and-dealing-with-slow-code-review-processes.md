@@ -4,7 +4,7 @@ title: "Episode 156: How to move from web development into other software engine
 date: 2019-05-06 12:00:00 -0700
 guid: c406caa2-b212-4a67-8b97-6fb97b27e1b4
 duration: "35:52"
-length: 31247539
+length: 33934723
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-156.mp3"
 categories: episode
 ---

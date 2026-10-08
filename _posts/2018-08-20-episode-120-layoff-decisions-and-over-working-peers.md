@@ -4,7 +4,7 @@ title: "Episode 120: Layoff Decisions and Overworking Peers"
 date: 2018-08-20 12:00:00 -0700
 guid: 8021a752-ebfd-4d71-a7ef-1f5e8f053d67
 duration: "32:09"
-length: 27822901
+length: 30501517
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-120.mp3"
 categories: episode
 ---

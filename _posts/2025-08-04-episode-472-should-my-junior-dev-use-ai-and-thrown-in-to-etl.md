@@ -4,7 +4,7 @@ title: "Episode 472: Should my junior dev use AI and thrown in to ETL"
 date: 2025-08-04 05:00:00 -0700
 guid: c9d7c7bc-0b75-4480-8a58-c3e1347ccbeb
 duration: "26:59"
-length: 25760467
+length: 26291875
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-472.mp3"
 categories: episode
 ---

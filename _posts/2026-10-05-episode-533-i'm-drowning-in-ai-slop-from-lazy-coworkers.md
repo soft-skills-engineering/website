@@ -4,7 +4,7 @@ title: "Episode 533: I'm drowning in AI slop from lazy coworkers"
 date: 2026-10-05 05:00:00 -0700
 guid: a65cb6e2-d684-4ebe-b7d9-856da162d95b
 duration: "33:13"
-length: 29390088
+length: 32883408
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-533.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 531: Shallow feedback and my coworker is a huge sloperator"
 date: 2026-09-21 05:00:00 -0700
 guid: 39b230fa-6617-4ef0-9688-c16feeb8c111
 duration: "33:38"
-length: 30095736
+length: 32609784
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-531.mp3"
 categories: episode
 ---

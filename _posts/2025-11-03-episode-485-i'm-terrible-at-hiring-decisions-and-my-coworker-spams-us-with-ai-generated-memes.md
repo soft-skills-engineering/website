@@ -4,7 +4,7 @@ title: "Episode 485: I'm terrible at hiring decisions and my coworker spams us w
 date: 2025-11-03 05:00:00 -0700
 guid: 9ecf559d-9562-4861-9544-6ae8158af81a
 duration: "43:53"
-length: 39216691
+length: 41530003
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-485.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 243: Saying no and conference"
 date: 2021-01-11 12:00:00 -0700
 guid: e8726a3d-8846-4c99-a065-cb42f453895c
 duration: "21:59"
-length: 21310483
+length: 22405483
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-243.mp3"
 categories: episode
 ---

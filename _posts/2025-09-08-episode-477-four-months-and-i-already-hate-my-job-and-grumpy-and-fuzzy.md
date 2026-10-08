@@ -4,7 +4,7 @@ title: "Episode 477: Four months and I already hate my job and grumpy and fuzzy"
 date: 2025-09-08 05:00:00 -0700
 guid: dde8c5c7-5400-42d5-bdb8-625d28118efd
 duration: "37:51"
-length: 33274737
+length: 35573095
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-477.mp3"
 categories: episode
 ---

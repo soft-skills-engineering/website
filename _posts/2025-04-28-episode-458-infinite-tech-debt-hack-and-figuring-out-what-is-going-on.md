@@ -4,7 +4,7 @@ title: "Episode 458: Infinite tech debt hack and figuring out what is going on"
 date: 2025-04-28 05:00:00 -0700
 guid: 43aef4a8-063e-46c8-9bbc-9d0baa88e959
 duration: "34:00"
-length: 32033987
+length: 33323953
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-458.mp3"
 categories: episode
 ---

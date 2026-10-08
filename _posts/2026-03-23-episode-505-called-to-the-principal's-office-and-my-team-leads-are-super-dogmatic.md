@@ -4,7 +4,7 @@ title: "Episode 505: Called to the principal's office and my team leads are supe
 date: 2026-03-23 05:00:00 -0700
 guid: 2e24be50-1d91-4df8-b860-d921d59b7fd4
 duration: "45:53"
-length: 38814883
+length: 42508171
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-505.mp3"
 categories: episode
 ---

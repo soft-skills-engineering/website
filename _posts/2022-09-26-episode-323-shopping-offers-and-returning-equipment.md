@@ -4,7 +4,7 @@ title: "Episode 323: Shopping offers and returning equipment"
 date: 2022-09-26 05:00:00 -0700
 guid: 5dfccde3-6e99-4ca3-8d16-3d3e7cdba478
 duration: "26:26"
-length: 25347817
+length: 27475060
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-323.mp3"
 categories: episode
 ---

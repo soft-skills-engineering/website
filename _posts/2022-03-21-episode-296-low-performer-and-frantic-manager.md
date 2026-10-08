@@ -4,7 +4,7 @@ title: "Episode 296: Low performer and frantic manager"
 date: 2022-03-21 06:00:00 -0700
 guid: afed4e04-94f5-41d7-8624-4a1ad9490632
 duration: "28:44"
-length: 25901613
+length: 27413397
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-296.mp3"
 categories: episode
 ---

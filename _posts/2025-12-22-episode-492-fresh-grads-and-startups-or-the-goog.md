@@ -4,7 +4,7 @@ title: "Episode 492: Fresh grads and startups or the goog"
 date: 2025-12-22 05:00:00 -0700
 guid: 6b8df39a-2b96-4f89-9f9f-1e2ac9a3e8de
 duration: "33:30"
-length: 29560915
+length: 31622539
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-492.mp3"
 categories: episode
 ---

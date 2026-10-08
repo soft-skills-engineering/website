@@ -4,7 +4,7 @@ title: "Episode 319: Steve's babysitter and these uncertain times"
 date: 2022-08-29 05:00:00 -0700
 guid: c42fa9c3-ef62-41ce-aad8-4b8141e94f02
 duration: "37:15"
-length: 32180826
+length: 34546838
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-319.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 347: New untrusting manager and crappy project management"
 date: 2023-03-13 05:00:00 -0700
 guid: 5d89f2f4-1b30-4d43-9af9-260c5964304c
 duration: "29:07"
-length: 23854971
+length: 26289717
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-347.mp3"
 categories: episode
 ---

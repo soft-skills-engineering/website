@@ -4,7 +4,7 @@ title: "Episode 461: How to do side projects with a family and demanding job and
 date: 2025-05-19 05:00:00 -0700
 guid: 2917c9c9-414b-4dbb-9167-21ca3c43a02c
 duration: "32:40"
-length: 31498781
+length: 33524166
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-461.mp3"
 categories: episode
 ---

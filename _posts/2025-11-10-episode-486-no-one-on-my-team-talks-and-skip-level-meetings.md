@@ -4,7 +4,7 @@ title: "Episode 486: No one on my team talks and skip level meetings"
 date: 2025-11-10 05:00:00 -0700
 guid: 001647f9-fb1f-4fc8-b90d-03a831cba6d1
 duration: "29:19"
-length: 25423483
+length: 27676123
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-486.mp3"
 categories: episode
 ---

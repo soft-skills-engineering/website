@@ -4,7 +4,7 @@ title: "Episode 529: Zoom calls on my open floor plan and laconic staff engineer
 date: 2026-09-07 05:00:00 -0700
 guid: 8683e0db-2d7a-4f35-bdc5-9d35933936cf
 duration: "34:11"
-length: 32225280
+length: 34856568
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-529.mp3"
 categories: episode
 ---

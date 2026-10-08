@@ -4,7 +4,7 @@ title: "Episode 267: Cheap promotion raise and live coding blues"
 date: 2021-08-16 12:00:00 -0700
 guid: 7da442d0-f423-48de-8aa2-517b3db06c7b
 duration: "28:42"
-length: 28357601
+length: 30037145
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-267.mp3"
 categories: episode
 ---

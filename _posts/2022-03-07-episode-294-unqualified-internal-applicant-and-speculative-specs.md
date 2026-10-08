@@ -4,7 +4,7 @@ title: "Episode 294: Unqualified internal applicant and speculative specs"
 date: 2022-03-07 06:00:00 -0700
 guid: b602c213-e47e-4f77-a748-d3fe28f209cf
 duration: "31:47"
-length: 29167044
+length: 31256429
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-294.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 277: Super long code reviews and replacement laptop"
 date: 2021-11-08 12:00:00 -0700
 guid: 94275752-cad7-4cc2-b2cb-752fea1e9727
 duration: "33:32"
-length: 32379820
+length: 33829556
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-277.mp3"
 categories: episode
 ---

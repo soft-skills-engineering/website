@@ -4,7 +4,7 @@ title: "Episode 207: Unclear career goals and garbage code"
 date: 2020-04-27 12:00:00 -0700
 guid: edddf2c0-04d5-4a6a-a580-f81e95a5b999
 duration: "34:46"
-length: 35006179
+length: 36790675
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-207.mp3"
 categories: episode
 ---

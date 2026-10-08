@@ -4,7 +4,7 @@ title: "Episode 532: My new company is an absolute mess and should I get an Engl
 date: 2026-09-28 05:00:00 -0700
 guid: 7691dbd2-7ccc-40b3-8c73-15d07f9c6ed2
 duration: "31:13"
-length: 32972088
+length: 34100904
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-532.mp3"
 categories: episode
 ---

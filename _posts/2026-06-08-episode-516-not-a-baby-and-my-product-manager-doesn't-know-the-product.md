@@ -4,7 +4,7 @@ title: "Episode 516: Not a baby and my product manager doesn't know the product"
 date: 2026-06-08 05:00:00 -0700
 guid: 8f0030aa-9e20-4238-bd13-dc3152b1f8f2
 duration: "36:51"
-length: 34216536
+length: 37633704
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-516.mp3"
 categories: episode
 ---

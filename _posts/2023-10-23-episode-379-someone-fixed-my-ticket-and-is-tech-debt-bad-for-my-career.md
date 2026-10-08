@@ -4,7 +4,7 @@ title: "Episode 379: Someone fixed my ticket and is tech debt bad for my career"
 date: 2023-10-23 05:00:00 -0700
 guid: e9e9d544-6fcc-4c46-9f89-3716db8ad68f
 duration: "36:20"
-length: 52332574
+length: 52533194
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-379.mp3"
 categories: episode
 ---

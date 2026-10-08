@@ -4,7 +4,7 @@ title: "Episode 502: Management keeps leaving and I hate using AI to code"
 date: 2026-03-02 05:00:00 -0700
 guid: 7fb060a9-3755-4b4f-85cf-3948a8fbff0b
 duration: "41:19"
-length: 35581195
+length: 38956963
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-502.mp3"
 categories: episode
 ---

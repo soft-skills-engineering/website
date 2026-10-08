@@ -4,7 +4,7 @@ title: "Episode 176: Afraid to disappoint and tech co-founder advice"
 date: 2019-09-23 12:00:00 -0700
 guid: 04bdefe9-aa2d-494c-815a-75406f72e591
 duration: "24:53"
-length: 20885299
+length: 23989531
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-176.mp3"
 categories: episode
 ---

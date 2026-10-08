@@ -4,7 +4,7 @@ title: "Episode 352: Exploding manager and I hate computers"
 date: 2023-04-17 05:00:00 -0700
 guid: f852bfe0-e7a7-431c-97ba-800874d8df67
 duration: "32:15"
-length: 29192913
+length: 29886869
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-352.mp3"
 categories: episode
 ---

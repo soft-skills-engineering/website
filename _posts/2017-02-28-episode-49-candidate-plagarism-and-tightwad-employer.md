@@ -4,7 +4,7 @@ title: 'Episode 49: Candidate Plagiarism and a Tightwad Employer'
 date: 2017-02-28 12:00:00 -0700
 guid: aba992fa-f4d0-40e7-aa93-f20e750f7940
 duration: "27:31"
-length: 26410916
+length: 26410532
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-049.mp3"
 categories: episode
 ---

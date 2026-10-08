@@ -4,7 +4,7 @@ title: "Episode 262: I'm too popular and too much turnover"
 date: 2021-06-14 12:00:00 -0700
 guid: 5d62a6e3-f154-408b-a3f7-bcd4a3515d19
 duration: "19:49"
-length: 19226491
+length: 19591339
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-262.mp3"
 categories: episode
 ---

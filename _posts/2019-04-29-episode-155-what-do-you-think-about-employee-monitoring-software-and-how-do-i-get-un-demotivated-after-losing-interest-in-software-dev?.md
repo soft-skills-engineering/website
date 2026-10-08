@@ -4,7 +4,7 @@ title: "Episode 155: What do you think about employee monitoring software and ho
 date: 2019-04-29 12:00:00 -0700
 guid: 330fddaa-8563-4e6a-8dd8-b14d1ab1e0b8
 duration: "26:49"
-length: 22821139
+length: 25018027
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-155.mp3"
 categories: episode
 ---

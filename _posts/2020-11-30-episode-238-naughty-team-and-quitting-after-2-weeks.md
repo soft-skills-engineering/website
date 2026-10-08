@@ -4,7 +4,7 @@ title: "Episode 238: Naughty team and quitting after 2 weeks"
 date: 2020-11-30 12:00:00 -0700
 guid: 7e02bef2-93ac-485b-8ba7-ea011d27b92a
 duration: "31:41"
-length: 32879616
+length: 33622664
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-238.mp3"
 categories: episode
 ---

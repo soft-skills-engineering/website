@@ -4,7 +4,7 @@ title: "Episode 220: Premature leadership push and credit and status"
 date: 2020-07-27 12:00:00 -0700
 guid: 52256a40-8613-4d94-959c-ee8adb66f324
 duration: "17:50"
-length: 17420402
+length: 35365698
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-220.mp3"
 categories: episode
 ---

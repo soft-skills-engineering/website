@@ -4,7 +4,7 @@ title: "Episode 188: Drama overload and agile ouroboroses"
 date: 2019-12-16 12:00:00 -0700
 guid: cf4a890f-8432-43b7-b297-0676ff3af401
 duration: "25:35"
-length: 22693243
+length: 23615395
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-188.mp3"
 categories: episode
 ---

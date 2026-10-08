@@ -4,7 +4,7 @@ title: "Episode 497: Patronizing perf reviews and can't get anything done as a t
 date: 2026-01-26 05:00:00 -0700
 guid: 1f811592-255b-4951-bf3f-5868a90e9269
 duration: "27:52"
-length: 25486032
+length: 26723208
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-497.mp3"
 categories: episode
 ---

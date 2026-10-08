@@ -4,7 +4,7 @@ title: "Episode 530: Product engineering and why does my team never challenge my
 date: 2026-09-14 05:00:00 -0700
 guid: c43c1979-9287-4d78-a024-eb4bff3daa81
 duration: "35:43"
-length: 36745008
+length: 38403936
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-530.mp3"
 categories: episode
 ---

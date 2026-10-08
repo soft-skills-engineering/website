@@ -4,7 +4,7 @@ title: "Episode 142: Can I get hired above my level even though I look inexperie
 date: 2019-01-28 12:00:00 -0700
 guid: 7c0bd090-0016-47e2-b4d2-5bba73b8b468
 duration: "30:30"
-length: 26212219
+length: 28544611
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-142.mp3"
 categories: episode
 ---

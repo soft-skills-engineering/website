@@ -4,7 +4,7 @@ title: "Episode 104: Interviews With VPs and Hiring a Tester"
 date: 2018-04-06 12:00:00 -0700
 guid: 4361d5ab-624a-4c7c-b940-03d7f59aa311
 duration: "28:04"
-length: 26951590
+length: 26951206
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-104.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 211: Biorhythm and coworker roommate"
 date: 2020-05-25 12:00:00 -0700
 guid: adfd159f-3d3c-46af-966b-60eb1c54285c
 duration: "26:34"
-length: 26710147
+length: 27954259
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-211.mp3"
 categories: episode
 ---

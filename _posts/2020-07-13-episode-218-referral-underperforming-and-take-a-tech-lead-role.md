@@ -4,7 +4,7 @@ title: "Episode 218: Referral underperforming and take a tech lead role"
 date: 2020-07-13 12:00:00 -0700
 guid: d22ac2b0-4a65-4e99-b5b4-f9c52ff5944f
 duration: "32:33"
-length: 31514565
+length: 35372275
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-218.mp3"
 categories: episode
 ---

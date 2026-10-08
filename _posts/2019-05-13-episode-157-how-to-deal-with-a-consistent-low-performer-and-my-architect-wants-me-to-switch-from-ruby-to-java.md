@@ -4,7 +4,7 @@ title: "Episode 157: How to deal with a consistent low performer and my architec
 date: 2019-05-13 12:00:00 -0700
 guid: 262ec42f-1326-4150-b0d2-9e394b5bfa5f
 duration: "33:08"
-length: 26135723
+length: 28857179
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-157.mp3"
 categories: episode
 ---

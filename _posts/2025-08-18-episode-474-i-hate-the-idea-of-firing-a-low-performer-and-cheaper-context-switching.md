@@ -4,7 +4,7 @@ title: "Episode 474: I hate the idea of firing a low performer and cheaper conte
 date: 2025-08-18 05:00:00 -0700
 guid: 20ee80a2-182c-4a94-b04a-4d2583d99391
 duration: "38:04"
-length: 35251003
+length: 36839059
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-474.mp3"
 categories: episode
 ---

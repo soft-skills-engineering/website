@@ -4,7 +4,7 @@ title: "Episode 322: Cover blown and no one cares"
 date: 2022-09-19 05:00:00 -0700
 guid: 312f7896-3300-429f-9454-11f9746389e0
 duration: "28:24"
-length: 25179138
+length: 26799147
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-322.mp3"
 categories: episode
 ---

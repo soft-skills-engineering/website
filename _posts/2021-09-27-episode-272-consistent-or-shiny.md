@@ -4,7 +4,7 @@ title: "Episode 272: Consistent or shiny"
 date: 2021-09-27 12:00:00 -0700
 guid: f156d851-56d9-4f37-8c42-844a1053dd47
 duration: "30:30"
-length: 29564011
+length: 31929907
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-272.mp3"
 categories: episode
 ---

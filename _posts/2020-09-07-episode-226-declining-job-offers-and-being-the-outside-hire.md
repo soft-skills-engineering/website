@@ -4,7 +4,7 @@ title: "Episode 226: Declining job offers and being the outside hire"
 date: 2020-09-07 12:00:00 -0700
 guid: 76aafee4-0f70-436d-8d60-8fd1095d42eb
 duration: "31:26"
-length: 29755651
+length: 32334187
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-226.mp3"
 categories: episode
 ---

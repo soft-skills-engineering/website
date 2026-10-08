@@ -4,7 +4,7 @@ title: "Episode 282: Setting boundaries late and junior joy"
 date: 2021-12-13 12:00:00 -0700
 guid: e4a667ed-9ba5-47be-a58e-06f4133888c0
 duration: "27:51"
-length: 25610395
+length: 27274530
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-282.mp3"
 categories: episode
 ---

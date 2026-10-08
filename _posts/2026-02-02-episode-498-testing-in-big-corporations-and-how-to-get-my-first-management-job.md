@@ -4,7 +4,7 @@ title: "Episode 498: Testing in big corporations and how to get my first managem
 date: 2026-02-02 05:00:00 -0700
 guid: 53f36522-0152-42c3-aed4-1909dd2a3330
 duration: "31:52"
-length: 27963840
+length: 30452664
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-498.mp3"
 categories: episode
 ---

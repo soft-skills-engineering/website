@@ -4,7 +4,7 @@ title: "Episode 308: FAANG to startup and Google interview prep"
 date: 2022-06-13 05:00:00 -0700
 guid: 35c29f35-bc30-481e-b9a7-941e7fd58399
 duration: "27:35"
-length: 25613837
+length: 27448542
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-308.mp3"
 categories: episode
 ---

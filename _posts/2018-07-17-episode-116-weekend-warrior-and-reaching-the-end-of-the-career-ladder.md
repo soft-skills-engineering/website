@@ -4,7 +4,7 @@ title: "Episode 116: Weekend Warrioring and Reaching the End of the Career Ladde
 date: 2018-07-17 12:00:00 -0700
 guid: 3a295799-0311-4cee-9c70-91935ee96cfd
 duration: "30:37"
-length: 26972923
+length: 29833195
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-116.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 447: Overleveled at FAANG and accidental draft feedback"
 date: 2025-02-10 05:00:00 -0700
 guid: ae3525fd-ef1b-42ef-8bc1-56749fec4484
 duration: "30:11"
-length: 29499460
+length: 30240412
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-447.mp3"
 categories: episode
 ---

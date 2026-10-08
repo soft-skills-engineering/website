@@ -4,7 +4,7 @@ title: "Episode 280: Async communication and how to quit not nicely"
 date: 2021-11-29 12:00:00 -0700
 guid: 2b8e80aa-6f83-4a14-9e56-a4f7d443e326
 duration: "32:56"
-length: 29645739
+length: 31405643
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-280.mp3"
 categories: episode
 ---

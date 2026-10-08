@@ -4,7 +4,7 @@ title: "Episode 173: Newbie burden and getting a 25% raise"
 date: 2019-09-02 12:00:00 -0700
 guid: 5e990430-831a-4de5-b15b-7b70309c4c9d
 duration: "33:24"
-length: 31936147
+length: 36399187
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-173.mp3"
 categories: episode
 ---

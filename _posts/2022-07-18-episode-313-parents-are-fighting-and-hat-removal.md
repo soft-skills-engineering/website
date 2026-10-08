@@ -4,7 +4,7 @@ title: "Episode 313: Parents are fighting and hat-removal"
 date: 2022-07-18 05:00:00 -0700
 guid: c882dc04-a822-46bf-851d-cc8db238ad76
 duration: "33:33"
-length: 30892027
+length: 32412223
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-313.mp3"
 categories: episode
 ---

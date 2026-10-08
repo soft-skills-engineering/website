@@ -4,7 +4,7 @@ title: "Episode 94: Dodging Recommendations and Full Sleeve Tattoos"
 date: 2018-02-03 12:00:00 -0700
 guid: 78fec03f-025d-4714-a660-cb65993eac01
 duration: "34:45"
-length: 33363236
+length: 33362852
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-094.mp3"
 categories: episode
 ---

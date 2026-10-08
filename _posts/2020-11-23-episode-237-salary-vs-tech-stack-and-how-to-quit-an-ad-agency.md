@@ -4,7 +4,7 @@ title: "Episode 237: Salary vs tech stack and how to quit an ad agency"
 date: 2020-11-23 12:00:00 -0700
 guid: d5089f10-f38b-4f21-b0f9-14f331a4d3ba
 duration: "24:49"
-length: 22821984
+length: 25031530
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-237.mp3"
 categories: episode
 ---

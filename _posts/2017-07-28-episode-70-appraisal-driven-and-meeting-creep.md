@@ -4,7 +4,7 @@ title: "Episode 70: Appraisal-Driven Development and Meeting Creep"
 date: 2017-07-28 12:00:00 -0700
 guid: 94b06706-a1ed-498a-91e5-fbcea15ce6ff
 duration: "32:03"
-length: 30770050
+length: 30769666
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-070.mp3"
 categories: episode
 ---

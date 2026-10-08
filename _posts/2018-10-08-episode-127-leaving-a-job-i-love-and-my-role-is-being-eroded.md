@@ -4,7 +4,7 @@ title: "Episode 127: Leaving a Job I Love and My Role Is Being Eroded"
 date: 2018-10-08 12:00:00 -0700
 guid: 62d6a775-3f54-4a9a-8158-4eefea2f078d
 duration: "21:20"
-length: 18104827
+length: 19958155
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-127.mp3"
 categories: episode
 favorite: true

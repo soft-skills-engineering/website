@@ -4,7 +4,7 @@ title: "Episode 158: I accepted a counter-offer and stayed and dealing with engi
 date: 2019-05-20 12:00:00 -0700
 guid: 466e6c5b-82e0-4045-99a9-6aeb1cb5ef97
 duration: "27:10"
-length: 23515439
+length: 25492247
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-158.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: "Episode 519: Why does my team not have a tech lead and rumors!"
 date: 2026-06-29 05:00:00 -0700
 guid: 3d628cae-e3d4-4056-8833-17d95f384879
 duration: "33:51"
-length: 31551888
+length: 34557312
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-519.mp3"
 categories: episode
 ---

@@ -4,7 +4,7 @@ title: 'Episode 31: Going In To Management and Knowing If A Job Is Worth Applyin
 date: 2016-10-17 12:00:00 -0700
 guid: 76e67698-7853-496a-9603-15b3fec71e1b
 duration: "33:10"
-length: 31833216
+length: 31832832
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-031.mp3"
 categories: episode
 ---

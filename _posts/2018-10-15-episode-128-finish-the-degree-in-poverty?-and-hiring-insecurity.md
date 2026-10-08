@@ -4,7 +4,7 @@ title: "Episode 128: Finish The Degree In Poverty? and Hiring Insecurity"
 date: 2018-10-15 12:00:00 -0700
 guid: ccfefa08-1103-4352-ad58-3ec685c641e8
 duration: "18:36"
-length: 15597653
+length: 26173165
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-128.mp3"
 categories: episode
 ---

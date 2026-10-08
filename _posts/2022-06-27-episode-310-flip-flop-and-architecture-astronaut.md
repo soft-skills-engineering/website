@@ -4,7 +4,7 @@ title: "Episode 310: Flip flop and architecture astronaut"
 date: 2022-06-27 05:00:00 -0700
 guid: 9fe0d2dd-2d00-4996-8889-caaa26c53713
 duration: "30:01"
-length: 27208497
+length: 28846764
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-310.mp3"
 categories: episode
 ---

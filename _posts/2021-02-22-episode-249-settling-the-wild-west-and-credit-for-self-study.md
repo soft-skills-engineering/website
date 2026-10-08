@@ -4,7 +4,7 @@ title: "Episode 249: Settling the Wild West and credit for self-study"
 date: 2021-02-22 12:00:00 -0700
 guid: 4e93cd66-42f6-456c-9479-6fbfc69205f9
 duration: "28:57"
-length: 29773978
+length: 30951683
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-249.mp3"
 categories: episode
 ---

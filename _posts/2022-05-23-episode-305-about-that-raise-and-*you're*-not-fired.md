@@ -4,7 +4,7 @@ title: "Episode 305: About that raise and *you're* not fired"
 date: 2022-05-23 06:00:00 -0700
 guid: 494254e4-42b9-48e4-afef-b17176d14eb0
 duration: "26:00"
-length: 23629074
+length: 25068152
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-305.mp3"
 categories: episode
 ---

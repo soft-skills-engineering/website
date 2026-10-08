@@ -4,7 +4,7 @@ title: "Episode 132: Should I tell my boss I'm planning to quit and keeping tech
 date: 2018-11-12 12:00:00 -0700
 guid: 841da437-4041-4261-872d-c203ae3d610f
 duration: "25:28"
-length: 21274123
+length: 23360707
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-132.mp3"
 categories: episode
 ---

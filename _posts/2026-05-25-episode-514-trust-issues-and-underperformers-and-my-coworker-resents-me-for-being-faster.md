@@ -4,7 +4,7 @@ title: "Episode 514: Trust issues and underperformers and my coworker resents me
 date: 2026-05-25 05:00:00 -0700
 guid: 1ba8275f-4631-4a00-800e-10bd1beaefab
 duration: "38:14"
-length: 34311096
+length: 36814968
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-514.mp3"
 categories: episode
 ---

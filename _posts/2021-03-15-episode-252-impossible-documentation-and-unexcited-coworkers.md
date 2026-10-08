@@ -4,7 +4,7 @@ title: "Episode 252: Impossible documentation and unexcited coworkers"
 date: 2021-03-15 12:00:00 -0700
 guid: 0058144b-d1f1-43bf-aa1c-cfd91ec53ff8
 duration: "29:42"
-length: 27139220
+length: 29645788
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-252.mp3"
 categories: episode
 ---

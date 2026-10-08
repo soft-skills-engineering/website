@@ -4,7 +4,7 @@ title: "Episode 183: Terrible boss code and peer-to-peer mentorship"
 date: 2019-11-11 12:00:00 -0700
 guid: 2658c76e-57b3-4dc8-a967-90310f3c54ef
 duration: "30:17"
-length: 27194275
+length: 29555515
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-183.mp3"
 categories: episode
 ---

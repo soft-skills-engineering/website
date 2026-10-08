@@ -4,7 +4,7 @@ title: "Episode 2: Influencing your team and dealing with anger"
 date: 2016-03-14 12:00:00 -0700
 guid: 56d6dca2-d114-468a-953d-3f95b3048f59
 duration: "25:33"
-length: 34683307
+length: 34682923
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-002.mp3"
 categories: episode
 ---

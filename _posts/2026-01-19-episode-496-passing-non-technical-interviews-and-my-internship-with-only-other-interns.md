@@ -4,7 +4,7 @@ title: "Episode 496: Passing non-technical interviews and my internship with onl
 date: 2026-01-19 05:00:00 -0700
 guid: 7bff6b51-ba01-4709-81c9-cae7041a9f80
 duration: "26:48"
-length: 25525600
+length: 26993377
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-496.mp3"
 categories: episode
 ---

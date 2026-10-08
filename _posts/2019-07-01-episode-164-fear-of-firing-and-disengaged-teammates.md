@@ -4,7 +4,7 @@ title: "Episode 164: Fear of firing and disengaged teammates"
 date: 2019-07-01 12:00:00 -0700
 guid: 17bcfb27-a0ef-4a11-b9f0-ec79c2ee32b8
 duration: "31:15"
-length: 31925875
+length: 34222507
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-164.mp3"
 categories: episode
 ---

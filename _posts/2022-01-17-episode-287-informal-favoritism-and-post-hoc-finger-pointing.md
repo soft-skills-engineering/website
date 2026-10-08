@@ -4,7 +4,7 @@ title: "Episode 287: Informal favoritism and post-hoc finger pointing"
 date: 2022-01-17 12:00:00 -0700
 guid: fb9e61c0-0ee0-4f4d-94b7-9dfcd8818da4
 duration: "22:01"
-length: 20155939
+length: 21377844
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-287.mp3"
 categories: episode
 ---

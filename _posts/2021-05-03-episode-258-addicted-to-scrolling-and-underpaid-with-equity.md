@@ -4,7 +4,7 @@ title: "Episode 258: Addicted to scrolling and underpaid with equity"
 date: 2021-05-03 12:00:00 -0700
 guid: c73ab58b-996d-4360-b07e-c42ab0584cab
 duration: "31:14"
-length: 28312917
+length: 31671709
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-258.mp3"
 categories: episode
 ---

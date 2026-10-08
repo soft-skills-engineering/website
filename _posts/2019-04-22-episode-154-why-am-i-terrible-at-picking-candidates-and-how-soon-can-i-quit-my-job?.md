@@ -4,7 +4,7 @@ title: "Episode 154: Why am I terrible at picking candidates and how soon can I 
 date: 2019-04-22 12:00:00 -0700
 guid: 9985a3d3-a6e8-4a57-926c-7db741449485
 duration: "30:27"
-length: 26082331
+length: 28293835
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-154.mp3"
 categories: episode
 ---

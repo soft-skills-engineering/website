@@ -4,7 +4,7 @@ title: "Episode 446: Wading through AI slop and they don't get git"
 date: 2025-02-03 05:00:00 -0700
 guid: 8d5b268d-2a14-410b-97f8-e0b8689b9341
 duration: "33:19"
-length: 32849637
+length: 33998561
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-446.mp3"
 categories: episode
 ---

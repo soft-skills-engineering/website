@@ -4,7 +4,7 @@ title: "Episode 473: Mental health support and overcoming FOMO of taking a break
 date: 2025-08-11 05:00:00 -0700
 guid: d3031268-8a30-4e67-8cb0-401fc33901d1
 duration: "35:59"
-length: 33568795
+length: 34692907
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-473.mp3"
 categories: episode
 ---

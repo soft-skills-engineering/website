@@ -4,7 +4,7 @@ title: "Episode 494: Am I interviewing all wrong and leaving old team chats"
 date: 2026-01-05 05:00:00 -0700
 guid: 4fe8037c-9f31-42e5-8ba3-78540d4f7b25
 duration: "26:02"
-length: 23467032
+length: 25155336
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-494.mp3"
 categories: episode
 ---

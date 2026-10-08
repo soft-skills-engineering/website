@@ -4,7 +4,7 @@ title: "Episode 18: Dropping out of college and preparing for interviews"
 date: 2016-07-18 12:00:00 -0700
 guid: ba176025-7551-476e-a026-e9d40706ad83
 duration: "25:33"
-length: 35014272
+length: 39348480
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-018.mp3"
 categories: episode
 ---

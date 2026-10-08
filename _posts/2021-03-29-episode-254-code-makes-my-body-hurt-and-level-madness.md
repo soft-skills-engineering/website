@@ -4,7 +4,7 @@ title: "Episode 254: Code makes my body hurt and level madness"
 date: 2021-03-29 12:00:00 -0700
 guid: 2e365b8b-d193-4fb2-8c0e-07c9dbacda09
 duration: "32:31"
-length: 31253632
+length: 33531927
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-254.mp3"
 categories: episode
 ---

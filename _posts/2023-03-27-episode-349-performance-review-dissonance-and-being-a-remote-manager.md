@@ -4,7 +4,7 @@ title: "Episode 349: Performance review dissonance and being a remote manager"
 date: 2023-03-27 05:00:00 -0700
 guid: 44aa7995-d6bc-40fa-b77a-eb35aed90e6d
 duration: "29:36"
-length: 24115657
+length: 26301602
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-349.mp3"
 categories: episode
 ---

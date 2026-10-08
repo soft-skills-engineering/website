@@ -4,7 +4,7 @@ title: "Episode 200: Crazy work work stories"
 date: 2020-03-09 12:00:00 -0700
 guid: a2c71955-f58d-42ed-843a-f5308519a1f7
 duration: "29:29"
-length: 30527419
+length: 31557955
 file: "https://dts.podtrac.com/redirect.mp3/download.softskills.audio/sse-200.mp3"
 categories: episode
 ---
