@@ -33,7 +33,7 @@ cd "$(dirname "$0")"
 source venv/bin/activate
 
 # Determine the next episode number to publish:
-latest_published_epispode_number=$(curl --silent --fail 'http://softskills.audio/feed.xml' \
+latest_published_epispode_number=$(curl --silent --fail 'https://softskills.audio/feed.xml' \
         | egrep 'sse-[0-9]+\.mp3' \
         | sed -e 's/.*sse-//' \
         | sed -e 's/\.mp3.*//' \
